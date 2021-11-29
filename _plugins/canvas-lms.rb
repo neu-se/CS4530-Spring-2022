@@ -144,10 +144,12 @@ class CanvasSyncer
     end
   end
 
-  def syncAssignment(title, dueDate, contents, baseURL, pageURL)
+  def syncAssignment(title, dueDate, contents, baseURL, lastModifiedAt, permalink)
     assignmentIdx = getAllAssignments().index { |assignment| assignment['name'] == title }
     dueDate = DateTime.parse(dueDate)
     baseURL = baseURL[0..baseURL.rindex('/')]
+    contents = '<div class="fs-1 text-right fw-300">This content was last updated at:' + lastModifiedAt + '; you may view it with native formatting <a target="_blank" href="' + permalink+ '">on the course website</a></div>' + contents
+
     contents = contents.gsub(/<a href="\//, '<a target="_blank" href="' + baseURL + '/')
     assignment = {
       name: title,
@@ -196,8 +198,9 @@ class CanvasSyncer
     end
   end
 
-  def syncHomePage(content, baseURL, permalink)
+  def syncHomePage(content, baseURL, permalink, lastModifiedAt)
     home = getHomePage()
+    content = '<div class="fs-1 text-right fw-300">This content was last updated at:' + lastModifiedAt + '; you may view it with native formatting <a target="_blank" href="' + permalink+ '">on the course website</a></div>' + content
     content = content.gsub(/<a href="\//, '<a target="_blank" href="' + baseURL + '/')
 
     existing_home = home.body
@@ -219,14 +222,15 @@ if ENV['CANVAS_COURSE_ID'] && ENV['CANVAS_TOKEN'] && ENV['CANVAS_BASE_URL']
   Jekyll::Hooks.register :pages, :post_render do |page|
     site = page.site
     baseURL = site.config['url'] # + site.baseurl
+    permalink =  site.config['url'] + site.baseurl + page.url
     if (page.name == "index.md" && page.dir == "/")
-      canvasSyncer.syncHomePage(page['content'], baseURL, page.permalink())
+      canvasSyncer.syncHomePage(page['content'], baseURL, permalink, page['last_modified_at'].to_s)
     elsif (page['layout'] == 'assignment')
       if(page['due_date'] == nil)
         print "Canvas importer: no due date for assignment " + page['title'] + ": skipping\n"
         next
       end
-      canvasSyncer.syncAssignment(page['title'], page['due_date'], page['content'], baseURL, page.permalink())
+      canvasSyncer.syncAssignment(page['title'], page['due_date'], page['content'], baseURL, page['last_modified_at'].to_s, permalink)
     elsif (page['layout'] == 'module')
       if(page['lessons'] == nil)
         print "Canvas importer: no lessons for module " + page['title'] + ": skipping\n"
