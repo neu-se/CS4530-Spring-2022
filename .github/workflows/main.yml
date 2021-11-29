@@ -1,0 +1,20 @@
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # or master before October 2020
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+        env:
+          CANVAS_TOKEN: ${{secrets.CANVAS_TOKEN}}
+          CANVAS_COURSE_ID: ${{secrets.CANVAS_COURSE_ID}}
+          CANVAS_BASE_URL: ${{ secrets.CANVAS_BASE_URL }}
+          JEKYLL_NO_BUNDLER_REQUIRE: true
