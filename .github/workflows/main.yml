@@ -13,7 +13,6 @@ jobs:
       - uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GH_TOKEN }}
-          jekyll_build_options: -b https://neu-se.github.io
         env:
           CANVAS_TOKEN: ${{secrets.CANVAS_TOKEN}}
           CANVAS_COURSE_ID: ${{secrets.CANVAS_COURSE_ID}}

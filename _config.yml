@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.
 tagline: Fundamentals of Software Engineering
 baseurl: '/CS4530-Spring-2022' # the subpath of your site, e.g. /blog
-url: '' # the base hostname & protocol for your site, e.g. http://example.com
+url: 'https://neu-se.github.io' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md", "disabled", "vendor", "_plugins"]
 
 # Theme settings
