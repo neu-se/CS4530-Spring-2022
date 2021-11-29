@@ -148,7 +148,7 @@ class CanvasSyncer
     assignmentIdx = getAllAssignments().index { |assignment| assignment['name'] == title }
     dueDate = DateTime.parse(dueDate)
     baseURL = baseURL[0..baseURL.rindex('/')]
-    contents = '<div class="fs-1 text-right fw-300">This content was last updated at:' + lastModifiedAt + '; you may view it with native formatting <a target="_blank" href="' + permalink+ '">on the course website</a></div>' + contents
+    contents = '<div class="fs-1 text-right fw-300">This content was last updated at: ' + lastModifiedAt + '; you may view it with native formatting <a target="_blank" href="' + permalink+ '">on the course website</a></div>' + contents
 
     contents = contents.gsub(/<a href="\//, '<a target="_blank" href="' + baseURL + '/')
     assignment = {
@@ -200,7 +200,7 @@ class CanvasSyncer
 
   def syncHomePage(content, baseURL, permalink, lastModifiedAt)
     home = getHomePage()
-    content = '<div class="fs-1 text-right fw-300">This content was last updated at:' + lastModifiedAt + '; you may view it with native formatting <a target="_blank" href="' + permalink+ '">on the course website</a></div>' + content
+    content = '<div class="fs-1 text-right fw-300">This content was last updated at: ' + lastModifiedAt + '; you may view it with native formatting <a target="_blank" href="' + permalink+ '">on the course website</a></div>' + content
     content = content.gsub(/<a href="\//, '<a target="_blank" href="' + baseURL + '/')
 
     existing_home = home.body
