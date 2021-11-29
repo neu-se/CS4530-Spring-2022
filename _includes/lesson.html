@@ -1,0 +1,9 @@
+### Lessons:
+<ul>
+{% for lesson in page.lessons %}
+    <li>{{ lesson.title }}
+        <a href="{{ site.baseurl }}/slides-pdf/{{lesson.pdf}}">Slides PDF</a>,
+        <a href="{{ site.baseurl }}/slides-pdf/{{lesson.ppt}}">PPT</a>
+    </li>
+{% endfor %}
+</ul>

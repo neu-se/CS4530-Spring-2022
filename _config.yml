@@ -13,26 +13,29 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Just the Class
-tagline: A Jekyll template for course websites
-description: A modern, highly customizable, responsive Jekyll template for course websites
-author: Kevin Lin
-baseurl: '/just-the-class' # the subpath of your site, e.g. /blog
-url: 'https://kevinl.info' # the base hostname & protocol for your site, e.g. http://example.com
-exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+title: CS4530, Spring 2022
+#email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Northeastern University CS 4530 "Fundamentals of Software Engineering",
+  Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.
+tagline: Fundamentals of Software Engineering
+baseurl: '/CS4530-Spring-2022' # the subpath of your site, e.g. /blog
+url: '' # the base hostname & protocol for your site, e.g. http://example.com
+exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md", "disabled", "vendor", "_plugins"]
 
 # Theme settings
-remote_theme: pmarsceill/just-the-docs@v0.3.3
-color_scheme: light
+theme: just-the-docs
+color_scheme: neu
 search_enabled: true
 heading_anchors: true
 permalink: pretty
-aux_links:
-  Kevin Lin:
-    - 'https://kevinl.info'
-  Just the Class on GitHub:
-    - 'https://github.com/kevinlin1/just-the-class'
-footer_content:
+#aux_links:
+#  Kevin Lin:
+#    - 'https://kevinl.info'
+#  Just the Class on GitHub:
+#    - 'https://github.com/kevinlin1/just-the-class'
+footer_content: "&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA</a> license"
+
 
 # Collections for website data
 collections:
@@ -74,3 +77,7 @@ compress_html:
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-last-modified-at
+
+last-modified-at:
+  date-format: '%b %d, %y %H:%M %Z'
