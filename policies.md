@@ -20,16 +20,18 @@ If you're worried about being busy around the time of a HW submission, please pl
 
 ## In Class Activities:
 
-Most lectures will feature interactive activities and/or polls that support the material being presented. These polls and activities are meant primarily to help us understand how well you (and the class as a whole) are understanding the material that day. These polls will be graded on a "did it" or "didn't" basis: you either take the polls, and you get the marks, or you did not take the polls, and do not get the marks (that is, as long as you answer the questions, you get full credit, regardless of what the answers are). You must be present in class to take the poll (participating in an online quiz while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). You can miss up to three activities/polls with no penalty.
+Most lectures will feature interactive activities and/or polls that support the material being presented. You must be present in class to take complete the activity or take the poll (participating in an online activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Participation grades will be posted on Canvas, and regularly updated. You can miss up to three activities/polls with no penalty.
 
 If you join class in person, you are strongly encouraged to bring your laptop or phone to class so that you can participate in the activities.
 
 ## Grading
 There will be four programming assignments and a final project. You will complete the assignments individually, and the project in a group of 3-4. The overall grading breakdown is:
-* 36% Individual homework assignments
-* 29% Team final project
+* 35% Individual homework assignments
+* 35% Team final project
 * 10% Participation in synchronous, in-class activities
-* 25% Final exam
+* 20% Exam
+
+**Assignment of final grades:** Although each instructor will use the same lesson plans and assignments, we expect that there may be variation in grades when compared between sections. Hence, each instructor will assign final grades to students in their sections, and reserve the right to apply different curves than are used by the other instructors. With each graded assignment, students will be provided with the distribution of all grades in their section.
 
 **Grading grievances:** If you have concerns regarding the grading of your work, please let us know *right away* by opening a regrade request in GradeScope. Do not post on Piazza or your TA or instructor: GradeScope provides an interface that allows us to review all regrade requests in one place.  All regrade requests must be submitted within 14 days from your receipt of the graded work. If your regrade request is closed and you feel that the response was not satisfactory, you may appeal to the instructor via email within 48 hours.
 
@@ -41,7 +43,7 @@ Please don't be late. You are an essential part of the class. Your participation
 
 BE PRESENT WHEN YOU ARE ATTENDING CLASS. Please do not distract yourself from the class by doing other activities such as phone calls, email, facebook, chat/IM/texting, games, web surfing -- unless it has a direct bearing on the course. Then, by all means, surf away!
 
-Attendance in the synchronous meetings is expected (either in person, or remotely). Sometimes you cannot avoid missing a class. If you need to be away from class, it is your responsibility to catch up on the materials discussed in the class.
+Attendance in the synchronous meetings is expected. Sometimes you cannot avoid missing a class. If you need to be away from class, it is your responsibility to catch up on the materials discussed in the class.
 
 ## Accommodations for Disabilities
 Students who have disabilities who wish to receive academic services and/or accommodations should visit the [Disability Resource Center](http://www.northeastern.edu/drc) at 20 Dodge Hall or call (617) 373-2675. If you have already done so, please provide your letter from the DRC to the Instructor early in the semester so that they can arrange those accommodations.
