@@ -42,7 +42,6 @@ Just the Class is built for [Jekyll](https://jekyllrb.com), a static site genera
 $ gem install bundler jekyll
 $ bundle install
 ```
-
 1. Start your local Jekyll server.
 ```bash
 $ bundle exec jekyll serve
