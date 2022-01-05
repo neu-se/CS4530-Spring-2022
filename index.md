@@ -34,7 +34,16 @@ This class will serve as an introduction to the field of software engineering, c
 - Students will design and implement a portfolio-worthy software engineering project in a small team environment that can be publicly showcased to recruiters.
 
 ### Course Delivery
-The course will be delivered in a "traditional" lecture style. Prof Wand's section will be entirely virtual, and the other sections will be entirely on-the-ground, with no virtual participation option.
+The course will be delivered in a "traditional" lecture style. Prof Wand's section will be entirely virtual, and the other sections will be entirely on-the-ground, with no virtual participation option. You must attend the section for which you have registered, and you may not partner with students in other sections for the term project.
+
+| Section       | Instructor                                                                | Meeting Time                                 | Meeting Place      |
+|---------------|---------------------------------------------------------------------------|----------------------------------------------|--------------------|
+| 1             | Prof Bhutta                                                               | MR 11:45 am - 1:25 pm                        | West Village H 110 |
+| 2             | Prof Bell                                                                 | MR 11:45 am - 1:25 pm                        | West Village G 108 |
+| 3             | Prof Bhutta                                                               | MW 2:50 pm - 4:30 pm                         | Shillman Hall 220  |
+| 4             | Prof Vesely                                                               | TF 8:00 am - 9:40 am                         | Robinson Hall 411  |
+| 5             | Prof Wand                                                                 | W 6:00 pm - 9:20 pm                          | Online             |
+| 6             | Prof Bhutta                                                               | T 11:45 am - 1:25pm<br />R 2:50 pm - 4:30 pm | Knowels Center 010 |
 
 
 ## Course Project
