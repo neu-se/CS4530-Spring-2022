@@ -8,7 +8,7 @@ has_children: true
 
 ## Homework policy 
 
-Students must work individually on all homework assignments. We encourage you to have high-level discussions with other students in the class about the assignments, however, we require that when you turn in an assignment, it is only your work. That is, copying any part of another student's assignment is strictly prohibited. You are free to reuse small snippets of example code found on the Internet (e.g. via StackOverflow) provided that it is attributed. If you are concerned that by reusing and attributing that copied code it may appear that you didn't complete the assignment yourself, then please raise a discussion with the instructor.
+Students must work individually on all homework assignments. We encourage you to have high-level discussions with other students in the class about the assignments, however, we require that when you turn in an assignment, it is only your work. That is, copying any part of another student's assignment is strictly prohibited, and repercussions for doing so will be severe (up to and including failing the class outright). You are free to reuse small snippets of example code found on the Internet (e.g. via StackOverflow) provided that it is attributed. If you are concerned that by reusing and attributing that copied code it may appear that you didn't complete the assignment yourself, then please raise a discussion with the instructor.
 
 Your work is late if it is not turned in by the deadline.
 * 10% will be deducted for late assignments turned in within 24 hours after the due date.
@@ -33,7 +33,7 @@ There will be four programming assignments and a final project. You will complet
 
 **Assignment of final grades:** Although each instructor will use the same lesson plans and assignments, we expect that there may be variation in grades when compared between sections. Hence, each instructor will assign final grades to students in their sections, and reserve the right to apply different curves than are used by the other instructors. With each graded assignment, students will be provided with the distribution of all grades in their section.
 
-**Grading grievances:** If you have concerns regarding the grading of your work, please let us know *right away* by opening a regrade request in GradeScope. Do not post on Piazza or your TA or instructor: GradeScope provides an interface that allows us to review all regrade requests in one place.  All regrade requests must be submitted within 14 days from your receipt of the graded work. If your regrade request is closed and you feel that the response was not satisfactory, you may appeal to the instructor via email within 48 hours.
+**Grading grievances:** If you have concerns regarding the grading of your work, please let us know *right away* by opening a regrade request in GradeScope. Do not post on Piazza or your TA or instructor: GradeScope provides an interface that allows us to review all regrade requests in one place.  All regrade requests must be submitted within 7 days from your receipt of the graded work. If your regrade request is closed and you feel that the response was not satisfactory, you may appeal to the instructor via email within 48 hours.
 
 ## Classroom Environment
 
