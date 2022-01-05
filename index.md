@@ -43,7 +43,7 @@ The course will be delivered in a "traditional" lecture style. Prof Wand's secti
 | 3             | Prof Bhutta                                                               | MW 2:50 pm - 4:30 pm                         | Shillman Hall 220  |
 | 4             | Prof Vesely                                                               | TF 8:00 am - 9:40 am                         | Robinson Hall 411  |
 | 5             | Prof Wand                                                                 | W 6:00 pm - 9:20 pm                          | Online             |
-| 6             | Prof Bhutta                                                               | T 11:45 am - 1:25pm<br />R 2:50 pm - 4:30 pm | Knowels Center 010 |
+| 6             | Prof Bhutta                                                               | T 11:45 am - 1:25pm<br />R 2:50 pm - 4:30 pm | Knowles Center 010 |
 
 
 ## Course Project
