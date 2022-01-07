@@ -61,7 +61,7 @@ the following functions:
 
 1. `makeVenusian(name:string):Venusian //  returns a Venusian with
    the given name and a unique VSN.`
-1. `venusianGetName(v:Venusian):string` which returns the name of the given Venusian 
+1. `venusianGetName(v:Venusian):string // returns the name of the given Venusian `
 1. `venusianGetVSN(v:Venusian):number // returns the VSN of the given Venusian`
 
 1. `makeShip(crew:Venusian[], daughters:Ship[]):Ship // returns a
