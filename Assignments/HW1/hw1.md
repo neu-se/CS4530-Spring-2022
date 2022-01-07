@@ -4,11 +4,9 @@ title: Assignment 1 -- Venusians
 permalink: /assignments/hw1
 parent: Assignments
 nav_order: 1
+due_date: "Friday January 28, 10:00pm EST"
+submission_notes: Submit on GradeScope 
 ---
-
-# Assignment 1: Venusians
-
-**Due Friday, January 28, 10:00pm EST**{: .label .label-red }
 
 ### Change Log
 
