@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Assignment 1 -- Venusians
+layout: assignment
+title: "Assignment 1: Venusians"
 permalink: /assignments/hw1
 parent: Assignments
 nav_order: 1
