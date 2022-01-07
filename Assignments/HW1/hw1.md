@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Assignment 1The Venusians
+title: Assignment 1 -- Venusians
 permalink: /assignments/hw1
 parent: Assignments
 nav_order: 1
@@ -14,7 +14,7 @@ nav_order: 1
 
 ## Objectives of this Assignment
 
-The objectives for this first assignment, are to:
+The objectives for this first assignment are to:
 * get you familiar with the basics of Typescript and the VSC/npm
 ecosystem.
 * have you re-acquaint yourself with the basics of object-oriented
@@ -22,7 +22,7 @@ programming, such as classes and objects.
 * learn to write new code in TypeScript.
 
 Your assignment will be graded following the rubric embedded in this
-document."  Based on past experiences, we project that this assignment
+document.  Based on past experiences, we project that this assignment
 could take you up to 14 hours (depending on your prior preparation).
 We encourage you to start early so that you can post questions on
 Piazza, make the most use of our TAs' tutorials, and attend office
@@ -61,39 +61,39 @@ Venusian fleet:
 Your task is to build a Typescript module named `hw1.ts` that exports
 the following functions:
 
-1. `makeVenusian(name:string):Venusian` which returns a Venusian with
-   the given name and a unique VSN.
+1. `makeVenusian(name:string):Venusian //  returns a Venusian with
+   the given name and a unique VSN.`
 1. `venusianGetName(v:Venusian):string` which returns the name of the given Venusian 
-1. `venusianGetVSN(v:Venusian):number` which returns the VSN of the given Venusian
+1. `venusianGetVSN(v:Venusian):number // returns the VSN of the given Venusian`
 
-1. `makeShip(crew:Venusian[], daughters:Ship[]):Ship` which returns a
+1. `makeShip(crew:Venusian[], daughters:Ship[]):Ship // returns a
    ship with the given crew, the given daughters, and a unique serial
-   number
+   number`
 
-1. `shipGetCrew(ship:Ship):Venusian[]` which returns the crew of the given ship
-1. `shipGetDaughters(ship:Ship):Ship[]` which returns the daughters of
-the given ship
-1. `shipGetSerialNumber(ship:Ship):number` which returns the serial
-number of the given ship
+1. `shipGetCrew(ship:Ship):Venusian[] // returns the crew of the given ship`
+1. `shipGetDaughters(ship:Ship):Ship[] // returns the daughters of
+the given ship`
+1. `shipGetSerialNumber(ship:Ship):number // returns the serial
+number of the given ship`
 
-1. `hasWaldo(ship:Ship):boolean`  returns true iff the ship a crew
-   member named Waldo.
+1. `hasWaldo(ship:Ship):boolean // returns true iff the ship has a crew
+   member named Waldo.`
 
-1. `totalWaldos(ship:Ship):number`   returns the number of Venusians
-   named "Waldo" that are in the ship or its fleet.
+1. `totalWaldos(ship:Ship):number // returns the number of Venusians
+   named "Waldo" that are in the ship or its fleet.`
 
-1. `shipWithoutWaldos(ship:Ship):void`  removes any Venusians named
-"Waldo" from the crew of the given ship.
+1. `shipWithoutWaldos(ship:Ship):void // removes any Venusians named
+"Waldo" from the crew of the given ship.`
 
-1. `shipWithoutDeepWaldos(ship:Ship):void`   removes any Venusians
-named Waldo from the crews of the given ship and its fleet.
+1. `shipWithoutDeepWaldos(ship:Ship):void // removes any Venusians
+named Waldo from the crews of the given ship and its fleet.`
 
-1. `shipHasDuplicates(ship:Ship):boolean` It has come to the attention
+1. `shipHasDuplicates(ship:Ship):boolean // It has come to the attention
 of the Venusian fleet command that some shipbuilders have been
-cheating by putting ships with the same serial number in their ships
-or their fleets.  Given a ship, determines whether there are any
+cheating by putting multiple ships with the same serial number in the
+fleets of their ships.  Given a ship, determines whether there are any
 duplicates among the ship and its fleet.  The duplicates may occur
-anywhere in the ship and its fleet.  
+anywhere in the ship and its fleet.`  
 
 > EXAMPLE: in the example above,
 there are no duplicates.  If ship 12 were added to the daughters of
