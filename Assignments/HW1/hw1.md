@@ -72,8 +72,8 @@ Your task is to define TypeScript class `Venusian` and `Ship` as follows:
    * `getDaughters():Ship[]` returns the daughters of the ship.
    * `getSerialNumber():number` returns the serial
 number of the ship
-   * `hasWaldo():boolean` returns true iff the ship has a crew
-   member named Waldo.  Waldo is a fairly common name among Venusians, so there might be more than one Waldo among the crew
+   * `hasWaldo():boolean` returns true iff the ship has one ore more crew
+   members named Waldo. 
    * `totalWaldos():number` returns the number of Venusians
    named "Waldo" that are in the ship or its fleet.  Venusians can be in two places at once, so if two Waldos have same VSN, you should count them twice.
    * `removeWaldos():void` removes any Venusians named "Waldo" from the crew of the ship.
