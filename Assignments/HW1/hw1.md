@@ -56,37 +56,30 @@ Venusian fleet:
    and none of these ships has any other daughters, then the fleet of
    ship 1 consists of 1, 11, 12, 111, 112, 1121, and 1122
 
-Your task is to build a Typescript module named `hw1.ts` that exports
-the following functions:
+Your task is to define TypeScript class `Venusian` and `Ship` as follows:
 
-1. `makeVenusian(name:string):Venusian //  returns a Venusian with
-   the given name and a unique VSN.`
-1. `venusianGetName(v:Venusian):string // returns the name of the given Venusian `
-1. `venusianGetVSN(v:Venusian):number // returns the VSN of the given Venusian`
+* The class `Venusian` has a contructor `new Venusian(name:string)` that returns a Venusian with
+   the given name and a unique VSN.  The class `Venusian` has the following public methods:
 
-1. `makeShip(crew:Venusian[], daughters:Ship[]):Ship // returns a
+   * `getName()` returns the name of the Venusian
+   * `getVSN()` returns the VSN of the given Venusian
+
+* The class `Ship` has a constructor `new Ship(crew:Venusian[], daughters:Ship[])` that returns a
    ship with the given crew, the given daughters, and a unique serial
-   number`
+   number.  The class `Ship` has the following public methods:
 
-1. `shipGetCrew(ship:Ship):Venusian[] // returns the crew of the given ship`
-1. `shipGetDaughters(ship:Ship):Ship[] // returns the daughters of
-the given ship`
-1. `shipGetSerialNumber(ship:Ship):number // returns the serial
-number of the given ship`
-
-1. `hasWaldo(ship:Ship):boolean // returns true iff the ship has a crew
-   member named Waldo.`
-
-1. `totalWaldos(ship:Ship):number // returns the number of Venusians
-   named "Waldo" that are in the ship or its fleet.`
-
-1. `shipWithoutWaldos(ship:Ship):void // removes any Venusians named
-"Waldo" from the crew of the given ship.`
-
-1. `shipWithoutDeepWaldos(ship:Ship):void // removes any Venusians
-named Waldo from the crews of the given ship and its fleet.`
-
-1. `shipHasDuplicates(ship:Ship):boolean // It has come to the attention
+   * `getCrew():Venusian[]` returns the crew of the  ship.
+   * `getDaughters():Ship[]` returns the daughters of the ship.
+   * `getSerialNumber():number` returns the serial
+number of the ship
+   * `hasWaldo():boolean` returns true iff the ship has a crew
+   member named Waldo.  Waldo is a fairly common name among Venusians, so there might be more than one Waldo among the crew
+   * `totalWaldos():number` returns the number of Venusians
+   named "Waldo" that are in the ship or its fleet.  Venusians can be in two places at once, so if two Waldos have same VSN, you should count them twice.
+   * `removeWaldos():void` // removes any Venusians named "Waldo" from the crew of the ship.
+   * `removeDeepWaldos(ship:Ship):void` // removes any Venusians
+named Waldo from the crews of the given ship and its fleet.
+   * `FleetHasDuplicates(ship:Ship):boolean` // It has come to the attention
 of the Venusian fleet command that some shipbuilders have been
 cheating by putting multiple ships with the same serial number in the
 fleets of their ships.  Given a ship, determines whether there are any
@@ -100,13 +93,13 @@ ship 1 would return true.
 
 ## Starter Code and Details
 
-We will supply you with starter code in XXXXX.zip .  Unpack it, put it
+We will supply you with starter code in hw1.zip .  Unpack it, put it
 in a fresh directory, and build a project by running `npm install` in
 it to fetch all the dependencies.
 The package also includes some basic sanity tests, which you can run
 by saying `npm test`.
 
-To help you set up a local development environment for this class, we've prepared a tutorial for [setting up a development environment with NodeJS, VSCode and TypeScript]({{ site.baseurl }}/{ link hw1.html }
+To help you set up a local development environment for this class, we've prepared a tutorial for [setting up a development environment with NodeJS, VSCode and TypeScript]({{site.baseurl}}/{ link: Assignments/HW1/hw1-starter.zip }
 
 
 ## Rubric
@@ -115,7 +108,7 @@ Your code will be evaluated by automated testing in Gradescope.  It
 will be judged for style using a linter with parameters set in the
 starter code that we will supply you.
 
-For each of the 12 functions listed above, you will receive a numeric
+For each of the 10 methods listed above, you will receive a numeric
 score of: 
 * 2 (Satisfactory)
 * 1 (Meets minimum expecations)
@@ -153,8 +146,7 @@ already have one) so that you can log in to GradeScope directly.
 Please contact the instructors immediately if you have difficulty
 accessing the course on GradeScope.
 
-Submit your solution to Gradescope in the form of a single file named
-`hw1.ts` that exports the 16 functions listed above. 
+Submit your solution to Gradescope in the form of exactly two files, `Venusian.ts` and `Ship.ts`. Before submitting, be sure your code passes the sanity tests included in the starter package. 
 GradeScope will provide you with feedback on your submission, providing a numeric score of:
 * 2 (Satisfactory)
 * 1 (Meets minimum expecations)
