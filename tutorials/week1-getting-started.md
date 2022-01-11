@@ -20,9 +20,10 @@ If you run into any difficulties following any of these steps, please post (in a
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 
+For this class, you will need Node.js version 16 (16.13.2 is the latest version at time of writing, although any 16.x shoudl work in theory). 
 There are many ways that you can install Node.js: for instance, you can use a package manager like
 `snap` or `homebrew` to install it; you can download an installer directly from the Node.js website, and you can,
-of course, build it from source.
+of course, build it from source. However, due to the complexity of running different Node.js versions on the same machine, we *very strongly* suggest using `nvm`, as explained below.
 
 We recommend installing Node.js using [nvm, the node version manager](https://github.com/nvm-sh/nvm). When language runtimes
 are in active development (like Node.js is), sometimes you end up needing to have multiple versions of Node.js installed,
@@ -33,50 +34,44 @@ have previously installed Node.js.
 
 ## Installing NodeJS with NVM for Windows
 
-1. Download `nvm-setup.zip` from [nvm-windows](https://github.com/coreybutler/nvm-windows/releases).
-   - ![image](./assets/week1-getting-started/node/download-nvmw.JPG)
+1. Download `nvm-setup.zip` from the most recent release of [nvm-windows](https://github.com/coreybutler/nvm-windows/releases) (at time of writing this document, version 1.1.9).
+   - ![image](./assets/week1-getting-started/node/download-nvmw.png)
 2. Extract the contents of `nvm-setup.zip` and run the executable `nvm-setup.exe`.
    - This should open the nvm installation wizard.
-3. Accept the license agreement and click next.
-   - ![image](./assets/week1-getting-started/node/nvmw-license.JPG)
-4. Select the destination for installing nvm and click next.
-   - ![image](./assets/week1-getting-started/node/nvmw-destination.JPG)
-5. Select the destination of NodeJS installation Symlink and click next.
-   - ![image](./assets/week1-getting-started/node/nvmw-symlink.JPG)
-6. Click on install to begin installation.
-   - ![image](./assets/week1-getting-started/node/nvmw-finish.JPG)
+3. Accept the license agreement and click next. Continue to accept the default choices for any remaining prompts, and click "install". If you receive messages along the lines of "NodeJS version XYZ is already installed, would you like nvm to control this installation," select "Yes". 
 7. Upon completion, you will see the below window
-   - ![image](./assets/week1-getting-started/node/nvmw-finished.JPG)
-8. Open a command prompt with administrative privileges.
-9. Verify the installation, run the command `*nvm version*`
+   - ![image](./assets/week1-getting-started/node/nvmw-finished.png)
+8. Open a command prompt with administrative privileges (type `cmd` in the windows start bar, then select "Run as administrator").
+9. Verify the installation, run the command `nvm version`
    - This should display the version of nvm installed.
-   - ![image](./assets/week1-getting-started/node/nvmw-verification.JPG)
-10. Run the command `*nvm list available*` to display all available NodeJS versions.
-   - ![image](./assets/week1-getting-started/node/nvm-list-available.JPG)
-11. Install the latest LTS version of nodeJS available using the command `*nvm install 14.15.4*`.
-12. To use this version of NodeJS, run the command `*nvm use 14.15.4*`.
+   - ![image](./assets/week1-getting-started/node/nvmw-verification.png)
+10. Run the command `nvm list available` to display all available NodeJS versions.
+   - ![image](./assets/week1-getting-started/node/nvmw-list-available.png)
+11. Install the latest LTS version of nodeJS available using the command `nvm install 16.3.2`.
+12. To use this version of NodeJS, run the command `nvm use 16.13.2`.
 13. Now, NodeJS should be installed and ready for use. To verify the installation run the below commands:
-   - `*node -v*`
-   - `*npm -v*`
-   - ![image](./assets/week1-getting-started/node/nvm-use-14.JPG)
+   - `node -v`
+   - `npm -v`
+   - ![image](./assets/week1-getting-started/node/nvmw-use-16.png)
 
 ## Installation Steps (Linux / Mac)
 
-1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash` or `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`.
+1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash` or `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`.
 2. Close and reopen a terminal.
 3. Verify nvm is working by entering `command -v nvm`. If your terminal prints
 out `nvm`, it should be working. If you see `vm: command not found` or no
 feedback, open a new terminal and trying again or restart from step 1.
-4. Install node by typing `nvm install 14`.
+4. Install node by typing `nvm install 16`.
 
 ## Verification
 
 1. Open a shell or windows powershell.
 2. Run the command `node -v`
-  - This should print the current version of nodeJS installed (v14.x.x)
+  - This should print the current version of nodeJS installed (v16.x.x)
 3. Run the command `npm -v`
-  - This should print the current version of npm installed (v6.x.x)
+  - This should print the current version of npm installed (v8.x.x)
 ![image](./assets/week1-getting-started/node/verification.JPG)
+4. If you find that some other version is being used, and would like to change the default to 16, run the command `nvm alias default 16`
 
 # Installing Visual Studio Code (VSCode)
 
