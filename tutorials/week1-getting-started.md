@@ -59,7 +59,7 @@ have previously installed Node.js.
 1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash` or `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`.
 2. Close and reopen a terminal.
 3. Verify nvm is working by entering `command -v nvm`. If your terminal prints
-out `nvm`, it should be working. If you see `vm: command not found` or no
+out `nvm`, it should be working. If you see `nvm: command not found` or no
 feedback, open a new terminal and trying again or restart from step 1.
 4. Install node by typing `nvm install 16`.
 
