@@ -75,12 +75,11 @@ feedback, open a new terminal and trying again or restart from step 1.
 
 # Installing Visual Studio Code (VSCode)
 
-Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity). Read more [here](https://code.visualstudio.com/docs).
+Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity). VSCode also supports importing hotkey configurations from most other text editors and IDEs. Read more [here](https://code.visualstudio.com/docs).
 While you are required to use *an* IDE for this class, it is not mandatory to use VSCode: if you already are comfortable developing TypeScript or JavaScript
 in another suitable IDE (like IntelliJ), then you are welcome to continue to use that. However, VSCode is the
-"supported" option: if you struggle to get things like the linter set up correctly in VSCode, we will be happy to help you.
-However, we can't provide such support for all IDEs.
-
+"supported" option: if you struggle to get things like the linter set up correctly in VSCode, we will be happy to help you. 
+However, we can't provide such support for all IDEs. 
 ## Pre-requisites
 
 - Administrative access on the host machine for software installation.
