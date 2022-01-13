@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="fs-1 text-right fw-300">Last updated: {{ page.last_modified_at | date: '%b %d, %y %H:%M %Z' }} | <a href="{{ site.baseurl}}{{page.url}}">Permalink</a></div>
-<h2 class="fs-4" id="{{ page.title | slugify }}" >{{ page.title }}</h2>
+<h2 class="fs-6" id="{{ page.title | slugify }}" >{{ page.title }}</h2>
 <div class="module">
   {{ content }}
 </div>

@@ -24,6 +24,7 @@ tutorials:
     title: Getting started with TypeScript
     page: week1-getting-started.md
 ---
+
 ### Learning Objectives:
 
 In this first week of the course, you will learn
@@ -38,15 +39,13 @@ programming.
 
 
 ### Important Dates:
-* Tutorial: Getting Started with TypeScript, Date TBD
-* HW1 - TBD, link code is below and commented out
-{% comment %}
-* [HW1]({{ site.baseurl }}{% link assignments/hw1.md %}) Released Jan 22, **Due Feb 5 by 10pm**{: .label .label-red }
-{% endcomment %}
+* [HW1]({{ site.baseurl }}{% link Assignments/HW1/hw1.md %}) **Due Jan 28 by 10pm**{: .label .label-red }
 
 {% include lesson.html %}
 
 ### Tutorial
+* [Getting Started with TypeScript]({{site.baseurl}}{% link tutorials/week1-getting-started.md %})
+
 ### Resources
 ### Additional Readings:
 * [Class Syllabus](https://neu-se.github.io/CS4530-Spring-2022/)
