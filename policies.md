@@ -20,9 +20,13 @@ If you're worried about being busy around the time of a HW submission, please pl
 
 ## In Class Activities:
 
-Most lectures will feature interactive activities and/or polls that support the material being presented. You must be present in class to complete the activity or take the poll (participating in an online activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Participation grades will be posted on Canvas, and regularly updated. You can miss up to three activities/polls with no penalty.
+Most lectures will feature interactive activities and/or polls that support the material being presented. You must be present in class to complete the activity or take the poll (participating in an online activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Each instructor may have a different style for assigning participation grades, but historical grading information suggests that each style results in a similar overall grade distribution. Participation grades will be posted on Canvas, and regularly updated. 
 
 If you join class in person, you are strongly encouraged to bring your laptop or phone to class so that you can participate in the activities.
+
+### Policy on remote attendance
+
+We would like to provide the best and most comfortable learning experience, and encourage you to stay at home if you are ill, and upon request, will provide remote access to our classes. We are following guidance and regulations set by the Provost’s office. In short: if you are registered for an on-the-ground section but do not feel comfortable or are unable to attend in person for a short duration (e.g. one or two weeks) due to either your illness or heightened concern for your or your roommates/family’s health, we will provide access to attend class those weeks remotely. However, we have been asked to be *extremely* attentive that we only provide this access for a maximum of two weeks. If you anticipate being unable to attend class in person for more than two weeks, please reach out to the [Disability Resource Center](http://www.northeastern.edu/drc), which is coordinating a process to provide longer-term access to remote resources.
 
 ## Grading
 There will be four programming assignments and a final project. You will complete the assignments individually, and the project in a group of 3-4. The overall grading breakdown is:
