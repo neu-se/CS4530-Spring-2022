@@ -156,7 +156,8 @@ class CanvasSyncer
       description: contents,
       due_at: dueDate,
       course_id: @course_id,
-      published: true
+      published: true,
+      notify_of_update: true
     }
     if assignmentIdx == nil
       # create assignment...
