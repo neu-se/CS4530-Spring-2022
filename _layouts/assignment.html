@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<h2 class="fs-6" id="{{ page.title | slugify }}">
+    {% if page.long_title %}
+    {{ page.long_title }}
+    {% else %}
+    {{page.title}}
+    {% endif %}
+    <strong class="label label-red">Due {{ page.due_date }}</strong>
+</h2>
+
+
+{{ content }}
