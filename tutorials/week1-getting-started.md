@@ -143,7 +143,7 @@ Typescript is a superscript of JavaScript which adds type information and other 
 
 ## Installation
 
-1. Open VSCode and press the ctrl + `~` (Tilde or back tick key) to open a terminal.`
+1. Open VSCode and press the ctrl + `~` (Tilde or back tick key) to open a terminal.
   - Optionally you can open a separate shell (Do not use powershell)
 2. Run the command `npm install -g typescript` in the terminal.
   - Typescript should now be installed globally and accessible from the terminal.
@@ -163,5 +163,5 @@ Typescript is a superscript of JavaScript which adds type information and other 
 5. Run the command `tsc hello-world.ts`
   - This will generate a JS file called `hello-world.js`
 6. Run the file with node using the command `node hello-world.js`.
-  - This will give the below result.
+  - This will give the result below.
   - ![image](./assets/week1-getting-started/ts/result.JPG)
