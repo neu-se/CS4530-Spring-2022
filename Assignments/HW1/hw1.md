@@ -118,6 +118,7 @@ score of:
 * 1 (Meets minimum expecations)
 * 0 (Not passing)
 
+We have provided between one and three tests on Gradescope to check each of the ten functions that you have been asked to implement.
 For each function, the requirements for each of these grades are:
 ### Satisfactory
 * Have no errors or warnings reported by the linter
