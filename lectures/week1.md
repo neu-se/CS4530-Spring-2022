@@ -9,15 +9,19 @@ lessons: #I know that it seems a bit annoying to have to put each lecture in the
          #links to the ppt, pdf, and tutorials as appropriate!
   - 
     title: Introduction to this class 
-    # pdf: "Lesson 10.1 - Software Processes and Continuous Development.pdf"
+    pdf: "Lesson 1.1 Course Introduction.pdf"
     ppt: "Lesson 1.1 Course Introduction.pptx"
-#   - 
-    # title: Another lesson
-    # pdf: "Lesson 10.2 - Continuous Integration.pdf"
-    # ppt: "Lesson 10.2 - Continuous Integration.pptx"
+  - 
+     title: General Program Design Principles
+     pdf: "Lesson 1.2 - General Program Design Principles.pdf"
+     ppt: "Lesson 1.2 - General Program Design Principles.pptx"
+  -
+     title: Object-Oriented Principles
+     pdf: "Lesson 1.3 Object-Oriented Principles.pdf"
+     ppt: "Lesson 1.3 Object-Oriented Principles.pptx"
 tutorials:
   - 
-    title: Getting started with Git
+    title: Getting started with TypeScript
     page: week1-getting-started.md
 ---
 ### Learning Objectives:
