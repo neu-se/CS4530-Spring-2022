@@ -9,6 +9,7 @@ submission_notes: Submit on GradeScope
 ---
 
 ### Change Log
+* 1/18/22: Initial Release
 
 ## Objectives of this Assignment
 
@@ -107,22 +108,22 @@ To help you set up a local development environment for this class, we've prepare
 Your code will be evaluated by automated testing in Gradescope.  It
 will be judged for style using a linter with parameters set in the
 starter code that we will supply you.
+Your code must have *no linter errors or warnings* in order for it to receive any grade.
+Please note that you can check for linter issues before submitting by running `npm run lint`; many formatting issues can also be automatically fixed by running `npm run format`.
 
-For each of the 10 methods listed above, you will receive a numeric
+If your code has no linter errors or warnings, then for each of the 10 methods listed above, you will receive a numeric
 score of: 
 * 2 (Satisfactory)
 * 1 (Meets minimum expecations)
 * 0 (Not passing)
 
 For each function, the requirements for each of these grades are:
-
 ### Satisfactory
-* Have no errors reported by the linter
+* Have no errors or warnings reported by the linter
 * Passes all of the Gradescope tests for this function 
-
 ### Meets minimum expectations
-* Have no errors reported by the linter
-* Fails no more than 2 of the Gradescope tests for this function
+* Have no errors or warnings reported by the linter
+* Fails at least one, but no more than 2 of the Gradescope tests for this function
 
 ### Not Passing
 * Does not meet the minimum expectations.
@@ -139,7 +140,7 @@ When we say "no errors reported by the linter", we mean the following:
 
 Submit your assignment in GradeScope. The easiest way to get into
 GradeScope the first time is to first [sign into
-Canvas](https://northeastern.instructure.com/courses/NNNN) and then
+Canvas](https://northeastern.instructure.com/courses/99531) and then
 click the link on our course for "GradeScope".  You should then also
 have the option to create an account on GradeScope (if you don't
 already have one) so that you can log in to GradeScope directly.
@@ -147,10 +148,7 @@ Please contact the instructors immediately if you have difficulty
 accessing the course on GradeScope.
 
 Submit your solution to Gradescope in the form of exactly two files, `Venusian.ts` and `Ship.ts`. Before submitting, be sure your code passes the sanity tests included in the starter package. 
-GradeScope will provide you with feedback on your submission, providing a numeric score of:
-* 2 (Satisfactory)
-* 1 (Meets minimum expecations)
-* 0 (Not passing)
+GradeScope will provide you with feedback on your submission, providing a numeric score between 0 and 20.
 
 You will be able to  view the complete output from running the tests and
 linter on GradeScope. If you have any doubts about the autograder,
