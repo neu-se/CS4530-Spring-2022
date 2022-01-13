@@ -77,9 +77,9 @@ number of the ship
    * `totalWaldos():number` returns the number of Venusians
    named "Waldo" that are in the ship or its fleet.  Venusians can be in two places at once, so if two Waldos have same VSN, you should count them twice.
    * `removeWaldos():void` removes any Venusians named "Waldo" from the crew of the ship.
-   * `removeDeepWaldos(ship:Ship):void` removes any Venusians
+   * `removeDeepWaldos():void` removes any Venusians
 named Waldo from the crews of the given ship and its fleet.
-   * `FleetHasDuplicates(ship:Ship):boolean` It has come to the attention
+   * `fleetHasDuplicates():boolean` It has come to the attention
 of the Venusian fleet command that some shipbuilders have been
 cheating by putting multiple ships with the same serial number in the
 fleets of their ships.  Given a ship, determines whether there are any
