@@ -2,8 +2,10 @@
 <ul>
 {% for lesson in page.lessons %}
     <li>{{ lesson.title }}
-        <a href="{{ site.baseurl }}/slides-pdf/{{lesson.pdf}}">Slides PDF</a>,
-        <a href="{{ site.baseurl }}/slides-pdf/{{lesson.ppt}}">PPT</a>
+        {% if lesson.pdf %}
+        <a href="{{ site.baseurl }}/Slides/{{lesson.pdf}}">Slides PDF</a>,
+        {% endif %}
+        <a href="{{ site.baseurl }}/Slides/{{lesson.ppt}}">PPT</a>
     </li>
 {% endfor %}
 </ul>
