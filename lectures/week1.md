@@ -13,8 +13,8 @@ lessons: #I know that it seems a bit annoying to have to put each lecture in the
     ppt: "Lesson 1.1 Course Introduction.pptx"
   - 
      title: General Program Design Principles
-     pdf: "Lesson 1.2 - General Program Design Principles.pdf"
-     ppt: "Lesson 1.2 - General Program Design Principles.pptx"
+     pdf: "Lesson 1.2 General Program Design Principles.pdf"
+     ppt: "Lesson 1.2 General Program Design Principles.pptx"
   -
      title: Object-Oriented Principles
      pdf: "Lesson 1.3 Object-Oriented Principles.pdf"
