@@ -9,7 +9,7 @@ submission_notes: Submit on GradeScope
 ---
 
 ### Change Log
-* 1/18/22: Initial Release
+* 1/13/22: Initial Release
 
 ## Objectives of this Assignment
 
@@ -94,7 +94,7 @@ ship 1 would return true.
 
 ## Starter Code and Details
 
-We will supply you with starter code in hw1.zip .  Unpack it, put it
+We will supply you with starter code in [hw1.zip]({{site.baseurl}}/Assignments/HW1/hw1-starter.zip).  Unpack it, put it
 in a fresh directory, and build a project by running `npm install` in
 it to fetch all the dependencies.
 The package also includes some basic sanity tests, which you can run
@@ -124,7 +124,7 @@ For each function, the requirements for each of these grades are:
 * Passes all of the Gradescope tests for this function 
 ### Meets minimum expectations
 * Have no errors or warnings reported by the linter
-* Fails at least one, but no more than 2 of the Gradescope tests for this function
+* Passes at least one, fails but no more than 1 of the Gradescope tests for this function
 
 ### Not Passing
 * Does not meet the minimum expectations.
