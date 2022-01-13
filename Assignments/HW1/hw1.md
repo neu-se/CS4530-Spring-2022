@@ -99,6 +99,7 @@ in a fresh directory, and build a project by running `npm install` in
 it to fetch all the dependencies.
 The package also includes some basic sanity tests, which you can run
 by saying `npm test`.
+You may *not* install additional third-party libraries to use in your code beyond what is included in the handout - we will grade your code using the `package.json` distributed in the handout.
 
 To help you set up a local development environment for this class, we've prepared a tutorial for [setting up a development environment with NodeJS, VSCode and TypeScript]({{site.baseurl}}/{ link: Assignments/HW1/hw1-starter.zip }
 
