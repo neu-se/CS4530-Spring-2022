@@ -122,9 +122,10 @@ For each function, the requirements for each of these grades are:
 ### Satisfactory
 * Have no errors or warnings reported by the linter
 * Passes all of the Gradescope tests for this function 
+
 ### Meets minimum expectations
 * Have no errors or warnings reported by the linter
-* Passes at least one, fails but no more than 1 of the Gradescope tests for this function
+* Fails no more than one of the Gradescope tests for this function (while also passing at least one)
 
 ### Not Passing
 * Does not meet the minimum expectations.
