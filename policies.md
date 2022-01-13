@@ -20,7 +20,7 @@ If you're worried about being busy around the time of a HW submission, please pl
 
 ## In Class Activities:
 
-Most lectures will feature interactive activities and/or polls that support the material being presented. You must be present in class to take complete the activity or take the poll (participating in an online activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Participation grades will be posted on Canvas, and regularly updated. You can miss up to three activities/polls with no penalty.
+Most lectures will feature interactive activities and/or polls that support the material being presented. You must be present in class to complete the activity or take the poll (participating in an online activity while not attending the synchronous session will be considered academic dishonesty and will be treated harshly). Participation grades will be posted on Canvas, and regularly updated. You can miss up to three activities/polls with no penalty.
 
 If you join class in person, you are strongly encouraged to bring your laptop or phone to class so that you can participate in the activities.
 
