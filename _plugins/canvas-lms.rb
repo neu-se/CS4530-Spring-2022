@@ -231,7 +231,7 @@ if ENV['CANVAS_COURSE_ID'] && ENV['CANVAS_TOKEN'] && ENV['CANVAS_BASE_URL']
         print "Canvas importer: no due date for assignment " + page['title'] + ": skipping\n"
         next
       end
-      canvasSyncer.syncAssignment(page['title'], page['due_date'], page['content'], baseURL, page['last_modified_at'].to_s, permalink)
+      canvasSyncer.syncAssignment(page['title'], page['due_date'], page['content'], baseURL + site.baseurl, page['last_modified_at'].to_s, permalink)
     elsif (page['layout'] == 'module')
       if(page['lessons'] == nil)
         print "Canvas importer: no lessons for module " + page['title'] + ": skipping\n"
