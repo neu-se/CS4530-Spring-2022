@@ -1,39 +1,20 @@
-# Just the Class
+# CS4530, Spring 2022: Fundamentals of Software Engineering
+This repository contains the source for the website for Northeastern's CS4530, Spring 2022 class. If you are looking to browse the site, you should visit it directly, at [https://neu-se.github.io/CS4530-Spring-2022/](https://neu-se.github.io/CS4530-Spring-2022/). If you are looking to edit the site, then you have come to the right place!
 
-Just the Class is a GitHub Pages template developed for the purpose of quickly deploying course websites. In addition to serving plain web pages and files, it provides a boilerplate for:
+### Websites for prior versions of this class:
+* [Fall 2020](https://pages.github.ccs.neu.edu/CS5500-CourseMaterials/CS4530-CS5500-Fall2020/)
+* [Spring 2021](https://neu-se.github.io/CS4530-CS5500-Spring-2021/) (see also [public website repo](https://github.com/neu-se/CS4530-CS5500-Spring-2021/))
+* [Fall 2021](https://pages.github.ccs.neu.edu/CS4530-Fall2021/CourseWebSite/)
 
-- a [course calendar](calendar.md),
-- a [staff](staff.md) page,
-- and a weekly [schedule](schedule.md).
+### License
+All materials in this repository (the lectures, assignments, and also the site itself) are released under the [Creative Commons Attribution-ShareAlike 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/). Please feel free to reuse or remix these materials in your class. If you do, we'd love to hear your thoughts.
 
-Just the Class is a set of customizations on top of the popular [Just the Docs](https://github.com/pmarsceill/just-the-docs) theme, which provides a robust and thoroughly-tested foundation that makes it easy to extend for your own special use cases. These foundational features include:
-
-- automatic [navigation structure](https://pmarsceill.github.io/just-the-docs/docs/navigation-structure/),
-- instant, full-text [search](https://pmarsceill.github.io/just-the-docs/docs/search/) and page indexing,
-- and a small but powerful set of [UI components](https://pmarsceill.github.io/just-the-docs/docs/ui-components) and authoring [utilities](https://pmarsceill.github.io/just-the-docs/docs/utilities).
-
-## Getting Started
-
-Getting started with Just the Class is simple.
-
-1. Create a [new repository based on Just the Class](https://github.com/kevinlin1/just-the-class/generate).
-1. Update `_config.yml` and `index.md` with your course information.
-1. Configure a [publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages). Your course website is now live!
-1. Edit and create `.md` [Markdown files](https://guides.github.com/features/mastering-markdown/) to add your content.
-
-Just the Class has been used by instructors at Stanford University ([CS 161](https://stanford-cs161.github.io/winter2021/)), UC Berkeley ([Data 100](https://ds100.org/fa21/)), UC Santa Barbara ([DS1](https://ucsb-ds.github.io/ds1-f20/)), Northeastern University ([CS4530/5500](https://neu-se.github.io/CS4530-CS5500-Spring-2021/)), and Carnegie Mellon University ([17-450/17-950](https://cmu-crafting-software.github.io/)). For a few open-source examples, see the following course websites and their source code.
-
-- [CSE 390HA](https://courses.cs.washington.edu/courses/cse390ha/20au/) ([source code](https://gitlab.cs.washington.edu/cse390ha/20au/website)) is an example of a single-page website that centers modules.
-- [CSE 143](https://courses.cs.washington.edu/courses/cse143/20au/) ([source code](https://gitlab.cs.washington.edu/cse143/20au/website)) hosts an entire online textbook with full-text search.
-- [CSE 373](https://courses.cs.washington.edu/courses/cse373/21su/) ([source code](https://gitlab.cs.washington.edu/cse373-root/21su/website)) is an example of a simple website combining Markdown pages with generated HTML files.
-
-Share your course website and find more examples in the [show and tell discussion](https://github.com/kevinlin1/just-the-class/discussions/categories/show-and-tell)!
-
-Continue reading to learn how to setup a development environment on your local computer. This allows you to make incremental changes without directly modifying the live website.
+### About this site
+This website is built using [Jekyll](https://jekyllrb.com), a lighweight static website generator that takes Markdown files as input and outputs a nicely structured website according to some template. This site uses [Kevin Lin's Just the Class](https://kevinl.info/just-the-class/) Jekyll template, which in turn is built on the [Just the Docs](https://pmarsceill.github.io/just-the-docs/) template.
 
 ### Local development environment
 
-Just the Class is built for [Jekyll](https://jekyllrb.com), a static site generator. View the [quick start guide](https://jekyllrb.com/docs/) for more information. Just the Docs requires no special Jekyll plugins and can run on GitHub Pages' standard Jekyll compiler.   
+The local development environment for [Jekyll](https://jekyllrb.com) will allow you to run a live-updating local server that lets you preview what the website will look like when it is deployed. As you make changes to the website (in the markdown files), the development server will automatically update the site that it is serving. View the [Jekyll quick start guide](https://jekyllrb.com/docs/) for more information.
 
 1. Follow the GitHub documentation for [Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll).
 
@@ -49,4 +30,12 @@ $ bundle exec jekyll serve
 1. Point your web browser to [http://localhost:4000](http://localhost:4000)
 1. Reload your web browser after making a change to preview its effect.
 
-For more information, refer to [Just the Docs](https://pmarsceill.github.io/just-the-docs/).
+### Canvas Sync
+The GitHub Actions build system for this site is configured to automatically push content into Canvas when changes are pushed to the main branch of this repository. Specifically, it will push the assignments, lectures, and the home page material into Canvas, overwriting any changes made to those assignments, modules, or home page content in Canvas.
+
+The Canvas sync plugin benefits from some metadata on assignments (e.g. due date) and lectures (e.g. list of lessons and curricular materials). Hence, the assignments and lectures in this site include a few extra front-matter definitions at the top of each page.
+
+To use this plugin on a new repository, configure the GitHub secrets `CANVAS_BASE_URL`, `CANVAS_COURSE_ID` and `CANVAS_TOKEN`. Given that the plugin is embeded directly in the project (and not in a separate gem), it's also necessary to set the environmental variable `JEKYLL_NO_BUNDLER_REQUIRE` to true. Ideally, after this course offering is complete, the plugin should be extracted to its own module for better reusability. Note that GitHub Pages limits which plugins can be built using the standard GitHub Pages builder, and hence, the canvas sync plugin won't work if built using GitHub Pages. However, GitHub *Actions* will build whatever you want, including Jekyll sites with custom plugins. See the GitHub Actions configuration in this repo.
+
+### Automatic website previews
+This repository is also built by [Netlify](https://www.netlify.com). We do not use Netlify to host the production site, but use it for development. Each commit to this repository (to any branch) is automatically deployed to a publicly-accessible web address, allowing for an easy preview/review of what the site will look like given some change. The easiest way to use this workflow is to create a pull request: Netlify will add a status message on the pull request with a link to the current deploy preview of the site as it is in that pull request. As you push more commits to the pull request, Netlify will continue to update the site. Alternatively, you can log into the [Netlify control panel using GitHub sign-in](https://app.netlify.com/sites/objective-mclean-ad778c/overview) and view the complete deployment history, with direct links to all deploy previews (not just for pull requests).
