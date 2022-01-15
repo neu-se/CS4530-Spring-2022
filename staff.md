@@ -7,6 +7,8 @@ nav_order: 6
 
 # Staff
 
+## Office Hours Links
+All office hours will be held virtually. Links to join the TA and instructor office hours are [posted in Canvas](https://northeastern.instructure.com/courses/99531/pages/office-hours).
 ## Instructors
 
 {% assign instructors = site.staffers | where: 'role', 'Instructor' %}
