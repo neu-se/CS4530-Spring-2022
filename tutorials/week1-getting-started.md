@@ -47,7 +47,7 @@ have previously installed Node.js.
    - ![image](./assets/week1-getting-started/node/nvmw-verification.png)
 10. Run the command `nvm list available` to display all available NodeJS versions.
    - ![image](./assets/week1-getting-started/node/nvmw-list-available.png)
-11. Install the latest LTS (Long term supported, as opposed to the "development") version of Node.js available using the command `nvm install 16.3.2`.
+11. Install the latest LTS (Long term supported, as opposed to the "development") version of Node.js available using the command `nvm install 16.13.2`.
 12. To use this version of NodeJS, run the command `nvm use 16.13.2`.
 13. Now, NodeJS should be installed and ready for use. To verify the installation run the below commands:
    - `node -v`
