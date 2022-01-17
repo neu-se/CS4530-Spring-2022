@@ -10,6 +10,7 @@ submission_notes: Submit on GradeScope
 
 ### Change Log
 * 1/13/22: Initial Release
+* 1/16/22: Add pointer to textbooks page - JB
 
 ## Objectives of this Assignment
 
@@ -101,7 +102,8 @@ The package also includes some basic sanity tests, which you can run
 by saying `npm test`.
 You may *not* install additional third-party libraries to use in your code beyond what is included in the handout - we will grade your code using the `package.json` distributed in the handout.
 
-To help you set up a local development environment for this class, we've prepared a tutorial for [setting up a development environment with NodeJS, VSCode and TypeScript]({{site.baseurl}}{% link tutorials/week1-getting-started.md %})
+To help you set up a local development environment for this class, we've prepared a tutorial for [setting up a development environment with NodeJS, VSCode and TypeScript]({{site.baseurl}}{% link tutorials/week1-getting-started.md %}).
+As a reference for getting started with TypeScript, we suggest the book ["Programming TypeScript" by Boris Cherny](https://learning.oreilly.com/library/view/programming-typescript/9781492037644/). You can read this and many other tech books for free via Northeastern's Libraries - follow the instructions on the [course textbooks page]({{site.baseurl}}{% link textbooks.md %}).
 
 
 ## Rubric
