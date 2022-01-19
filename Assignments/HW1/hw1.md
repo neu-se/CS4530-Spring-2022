@@ -12,6 +12,7 @@ submission_notes: Submit on GradeScope
 * 1/13/22: Initial Release
 * 1/16/22: Add pointer to textbooks page - JB
 * 1/18/22: Specify return types on Venusian class, and clarify that Venusian names are case-sensitive - JB
+* 1/19/22: Update spec for Venusian to clarify captialization of the member method `getVsn`, to match the test included in the handout.
 
 ## Objectives of this Assignment
 
@@ -65,7 +66,7 @@ Your task is to define TypeScript class `Venusian` and `Ship` as follows:
    the given name and a unique VSN. Venusian names are case-senstive. The class `Venusian` has the following public methods:
 
    * `getName():string` returns the name of the Venusian. 
-   * `getVSN():number` returns the VSN of the given Venusian
+   * `getVsn():number` returns the VSN of the given Venusian
 
 * The class `Ship` has a constructor `new Ship(crew:Venusian[], daughters:Ship[])` that returns a
    ship with the given crew, the given daughters, and a unique serial
