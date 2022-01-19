@@ -53,10 +53,9 @@ We will talk about designs at three scales:
 ### Tutorials
 {% endcomment %}
 
-{% comment %}
 ### Resources
-* [Example 2.1 Adapter]({{ site.baseurl }}{% link /Examples/Example 2.1 Adapter.ts %})
-{% endcomment %}
+* [Code Examples for Lessons 2.1-2.4]({{ site.baseurl }}{% link /Examples/Week02-Slides.zip %})
+
 
 ### Additional Readings:
 * [Design Patterns](https://neu-se.github.io/CS4530-Spring-2022/resources/#design-patterns)
