@@ -10,7 +10,7 @@ nav_order: 1
 Programs are easier to read and to understand when they are written in a familiar style and follow standard coding conventions. Most organizations that develop software therefore require programmers to write programs that follow the organization's preferred style and coding conventions. These conventions can be very elaborate.
 
 Many of the guidelines are, in fact, arbitrary. When you are working on a coding project with other developers,
-different developers often have preference for slightly different syntax, for instance: should our string litterals
+different developers often have preference for slightly different syntax, for instance: should our string literals
 be enclosed by single quotes (`'`) or double quotes (`"`)? Should files be indented with spaces or tabs?
 In TypeScript, there are often multiple ways to accomplish the same goal, for instance, you could create a new empty array
 with the expression `const myArray = new Array()`, or `const myArray = []`. Sometimes there is no difference between
@@ -33,8 +33,11 @@ report issues as you find them. The most important rules to get started are:
 While the linter can automatically flag names that violate camelCase rules, it can not automatically determine that a name is "good" - this is a subjective judgement call.
 
 Please consider the following when choosing names:
-* Names for types are typically nouns or noun phrases. Interface names, however, might be adjectives (e.g. `Serializable`).
-* Function names are typically verbs or verb phrases
+* Names should be informative (e.g `lineTooLong()` rather than `checkLineLength()`)
+* Names for types are typically nouns or noun phrases. Interface names, however, might be adjectives (e.g. `Serializable`).  Class names may be noun phrases that include the interface name (e.g. `CuckooClock` and `DigitalClock` for classes that implement the interface `Clock`).
+* Use noun-like names for functions or methods that return values (e.g. `circleDiameter` rather than `calculateDiameter`). (Exception: simple getters can still have names that begin with `get`).
+* Reserve verb-like names for functions that perform actions (e.g. `addItem`).
+* Use adjective phrases for predicates when possible (e.g. `line.tooLong()`)
 * Variable and property names should be descriptive of what the variable is for, and not be named 
 after the type of the variable (which is captured in the variable's type declaration)
 * Names for properties that are private must start with a `_`
