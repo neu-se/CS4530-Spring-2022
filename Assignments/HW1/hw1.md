@@ -12,8 +12,8 @@ submission_notes: Submit on GradeScope
 * 1/13/22: Initial Release
 * 1/16/22: Add pointer to textbooks page - JB
 * 1/18/22: Specify return types on Venusian class, and clarify that Venusian names are case-sensitive - JB
-* 1/19/22: Update spec for Venusian to clarify captialization of the member method `getVsn`, to match the test included in the handout.
-* 1/19/22: Added a "Getting Started" section to help set up the development environment for the starter code locally.
+* 1/19/22: Update spec for Venusian to clarify captialization of the member method `getVsn`, to match the test included in the handout. -JB
+* 1/19/22: Added a "Getting Started" section to help set up the development environment for the starter code locally. -SR
 
 ## Objectives of this Assignment
 
