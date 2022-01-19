@@ -13,6 +13,7 @@ submission_notes: Submit on GradeScope
 * 1/16/22: Add pointer to textbooks page - JB
 * 1/18/22: Specify return types on Venusian class, and clarify that Venusian names are case-sensitive - JB
 * 1/19/22: Update spec for Venusian to clarify captialization of the member method `getVsn`, to match the test included in the handout.
+* 1/19/22: Added a "Getting Started" section to help set up the development environment for the starter code locally.
 
 ## Objectives of this Assignment
 
@@ -97,15 +98,17 @@ ship 1 would return true.
 
 ## Starter Code and Details
 
-We will supply you with starter code in [hw1.zip]({{site.baseurl}}/Assignments/HW1/hw1-starter.zip).  Unpack it, put it
-in a fresh directory, and build a project by running `npm install` in
-it to fetch all the dependencies.
-The package also includes some basic sanity tests, which you can run
-by saying `npm test`.
-You may *not* install additional third-party libraries to use in your code beyond what is included in the handout - we will grade your code using the `package.json` distributed in the handout.
+We will supply you with starter code in [hw1.zip]({{site.baseurl}}/Assignments/HW1/hw1-starter.zip).
 
-To help you set up a local development environment for this class, we've prepared a tutorial for [setting up a development environment with NodeJS, VSCode and TypeScript]({{site.baseurl}}{% link tutorials/week1-getting-started.md %}).
-As a reference for getting started with TypeScript, we suggest the book ["Programming TypeScript" by Boris Cherny](https://learning.oreilly.com/library/view/programming-typescript/9781492037644/). You can read this and many other tech books for free via Northeastern's Libraries - follow the instructions on the [course textbooks page]({{site.baseurl}}{% link textbooks.md %}).
+### Getting Started
+
+1. Download and unpack [hw1.zip]({{site.baseurl}}/Assignments/HW1/hw1-starter.zip) in a fresh directory. You should have a directory `hw1-handout` containing `package.json`, `src/` and a bunch of other files.
+2. Open `hw1-handout` in VSCode.
+3. Open up the VSCode terminal with `ctrl + ~`. Alternatively, you can also open a seperate terminal/cmd. Please make sure the shell is in the same folder as your `package.json`.
+4. Fetch all the necessary dependancies by running `npm install`. You may _not_ install additional third-party libraries to use in your code beyond what is included in the handout - we will grade your code using the `package.json` distributed in the handout.
+5. The package also includes some basic sanity tests, which you can run by saying `npm test`.
+
+To help you set up a local development environment for this class, we've prepared a tutorial for [setting up a development environment with NodeJS, VSCode and TypeScript]({{site.baseurl}}{% link tutorials/week1-getting-started.md %}). Additionally, [An Absolute Beginner's Guide to Using npm](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/) can help you in getting acquainted with `npm`. As a reference for getting started with TypeScript, we suggest the book ["Programming TypeScript" by Boris Cherny](https://learning.oreilly.com/library/view/programming-typescript/9781492037644/). You can read this and many other tech books for free via Northeastern's Libraries - follow the instructions on the [course textbooks page]({{site.baseurl}}{% link textbooks.md %}).
 
 
 ## Rubric
