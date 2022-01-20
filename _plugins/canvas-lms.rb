@@ -180,7 +180,8 @@ class CanvasSyncer
         params = {
           id: canvasAssignment['id'],
           course_id: @course_id,
-          assignment: assignment
+          assignment: assignment,
+          notify_of_update: true
         }
         print "Canvas importer: change detected, updating assignment " + title + "\n"
         url = LMS::Canvas.lms_url("EDIT_ASSIGNMENT", params)
