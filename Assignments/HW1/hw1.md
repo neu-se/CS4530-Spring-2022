@@ -14,6 +14,7 @@ submission_notes: Submit on GradeScope
 * 1/18/22: Specify return types on Venusian class, and clarify that Venusian names are case-sensitive - JB
 * 1/19/22: Update spec for Venusian to clarify captialization of the member method `getVsn`, to match the test included in the handout. -JB
 * 1/19/22: Added a "Getting Started" section to help set up the development environment for the starter code locally. -SR
+* 1/20/22: Clarify that unique ID's need only be unique for a single execution of your program and need not be globally unique IDs. -JB
 
 ## Objectives of this Assignment
 
@@ -64,14 +65,14 @@ Venusian fleet:
 Your task is to define TypeScript class `Venusian` and `Ship` as follows:
 
 * The class `Venusian` has a contructor `new Venusian(name:string)` that returns a Venusian with
-   the given name and a unique VSN. Venusian names are case-senstive. The class `Venusian` has the following public methods:
+   the given name and a unique VSN. By "unique", we mean that while your program is running, it must never re-use a VSN. It is OK for your program to re-use the same VSNs if you stop the program and run it again (it need not be a "globally unique" identifier). Venusian names are case-senstive. The class `Venusian` has the following public methods:
 
    * `getName():string` returns the name of the Venusian. 
    * `getVsn():number` returns the VSN of the given Venusian
 
 * The class `Ship` has a constructor `new Ship(crew:Venusian[], daughters:Ship[])` that returns a
    ship with the given crew, the given daughters, and a unique serial
-   number.  The class `Ship` has the following public methods:
+   number (similar to VSNs, the serial number need not be globally unique).  The class `Ship` has the following public methods:
 
    * `getCrew():Venusian[]` returns the crew of the  ship.
    * `getDaughters():Ship[]` returns the daughters of the ship.
