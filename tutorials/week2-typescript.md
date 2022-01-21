@@ -7,6 +7,7 @@ nav_order: 2
 ---
 
 # Typescript Basics
+# Typescript Basics
 
 This tutorial describes the basic concepts and syntax of typescript with code examples. Typescript is treated here as an extension to JavaScript, but it requires no prior knowledge to follow along.
 
