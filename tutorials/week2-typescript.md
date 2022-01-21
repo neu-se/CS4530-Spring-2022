@@ -23,18 +23,23 @@ Contents:
     *   [Arrays](#Arrays)
     *   [Tuples](#Tuples)
     *   [Enums](#Enums)
-        
-
-
 *   [Variables](#variables)
 *   [Objects](#objects)
 *   [Control Flow Statements](#control-flow-statements)
     *   [Equality vs Strict Equality](#equality-vs-strict-equality)
 *   [Loops](#loops)
 *   [Functions](#functions)
+    *   [Typing the function](#typing-the-function)
+    *   [Invoking the function](#invoking-the-function)
+    *   [Optional and Default Parameters](#optional-and-default-parameters)
+    *   [Rest Parameters](#rest-parameters)
     *   [Functions as Constructors](#functions-as-constructors)
     *   [Arrow Functions](#arrow-functions)
+    *   [Function Overloads](#function-overloads)
 *   [Classes](#classes)
+    *   [Creating a class](#creating-an-abstract-class)
+    *   [Creating an abstract class](#creating-an-abstract-class)
+*   [Type Aliases](#type-aliases)
 *   [Interfaces](#interfaces)
 *   [Custom types](#custom-types)
 *   [Generics](#generics)
@@ -386,29 +391,64 @@ function functionName(argument1: <type>, defaultArgument: <type> = value, option
     // Function body
 }
 ```
-    
 
-Examples:
+## Typing the function
+
+A simple function in javascript would look like this:
 ```ts
-// Function with 2 or 3 arguments which returns a number.
-function myFunc(x: number, y: boolean = true, z?: string): number {
-    console.log(x);
-    console.log(y);
-    console.log(z);
-    return 1;
+// Named function
+function add(a, b) {
+  return a + b;
 }
-
-// Calling functions
-
-let a = myFunc(1); // a = 1, x = 1, y = true, z = undefined.
-let b = myFunc(2, false); // a = 1, x = 2, y = false, z = undefined.
-let b = myFunc(2, false, 'some string'); // a = 1, x = 2, y = false, z = 'some string'.
 ```
-    
+Now, let’s add types to our simple examples above:
 
-Functions can also be immediately invoked as shown below:
 ```ts
-function myFunc() { /* Do something */ }();
+function add(a: number, b: number): number {
+  return a + b;
+}
+```
+
+You will usually explicitly annotate function parameters (a and b in this example)—TypeScript will always infer types throughout the body of your function, but in most cases it won’t infer types for your parameters. The return type is inferred, but it’s a good practice to explicitly annotate it.
+
+## Invoking the function
+
+When you invoke a function in TypeScript, you don’t need to provide any additional type information—just pass in some arguments, and TypeScript will go to work checking that your arguments are compatible with the types of your function’s parameters:
+
+```ts
+add(1, 2);         // evaluates to 3
+```
+Of course, if you forgot an argument, or passed an argument of the wrong type, TypeScript will be quick to point it out:
+
+```ts 
+add(1);            // Error TS2554: Expected 2 arguments, but got 1.
+add(1, 'a');       // Error TS2345: Argument of type '"a"' is not assignable
+                  // to parameter of type 'number'.
+```
+
+## Optional and Default Parameters
+
+Like in object and tuple types, you can use ? to mark parameters as optional. When declaring your function’s parameters, required parameters have to come first, followed by optional parameters:
+```ts
+function log(message: string, userId?: string) {
+  let time = new Date().toLocaleTimeString()
+  console.log(time, message, userId || 'Not signed in')
+}
+ 
+log('Page loaded') // Logs "12:38:31 PM Page loaded Not signed in"
+log('User signed in', 'da763be') // Logs "12:38:31 PM User signed in da763be"
+```
+
+## Rest Parameters
+
+If a function takes a list of arguments, you can of course simply pass the list in as an array:
+
+```ts
+function sum(numbers: number[]): number {
+  return numbers.reduce((total, n) => total + n, 0);
+}
+ 
+sum([1, 2, 3]); // evaluates to 6
 ```
 
 ## Functions as Constructors
@@ -447,7 +487,24 @@ const myFunc = (x: number, y: boolean = true, z?: string): number => {
 
 myFunc(1);
 ```
-    
+## Function Overloads
+
+In TypeScript, we can specify a function that can be called in different ways by writing overload signatures. To do this, write some number of function signatures (usually two or more), followed by the body of the function:
+```ts
+function makeDate(timestamp: number): Date;
+function makeDate(m: number, d: number, y: number): Date;
+function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
+  if (d !== undefined && y !== undefined) {
+    return new Date(y, mOrTimestamp, d);
+  } else {
+    return new Date(mOrTimestamp);
+  }
+}
+const d1 = makeDate(12345678);
+const d2 = makeDate(5, 5, 5);
+const d3 = makeDate(1, 3);
+```
+
 
 ## Classes
 
@@ -459,6 +516,14 @@ Classes are blueprints for creating objects.
 *   Class properties may have _getters_ and _setters_.
 *   Classes can extend other classes.
 *   Classes can implement interfaces.
+
+### Creating a Class
+
+A class definition can include the following:
+
+*   _Fields_ − A field is any variable declared in a class. Fields represent data pertaining to objects
+*   _Constructors_ − Responsible for allocating memory for the objects of the class
+*   _Functions_ − Functions represent actions an object can take. They are also at times referred to as methods
 
 Examples:
 ```ts
@@ -515,7 +580,72 @@ class SpecialPerson extends Person {
 
 }
 ``` 
-    
+## Creating an abstract class
+
+*   Define an abstract class in Typescript using the abstract keyword. Abstract classes are mainly for inheritance where other classes may derive from them. We cannot create an instance of an abstract class.
+
+*   An abstract class typically includes one or more abstract methods or property declarations. The class which extends the abstract class must define all the abstract methods.
+ 
+
+Example:
+```ts
+abstract class Person {
+ abstract name: string;
+ display(): void{
+     console.log(this.name);
+ }
+}
+class Employee extends Person {
+ name: string;
+ empCode: number;
+  constructor(name: string, code: number) {
+     super(); // must call super()
+     this.empCode = code;
+     this.name = name;
+ }
+}
+let emp: Person = new Employee("James", 100);
+emp.display(); //James
+```
+## Type Aliases
+
+We’ve been using object types and union types by writing them directly in type annotations. This is convenient, but it’s common to want to use the same type more than once and refer to it by a single name.
+A type alias is exactly that - a name for any type. The syntax for a type alias is:
+
+```ts
+type Point = {
+  x: number;
+  y: number;
+};
+ 
+// Exactly the same as the earlier example
+function printCoord(pt: Point) {
+  console.log("The coordinate's x value is " + pt.x);
+  console.log("The coordinate's y value is " + pt.y);
+}
+ 
+printCoord({ x: 100, y: 100 });
+```
+
+You can actually use a type alias to give a name to any type at all, not just an object type. For example, a type alias can name a union type:
+```ts
+type ID = number | string;
+``` 
+Note that aliases are only aliases - you cannot use type aliases to create different/distinct “versions” of the same type. When you use the alias, it’s exactly as if you had written the aliased type. In other words, this code might look illegal, but is OK according to TypeScript because both types are aliases for the same type:
+
+```ts
+type UserInputSanitizedString = string;
+ 
+function sanitizeInput(str: string): UserInputSanitizedString {
+  return sanitize(str);
+}
+ 
+// Create a sanitized input
+let userInput = sanitizeInput(getInput());
+ 
+// Can still be re-assigned with a string though
+userInput = "new input";
+```
 
 ## Interfaces
 
