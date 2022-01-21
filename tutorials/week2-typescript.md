@@ -7,14 +7,25 @@ nav_order: 2
 ---
 
 # Typescript Basics
-# Typescript Basics
 
 This tutorial describes the basic concepts and syntax of typescript with code examples. Typescript is treated here as an extension to JavaScript, but it requires no prior knowledge to follow along.
 
 Contents:
 
 *   [Typescript Basics](#typescript-basics)
-*   [Basic Types](#basic-types)
+*   [Types](#Types)
+    *   [Any](#Any)
+    *   [Unkown]
+    *   [Boolean]
+    *   [Number]
+    *   [Bigint]
+    *   [String]
+    *   [Arrays]
+    *   [Tuples]
+    *   [Enums]
+        
+
+
 *   [Variables](#variables)
     *   [Objects and Arrays](#objects-and-arrays)
 *   [Control Flow Statements](#control-flow-statements)
@@ -32,21 +43,20 @@ Contents:
 
 Typescript is a superset of JavaScript. Thus, all JavaScript code is valid Typescript code. Typescript introduces concepts of optional typing, modules, and few additional features to Javascript. Let us begin by extending JavaScript to use the features of Typescript and primitive types.
 
-## Basic Types
+## Types
 
-Typescript comes with various built-in types. They are as follows:
+### Any
 
-*   number
-*   string
-*   boolean
-*   Array
-*   object
-*   any
-*   unknown
-*   void
-*   never
+The any data type is the super type of all types in TypeScript. It denotes a dynamic type. Using the any type is equivalent to opting out of type checking for a variable.
 
-The usage of each type will be demonstrated in further sections.
+Syntax:
+```ts
+let a: any = 666            // any
+let b: any = ['danger']     // any
+let c = a + b               // any
+``` 
+*   _Usage_: 
+In TypeScript everything needs to have a type at compile time, and any is the default type when you (the programmer) and TypeScript (the typechecker) can’t figure out what type something is. It’s a last resort type, and you should avoid it when possible.
 
 ## Variables
 
