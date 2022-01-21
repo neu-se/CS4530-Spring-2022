@@ -13,21 +13,21 @@ This tutorial describes the basic concepts and syntax of typescript with code ex
 Contents:
 
 *   [Typescript Basics](#typescript-basics)
-*   [Types](#Types)
+*   [Types in Typescript](#Types-in-typescript)
     *   [Any](#Any)
-    *   [Unkown]
-    *   [Boolean]
-    *   [Number]
-    *   [Bigint]
-    *   [String]
-    *   [Arrays]
-    *   [Tuples]
-    *   [Enums]
+    *   [Unkown](#Unkown)
+    *   [Boolean](#Boolean)
+    *   [Number](#Number)
+    *   [Bigint](#Bigint)
+    *   [String](#String)
+    *   [Arrays](#Arrays)
+    *   [Tuples](#Tuples)
+    *   [Enums](#Enums)
         
 
 
 *   [Variables](#variables)
-    *   [Objects and Arrays](#objects-and-arrays)
+*   [Objects](#objects)
 *   [Control Flow Statements](#control-flow-statements)
     *   [Equality vs Strict Equality](#equality-vs-strict-equality)
 *   [Loops](#loops)
@@ -43,13 +43,13 @@ Contents:
 
 Typescript is a superset of JavaScript. Thus, all JavaScript code is valid Typescript code. Typescript introduces concepts of optional typing, modules, and few additional features to Javascript. Let us begin by extending JavaScript to use the features of Typescript and primitive types.
 
-## Types
+## Types in typescript
 
 ### Any
 
 The any data type is the super type of all types in TypeScript. It denotes a dynamic type. Using the any type is equivalent to opting out of type checking for a variable.
 
-Syntax:
+Example:
 ```ts
 let a: any = 666            // any
 let b: any = ['danger']     // any
@@ -57,6 +57,159 @@ let c = a + b               // any
 ``` 
 *   _Usage_: 
 In TypeScript everything needs to have a type at compile time, and any is the default type when you (the programmer) and TypeScript (the typechecker) can’t figure out what type something is. It’s a last resort type, and you should avoid it when possible.
+
+
+### Unknown
+
+If any is the Godfather, then unknown is Keanu Reeves as undercover FBI agent Johnny Utah in Point Break: laid back, fits right in with the bad guys, but deep down has a respect for the law and is on the side of the good guys. You can compare unknown values (with ==, ===, ||, &&, and ?), negate them (with !), and refine them (like you can any other type) with JavaScript’s typeof and instanceof operators.
+
+Example:
+```ts
+let a: unknown = 30         // unknown
+let b = a === 123           // boolean
+``` 
+*   _Usage_: 
+For the few cases where you have a value whose type you really don’t know ahead of time, don’t use any, and instead reach for unknown. Like any, it represents any value, but TypeScript won’t let you use an unknown type until you refine it by checking what it is.
+
+### Boolean
+
+The boolean type has two values: true and false. 
+
+Example:
+```ts
+let a = true                // boolean
+     var b = false               // boolean
+     const c = true              // true
+     let d: boolean = true       // boolean
+     let e: true = true          // true
+```
+*   _Usage_: 
+You can compare them (with ==, ===, ||, &&, and ?), negate them (with !).
+
+### Number
+
+Number is the set of all numbers: integers, floats, positives, negatives, Infinity, NaN. 
+
+Example: 
+```ts
+var b = Infinity * 0.10     // number
+const c = 5678              // 5678
+let d = a < b               // boolean
+let e: number = 100         // number
+let f: 26.218 = 26.218
+```
+
+*   _Usage_: 
+Numbers can do things, like addition (+), subtraction (-), modulo (%), and comparison (<). When working with long numbers, use numeric separators to make those numbers easier to read. 
+
+### Bigint
+
+The bigint type is the set of all BigInts, and supports things like addition (+), subtraction (-), multiplication (*), division (/), and comparison (<). 
+
+Example: 
+```ts
+let a = 1234n               // bigint
+const b = 5678n             // 5678n
+var c = a + b               // bigint
+let d = a < 1235            // boolean
+let e = 88.5n               // Error TS1353: A bigint literal must be an integer.
+let f: bigint = 100n        // bigint
+let g: 100n = 100n
+```
+
+*   _Usage_: 
+It lets you work with large integers without running into rounding errors. While the number type can only represent whole numbers up to 253, bigint can represent integers bigger than that too. 
+
+### String
+
+String is the set of all strings and the things you can do with them like concatenate (+), slice (.slice),etc. 
+
+Example: 
+```ts
+let a: any = 666            // any
+let b: any = ['danger']     // any
+let c = a + b               // any
+```
+
+*   _Usage_: 
+Any functionality that requires the functionality of a  string of characters. Here are a couple of string operations: 
+**charAt()** : charAt() is a method that returns the character from the specified index. Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.length – 1. 
+
+Syntax: 
+```ts
+string.charAt(index);
+```
+**slice()** : This method extracts a section of a string and returns a new string. 
+Syntax:
+```ts 
+string.slice( beginslice [, endSlice] );
+```
+**split()** : This method splits a String object into an array of strings by separating the string into substrings. 
+Syntax: 
+```ts 
+string.split([separator][, limit]);
+```
+**concat()**: This method adds two or more strings and returns a new single string. 
+Syntax: 
+```ts 
+string.concat(string2, string3[, ..., stringN]);
+```
+**indexOf()**: This method returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex or -1 if the value is not found. 
+Syntax: 
+```ts 
+string.indexOf(searchValue[, fromIndex]);
+```
+### Arrays
+
+Like in JavaScript, TypeScript arrays are special kinds of objects that support things like concatenation, pushing, searching, and slicing. Arrays are iterable Objects with the keys as numbers.
+
+Example:
+```ts 
+let a = [1, 2, 3]           // number[]
+var b = ['a', 'b']          // string[]
+let c: string[] = ['a']     // string[]
+let d = [1, 'a']            // (string | number)[]
+const e = [2, 'b']          // (string | number)[]
+ 
+let f = ['red']
+f.push('blue')
+let g = []                  // any[]
+g.push(1)                   // number[]
+g.push('red')               // (string | number)[]
+ 
+let h: number[] = []        // number[]
+h.push(1)                   // number[]
+```
+### Tuples
+
+Tuples are subtypes of array. They’re a special way to type arrays that have fixed lengths, where the values at each index have specific, known types. Unlike most other types, tuples have to be explicitly typed when you declare them. 
+
+Example: 
+```ts 
+let a: [number] = [1]
+ 
+// A tuple of [first name, last name, birth year]
+let b: [string, string, number] = ['malcolm', 'gladwell', 1963]
+ ```
+
+*   _Usage_: 
+In TypeScript Tuples support optional elements too. Just like in object types, ? means “optional”. Tuples also support rest elements, which you can use to type tuples with minimum lengths. Not only do tuple types safely encode heterogeneous lists, but they also capture the length of the list they type. 
+
+### Enums 
+
+Enums are a way to enumerate the possible values for a type. They are unordered data structures that map keys to values.
+
+Example:
+```ts 
+enum Language {
+ English,
+ Spanish,
+ Russian
+}
+```
+*   _Usage_: 
+There are two kinds of enums: enums that map from strings to strings, and enums that map from strings to numbers. Use it when you wish to provide flexibility making it easier to express and document intentions and use cases or when you want to save compile-time and runtime with inline code.
+
 
 ## Variables
 
@@ -83,7 +236,7 @@ const f: boolean = false;
 let uninitialized: any;
 ``` 
 
-## Objects and Arrays
+## Objects
 
 *   Objects are similar to dictionaries with key-value pairs.
 *   Arrays are iterable Objects with the keys as numbers.
@@ -97,12 +250,6 @@ const myObj: any = {
 };
 
 console.log(myObj.key1); // prints 'value1'
-
-const myArr: Array<string> = ['a', 'b', 'c'];
-console.log(myArr[0]); // prints 'a'
-
-// Alternate type definition for Arrays
-const myArr: string[] = ['a', 'b', 'c'];
 ```
     
 
@@ -227,8 +374,13 @@ do {
     
 
 ## Functions
+*   Functions usually "take in" data, process it, and "return" a result. Remember one function/method one job!
 
-Functions in Typescript are defined as below:
+*   There is a lot you can do with functions in JavaScript like assign them to variables, pass them to other functions, return them from functions, assign them to objects and prototypes, write properties to them, read those properties back, and so on, and TypeScript models all of those things with its rich type system, which we just learnt. 
+
+*   Typescript enables us to set the types for our function parameters and our return type.
+
+*   Functions in Typescript are defined as below:
 ```ts
 function functionName(argument1: <type>, defaultArgument: <type> = value, optionalArgument?: <type>): <return type> {
     // Function body
