@@ -360,8 +360,6 @@ Typescript contains the following loops:
 *   While
 *   Do-while
 
-**TODO** - make sure loop syntax matches our linting rules
-
 Examples:
 ```ts
 for(let i: number = 0; i < 10; i++) {
@@ -772,16 +770,13 @@ subtract(2, 1);
 
 ## General Guidelines
 
-**TODO** update this to follow the style guideline
-_Note_: These guidelines will not be used for grading assignments.
-
-*   Naming conventions:
+*   Naming conventions 
     *   use kebab-case for file names.
     *   Use camelCase for variable and function names.
     *   Use PascalCase for Class and constructor function names.
 *   Prefer descriptive names over random letters.
 *   Although typing is optional in typescript, it is not optional for this course.
 *   Always use strict equality.
-*   Use a linter. (Most stylistic issues can be resolved by it)
+*   Use a linter. (as specified on course website)
 *   Use a prettifier. (If the linter doesn't do it already)
-*   Have only 1 class per file. And keep all files smaller than 300 lines.
+*   Use general coding guidelines as discussed in Week1.
