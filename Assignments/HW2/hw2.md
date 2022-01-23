@@ -115,10 +115,13 @@ If the token is valid and the conversation area is successfully created, set ret
 📝 Check your work: When you run the API sanity test suite (`npm test CoveyTownConversationAPI`), you should now see "Executes without error when creating a new conversation" succeed. Other tests may fail.
 
 Implement the method `addConversationArea` method in `CoveyTownController`. Recall from the architectural diagram above that the `CoveyTownController` is responsible for keeping track of all of the state regarding a single town, including its conversation areas. Avery has already added a private field, `_conversationAreas` to `CoveyTownController`. Your task is to implement the `addConversationArea` method, which should have the following behavior:
-1. The method must check to see if there is an existing conversation area with the requested `label`, and if one already exists, return `false`.
-2. Any players who are in the region defined by the `boundingBox` of the new conversation area should be added to it as `occupants`, and those players should have their `_activeConversationArea` property set to that new conversation area.
-    * The `x, y` position of the box denotes the *center* of the box on the map; a player is defined as inside of this box if the `x, y` position of the player is anywhere within the bounding box.
-3. Notify all listeners that are subscribed to this town that the newly created conversation area was created, by invoking `onConversationUpdated(theNewConversationArea)` on each.
+1. Check that the `topic` is defined: it is not permitted to create a conversation area an empty string as the topic, if this is the case return `false`.
+2. Check to see if there is an existing conversation area with the requested `label`, and if one already exists, return `false`.
+3. Check to see if the `boundingBox` of the new conversation area overlaps with any existing, and if so, return `false`.
+  * The `x, y` position of the box denotes the *center* of the box on the map, `height` and `width` represent the overall height and width of the box.
+4. Any players who are in the region defined by the `boundingBox` of the new conversation area should be added to it as `occupants`, and those players should have their `_activeConversationArea` property set to that new conversation area.
+    * A player is defined as inside of a box if the `x, y` position of the player is anywhere within the bounding box.
+5. Notify all listeners that are subscribed to this town that the newly created conversation area was created, by invoking `onConversationAreaUpdated(theNewConversationArea)` on each.
 
 This is a much bigger task than the first one. Note that you will undoubtedly find it useful to add new helper methods (private or public), perhaps in `CoveyTownController`, `Player`, or both. You *must not* add additional fields to track the conversation area's state: the data model that Avery defined is the data model that you must use!
 
@@ -138,17 +141,19 @@ We suggest that you submit your code at this point on GradeScope, which will run
 Congratulations on making it this far! You are almost done, there are only two more tasks to complete the feature.
 
 ### Task 2.1: Track conversation participants
-In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's movement (updating the `occupantsByID` property on any effected conversation areas). If any conversation areas are updated, you must emit a `onConversationUpdated` event, similarly to how you did in Task 1.2 when a conversation is created.
+In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's movement (updating the `occupantsByID` property on any effected conversation areas). If any conversation areas are updated, you must emit a `onConversationAreaUpdated` event, similarly to how you did in Task 1.2 when a conversation is created.
+
+Note that you might need to send multiple `onConversationAreaUpdated` events: one for a user leaving an area and one for them entering another. It is important that no client ever believe that a user is in two conversation areas at the same time. Hence, be sure to send the "exit" update before the "enter" update.
 
 📝 Check your work: Again, Avery has provided a single sanity test that checks some of the behavior defined above. You can run this test with the command `npm test -- -t 'CoveyTownController updatePlayerLocation'`, and you might also consider extending it.
 
 ### Task 2.2: Remove participants from conversation if they disconnect 
-When a player disconnects from the server, there is no "movement" that happens, but any resources used by that player are cleaned up by the `CoveyTownController`'s `destroySession` method. Update `destroySession` to remove disconencted players from any conversationa area that they had been a participant in, and emit any `onConversationUpdated` events as necessary.
+When a player disconnects from the server, there is no "movement" that happens, but any resources used by that player are cleaned up by the `CoveyTownController`'s `destroySession` method. Update `destroySession` to remove disconencted players from any conversationa area that they had been a participant in, and emit any `onConversationAreaUpdated` events as necessary.
 
 📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provdied to test this behavior.
 
 ### Task 2.3: Automatically end a conversation when it's unoccupied 
-When a conversation area is unoccupied, it should show a default greeting message, encouraging any new user to set a conversation topic. Hence, we need some logic to destory a conversation when there are no longer any occupants in it. When the last player leaves a conversation area, emit the `onConversationAreaUpdated` event to each of the town controller's listeners.
+When a conversation area is unoccupied, it should show a default greeting message, encouraging any new user to set a conversation topic. Hence, we need some logic to destroy a conversation when there are no longer any occupants in it. When the last player leaves a conversation area, emit the `onConversationAreaDestroyed` event to each of the town controller's listeners, *and do not* emit a `onConversationAreaUpdated`. When emitting an `onConversationAreaDestroyed` message, the `occupantsByID` array should be set to an empty array.
 
 📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provdied to test this behavior.
 
