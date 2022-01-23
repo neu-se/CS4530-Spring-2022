@@ -8,26 +8,32 @@ nav_order: 2
 
 # Typescript Basics
 
-This tutorial describes the basic concepts and syntax of typescript with code examples. Typescript is treated here as an extension to JavaScript, but it requires no prior knowledge to follow along.
+This tutorial describes the basic concepts and syntax of typescript with code examples. Typescript is treated here as an extension of JavaScript, but it requires no prior knowledge to follow along.
+
+You can run the examples on [Online Typescript Editor](https://www.typescriptlang.org/play) . 
 
 Contents:
 
-*   [Typescript Basics](#typescript-basics)
-*   [Types in Typescript](#Types-in-typescript)
-    *   [Any](#Any)
-    *   [Unkown](#Unkown)
-    *   [Boolean](#Boolean)
-    *   [Number](#Number)
-    *   [Bigint](#Bigint)
-    *   [String](#String)
-    *   [Arrays](#Arrays)
-    *   [Tuples](#Tuples)
-    *   [Enums](#Enums)
+*   [Types in Typescript](#types-in-typescript)
+    *   [Boolean](#boolean)
+    *   [Number](#number)
+    *   [BigInt](#bigint)
+    *   [String](#string)
+    *   [Arrays](#arrays)
+    *   [Tuples](#tuples)
+    *   [Enums](#enums)
+    *   [Any](#any)
+    *   [Unknown](#unknown)
 *   [Variables](#variables)
 *   [Objects](#objects)
 *   [Control Flow Statements](#control-flow-statements)
     *   [Equality vs Strict Equality](#equality-vs-strict-equality)
 *   [Loops](#loops)
+*   [Array Functions](#array-functions)
+    *   [ForEach](#foreach)
+    *   [Map](#map)
+    *   [Filter](#filter)
+    *   [Reduce](#reduce)
 *   [Functions](#functions)
     *   [Typing the function](#typing-the-function)
     *   [Invoking the function](#invoking-the-function)
@@ -49,32 +55,6 @@ Contents:
 Typescript is a superset of JavaScript. Thus, all JavaScript code is valid Typescript code. Typescript introduces concepts of optional typing, modules, and few additional features to Javascript. Let us begin by extending JavaScript to use the features of Typescript and primitive types.
 
 ## Types in typescript
-
-### Any
-
-The any data type is the super type of all types in TypeScript. It denotes a dynamic type. Using the any type is equivalent to opting out of type checking for a variable.
-
-Example:
-```ts
-let a: any = 666            // any
-let b: any = ['danger']     // any
-let c = a + b               // any
-``` 
-*   _Usage_: 
-In TypeScript everything needs to have a type at compile time, and any is the default type when you (the programmer) and TypeScript (the typechecker) can’t figure out what type something is. It’s a last resort type, and you should avoid it when possible.
-
-
-### Unknown
-
-If any is the Godfather, then unknown is Keanu Reeves as undercover FBI agent Johnny Utah in Point Break: laid back, fits right in with the bad guys, but deep down has a respect for the law and is on the side of the good guys. You can compare unknown values (with ==, ===, ||, &&, and ?), negate them (with !), and refine them (like you can any other type) with JavaScript’s typeof and instanceof operators.
-
-Example:
-```ts
-let a: unknown = 30         // unknown
-let b = a === 123           // boolean
-``` 
-*   _Usage_: 
-For the few cases where you have a value whose type you really don’t know ahead of time, don’t use any, and instead reach for unknown. Like any, it represents any value, but TypeScript won’t let you use an unknown type until you refine it by checking what it is.
 
 ### Boolean
 
@@ -107,7 +87,7 @@ let f: 26.218 = 26.218
 *   _Usage_: 
 Numbers can do things, like addition (+), subtraction (-), modulo (%), and comparison (<). When working with long numbers, use numeric separators to make those numbers easier to read. 
 
-### Bigint
+### BigInt
 
 The bigint type is the set of all BigInts, and supports things like addition (+), subtraction (-), multiplication (*), division (/), and comparison (<). 
 
@@ -123,7 +103,7 @@ let g: 100n = 100n
 ```
 
 *   _Usage_: 
-It lets you work with large integers without running into rounding errors. While the number type can only represent whole numbers up to 253, bigint can represent integers bigger than that too. 
+It lets you work with large integers without running into rounding errors. While the number type can only represent whole numbers it can hold numbers larger than 2<sup>53</sup> – 1. 
 
 ### String
 
@@ -137,32 +117,33 @@ let c = a + b               // any
 ```
 
 *   _Usage_: 
-Any functionality that requires the functionality of a  string of characters. Here are a couple of string operations: 
-**charAt()** : charAt() is a method that returns the character from the specified index. Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.length – 1. 
+Any functionality that requires the functionality of a  string of characters. Here are a couple of string operations:
+
+**charAt()** : This method returns the character from the specified index. Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.length – 1. 
 
 Syntax: 
 ```ts
-string.charAt(index);
+string.charAt(index)
 ```
 **slice()** : This method extracts a section of a string and returns a new string. 
 Syntax:
 ```ts 
-string.slice( beginslice [, endSlice] );
+string.slice( beginslice [, endSlice])
 ```
 **split()** : This method splits a String object into an array of strings by separating the string into substrings. 
 Syntax: 
 ```ts 
-string.split([separator][, limit]);
+string.split([separator][, limit])
 ```
 **concat()**: This method adds two or more strings and returns a new single string. 
 Syntax: 
 ```ts 
-string.concat(string2, string3[, ..., stringN]);
+string.concat(string2, string3[, ..., stringN])
 ```
-**indexOf()**: This method returns the index within the calling String object of the first occurrence of the specified value, starting the search at fromIndex or -1 if the value is not found. 
+**indexOf()**: This method returns the index within the calling String object of the first occurrence of the specified value, starting the search at index or -1 if the value is not found. 
 Syntax: 
 ```ts 
-string.indexOf(searchValue[, fromIndex]);
+string.indexOf(searchValue[, fromIndex])
 ```
 ### Arrays
 
@@ -215,14 +196,40 @@ enum Language {
 *   _Usage_: 
 There are two kinds of enums: enums that map from strings to strings, and enums that map from strings to numbers. Use it when you wish to provide flexibility making it easier to express and document intentions and use cases or when you want to save compile-time and runtime with inline code.
 
+### Any
 
-## Variables
+The any data type is the super type of all types in TypeScript. It denotes a dynamic type. Using the any type is equivalent to opting out of type checking for a variable.
+
+Example:
+```ts
+let a: any = 666            // any
+let b: any = ['danger']     // any
+let c = a + b               // any
+``` 
+*   _Usage_: 
+In TypeScript everything needs to have a type at compile time, and any is the default type when you (the programmer) and TypeScript (the typechecker) can’t figure out what type something is. It’s a last resort type, and you should avoid it when possible.
+
+
+### Unknown
+
+If any is the Godfather, then unknown is Keanu Reeves as undercover FBI agent Johnny Utah in Point Break: laid back, fits right in with the bad guys, but deep down has a respect for the law and is on the side of the good guys. You can compare unknown values (with ==, ===, &&, and ?), and refine them (like you can any other type) with JavaScript’s typeof and instanceof operators.
+
+Example:
+```ts
+let a: unknown = 30         // unknown
+let b = a === 123           // boolean
+``` 
+*   _Usage_: 
+For the few cases where you have a value whose type you really don’t know ahead of time, don’t use any, and instead reach for unknown. Like any, it represents any value, but TypeScript won’t let you use an unknown type until you refine it by checking what it is.
+
+
+## Variable declaration in typescript
 
 Variables can be declared in Typescript using one of 3 keywords:
 
-*   _var_: var has scoping issues and should be avoided.
-*   _let_: let should be used in all cases except where a variable is constant.
-*   _const_: const should be used when there is no reassignment to the variable.
+*   _var_:  var declarations are accessible anywhere within their containing function, module, namespace, or global scope - all which we’ll go over later on - regardless of the containing block. Some people call this var-scoping or function-scoping. Parameters are also function scoped.
+*   _let_: When a variable is declared using let, it uses what some call lexical-scoping or block-scoping. Unlike variables declared with var whose scopes leak out to their containing function, block-scoped variables are not visible outside of their nearest containing block.
+*   _const_: They are like let declarations but, as their name implies, their value cannot be changed once they are bound. In other words, they have the same scoping rules as let, but you can’t re-assign to them.
 
 The syntax of declarations is as below:
 ```ts
@@ -350,7 +357,7 @@ if(0 === '0') { } // Evaluated to false because types are different.
 ``` 
     
 
-We recommend using strict equality (`===`) in all cases, and this recommendatiopn is enforced by our linter.
+We recommend using strict equality (`===`) in all cases, and this recommendation is enforced by our linter.
 
 ## Loops
 
@@ -374,10 +381,111 @@ do {
 
 } while(condition)
 ``` 
+## Array Functions
+
+ForEach, Map, reduce, and filter are all array methods in JavaScript. Each one will iterate over an array and perform a transformation or computation. Each will return a new array based on the result of the function.
+
+## ForEach
+
+forEach() method calls a function for each element in the array. It returns the resultant array.
+
+Syntax
+```ts
+array.forEach(callback[, thisObject]);
+```
+
+Example
+```ts
+let num = [7, 8, 9];
+num.forEach(function (value) {
+  console.log(value);
+}); 
+```
+## Map
+
+It is an array function that transforms the array according to the applied function and returns the updated array. It works on each element of an array.
+
+Syntax
+```ts  
+array.map(callback[,object])
+``` 
+callback - It is a function that provides an element of the new Array from an element of the current one.
+
+object - object to use as this when executing callback.
+ 
+Return Type - List
+ 
+Examples
+```ts  
+//Calculate cube of each element with the help of map. 
+function cube(n){  
+   return n*n*n;  
+}  
+var arr=new Array(1,2,3,4)  
+var newArr=arr.map(cube);  
+console.log(newArr)  // Output : [1,8,27,64]
+```
+In the above example, a function called “cube” is created and then is passed as a callback function into map().
+
+## Reduce
+It also works on a callback for each element of an array. It reduces the result of this callback function from one array element to the other.
+ 
+Syntax
+```ts 
+array.reduce(callback[,initalValue])
+``` 
+callback - this parameter is the function to execute on each value in the array.
+
+intitalValue - this parameter is the object to use as the first argument of the first call of the callback.
+ 
+Examples
+```ts 
+//To calculate product of every element of an array,
+var arr = new Array (1,2,3,4,5)    
+var val = arr.reduce(function(a,b){    
+   return a*b;    
+});      
+//output => 120  
+```  
+Calculate the total salary from a list of object, then you will use the reduce() like,
+
+```ts
+var employees = [    
+   { id: 20, name: 'Ajay', salary:30000 },    
+   { id: 24, name: 'Vijay', salary:35000 },    
+   { id: 56, name: 'Rahul', salary:32000 },    
+   { id: 88, name: 'Raman', salary:38000 }    
+];    
+var totalSalary= employees .reduce(function (total, record) {    
+   return total + record.salary;    
+}, 0);    
     
+//It will return the total salary of all the employees.  
+```
+
+## Filter
+As the name suggests it can filter out the data/array elements on the basis of condition and return the result as a list. Basically, this function pushes the current element into a new array when the callback functions return true.
+ 
+Syntax
+```ts  
+array.map(callback[,object])
+``` 
+callback - it is a function that provides an element of the new Array from an element of the current one.
+object - object to use as this when executing callback.
+ 
+Return Type: List
+ 
+Examples
+```ts 
+//Calculate a list of even elements from an array :    
+arr = new Array(1, 2, 3, 6, 5, 4)  
+var newArr = arr.filter(function(record) {  
+    return record % 2 == 0;  
+}); // output => [2,6,4] 
+```
 
 ## Functions
-*   Functions usually "take in" data, process it, and "return" a result. Remember one function/method one job!
+*   Functions usually "take in" data, process it, and "return" a result. **Remember one function/method one job!**
 
 *   There is a lot you can do with functions in JavaScript like assign them to variables, pass them to other functions, return them from functions, assign them to objects and prototypes, write properties to them, read those properties back, and so on, and TypeScript models all of those things with its rich type system, which we just learnt. 
 
@@ -436,6 +544,18 @@ function log(message: string, userId?: string) {
 log('Page loaded') // Logs "12:38:31 PM Page loaded Not signed in"
 log('User signed in', 'da763be') // Logs "12:38:31 PM User signed in da763be"
 ```
+You can provide default values for optional parameters. Semantically it’s similar to making a parameter optional, in that callers no longer have to pass it in (a difference is that default parameters don’t have to be at the end of your list of parameters, while optional parameters do).
+
+For example, we can rewrite log as:
+```ts
+function log(message: string, userId = 'Not signed in') {
+  let time = new Date().toISOString()
+  console.log(time, message, userId)
+}
+
+log('User clicked on a button', 'da763be')
+log('User signed out')
+```
 
 ## Rest Parameters
 
@@ -458,17 +578,28 @@ Examples:
 function Person(firstName: string, lastName: string): void {
     this.firstName = firstName;
     this.lastName = lastName;
-
     this.getFullName = function(): string {
         return this.firstName + ' ' + this.lastName;
     }
-
 }
-
 const person1 = new Person('first', 'last');
 console.log(person1.getFullName()); // Returns 'first last'.
-``` 
-    
+```
+*   Constructors can’t have type parameters - these belong on the outer class declaration
+
+*   Constructors can’t have return type annotations - the class instance type is always what’s returned
+```ts
+class Point {
+  x: number;
+  y: number;
+ 
+  // Normal signature with defaults
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
+}
+```
 
 ## Arrow Functions
 
@@ -476,21 +607,23 @@ Arrow Functions (also called fat arrow functions) are functions which have lexic
 
 Examples:
 ```ts
-const myFunc = (x: number, y: boolean = true, z?: string): number => {
-    console.log(x);
-    console.log(y);
-    console.log(z);
-    return 1;
+let sum = (x: number, y: number): number => {
+    return x + y;
 }
 
-myFunc(1);
+sum(10, 20); //returns 30
 ```
+In the above example, sum is an arrow function. (x:number, y:number) denotes the parameter types, :number specifies the return type. The fat arrow => separates the function parameters and the function body. The right side of => can contain one or more code statements.
+
 ## Function Overloads
 
 In TypeScript, we can specify a function that can be called in different ways by writing overload signatures. To do this, write some number of function signatures (usually two or more), followed by the body of the function:
 ```ts
+//function makeDate() with one parameter
 function makeDate(timestamp: number): Date;
+//function makeDate() with three parameters 
 function makeDate(m: number, d: number, y: number): Date;
+//function makeDate() with one parameter and 2 default parameters
 function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
   if (d !== undefined && y !== undefined) {
     return new Date(y, mOrTimestamp, d);
@@ -500,7 +633,7 @@ function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
 }
 const d1 = makeDate(12345678);
 const d2 = makeDate(5, 5, 5);
-const d3 = makeDate(1, 3);
+const d3 = makeDate(1, 3); //No overload expects 2 arguments, but overloads do exist that expect either 1 or 3 arguments.
 ```
 
 
@@ -616,7 +749,6 @@ type Point = {
   y: number;
 };
  
-// Exactly the same as the earlier example
 function printCoord(pt: Point) {
   console.log("The coordinate's x value is " + pt.x);
   console.log("The coordinate's y value is " + pt.y);
@@ -651,12 +783,14 @@ Interfaces are used to define contracts for interaction with external entities. 
 
 Examples:
 ```ts
+//Interface IPerson respresents a person by attributes firstName and lastName and a method to getFullName()
 interface IPerson {
     firstName: string;
     lastName: string;
     getFullName(): string;
 }
 
+//Class Person implements interface Iperson. Person class must contains ll the attributes and methods of interface. 
 class Person implements IPerson {
 
     public firstName: string = '';
@@ -678,7 +812,7 @@ const person: IPerson = new Person();
 
 *   For complicated types (usually required for Objects), it is recommended to use an interface.
 *   Additionally, typescript contain the 'type' keyword which can be used to create new types.
-    *   This is generally used when a union of different types is required.
+*   This is generally used when a union of different types is required.
 
 Examples:
 ```ts 
@@ -734,8 +868,8 @@ interface IMyInterface<T> {
 
 A Module in typescript is defined by using the 'Import' or 'Export' keywords within a file. Variables declared in a module are scoped locally and are not added to the global scope.
 
-*   Export makes the variables and functions from a file visible outside it.
-*   Import allows use to use variables and functions exported by another file.
+*   **Export** makes the variables and functions from a file visible outside it.
+*   **Import** allows use to use variables and functions exported by another file.
 
 Examples:
 ```ts
