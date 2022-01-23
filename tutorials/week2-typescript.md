@@ -24,7 +24,7 @@ Contents:
     *   [Enums](#enums)
     *   [Any](#any)
     *   [Unknown](#unknown)
-*   [Variables](#variables)
+*   [Variable declaration in typescript](#variable-declaration-in-typescript)
 *   [Objects](#objects)
 *   [Control Flow Statements](#control-flow-statements)
     *   [Equality vs Strict Equality](#equality-vs-strict-equality)
