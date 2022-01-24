@@ -50,6 +50,11 @@ Contents:
 *   [Custom types](#custom-types)
 *   [Generics](#generics)
 *   [Modules](#modules)
+*   [Object oriented programming concepts using typescript](#object-oriented-programming-concepts-using-typescript)
+    *   [Inheritance](#inheritance)
+    *   [Polymorphism](#polymorphism)
+    *   [Abstraction](#abstraction)
+    *   [Encapsulation](#encapsulation)
 *   [General Guidelines](#general-guidelines)
 
 Typescript is a superset of JavaScript. Thus, all JavaScript code is valid Typescript code. Typescript introduces concepts of optional typing, modules, and few additional features to Javascript. Let us begin by extending JavaScript to use the features of Typescript and primitive types.
@@ -900,7 +905,144 @@ subtract(2, 1);
 
 // multiply cannot be imported.
 ``` 
-    
+## Object oriented programming concepts using typescript  
+
+Object Oriented Programming or OOP is a programming paradigm that has four principles which are:
+
+*   Inheritance
+*   Polymorphism
+*   Abstraction
+*   Encapsulation
+
+## Inheritance
+
+TypeScript supports the concept of Inheritance. Inheritance is the ability of a program to create new classes from an existing class. The class that is extended to create newer classes is called the parent class/super class. The newly created classes are called the child/sub classes.
+
+A class inherits from another class using the ‘extends’ keyword. Child classes inherit all properties and methods except private members and constructors from the parent class. However, TypeScript doesn’t support multiple inheritance.
+
+Syntax: 
+```ts
+class child_class_name extends parent_class_name
+```
+
+Example:
+```ts
+//Parent class Shape
+class Shape {
+ Area:number
+  constructor(a:number) {
+    this.Area = a
+ }
+}
+
+//Child class Circle that inherits properties of Shape 
+class Circle extends Shape {
+ disp():void {
+    console.log("Area of the circle:  "+this.Area)
+ }
+}
+var obj = new Circle(223);
+obj.disp()
+```
+## Polymorphism
+
+When multiple classes inherit from a parent and override the same functionality, the result is polymorphism. Each of those child classes now implements a property or method, but they each may have their own way of performing that implementation. 
+
+lternatively, one child class might override the parent’s members while another child doesn’t but just accepts the parent class’s implementation instead. This also demonstrates polymorphic behavior, since those behaviors are different between the siblings. 
+
+```ts
+class CheckingAccount {
+  open(initialAmount: number) {
+    // code to open account and save in database
+  }
+}
+
+class BusinessCheckingAccount extends CheckingAccount {
+  open(initialAmount: number) {
+    if (initialAmount < 1000) {
+      throw new Error("Business accounts must have an initial deposit of 1.000 Euros")
+    }
+    super.open(initialAmount);
+  }
+}
+
+class PersonalCheckingAccount extends CheckingAccount {
+  open(initialAmount: number) {
+    if (initialAmount <= 0) {
+      throw new Error("Personal accounts must have an initial deposit of more than zero Euros")
+    }
+    super.open(initialAmount);
+  }
+}
+```
+
+In the above code sample shows, the two child classes have different business rules to implement when it comes to opening an account – mainly different opening balances. Because both children have a method to open the account but both children choose to do it differently means the behavior is polymorphic.
+
+To achieve polymorphism, inherit from a base class, then override methods and write implementation code in them. In addition to overriding methods, you can overload methods to achieve polymorphism.
+
+Overloaded methods are methods that have different signatures (i.e., different data types or number of arguments) with the same name. However, in TypeScript, methods aren’t overloaded by simply modifying the types or number of arguments like in some other languages. 
+ 
+To create an overload in TypeScript, you can either add optional arguments to a method, or overload function declarations in an interface and implement the interface.
+
+
+## Abstraction
+
+Abstraction is a way to model objects in a system that creates a separation of duties between class or type and the code that inherits it.
+
+A developer creates a type, i.e., a class or interface, and that type specifies what the calling code should implement, but not how. So it’s the job of the abstract type to define what needs to be done, but up to the consuming types to actually do those things. To enforce abstraction, inherit or implement from abstract classes and interfaces.
+
+For example, some bank accounts have fees. You can create a Fee interface that defines a method for charging a fee. Fees don’t apply to all types of accounts, so it’s best to create an interface that can be applied to specific classes anywhere in the inheritance hierarchy. A checking account might charge fees, where its parent and sibling, the generic bank account and savings accounts might not.
+
+```ts
+interface Fee {
+  chargeFee(amount: number );
+}
+
+// parent BankAccount and sibling SavingsAccount do not implement Fee interface
+class BankAccount { ... }
+
+class SavingsAccount extends BankAccount { ... }
+
+// checking implements Fee
+class CheckingAccount extends BankAccount implements Fee {
+  chargeFee(amount: number) {}
+}
+```
+
+Children classes inherit interface members that have been implemented in their parent, so if a BusinessChecking account has inherited from the CheckingAccount class, then it inherits that implementation.
+
+```ts
+// BusinessChecking inherits CheckingAccount and therefore Fee
+class BusinessChecking extends CheckingAccount { … }
+
+
+// Code that uses BusinessChecking can call chargeFee
+function CalculateMonthlyStatements() {
+  let businessChecking = new BusinessChecking();
+  businessChecking.chargeFee(100);
+}
+```
+## Encapsulation
+
+Encapsulation is a key part of Object Oriented Programming that is a way to structure code so that a certain block of code has specific access points for external code. The term for this is “visibility” or “accessibility”. Visibility defines what code from one method, property, or class can call code in another method, property, or class. 
+
+In TypeScript, we enforce encapsulation with methods and properties that only allow access to data that we control. The Withdraw method below does that by doing the calculation and updating the class level _balance field. The Balance property then returns the private _balance field to the calling code.
+
+```ts
+Withdraw(amount: number): boolean
+{
+    if (this._balance > amount)
+    {
+        this._balance -= amount
+        return true;
+    }
+    return false;
+}
+private _balance: number;
+get Balance(): number {
+    return this._balance;
+}
+```
 
 ## General Guidelines
 
