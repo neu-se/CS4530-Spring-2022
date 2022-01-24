@@ -120,7 +120,7 @@ class CanvasSyncer
           end
         else
           file = CGI.escape ourItem[itemKey]
-          url = siteBaseURL + "/slides-" + itemKey + "/" + file
+          url = siteBaseURL + "/Slides/" + file
           canvasIdx = canvasItems.index { |item| item['external_url'] == url }
           if canvasIdx != nil
             cItem = canvasItems[canvasIdx]
