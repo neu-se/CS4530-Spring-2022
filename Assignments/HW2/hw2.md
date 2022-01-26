@@ -118,9 +118,10 @@ Implement the method `addConversationArea` method in `CoveyTownController`. Reca
 1. Check that the `topic` is defined: it is not permitted to create a conversation area an empty string as the topic, if this is the case return `false`.
 2. Check to see if there is an existing conversation area with the requested `label`, and if one already exists, return `false`.
 3. Check to see if the `boundingBox` of the new conversation area overlaps with any existing, and if so, return `false`.
+  * Boxes are allowed to be *adjacent* that is, two conversation areas may share boundary points.
   * The `x, y` position of the box denotes the *center* of the box on the map, `height` and `width` represent the overall height and width of the box.
 4. Any players who are in the region defined by the `boundingBox` of the new conversation area should be added to it as `occupants`, and those players should have their `_activeConversationArea` property set to that new conversation area.
-    * A player is defined as inside of a box if the `x, y` position of the player is anywhere within the bounding box.
+    * A player is defined as inside of a box if the `x, y` position of the player is anywhere within the bounding box. A player who overlaps only with the edge of a conversation area's bounding box is not in the box.
 5. Notify all listeners that are subscribed to this town that the newly created conversation area was created, by invoking `onConversationAreaUpdated(theNewConversationArea)` on each.
 
 This is a much bigger task than the first one. Note that you will undoubtedly find it useful to add new helper methods (private or public), perhaps in `CoveyTownController`, `Player`, or both. You *must not* add additional fields to track the conversation area's state: the data model that Avery defined is the data model that you must use!
