@@ -112,9 +112,9 @@ This task will require you to implement three methods, and you will receive part
 
 When the `conversationAreaCreateHandler` is called, it should:
 1. Validate that the supplied session token is a valid token for the specified town
-2. Delegate the actual responsibility for creating the town to the `CoveyTownController`, invoking the `addConversationArea` method on the appropriate town controller.
+2. Delegate the actual responsibility for creating the conersation area to the `CoveyTownController`, invoking the `addConversationArea` method on the appropriate town controller.
 
-If the token is valid and the conversation area is successfully created, set return the `isOK` parameter on the returned response to `true`, and the `message` to `undefined`. If not successful for any reason, set the return `isOK` to `false`, and set the message to exactly the string: "Unable to create conversation area <conversationAreaLabel> with topic <conversationAreaTopic>" (replacing the values in `<>` with the parameters that were passed). For example, if a request to create a conversation area with label `foo` and topic `bar` fails, the returned message should be `Unable to create conversation area foo with topic bar`.
+If the token is valid and the conversation area is successfully created, set return the `isOK` parameter on the returned response to `true`, the `response` property to `{}`, and the `message` to `undefined`. If not successful for any reason, set the return `isOK` to `false`, and set the message to exactly the string: `Unable to create conversation area <conversationAreaLabel> with topic <conversationAreaTopic>` (replacing the values in `<>` with the parameters that were passed). For example, if a request to create a conversation area with label `foo` and topic `bar` fails, the returned message should be `Unable to create conversation area foo with topic bar`.
 
 📝 Check your work: When you run the API sanity test suite (`npm test CoveyTownConversationAPI`), you should now see "Executes without error when creating a new conversation" succeed. Other tests may fail.
 
