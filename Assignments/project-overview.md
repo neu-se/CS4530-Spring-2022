@@ -29,10 +29,9 @@ Select projects from Spring 2021 are hosted [in our project showcase](https://ne
 | 5/22/22 | Project Implementation and Documentation | Deliver your new feature, including design documentation and tests |
 
 ### Team Formation
-All projects will be completed in a team of 3-4 students.
+All projects will be completed in a team of 4-5 students.
 The very first deliverable for the project will be a team formation survey: you will be able to indicate
-your preferences for teammates. Students may specify preferences for their teams (by specifying a complete team of 4 in the survey),
-otherwise the instructors will assign students to teams based on responses to the survey.
+your preferences for teammates. The instructors will assign students to the teams based on a number of factors including your responses to the survey.
 All students in each team must be in the same section of the class.
 
 Complete the [team formation](https://docs.google.com/forms/d/e/1FAIpQLSdf7hc6AZ80f9pwAOV7vPsJxpQ-0KWy_kkIABLkP761V4UPPw/viewform?usp=sf_link) before Feb 9.
@@ -54,11 +53,12 @@ The project plan will include:
 * High level architecture: Describe the key components in your feature (or how your feature relates to the existing components of Covey.Town)
 * Work breakdown: Map your user stories to engineering tasks. Assign each task to a team member (or pair of team members), provide an estimate for how long each task will take, and schedule those stories into 2 week sprints.
 
-We will use the work breakdown and schedule as the basis for weekly check-ins with your team's TA.
+Your team will self-organize, as agile teams do and will use the work breakdown and schedule as the basis for weekly check-ins with your team's TA.
 
 The project plan assignment will be released by February 18th.
 
 ### Project Implementation and Documentation
+You will be assigned a mentor for your project who will work closely with you for the entire project. This will weekly meetings and regular sprint demos. Peer evaluation will also be used.
 Your final team deliverable will be a "release" of your new feature on GitHub (with tests), and will be accompanied by a demo.
 *Optionally,* you may also open a pull request to merge your feature into our main repository (submitting a pull request, or the pull request being merged into our
 codebase is independent of the grade you receive, but provides a platform for more visiblity of your project). 
