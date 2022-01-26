@@ -119,7 +119,7 @@ class CanvasSyncer
             self.createModuleItem(modID, "SubHeader", ourItem['title'], ctr, 0, nil)
           end
         else
-          file = CGI.escape ourItem[itemKey]
+          file = ERB::Util.url_encode ourItem[itemKey]
           url = siteBaseURL + "/Slides/" + file
           canvasIdx = canvasItems.index { |item| item['external_url'] == url }
           if canvasIdx != nil
@@ -239,6 +239,9 @@ if ENV['CANVAS_COURSE_ID'] && ENV['CANVAS_TOKEN'] && ENV['CANVAS_BASE_URL']
         next
       end
       canvasSyncer.syncModule(page['title'], @moduleCount, page['lessons'], page['tutorials'], baseURL + site.baseurl, page.permalink())
+
+
+
       @moduleCount = @moduleCount + 1
     end
   end
