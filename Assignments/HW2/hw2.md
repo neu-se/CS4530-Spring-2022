@@ -17,7 +17,7 @@ We understand that some of you may have some web development experience, but don
 ## The new feature: Conversation Areas
 In the original release of Covey.Town (demoed at [https://spring2021.covey.town](https://spring2021.covey.town)), users connect to a "Town", which provides a 2D arcade-style map that users can walk around in.
 When two users get close, they are able to see and hear each other through a video call.
-Since that original relese, our lead software engineer, Avery, has been quite busy on making this app more interesting and usable.
+Since that original release, our lead software engineer, Avery, has been quite busy on making this app more interesting and usable.
 One problem that Avery observed with the app was that users would focus on exploring the relatively small map, and then not know what to do: how do you have a conversation with someone else when there is nothing to indicate that you want to talk? If two people are talking, how does a third person know that it is OK to approach them and join the conversation? 
 
 Avery has developed an exciting new feature concept for Covey.Town this semester: **Conversation Areas**.
@@ -100,7 +100,7 @@ Avery's sanity test for this task uses their API client to make a request to cre
 
 The router interfaces with the HTTP server through the variable `app`, which in our case, is a library called [ExpressJS](https://expressjs.com). For tips on working with Express, see the [ExpressJS routing docs](https://expressjs.com/en/guide/routing.html)
 
-📝 Check your work: When you run the sanity test, it should still fail, but this time with the message "Error processing request: This feature is not yet implemented" (the default behavior of `conversationAreaCreateHandler`). If you get this message, then you have successfully completed thisf irst task!
+📝 Check your work: When you run the sanity test, it should still fail, but this time with the message "Error processing request: This feature is not yet implemented" (the default behavior of `conversationAreaCreateHandler`). If you get this message, then you have successfully completed this first task!
 
 ### Task 1.2: Implement business logic to create a conversation area [45 points total]
 With the top of the architecture stack implemented, it's now time to implement some business logic to actually create a conversation area.
