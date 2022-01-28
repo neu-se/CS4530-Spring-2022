@@ -70,6 +70,7 @@ Your final team deliverable will include:
 * A FEATURE.md document that describes the final version of your use cases
 * A DESIGN.md document that includes documentation of your design (using CRC cards, UML class diagrams, and/or UML sequence diagrams as you find necessary; remember that a picture is worth a thousand words!). In particular,
     for any change that you had to make to the existing codebase, provide a rationale for why the change was made, and what alternatives were considered.
+* A revised work breakdown, updated to reflect the work that was actually done and by whom
 * A 10 minute video that demonstrates the usage of your feature
     
 Accompanying the final team deliverable will be an *individual reflection*, which every student must submit on their own, which will include your reflections on:
