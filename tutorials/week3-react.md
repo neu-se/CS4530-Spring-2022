@@ -58,4 +58,65 @@ export default Counter;
 ```
 If we give this a try in the running app, we should find the count variable's value to keep incrementing by one every time the button is clicked.
 After we've got our heads around the code needed to define state, accessing and setting state is fairly simple and elegant.
- 
+
+### useEffect():
+Now let's have a look at how to invoke the code to execute at a certain point in the component's lifecycle.
+Older versions of React consisted of different Lifecycle hooks that allowed a user to hook into various phases of component rendering such as componentDidMount, ComponentDidUpdate, etc. which have all been condensed into a single function called useEffect(). Let us observe how this hook behaves by printing out the count in browser console.
+
+1. As always, we  will start by importing the function from the react library:
+```ts
+import {useEffect} from 'react';
+```
+ 2. Next we will add the function to our existing counter component:
+ ```ts
+ useEffect( ()=> {
+   console.log(`The current count is ${count}`);
+ },[])
+ ```
+ Let's break down this code to understand what is happening:
+ * We use React's useEffect function to hook into the component life cycle.
+ * The function takes in an arrow function, which executes when the component is first rendered.
+ * The function takes in a second parameter, which determines when our arrow function is called. This parameter is an array of values that, when changed, will cause the arrow function to be invoked. In our case, we pass in an empty array, so our arrow function will never be called after the first render.
+ * If we now try the running app and open the console, we'll see Counter first rendering only appears once.
+
+ 3. Let's remove the second parameter into useEffect now:
+ ```ts
+ useEffect( ()=> {
+   console.log(`The current count is ${count}`);
+ });
+ ```
+ * Now we can see that the componenet will render everytime the value of count is changed.
+ * Additionally we can also pass the variable in the array to observe only changes related to a particular value:
+ ```ts
+ useEffect( ()=> {
+   console.log(`The current count is ${count}`);
+ },[count]);
+ ```
+
+ 4. Finally, our component counter will look like:
+ ```ts
+import {useState} from 'react';
+import {useEffect} from 'react';
+
+function Counter() {
+
+  const [count, setCount] = useState(0);
+
+  function incrementCount() {
+    setCount(count + 1);
+  }
+
+  useEffect( ()=> {
+    console.log(`The current count is ${count}`);
+  });
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={incrementCount}>Click me!</button>
+    </div>
+  );
+}
+
+export default Counter;
+ ```
