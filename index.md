@@ -13,7 +13,7 @@ name: CS4530, Fundamentals of Software Engineering
 
 {% if site.announcements %}
 {{ site.announcements.last }}
-[Announcements](announcements.md){: .btn .btn-outline .fs-3 }
+[Announcements]({{ site.baseurl }}{% link announcements.md %}){: .btn .btn-outline .fs-3 }
 {% endif %}
 
 ## Overview

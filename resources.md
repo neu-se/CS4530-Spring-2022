@@ -31,7 +31,7 @@ The definitive list of "code smells" that should be avoiding in programming, mat
 ### Design Patterns
 
 * Book (free via library): ["Design Patterns Explained: A New Perspective on Object-Oriented Design" by Alan Shalloway and James Trott](https://learning.oreilly.com/library/view/design-patterns-explained/0201715945/)<br />In-depth coverage of design patterns, considering why they are important in software development, how to apply them, and descriptions of some common patterns.
-* Book (free via library): ["Refactoring to Patterns" by Joshua Kerievsky](https://learning.oreilly.com/library/view/refactoring-to-patterns/0321213351/)<br />A unification of the class Gang of Four Design Patterns work with Fowler's refactoring work, with practical example of how to introduce patterns into existing code bases to improve code quality. 
+* Book (free via library): ["Refactoring to Patterns" by Joshua Kerievsky](https://learning.oreilly.com/library/view/refactoring-to-patterns/0321213351/)<br />A unification of the classic Gang of Four Design Patterns work with Fowler's refactoring work, with practical example of how to introduce patterns into existing code bases to improve code quality. 
 * ["Fundamentals of Software Architecture" By Mark Richards and Neal Ford](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/)<br />
 An overview of software architectural patterns and their role in successful software projects.
 
