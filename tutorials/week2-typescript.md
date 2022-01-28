@@ -116,9 +116,13 @@ String is the set of all strings and the things you can do with them like concat
 
 Example: 
 ```ts
-let a: any = 666            // any
-let b: any = ['danger']     // any
-let c = a + b               // any
+let employeeName:string = "John Smith"; 
+let employeeDept:string = "Finance"; 
+
+// Post-ES6 
+let employeeDesc: string = `${employeeName} works in the ${employeeDept} department.`; 
+
+console.log(employeeDesc);//John Smith works in the Finance department. 
 ```
 
 *   _Usage_: 
