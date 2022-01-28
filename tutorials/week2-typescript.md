@@ -116,13 +116,12 @@ String is the set of all strings and the things you can do with them like concat
 
 Example: 
 ```ts
-let a: any = 666            // any
-let b: any = ['danger']     // any
-let c = a + b               // any
+let languageName: string = 'TypeScript'; //string
+let sentence: string = `${languageName} is fun!`;            // template string (https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
 ```
 
 *   _Usage_: 
-Any functionality that requires the functionality of a  string of characters. Here are a couple of string operations:
+Any functionality that requires the functionality of a  string of characters. Here are a few of string operations:
 
 **charAt()** : This method returns the character from the specified index. Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.length – 1. 
 
