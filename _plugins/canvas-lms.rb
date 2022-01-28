@@ -151,6 +151,7 @@ class CanvasSyncer
     contents = '<div class="fs-1 text-right fw-300">This content was last updated at: ' + lastModifiedAt + '; you may view it with native formatting <a target="_blank" href="' + permalink+ '">on the course website</a></div>' + contents
 
     contents = contents.gsub(/<a href="\//, '<a target="_blank" href="' + baseURL + '/')
+    contents = contents.gsub(/src="\/CS4530-Spring-2022/, 'src="' + baseURL + '/CS4530-Spring-2022/')
     assignment = {
       name: title,
       description: contents,
