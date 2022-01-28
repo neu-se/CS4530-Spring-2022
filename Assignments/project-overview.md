@@ -58,7 +58,7 @@ Your team will self-organize, as agile teams do and will use the work breakdown 
 The project plan assignment will be released by February 18th.
 
 ### Project Implementation and Documentation
-You will be assigned a mentor for your project who will work closely with you for the entire project. This will weekly meetings and regular sprint demos. Peer evaluation will also be used.
+You will be assigned a mentor for your project who will work closely with you for the entire project. You will coordinate with the mentor to setup weekly meetings and regular sprint demos. Peer evaluation will also be used.
 Your final team deliverable will be a "release" of your new feature on GitHub (with tests), and will be accompanied by a demo.
 *Optionally,* you may also open a pull request to merge your feature into our main repository (submitting a pull request, or the pull request being merged into our
 codebase is independent of the grade you receive, but provides a platform for more visiblity of your project). 
