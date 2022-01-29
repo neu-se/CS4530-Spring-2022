@@ -49,6 +49,112 @@ Let's use **npx** and **create-react-app** to create a new React project
     - After a few seconds, a browser window opens, with our app running:
       ![image](./assets/week3-react/start-screen.png)
 
+## React Component
+React follows a Component based architecture, which consists of various components and interactions between. A component can be considered a repeatable html element with built-in state, business logic, and a lifecycle. A component may be something as simple as a single html element such as an input box, or a button, or a complex entity made up of other components such as the Root (App) component.
+
+Components are the basic building blocks of a React application and they allow the developer to split the UI into independent and reusable
+pieces where each piece can be used in isolation. 
+### Creating a function component in react
+The simplest method to define a component is to write a function in Javascript. These components are also widely referred as functional stateless components but in the recent versions of React, they have the capabilities to contain state as well.
+```ts
+import * as React from "react";
+
+const App: React.SFC<IProps> = (props) => {
+  return (
+      <div className="App">
+        <h1>Welcome to React with Typescript Tutorial.</h1>
+  </div>
+);
+}
+
+export default App;
+```
+
+### A few things to note about React components:
+
+- The root (App) component is the entry point for the React App and all other components are nested in it.
+- We define a function component using an arrow function, passing the props type in as a generic parameter.
+- The import statement is used to import the public classes/functions from the `react` library.
+- We use stateless functional component (SFC) React.SFC to represent these type of components.
+- A function can return a single top level element. 
+  - div is the top level element in this case and other elements can be nested in it.
+    - The attribute `className` is used to specify a CSS class name if CSS properties have been defined seperately for a class.
+    - `className` attribute is used to set or return the value of an element’s class attribute. Using this property, the user can change the class of an element to the desired class.
+- The round brackets (()) after return are used to span a JSX/TSX element across multiple lines.
+- At last , the component needs to be exported from the current file, so that it can be imported somewhere else and can be used either in isolation or combination with other components for rendering on the UI.
+- Elements on one line can be returned directly.
+- Each instance of a component creates a new element independent of other instances on the component.
+- Each component has it's own state, props, and lifecycle (which will be explored later in the tutorial).
+
+
+## Props
+React components are similar to JavaScript functions and can accept arbitrary arguments called props. Since components are reusable, props are especially useful to display different content in each instance of the component. Let us extract the header elements from the previous code snippet into a new component called Header. We can then use props to say "hello" to different users.
+
+- Create a new file in `src/` directory called `Header.tsx`
+- Create and export a function called Header in the file as below:
+```ts
+ const Header: React.SFC<IProps> = (props: {name?: string}) => {
+
+    return (
+      <h1> Hello, {props.name} </h1>
+    );
+
+  }
+
+  Header.defaultProps = {
+    name: 'World'
+  };
+
+  export default Header;
+```
+
+- The above code snippet creates a new function component `Header` and prints the value of the `name` passed in the props.
+- It defines a defaultProps for the component `Header` where the default value for `name` is used in case the value for props for `name` is not passed in any instance of the component.
+
+
+- In App.tsx:
+  - Remove the code in h1 tags.
+  - Import the Header component as below:
+    - ```ts
+       import Header from './Header';
+      ```
+  - Update the contents of return as below:
+    - ```ts
+       <header className="App-header">
+         <Header />
+         <Header name="John" />
+         <Header name="Jane" />
+       </header>
+      ```
+  - Save all files and run npm start
+
+A few things to note from the above example:
+
+- Component.defaultProps can be used to specify default values for props.
+- Curly braces ({}) in JSX/TSX are used for one-way data binding.
+  - In our example, `{props.name}` will display the value of `name` in the html for the cases when the values "John" and "Jane" are passed as props.
+  - If no props are passed for an instance of the component, then it will display the default value of props.
+
+### Template for structure of function component
+```ts
+import * as React from "react";
+
+const ComponentName: React.SFC<IProps> = props => {
+ const handler = () => {
+ ...
+ };
+
+ return (
+  <div>Our TSX</div>
+ );
+};
+ComponentName.defaultProps = {
+ ...
+};
+
+export default ComponentName;
+```
+
 # Handling Events
 
 -   React impelemnts its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
