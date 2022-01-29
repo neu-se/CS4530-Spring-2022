@@ -5,6 +5,71 @@ permalink: /tutorials/week2-typescript-basics
 parent: Tutorials
 nav_order: 2
 ---
+# React Basics
+
+This tutorial covers the basic concepts of react. By the end of this tutorial, you will be able to create a new react app, understand the basic concepts of react such as states and props, understand React hooks and handling events.
+
+-   [React Basics](#)
+-   [Creating a new React App](#)
+-   [Understanding a React App](#)
+    -   [Components](#)
+    -   [Props](#)
+    -   [Handling Events](#)
+    -   [The this problem](#)
+-   [React Hooks](#)
+    -   [State and Event Binding](#)
+    -   [Lifecycle Hooks](#)
+
+# Creating a new React App
+
+Let's use **npx** and **create-react-app** to create a new React project
+
+-   **npx** stands for Node Package Execute. It is a runner that can execute any package that you want from the npm registry without even installing that package. In this case npx tool temporarily installs the create-react-app npm package and uses it to create our project.
+
+-   **create-react-app** is a command-line tool that we can use to quickly create a React and TypeScript app with lots of useful pieces.
+
+1. We use the create-react-app npm package to create a React and TypeScript project by entering the following:
+
+    ```ts
+    npx create-react-app my-app --typescript
+    ```
+
+    - Note 1: This will create a new project directory called my-app under the current directory.
+    - Note 2: This will create a git repo in my-app, so you probably shouldn't do this inside a pre-existing git repository.
+
+2. Navigate to the project directory using the command:
+    ```ts
+    cd my-app
+    ```
+3. To start the development server for React, run the command:
+    ```ts
+    npm start
+    ```
+4. Navigate to http://localhost:3000/ to see the default react page.
+    - After a few seconds, a browser window opens, with our app running:
+      ![image](./assets/week3-react/start-screen.png)
+
+# Handling Events
+
+-   React impelemnts its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
+    -   React events are named using camelCase, rather than lower case.
+    -   With JSX a function can be passed as an event handler instead of a string.
+
+For example, the HTML
+
+```html
+<button onclick="incrementCounter()">
+    Increment Counter
+</button>
+```
+
+is slightly different in React:
+
+```html
+<button onclick={incrementCounter}>
+    Increment Counter
+</button>
+```
 
 ## React Hooks
 React hooks are built-in functions which allows us to use state and other lifecycle features. The most basic hooks used by react are useState() which adds a state variable to a react component and useEffect() which is the lifecycle hook for a component. State of component referes to the data it is holding at a particular moment in time.
