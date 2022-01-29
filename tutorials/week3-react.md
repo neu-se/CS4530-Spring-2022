@@ -5,6 +5,51 @@ permalink: /tutorials/week2-typescript-basics
 parent: Tutorials
 nav_order: 2
 ---
+
+# React Basics
+
+This tutorial covers the basic concepts of react. By the end of this tutorial, you will be able to create a new react app, understand the basic concepts of react such as states and props, understand React hooks and handling events.
+
+-   [React Basics](#)
+-   [Creating a new React App](#)
+-   [Understanding a React App](#)
+    -   [Components](#)
+    -   [Props](#)
+    -   [Handling Events](#)
+    -   [The this problem](#)
+-   [React Hooks](#)
+    -   [State and Event Binding](#)
+    -   [Lifecycle Hooks](#)
+
+# Creating a new React App
+
+Let's use **npx** and **create-react-app** to create a new React project
+
+-   **npx** stands for Node Package Execute. It is a runner that can execute any package that you want from the npm registry without even installing that package. In this case npx tool temporarily installs the create-react-app npm package and uses it to create our project.
+
+-   **create-react-app** is a command-line tool that we can use to quickly create a React and TypeScript app with lots of useful pieces.
+
+1. We use the create-react-app npm package to create a React and TypeScript project by entering the following:
+
+    ```ts
+    npx create-react-app my-app --typescript
+    ```
+
+    - Note 1: This will create a new project directory called my-app under the current directory.
+    - Note 2: This will create a git repo in my-app, so you probably shouldn't do this inside a pre-existing git repository.
+
+2. Navigate to the project directory using the command:
+    ```ts
+    cd my-app
+    ```
+3. To start the development server for React, run the command:
+    ```ts
+    npm start
+    ```
+4. Navigate to http://localhost:3000/ to see the default react page.
+    - After a few seconds, a browser window opens, with our app running:
+      ![image](./assets/week3-react/start-screen.png)
+
 ## React Component
 React follows a Component based architecture, which consists of various components and interactions between. A component can be considered a repeatable html element with built-in state, business logic, and a lifecycle. A component may be something as simple as a single html element such as an input box, or a button, or a complex entity made up of other components such as the Root (App) component.
 
@@ -111,6 +156,27 @@ ComponentName.defaultProps = {
 export default ComponentName;
 ```
 
+# Handling Events
+
+-   React impelemnts its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
+    -   React events are named using camelCase, rather than lower case.
+    -   With JSX a function can be passed as an event handler instead of a string.
+
+For example, the HTML
+
+```html
+<button onclick="incrementCounter()">
+    Increment Counter
+</button>
+```
+
+is slightly different in React:
+
+```html
+<button onclick={incrementCounter}>
+    Increment Counter
+</button>
+```
 
 ## React Hooks
 React hooks are built-in functions which allows us to use state and other lifecycle features. The most basic hooks used by react are useState() which adds a state variable to a react component and useEffect() which is the lifecycle hook for a component. State of component referes to the data it is holding at a particular moment in time.
@@ -164,4 +230,65 @@ export default Counter;
 ```
 If we give this a try in the running app, we should find the count variable's value to keep incrementing by one every time the button is clicked.
 After we've got our heads around the code needed to define state, accessing and setting state is fairly simple and elegant.
- 
+
+### useEffect():
+Now let's have a look at how to invoke the code to execute at a certain point in the component's lifecycle.
+Older versions of React consisted of different Lifecycle hooks that allowed a user to hook into various phases of component rendering such as componentDidMount, ComponentDidUpdate, etc. which have all been condensed into a single function called useEffect(). Let us observe how this hook behaves by printing out the count in browser console.
+
+1. As always, we  will start by importing the function from the react library:
+```ts
+import {useEffect} from 'react';
+```
+ 2. Next we will add the function to our existing counter component:
+ ```ts
+ useEffect( ()=> {
+   console.log(`The current count is ${count}`);
+ },[])
+ ```
+ Let's break down this code to understand what is happening:
+ * We use React's useEffect function to hook into the component life cycle.
+ * The function takes in an arrow function, which executes when the component is first rendered.
+ * The function takes in a second parameter, which determines when our arrow function is called. This parameter is an array of values that, when changed, will cause the arrow function to be invoked. In our case, we pass in an empty array, so our arrow function will never be called after the first render.
+ * If we now try the running app and open the console, we'll see Counter first rendering only appears once.
+
+ 3. Let's remove the second parameter into useEffect now:
+ ```ts
+ useEffect( ()=> {
+   console.log(`The current count is ${count}`);
+ });
+ ```
+ * Now we can see that the componenet will render everytime the value of count is changed.
+ * Additionally we can also pass the variable in the array to observe only changes related to a particular value:
+ ```ts
+ useEffect( ()=> {
+   console.log(`The current count is ${count}`);
+ },[count]);
+ ```
+
+ 4. Finally, our component counter will look like:
+ ```ts
+import {useState} from 'react';
+import {useEffect} from 'react';
+
+function Counter() {
+
+  const [count, setCount] = useState(0);
+
+  function incrementCount() {
+    setCount(count + 1);
+  }
+
+  useEffect( ()=> {
+    console.log(`The current count is ${count}`);
+  });
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={incrementCount}>Click me!</button>
+    </div>
+  );
+}
+
+export default Counter;
+ ```
