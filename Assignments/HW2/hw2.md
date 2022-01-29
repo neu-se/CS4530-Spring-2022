@@ -8,12 +8,15 @@ due_date: "Friday February 11, 10:00pm EST"
 submission_notes: Submit on GradeScope 
 ---
 
+### Change Log
+* 1/28/22: Initial Relase
+* 1/29/22: Clarify expected return type of `conversationAreas` route
+
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
 Covey.Town is a collective effort of many contributors, and by the end of the semester, you will have the option to submit a pull request to merge a new feature into the codebase, and become a direct contributor yourself.
 
 We understand that some of you may have some web development experience, but don't expect that most of you do, and hence, have created this series of three individual assignments to help you get up to speed with our existing codebase and development environment.
-
 ## The new feature: Conversation Areas
 In the original release of Covey.Town (demoed at [https://spring2021.covey.town](https://spring2021.covey.town)), users connect to a "Town", which provides a 2D arcade-style map that users can walk around in.
 When two users get close, they are able to see and hear each other through a video call.
@@ -96,7 +99,7 @@ export interface ConversationAreaCreateRequest {
 
 Avery's sanity test for this task uses their API client to make a request to create a conversation area. You can run it right now, by running the command `npm test CoveyTownConversationAPI`. Before you implement this task, you should expect to see the tests fail, with a message `Request failed with status code 404` (404 is the error code that indicates that an address does not exist). 
 
-**The route**. Following the example routes that already exist in `router/towns.ts`, create the new route as specified above in the file `router/towns.ts`. Your route should follow the conventions in the other routes: forward the request on to the `conversationAreaCreateHandler` and `await` the response. If `conversationAreaCreateHandler` returns `true`, return the response with the HTTP status code `OK`. If `conversationAreaCreateHandler` throws an error, log the error and return a response with HTTP status `INTERNAL_SERVER_ERROR`, and the message `Internal server error, please see log in server for more details`.
+**The route**. Following the example routes that already exist in `router/towns.ts`, create the new route as specified above in the file `router/towns.ts`. Your route should follow the conventions in the other routes: forward the request on to the `conversationAreaCreateHandler` and `await` the response. If `conversationAreaCreateHandler` returns `true`, return the response with the HTTP status code `OK` and a `response` of `{}`. If `conversationAreaCreateHandler` throws an error, log the error and return a response with HTTP status `INTERNAL_SERVER_ERROR`, a `reponse` of `{}`, and the message `Internal server error, please see log in server for more details`.
 
 The router interfaces with the HTTP server through the variable `app`, which in our case, is a library called [ExpressJS](https://expressjs.com). For tips on working with Express, see the [ExpressJS routing docs](https://expressjs.com/en/guide/routing.html)
 
