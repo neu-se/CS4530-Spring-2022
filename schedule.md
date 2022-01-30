@@ -16,7 +16,7 @@ nav_order: 1
 | Mar 7-11      | Deployment Infrastructure<br />Continuous Development + DevOps            | Project Plan due                                                       |
 | Mar 14-18     | Spring Break!                                                             |                                                                        |
 | Mar 21-25     | Software Architecture<br />SE for Distributed Systems                     | HW 4 Due                                                               |
-| Marh 28-Apr 1 | Static Analysis & Bug-Finders / Code Smells & Refactoring; Technical Debt |                                                                        |
+| Mar 28-Apr 1 | Static Analysis & Bug-Finders / Code Smells & Refactoring; Technical Debt |                                                                        |
 | Apr 4-8       | Engineering Equitable Software<br />Estimation                            |                                                                        |
 | Apr 11-15     | Team Meetings + Advanced Topics                                           |                                                                        |
 | Apr 18-22     | Demos                                                                     | Final Project Report + Implementation Due                              |
