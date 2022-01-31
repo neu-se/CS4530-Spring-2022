@@ -12,7 +12,7 @@ In order to do so, `CoveyTownController`  has a method called `updatePlayerLocat
 
 #### **Objective for the task :**
 
-Uopn implementing this method, the list  `_conversationAreas` (in town controller) must track and reflect the players’ movement by updating the `occupantsByID` property on any effected conversation areas.
+Upon implementing this method, the list  `_conversationAreas` (in town controller) must track and reflect the players’ movement by updating the `occupantsByID` property on any effected conversation areas.
 
 For any conversation areas updated, you must emit a `onConversationAreaUpdated` event.
 
@@ -27,7 +27,7 @@ and you might also consider extending it.
 ### **Task 2.2: Remove participants from conversation when they disconnect** 
 
 1. When a player disconnects from the server, any resources used by that player must be cleaned up by the `CoveyTownController`’s `destroySession` method.
-1. Update `destroySession` to remove disconnected players from any conversation area that they had been a participant in and emit any `onConversationAreaUpdated` events as necessary.
+2. Update `destroySession` to remove disconnected players from any conversation area that they had been a participant in and emit any `onConversationAreaUpdated` events as necessary.
 
 📝 Testing : There are no sanity tests available, you can test it manually by writing your own testcases that test this behaviour. 
 
