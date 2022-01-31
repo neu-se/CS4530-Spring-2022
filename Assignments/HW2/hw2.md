@@ -11,6 +11,7 @@ submission_notes: Submit on GradeScope
 ### Change Log
 * 1/28/22: Initial Relase
 * 1/29/22: Clarify expected return type of `conversationAreas` route
+* 1/31/22: Clarify route specification, clarify behavior of `addCoversationArea` (2.1), update handout test for 2.1 to clearly specify the intended location to use is `userLocation.conversationLabel` ((diff)[https://github.com/neu-se/CS4530-Spring-2022/commit/TODO])
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -99,7 +100,7 @@ export interface ConversationAreaCreateRequest {
 
 Avery's sanity test for this task uses their API client to make a request to create a conversation area. You can run it right now, by running the command `npm test CoveyTownConversationAPI`. Before you implement this task, you should expect to see the tests fail, with a message `Request failed with status code 404` (404 is the error code that indicates that an address does not exist). 
 
-**The route**. Following the example routes that already exist in `router/towns.ts`, create the new route as specified above in the file `router/towns.ts`. Your route should follow the conventions in the other routes: forward the request on to the `conversationAreaCreateHandler` and `await` the response. If `conversationAreaCreateHandler` returns `true`, return the response with the HTTP status code `OK` and a `response` of `{}`. If `conversationAreaCreateHandler` throws an error, log the error and return a response with HTTP status `INTERNAL_SERVER_ERROR`, a `reponse` of `{}`, and the message `Internal server error, please see log in server for more details`.
+**The route**. Following the example routes that already exist in `router/towns.ts`, create the new route as specified above in the file `router/towns.ts`. Your route should follow the conventions in the other routes: forward the request on to the `conversationAreaCreateHandler` and `await` the response. If `conversationAreaCreateHandler` throws no error, then return the response from the handler as JSON, with the HTTP status code `OK`. If `conversationAreaCreateHandler` throws an error, log the error and return a response with HTTP status `INTERNAL_SERVER_ERROR`, a JSON response of `{message: 'Internal server error, please see log in server for more details'}`.
 
 The router interfaces with the HTTP server through the variable `app`, which in our case, is a library called [ExpressJS](https://expressjs.com). For tips on working with Express, see the [ExpressJS routing docs](https://expressjs.com/en/guide/routing.html)
 
@@ -131,6 +132,7 @@ Implement the method `addConversationArea` method in `CoveyTownController`. Reca
   * The `x, y` position of the box denotes the *center* of the box on the map, `height` and `width` represent the overall height and width of the box.
 4. Any players who are in the region defined by the `boundingBox` of the new conversation area should be added to it as `occupants`, and those players should have their `_activeConversationArea` property set to that new conversation area.
     * A player is defined as inside of a box if the `x, y` position of the player is anywhere within the bounding box. A player who overlaps only with the edge of a conversation area's bounding box is not in the box.
+    * This behavior *only* applies when a conversation area is created. After the conversation area is created, the server does *not* set the `_activeConversationArea` property on any player.
 5. Notify all listeners that are subscribed to this town that the newly created conversation area was created, by invoking `onConversationAreaUpdated(theNewConversationArea)` on each.
 
 This is a much bigger task than the first one. Note that you will undoubtedly find it useful to add new helper methods (private or public), perhaps in `CoveyTownController`, `Player`, or both. You *must not* add additional fields to track the conversation area's state: the data model that Avery defined is the data model that you must use!
@@ -151,9 +153,11 @@ We suggest that you submit your code at this point on GradeScope, which will run
 Congratulations on making it this far! You are almost done, there are only two more tasks to complete the feature.
 
 ### Task 2.1: Track conversation participants [15 points]
-In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's movement (updating the `occupantsByID` property on any effected conversation areas). If any conversation areas are updated, you must emit a `onConversationAreaUpdated` event, similarly to how you did in Task 1.2 when a conversation is created.
+In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. You should use the `conversationLabel` property on the `UserLocation` that is passed to `updatePlayerLocation` to identify the user's current conversation area (as reported by that user).
 
-Note that you might need to send multiple `onConversationAreaUpdated` events: one for a user leaving an area and one for them entering another. It is important that no client ever believe that a user is in two conversation areas at the same time. Hence, be sure to send the "exit" update before the "enter" update.
+Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's transition between conversation areas, updating the `occupantsByID` property on any effected conversation areas. You must also update the `Player` instance, setting the property `activeConversationArea` to be the `ServerConversationArea` instance representing that converation area that the player is now part of (or `undefined` if they are no longer within one).
+
+If any conversation areas are updated, you must emit a `onConversationAreaUpdated` event, similarly to how you did in Task 1.2 when a conversation is created. Note that you might need to send multiple `onConversationAreaUpdated` events: one for a user leaving an area and one for them entering another. It is important that no client ever believe that a user is in two conversation areas at the same time. Hence, be sure to send the "exit" update before the "enter" update.
 
 📝 Check your work: Again, Avery has provided a single sanity test that checks some of the behavior defined above. You can run this test with the command `npm test -- -t 'CoveyTownController updatePlayerLocation'`, and you might also consider extending it.
 
