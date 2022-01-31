@@ -174,3 +174,10 @@ You should then also have the option to create an account on GradeScope (if you 
 Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.
 
 To submit your assignment: run the command `npm run-script zip`. GradeScope will provide you with feedback on your submission, but note that it will *not* include any marks that will be assigned after we manually grade your submission for code style (it will show 0 for this until it is graded).
+
+## Setting Up a Local Development Environment for HW2
+
+1. Download and unpack [hw2-handout.zip]({{site.baseurl}}{%link /Assignments/HW2/hw2-handout.zip %}). You should have a directory `hw2-handout` containing `package.json`, `src/` and a bunch of other files.
+2. Open `hw2-handout` in VSCode.
+3. Open up the VSCode terminal with `ctrl + ~`. Alternatively, you can also open a seperate terminal/cmd. Please make sure the shell is in the same folder as your `package.json`. Fetch all the necessary dependancies by running `npm install`.
+4. The package also includes some basic sanity tests, which you can run by saying `npm test`.
