@@ -24,7 +24,8 @@ Select projects from Spring 2021 are hosted [in our project showcase](https://ne
 | Date | Deliverable | Description | 
 | -----| ----------- | ----------- |
 | 2/9/22 | [Team Formation](https://docs.google.com/forms/d/e/1FAIpQLSdf7hc6AZ80f9pwAOV7vPsJxpQ-0KWy_kkIABLkP761V4UPPw/viewform?usp=sf_link) | Specify preferences for teammates |
-| 2/21/22 | Project Pitch | Propose a new feature for Covey.Town that can be implemented within 5 weeks |
+| 2/18/22 | Kickoff Team Meeting | Meet with your assigned TA mentor to discuss your project concept |
+| 2/25/22 | Project Pitch | Propose a new feature for Covey.Town that can be implemented within 5 weeks |
 | 3/11/22 | Project Plan | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. Propose a high-level design. |
 | 5/22/22 | Project Implementation and Documentation | Deliver your new feature, including design documentation and tests |
 
@@ -36,6 +37,10 @@ All students in each team must be in the same section of the class.
 
 Complete the [team formation](https://docs.google.com/forms/d/e/1FAIpQLSdf7hc6AZ80f9pwAOV7vPsJxpQ-0KWy_kkIABLkP761V4UPPw/viewform?usp=sf_link) before Feb 9.
 
+### Team Meetings with TA Mentor
+Each team will be assigned a TA to act as a mentor, who will also serve as your point of contact for project grading.
+During the week of February 14-18, you will have a "Kickoff Meeting" with your TA mentor, where you will meet your TA mentor and have the opportunity to share any early ideas that you might want feedback on before submitting the project pitch.
+Once project begins in full force, you will have weekly meetings with your TA mentor (scheduled at your team's and the TA's convenience) in order to help ensure that you are making progress on the project, and to help address problems that you encounter (be they technical or non-technical problems).
 ### Project Pitch
 All projects will involve frontend and backend development of a new feature for Covey.Town.
 Once teams have been formed, you and your team will decide what kind of new feature you would like to build.
@@ -49,9 +54,9 @@ The project pitch assignment will be released on February 11th.
 ### Project Plan
 Based on the feedback that you receive from the course staff, you will propose a detailed plan to implement your new feature.
 The project plan will include:
-* Revised user stories and acceptance criteria (based on feedback on the project pitch)
-* High level architecture: Describe the key components in your feature (or how your feature relates to the existing components of Covey.Town)
-* Work breakdown: Map your user stories to engineering tasks. Assign each task to a team member (or pair of team members), provide an estimate for how long each task will take, and schedule those stories into 2 week sprints.
+* Revised user stories and conditions of satisfaction (based on feedback on the project pitch)
+* Revised design documents (based on feedback on the project pitch)
+* Work breakdown: Map your user stories to engineering tasks. Assign each task to a team member (or pair of team members), provide an estimate for how long each task will take, a rationale for that estimate, and schedule those stories into 2 week sprints.
 
 Your team will self-organize, as agile teams do and will use the work breakdown and schedule as the basis for weekly check-ins with your team's TA.
 
