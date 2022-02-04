@@ -12,6 +12,7 @@ submission_notes: Submit on GradeScope
 * 1/28/22: Initial Release
 * 1/29/22: Clarify expected return type of `conversationAreas` route
 * 1/31/22: Clarify route specification, clarify behavior of `updatePlayerLocation` (2.1), update handout test for 2.1 to clearly specify the intended location to use is `userLocation.conversationLabel` ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f7ce445fb51f99afc37c74fe94a21d4c4c3051bd))
+* 2/4/22: Clarify task 2.3 introductory language
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -167,7 +168,7 @@ When a player disconnects from the server, there is no "movement" that happens, 
 📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provdied to test this behavior.
 
 ### Task 2.3: Automatically end a conversation when it's unoccupied [5 points]
-When a conversation area is unoccupied, it should show a default greeting message, encouraging any new user to set a conversation topic. Hence, we need some logic to destroy a conversation when there are no longer any occupants in it. When the last player leaves a conversation area, destroy it, emit the `onConversationAreaDestroyed` event to each of the town controller's listeners, *and do not* emit a `onConversationAreaUpdated`. When emitting an `onConversationAreaDestroyed` message, the `occupantsByID` array should be set to an empty array.
+When a conversation area is not in use, the frontend should show a default greeting message, encouraging any new user to set a conversation topic. Hence, we need some logic to destroy a conversation area when there are no longer any occupants in it, so that the frontend can show that default message. When the last player leaves a conversation area, destroy it, emit the `onConversationAreaDestroyed` event to each of the town controller's listeners, *and do not* emit a `onConversationAreaUpdated`. When emitting an `onConversationAreaDestroyed` message, the `occupantsByID` array should be set to an empty array.
 
 📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provdied to test this behavior.
 
