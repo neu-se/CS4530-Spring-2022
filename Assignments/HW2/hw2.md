@@ -12,7 +12,7 @@ submission_notes: Submit on GradeScope
 * 1/28/22: Initial Release
 * 1/29/22: Clarify expected return type of `conversationAreas` route
 * 1/31/22: Clarify route specification, clarify behavior of `updatePlayerLocation` (2.1), update handout test for 2.1 to clearly specify the intended location to use is `userLocation.conversationLabel` ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f7ce445fb51f99afc37c74fe94a21d4c4c3051bd))
-* 2/4/22: Clarify task 2.3 introductory language
+* 2/4/22: Clarify task 2.3 introductory language ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f842dfef57ab468a0bd41f81cba07a90810b8f10))
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
