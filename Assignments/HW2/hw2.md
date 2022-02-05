@@ -165,12 +165,15 @@ If any conversation areas are updated, you must emit a `onConversationAreaUpdate
 ### Task 2.2: Remove participants from conversation if they disconnect [10 points]
 When a player disconnects from the server, there is no "movement" that happens, but any resources used by that player are cleaned up by the `CoveyTownController`'s `destroySession` method. Update `destroySession` to remove disconnected players from any conversation area that they had been a participant in and emit any `onConversationAreaUpdated` events as necessary. 
 
-📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provdied to test this behavior.
+📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provided to test this behavior.
 
 ### Task 2.3: Automatically end a conversation when it's unoccupied [5 points]
-When a conversation area is not in use, the frontend should show a default greeting message, encouraging any new user to set a conversation topic. Hence, we need some logic to destroy a conversation area when there are no longer any occupants in it, so that the frontend can show that default message. When the last player leaves a conversation area, destroy it, emit the `onConversationAreaDestroyed` event to each of the town controller's listeners, *and do not* emit a `onConversationAreaUpdated`. When emitting an `onConversationAreaDestroyed` message, the `occupantsByID` array should be set to an empty array.
+Avery has implemented logic on the frontend to show a default greeting message when there is no conversation area defined for a space.
+The code that you are implementing, then, needs to notify the frontend when a conversation area becomes unoccupied.
+When the last player leaves a conversation area emit the `onConversationAreaDestroyed(destroyedArea:ServerConversationArea)` event to each of the town controller's listeners, and then remove that conversation area from the town controller's list of conversation areas.
+When the last player leaves a conversation area, there is no need to emit a `onConversationAreaUpdated`.
 
-📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provdied to test this behavior.
+📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provided to test this behavior.
 
 ## Submission Instructions
 Submit your assignment in GradeScope. The easiest way to get into GradeScope the first time is to first
