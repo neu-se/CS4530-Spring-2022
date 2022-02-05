@@ -13,6 +13,7 @@ submission_notes: Submit on GradeScope
 * 1/29/22: Clarify expected return type of `conversationAreas` route
 * 1/31/22: Clarify route specification, clarify behavior of `updatePlayerLocation` (2.1), update handout test for 2.1 to clearly specify the intended location to use is `userLocation.conversationLabel` ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f7ce445fb51f99afc37c74fe94a21d4c4c3051bd))
 * 2/4/22: Clarify task 2.3 introductory language ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f842dfef57ab468a0bd41f81cba07a90810b8f10))
+* 2/5/22: Clarify conversation -> conversation area; rework 2.3 text to be clearer ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/284fdb83fec1e89a4bd1d6907d827e20fb296bde))
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -140,7 +141,7 @@ This is a much bigger task than the first one. Note that you will undoubtedly fi
 
 📝 Check your work: Avery has also provided a single unit test for `addConversationArea`, which you can run with `npm test -- -t 'CoveyTownController addConversationArea'`. You can also run this test directly in VSCode. Of course, you may find it useful to write additional tests (either writing new tests, or modifying the behavior of this one to check more interesting behaviors). There is also a complete test suite for this task on GradeScope.
 
-### Task 1.3: Include current conversations in join response [10 points]
+### Task 1.3: Include current conversation areas in join response [10 points]
 If you completed task 1.2 correctly, then all players who are in the town when a new converation is made will be notified of the new converation area. The last task to complete before we can move on to frontend implementation of this feature is to update the backend service to include the list of all current conversation areas when a new player joins the town. 
 
 In the file `CoveyTownRequestHandler.ts`, examine the method `townJoinHandler` and the type `TownJoinResponse`. Your objective for this task is to update the `TownJoinResponse` type to include a new field, `conversationAreas`, of type `ServerConversationArea[]`, and to update the `townJoinHandler` to include the current list of converation areas for the town that the user has joined.
@@ -153,7 +154,7 @@ We suggest that you submit your code at this point on GradeScope, which will run
 ## Part 2: Completing the TownService responsibilities [30 points total]
 Congratulations on making it this far! You are almost done, there are only two more tasks to complete the feature.
 
-### Task 2.1: Track conversation participants [15 points]
+### Task 2.1: Track conversation area participants [15 points]
 In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. You should use the `conversationLabel` property on the `UserLocation` that is passed to `updatePlayerLocation` to identify the user's current conversation area (as reported by that user).
 
 Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's transition between conversation areas, updating the `occupantsByID` property on any effected conversation areas. You must also update the `Player` instance, setting the property `activeConversationArea` to be the `ServerConversationArea` instance representing that converation area that the player is now part of (or `undefined` if they are no longer within one).
@@ -162,12 +163,12 @@ If any conversation areas are updated, you must emit a `onConversationAreaUpdate
 
 📝 Check your work: Again, Avery has provided a single sanity test that checks some of the behavior defined above. You can run this test with the command `npm test -- -t 'CoveyTownController updatePlayerLocation'`, and you might also consider extending it.
 
-### Task 2.2: Remove participants from conversation if they disconnect [10 points]
+### Task 2.2: Remove participants from conversation area if they disconnect [10 points]
 When a player disconnects from the server, there is no "movement" that happens, but any resources used by that player are cleaned up by the `CoveyTownController`'s `destroySession` method. Update `destroySession` to remove disconnected players from any conversation area that they had been a participant in and emit any `onConversationAreaUpdated` events as necessary. 
 
 📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provided to test this behavior.
 
-### Task 2.3: Automatically end a conversation when it's unoccupied [5 points]
+### Task 2.3: Automatically end a conversation area when it's unoccupied [5 points]
 Avery has implemented logic on the frontend to show a default greeting message when there is no conversation area defined for a space.
 The code that you are implementing, then, needs to notify the frontend when a conversation area becomes unoccupied.
 When the last player leaves a conversation area emit the `onConversationAreaDestroyed(destroyedArea:ServerConversationArea)` event to each of the town controller's listeners, and then remove that conversation area from the town controller's list of conversation areas.
