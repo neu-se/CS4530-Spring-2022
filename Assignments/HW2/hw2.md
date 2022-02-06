@@ -14,6 +14,7 @@ submission_notes: Submit on GradeScope
 * 1/31/22: Clarify route specification, clarify behavior of `updatePlayerLocation` (2.1), update handout test for 2.1 to clearly specify the intended location to use is `userLocation.conversationLabel` ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f7ce445fb51f99afc37c74fe94a21d4c4c3051bd))
 * 2/4/22: Clarify task 2.3 introductory language ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f842dfef57ab468a0bd41f81cba07a90810b8f10))
 * 2/5/22: Clarify conversation -> conversation area; rework 2.3 text to be clearer ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/284fdb83fec1e89a4bd1d6907d827e20fb296bde))
+* 2/6/22: Add note clarifying that Task 1.1 tests can not run on GradeScope until after Task 1.3 is completed; this does not impact Task 1.2 
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -107,6 +108,8 @@ Avery's sanity test for this task uses their API client to make a request to cre
 The router interfaces with the HTTP server through the variable `app`, which in our case, is a library called [ExpressJS](https://expressjs.com). For tips on working with Express, see the [ExpressJS routing docs](https://expressjs.com/en/guide/routing.html)
 
 📝 Check your work: When you run the sanity test, it should still fail, but this time with the message "Error processing request: This feature is not yet implemented" (the default behavior of `conversationAreaCreateHandler`). If you get this message, then you have successfully completed this first task!
+
+Note: Due to the complexity of writing these tests to work with partial implementations, the GradeScope tests for Task 1.1 *will not pass* until after you get to Task 1.3. The Task 1.2 tasks do *not* have this dependency: so once you are fairly certain that Task 1.1 is implemented correctly, continue with the rest of Task 1, and don't expect the GradeScope tests for  Task 1.1 to pass until after you implement 1.3.
 
 ### Task 1.2: Implement business logic to create a conversation area [45 points total]
 With the top of the architecture stack implemented, it's now time to implement some business logic to actually create a conversation area.
