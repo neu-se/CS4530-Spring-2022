@@ -3,7 +3,7 @@ layout: module
 title: Week 4 - Async Programming and Debugging
 permalink: /modules/week4-async
 parent: Modules
-nav_order: 2
+nav_order: 4
 lessons: #I know that it seems a bit annoying to have to put each lesson in the yaml header like this...
          #But, the benefit is that if you do it like this, the site
          #will automatically add the lecture on Canvas, including  
