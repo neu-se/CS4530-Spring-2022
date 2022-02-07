@@ -32,28 +32,37 @@ Your project pitch must include:
 * User stories and acceptance criteria: high level description of how users will interact with your new feature. User stories are requirements specified in the format 
 "As a < type of user >, I want < some goal > so that < some reason >."
 My conditions of satisfaction are < list of common cases and special cases that must work >.
-You should include at least 3 different user stories to describe how users will interact with your feature.
-Your 3 user stories should cover the key behavior that your feature will provide.
-Optionally, you may include *more* user stories, but please be sure to specify which are *must have* user stories and which are *optional* user stories (to be implemented only if you have enough time).
+You should include three different user stories to describe how users will interact with your feature.
+Your three user stories should cover the key behavior that your feature will provide.
+Do not provide more than three user stories.
+* Preliminary class-level design (CRC cards): Start to think about how you will implement this feature. What are the new classes that you are going to add to the Covey.Town codebase, and how will they interact with any existing classes? Create CRC cards that demonstrate the way that your feature will fit in with the existing codebase, creating cards for your new classes, and for any existing classes that you will anticipate modifying. Please refer to Lesson 2.4 (slides 20-21) for more details about CRC cards, and examples of CRC cards. 
 
 You can find good examples of user stories [on this GSA website](https://tech.gsa.gov/guides/user_story_example/). The most important part of this process is for you to convey to us what feature you plan to build, how you expect it to be used, and once it's built, how you will judge that it is built correctly.
 
-
 ## Submission 
-Your project pitch should be 1-2 pages in length, and submitted as a PDF in GradeScope to the assignment "Project Pitch."
+Your project pitch should be 2-4 pages in length, and submitted as a PDF in GradeScope to the assignment "Project Pitch."
 Each team submits a single document to GradeScope: when uploading the submission, GradeScope will ask you who your teammates are, and then will associate this submission with every member of your team.
-This assignment is due Feb 26. **In order to provide timely feedback on your project pitch, we can not allow any DRC accomodations for late submissions on this assignment.**
+This assignment is due Feb 25. **In order to provide timely feedback on your project pitch, we can not allow any DRC accomodations for late submissions on this assignment.**
 
 
 ## Grading
-The project pitch will be graded on the following rubric:
+The project pitch will account for 10% of your project grade. The grading of the project pitch is further broken down as follows:
 
-Satisfactory:
-* Project pitch includes at least one paragraph that provides a summary of what problem the proposed feature solves and why you are interested in building this feature (more text is permitted, but not necessarily encouraged or required)
-* Project pitch includes 3 user stories that cover the key behaviors described in the overall summary. Each user story includes conditions of satisfaction.
+Introductory problem statement (10%):
+* Receive full marks if there is a narrative consisting of 4-10 sentences that describes a specific problem that your project aims to solve.
+* Receive partial credit if the narrative is present, but does not describe a problem that the project aims to solve
 
-Meets minimum expectations:
-* Project pitch includes at least one paragraph that provides a summary of what problem the proposed feature solves and why you are interested in building this feature (more text is permitted, but not necessarily encouraged or required)
-* Project pitch includes 3 user stories that cover the key behaviors described in the overall summary. User stories might not include conditions of satisfaction.
+User stories (60%):
+Each of the three user stories will account for 20% of your grade on this assignment and graded as follows:
+* Receive full marks if:
+  * The user story fits the problem statement
+  * The user story satisfies the INVEST criteria for good user stories
+  * The user story includes conditions of satisfaction that cover the "normal" expected behavior of the feature, and any relevant error cases
 
-Submissions that do not meet the criteria for "meets minimum expectations" will receive no credit.
+CRC cards (30%):
+Your CRC cards will be evaluated holistically on the following rubric:
+* There are a sufficient number of CRC cards provided such that it will be possible to define realistic engineering tasks to implement your feature based on the classes and their responsibilities.
+* The names of new classes must follow our course style guide.
+* Each CRC card must include a short phrase or two describing the responsibilities of the type in the context of the application
+* Each CRC card must include all relevant collaborators (when these can be determined from the codebase)
+* Each CRC card must include a description of the state that is kept by objects of the class.
