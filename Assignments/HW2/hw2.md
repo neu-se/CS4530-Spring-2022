@@ -15,6 +15,7 @@ submission_notes: Submit on GradeScope
 * 2/4/22: Clarify task 2.3 introductory language ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f842dfef57ab468a0bd41f81cba07a90810b8f10))
 * 2/5/22: Clarify conversation -> conversation area; rework 2.3 text to be clearer ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/284fdb83fec1e89a4bd1d6907d827e20fb296bde))
 * 2/6/22: Add note clarifying that Task 1.1 tests can not run on GradeScope until after Task 1.3 is completed; this does not impact Task 1.2 
+* 2/9/22: Add debugging tips
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -69,6 +70,13 @@ We will review your code and note each violation of this rubric. We will deduct 
 Please post any questions about this assignment on Piazza. We have many sections of this class, and we want to make sure that we respond to your questions the same way, regardless of which section you are in.
 
 You may not make changes to `package.json` or to the lint configuration. You may not use `ts-ignore` or `eslint-disable` annotations.
+
+### How To Use GradeScope's Test Suite Effectively
+We have provided a very thorough test suite on GradeScope, but our goal is for you to *not* rely on this test suite for debugging your code, and instead rely as an objective ground truth to determine if you have successfully implemented a task or not.
+You will *not* see detailed failure messages on GradeScope, and any console output is hidden.
+The names of each of the tests describe loosely what inputs the test is providing to your application, but *not* the detailed criteria that each test is checking for. The tests, broadly, check for the behaviors that are described in this specification.
+
+If you are struggling to understand why a test isn't passing, we suggest a strategy called "[rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)": Reread the specification. Read through your code line by line, thinking about and explaining what it does - as if you were explaining it to a colleague or the TA. Do NOT try to think too much about what tests you are or are not passing: think about the specification, and what you think your code does, and what it actually appears to do as you read it.
 
 ## Part 1: Base implementation of TownService's ConversationArea API [60 points total]
 
@@ -137,7 +145,7 @@ Implement the method `addConversationArea` method in `CoveyTownController`. Reca
   * The `x, y` position of the box denotes the *center* of the box on the map, `height` and `width` represent the overall height and width of the box.
 4. Any players who are in the region defined by the `boundingBox` of the new conversation area should be added to it as `occupants`, and those players should have their `_activeConversationArea` property set to that new conversation area.
     * A player is defined as inside of a box if the `x, y` position of the player is anywhere within the bounding box. A player who overlaps only with the edge of a conversation area's bounding box is not in the box.
-    * This behavior *only* applies when a conversation area is created. After the conversation area is created, the server does *not* set the `_activeConversationArea` property on any player.
+    * This behavior *only* applies when a conversation area is created. After the conversation area is created, the server does *not* rely on the `x,y` position of a player to determine which conversation area they are in, and instead relies on the players' self-reported `location.conversationLabel` as the source of truth.
 5. Notify all listeners that are subscribed to this town that the newly created conversation area was created, by invoking `onConversationAreaUpdated(theNewConversationArea)` on each.
 
 This is a much bigger task than the first one. Note that you will undoubtedly find it useful to add new helper methods (private or public), perhaps in `CoveyTownController`, `Player`, or both. You *must not* add additional fields to track the conversation area's state: the data model that Avery defined is the data model that you must use!
