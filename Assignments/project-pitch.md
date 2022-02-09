@@ -34,13 +34,13 @@ Your project pitch must include:
 My conditions of satisfaction are < list of common cases and special cases that must work >.
 You should include three different user stories to describe how users will interact with your feature.
 Your three user stories should cover the key behavior that your feature will provide.
-Do not provide more than three user stories.
-* Preliminary class-level design (CRC cards): Start to think about how you will implement this feature. What are the new classes that you are going to add to the Covey.Town codebase, and how will they interact with any existing classes? Create CRC cards that demonstrate the way that your feature will fit in with the existing codebase, creating cards for your new classes, and for any existing classes that you will anticipate modifying. Please refer to Lesson 2.4 (slides 20-21) for more details about CRC cards, and examples of CRC cards. 
+Do not provide more than three user stories. Your description of user stories and conditions of satisfaction should be between 2-4 pages.
+* Preliminary class-level design (CRC cards): Start to think about how you will implement this feature. What are the new classes that you are going to add to the Covey.Town codebase, and how will they interact with any existing classes? Create CRC cards that demonstrate the way that your feature will fit in with the existing codebase, creating cards for your new classes, and for any existing classes that you will anticipate modifying. Please refer to Lesson 2.4 (slides 20-21) for more details about CRC cards, and examples of CRC cards. Attach your CRC cards to your project pitch document. Your CRC cards should be between 2-4 pages.
 
 You can find good examples of user stories [on this GSA website](https://tech.gsa.gov/guides/user_story_example/). The most important part of this process is for you to convey to us what feature you plan to build, how you expect it to be used, and once it's built, how you will judge that it is built correctly.
 
 ## Submission 
-Your project pitch should be 2-4 pages in length, and submitted as a PDF in GradeScope to the assignment "Project Pitch."
+Your project pitch should be no longer than 8 pages in length (with no more than 4 pages for the user stories and no more than 4 pages for the CRC cards), and submitted as a PDF in GradeScope to the assignment "Project Pitch."
 Each team submits a single document to GradeScope: when uploading the submission, GradeScope will ask you who your teammates are, and then will associate this submission with every member of your team.
 This assignment is due Feb 25. **In order to provide timely feedback on your project pitch, we can not allow any DRC accomodations for late submissions on this assignment.**
 
