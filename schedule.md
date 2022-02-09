@@ -20,5 +20,5 @@ nav_order: 1
 | Apr 4-8       | Engineering Equitable Software<br />Estimation                            |                                                                        |
 | Apr 11-15     | Team Meetings + Advanced Topics                                           |                                                                        |
 | Apr 18-22     | Demos                                                                     | Final Project Report + Implementation Due                              |
-| Apr 25-29     | Final exam (to be scheduled by Registrar)                                 |                                                                        |
+| Apr 29, May 2 or May 4     | Final exam (online). <br />The exam will be 2 hours, and we have scheduled 3 windows of 3 hours in which you may choose to take the exam: April 29 10am-1pm, May 2 4pm-7pm, May 4 6pm-9pm. |
 {: class="schedule-table"}
