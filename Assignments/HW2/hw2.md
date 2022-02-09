@@ -91,7 +91,7 @@ Each ConversationArea exists within a single Town in the overall Covey.Town data
  Referring to the diagram above, you'll start by implementing the ConverstationArea API at the *Router* level, defining the API in terms of an HTTP endpoint (Task 1.1). Then, you will implement the business logic to create new ConversationAreas in a request handler, and in CoveyTownController (Task 1.2). Lastly, you'll update the existing request handler that processes a player's request to join a town so that this response also includes the list of current `ConversationArea`s (Task 1.3).
 
 ### Task 1.1: Add an HTTP route to create conversation areas [5 points]
-Your first task is to add a request handler to the `TownsService` to receive client requests to create a new conversation. In the Towns Service architecture diagram above, this task will modifying the **Router** to know about our new REST API endpoint.
+Your first task is to add a request handler to the `TownsService` to receive client requests to create a new conversation. In the Towns Service architecture diagram above, this task will require modifying the **Router** to know about our new REST API endpoint.
 
 Avery has already decided on the API's specification, and in fact has already also created a client that coforms to that specification - so you will be able to start testing your implementation right away. Here is the specification of the new route that you need to add for this API:
 * URL: `/towns/:townID/conversationAreas` (where `:townID` is a parameter that specified the town in which the conversation area should be created)
