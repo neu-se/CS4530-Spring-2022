@@ -16,6 +16,7 @@ submission_notes: Submit on GradeScope
 * 2/5/22: Clarify conversation -> conversation area; rework 2.3 text to be clearer ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/284fdb83fec1e89a4bd1d6907d827e20fb296bde))
 * 2/6/22: Add note clarifying that Task 1.1 tests can not run on GradeScope until after Task 1.3 is completed; this does not impact Task 1.2 
 * 2/9/22: Add debugging tips
+* 2/9/22: Clarified that 2.1 should not make a copy/clone of the conversation area
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -168,7 +169,7 @@ Congratulations on making it this far! You are almost done, there are only two m
 ### Task 2.1: Track conversation area participants [15 points]
 In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. You should use the `conversationLabel` property on the `UserLocation` that is passed to `updatePlayerLocation` to identify the user's current conversation area (as reported by that user).
 
-Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's transition between conversation areas, updating the `occupantsByID` property on any effected conversation areas. You must also update the `Player` instance, setting the property `activeConversationArea` to be the `ServerConversationArea` instance representing that converation area that the player is now part of (or `undefined` if they are no longer within one).
+Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's transition between conversation areas, updating the `occupantsByID` property on any effected conversation areas. You must also update the `Player` instance, setting the property `activeConversationArea` to point to the  corresponding `ServerConversationArea` in the `_conversationAreas` array (or `undefined` if they are no longer within one). 
 
 If any conversation areas are updated, you must emit a `onConversationAreaUpdated` event, similarly to how you did in Task 1.2 when a conversation is created. Note that you might need to send multiple `onConversationAreaUpdated` events: one for a user leaving an area and one for them entering another. It is important that no client ever believe that a user is in two conversation areas at the same time. Hence, be sure to send the "exit" update before the "enter" update.
 
