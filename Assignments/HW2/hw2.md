@@ -17,6 +17,7 @@ submission_notes: Submit on GradeScope
 * 2/6/22: Add note clarifying that Task 1.1 tests can not run on GradeScope until after Task 1.3 is completed; this does not impact Task 1.2 
 * 2/9/22: Add debugging tips
 * 2/9/22: Clarified that 2.1 should not make a copy/clone of the conversation area
+* 2/10/22: Clarified that existing behavior (e.g. emitting `onPlayerMoved`) must be preserved in order to pass tests
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -167,7 +168,7 @@ We suggest that you submit your code at this point on GradeScope, which will run
 Congratulations on making it this far! You are almost done, there are only two more tasks to complete the feature.
 
 ### Task 2.1: Track conversation area participants [15 points]
-In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. You should use the `conversationLabel` property on the `UserLocation` that is passed to `updatePlayerLocation` to identify the user's current conversation area (as reported by that user).
+In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. You should use the `conversationLabel` property on the `UserLocation` that is passed to `updatePlayerLocation` to identify the user's current conversation area (as reported by that user). You should preserve the existing behavior of `updatePlayerLocation`, in particular, ensuring that `onPlayerMoved` is still emitted
 
 Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's transition between conversation areas, updating the `occupantsByID` property on any effected conversation areas. You must also update the `Player` instance, setting the property `activeConversationArea` to point to the  corresponding `ServerConversationArea` in the `_conversationAreas` array (or `undefined` if they are no longer within one). 
 
