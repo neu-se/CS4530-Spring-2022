@@ -15,6 +15,9 @@ submission_notes: Submit on GradeScope
 * 2/4/22: Clarify task 2.3 introductory language ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/f842dfef57ab468a0bd41f81cba07a90810b8f10))
 * 2/5/22: Clarify conversation -> conversation area; rework 2.3 text to be clearer ([diff](https://github.com/neu-se/CS4530-Spring-2022/commit/284fdb83fec1e89a4bd1d6907d827e20fb296bde))
 * 2/6/22: Add note clarifying that Task 1.1 tests can not run on GradeScope until after Task 1.3 is completed; this does not impact Task 1.2 
+* 2/9/22: Add debugging tips
+* 2/9/22: Clarified that 2.1 should not make a copy/clone of the conversation area
+* 2/10/22: Clarified that existing behavior (e.g. emitting `onPlayerMoved`) must be preserved in order to pass tests
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
 We're building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
@@ -70,6 +73,13 @@ Please post any questions about this assignment on Piazza. We have many sections
 
 You may not make changes to `package.json` or to the lint configuration. You may not use `ts-ignore` or `eslint-disable` annotations.
 
+### How To Use GradeScope's Test Suite Effectively
+We have provided a very thorough test suite on GradeScope, but our goal is for you to *not* rely on this test suite for debugging your code, and instead rely as an objective ground truth to determine if you have successfully implemented a task or not.
+You will *not* see detailed failure messages on GradeScope, and any console output is hidden.
+The names of each of the tests describe loosely what inputs the test is providing to your application, but *not* the detailed criteria that each test is checking for. The tests, broadly, check for the behaviors that are described in this specification.
+
+If you are struggling to understand why a test isn't passing, we suggest a strategy called "[rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging)": Reread the specification. Read through your code line by line, thinking about and explaining what it does - as if you were explaining it to a colleague or the TA. Do NOT try to think too much about what tests you are or are not passing: think about the specification, and what you think your code does, and what it actually appears to do as you read it.
+
 ## Part 1: Base implementation of TownService's ConversationArea API [60 points total]
 
 Your first major objective for this assignment will be to create a base implementation of the ConversationArea API in the backend TownService. By the end of this part of the assignment, you will have implemented a `createConversationArea` API endpoint, which will create a new `ConversationArea` on the server, and extended the existing `TownJoinHandler` so that when a player joins a town and receives the initial state of the town, the list of `ConversationArea`s will be included in that response.
@@ -83,7 +93,7 @@ Each ConversationArea exists within a single Town in the overall Covey.Town data
  Referring to the diagram above, you'll start by implementing the ConverstationArea API at the *Router* level, defining the API in terms of an HTTP endpoint (Task 1.1). Then, you will implement the business logic to create new ConversationAreas in a request handler, and in CoveyTownController (Task 1.2). Lastly, you'll update the existing request handler that processes a player's request to join a town so that this response also includes the list of current `ConversationArea`s (Task 1.3).
 
 ### Task 1.1: Add an HTTP route to create conversation areas [5 points]
-Your first task is to add a request handler to the `TownsService` to receive client requests to create a new conversation. In the Towns Service architecture diagram above, this task will modifying the **Router** to know about our new REST API endpoint.
+Your first task is to add a request handler to the `TownsService` to receive client requests to create a new conversation. In the Towns Service architecture diagram above, this task will require modifying the **Router** to know about our new REST API endpoint.
 
 Avery has already decided on the API's specification, and in fact has already also created a client that coforms to that specification - so you will be able to start testing your implementation right away. Here is the specification of the new route that you need to add for this API:
 * URL: `/towns/:townID/conversationAreas` (where `:townID` is a parameter that specified the town in which the conversation area should be created)
@@ -137,7 +147,7 @@ Implement the method `addConversationArea` method in `CoveyTownController`. Reca
   * The `x, y` position of the box denotes the *center* of the box on the map, `height` and `width` represent the overall height and width of the box.
 4. Any players who are in the region defined by the `boundingBox` of the new conversation area should be added to it as `occupants`, and those players should have their `_activeConversationArea` property set to that new conversation area.
     * A player is defined as inside of a box if the `x, y` position of the player is anywhere within the bounding box. A player who overlaps only with the edge of a conversation area's bounding box is not in the box.
-    * This behavior *only* applies when a conversation area is created. After the conversation area is created, the server does *not* set the `_activeConversationArea` property on any player.
+    * This behavior *only* applies when a conversation area is created. After the conversation area is created, the server does *not* rely on the `x,y` position of a player to determine which conversation area they are in, and instead relies on the players' self-reported `location.conversationLabel` as the source of truth.
 5. Notify all listeners that are subscribed to this town that the newly created conversation area was created, by invoking `onConversationAreaUpdated(theNewConversationArea)` on each.
 
 This is a much bigger task than the first one. Note that you will undoubtedly find it useful to add new helper methods (private or public), perhaps in `CoveyTownController`, `Player`, or both. You *must not* add additional fields to track the conversation area's state: the data model that Avery defined is the data model that you must use!
@@ -158,9 +168,9 @@ We suggest that you submit your code at this point on GradeScope, which will run
 Congratulations on making it this far! You are almost done, there are only two more tasks to complete the feature.
 
 ### Task 2.1: Track conversation area participants [15 points]
-In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. You should use the `conversationLabel` property on the `UserLocation` that is passed to `updatePlayerLocation` to identify the user's current conversation area (as reported by that user).
+In Avery's design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the `CoveyTownController`. The `CoveyTownController` needs to track which users are in each conversation. `CoveyTownController` has a method `updatePlayerLocation`, which is called each time that a player's location changes. You should use the `conversationLabel` property on the `UserLocation` that is passed to `updatePlayerLocation` to identify the user's current conversation area (as reported by that user). You should preserve the existing behavior of `updatePlayerLocation`, in particular, ensuring that `onPlayerMoved` is still emitted
 
-Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's transition between conversation areas, updating the `occupantsByID` property on any effected conversation areas. You must also update the `Player` instance, setting the property `activeConversationArea` to be the `ServerConversationArea` instance representing that converation area that the player is now part of (or `undefined` if they are no longer within one).
+Your objective for this task is to implement functionality so that at the end of the execution of this method, the `_conversationAreas` list tracked by the town controller reflects that player's transition between conversation areas, updating the `occupantsByID` property on any effected conversation areas. You must also update the `Player` instance, setting the property `activeConversationArea` to point to the  corresponding `ServerConversationArea` in the `_conversationAreas` array (or `undefined` if they are no longer within one). 
 
 If any conversation areas are updated, you must emit a `onConversationAreaUpdated` event, similarly to how you did in Task 1.2 when a conversation is created. Note that you might need to send multiple `onConversationAreaUpdated` events: one for a user leaving an area and one for them entering another. It is important that no client ever believe that a user is in two conversation areas at the same time. Hence, be sure to send the "exit" update before the "enter" update.
 
