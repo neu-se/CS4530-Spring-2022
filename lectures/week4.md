@@ -42,3 +42,5 @@ This week's lessons will bring us deeper into TypeScript, discussing the asynchr
 
 ### Additional Readings:
 For more debugging tips and strategies, see [Effective Debugging: 66 Specific Ways to Debug Software and Systems by Diomidis Spinellis](https://learning.oreilly.com/library/view/effective-debugging-66/9780134394909/).
+
+See also the [async tutorial](https://bit.ly/34GbcN6) and [solutions](https://gist.github.com/jon-bell/2b12da184c20daf9538a1427c8e0b2dd).
