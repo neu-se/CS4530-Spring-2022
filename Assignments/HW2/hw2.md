@@ -55,6 +55,8 @@ You are encouraged to write tests for your implementation, however *we will not 
 
 ### Grading
 Your code will automatically be evaluated for linter errors and warnings. Submissions that have *any* linter errors will automatically receive a grade of 0. **Do not wait to run the linter until the last minute**.
+Please note that you can check for linter issues before submitting by running `npm run lint`; many formatting issues can also be automatically fixed by running `npm run format`.
+
 
 Each implementation task will be automatically graded by our test suite on GradeScope. You may resubmit your code an unlimited number of times for feedback. Each task is allocated a set number of points based on its complexity. There are no partial marks for passing some, but not all of the tests for a function. GradeScope will provide feedback on which checks your implementation fails.
 
