@@ -25,8 +25,8 @@ This week's lessons will focus on testing, discussing the need for testing and i
 
 ### Important Dates:
 
-- [Project Team are Announced on Piazza](https://piazza.com/class/ky1wxuhh7ry2ue?cid=309)
-- [Project Specification]({{ site.baseurl }}{% link Assignments/project-overview.md %})
+- Project Teams [announced on Piazza](https://piazza.com/class/ky1wxuhh7ry2ue?cid=309)
+- [Project Pitch]({{ site.baseurl }}{% link Assignments/project-pitch.md %}) due 2/25
 
 {% include lesson.html %}
 
