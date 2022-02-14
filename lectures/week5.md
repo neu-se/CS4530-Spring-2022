@@ -26,6 +26,7 @@ This week's lessons will focus on testing, discussing the need for testing and i
 ### Important Dates:
 
 - Project Teams [announced on Piazza](https://piazza.com/class/ky1wxuhh7ry2ue?cid=309)
+- [Project Kick-off Meeting]({{ site.baseurl }}{% link Assignments/project-overview.md %}) by 2/18
 - [Project Pitch]({{ site.baseurl }}{% link Assignments/project-pitch.md %}) due 2/25
 
 {% include lesson.html %}
@@ -38,6 +39,6 @@ This week's lessons will focus on testing, discussing the need for testing and i
 
 ### Additional Readings:
 
-For more discussion on Test Double, see [Martin Fowler’s article, “Mocks Aren’t Stubs”](https://martinfowler.com/articles/mocksArentStubs.html).
+- For more discussion on Test Double, see [Martin Fowler’s article, “Mocks Aren’t Stubs”](https://martinfowler.com/articles/mocksArentStubs.html).
 
-See also the book by Gerard Meszaros “xUnit Test Patterns: Refactoring Test Code”.
+- See also the book by Gerard Meszaros “xUnit Test Patterns: Refactoring Test Code”.
