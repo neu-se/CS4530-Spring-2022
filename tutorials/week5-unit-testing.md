@@ -26,8 +26,8 @@ Contents:
     - [Mock](#mock)
     - [Stub](#stub)
   - [Testing Asynchronous Code](#testing-asynchronous-code)
-    - [Callbacks](#callbacks)
     - [Promise](#promise)
+    - [Callbacks](#callbacks)
 - [Setting up testing using Jest in VSCode](#setting-up-testing-using-jest-in-vscode)
   - [Features](#features)
   - [Installation](#installation)
@@ -480,54 +480,6 @@ Using a stub in our example simply prevents console.log() from being executed, s
 
 ## Testing Asynchronous Code
 
-### Callbacks
-
-Callbacks are one of the most commonly used patterns for asynchronous programming in JavaScript/TypeScript. Consider the below callback function use case:
-
-```ts
-test('Check if I am a true husky', () => {
-  function callback(data) {
-    expect(data).toBe('I am from Northeastern!');
-  }
-  fetchData(callback);
-});
-```
-Here, fetchData() is a function that takes a callback and would call that callback function later in it's implementation. Now consider 2 scenarios:
-
-case 1: 
-```ts
-fetchData(callback) {
-  setTimeout(()=>{
-    callback('I am from Northeastern!');
-  }, 1000);
-}
-```
-
-case 2: 
-```ts
-fetchData(callback) {
-  setTimeout(()=>{
-    callback('I am not from Northeastern!');
-  }, 1000);
-}
-```
-
-The test case would still pass in either of the above scenarios since fetchData() is an async function, which means the program will not wait for the call to complete.
-
-The correct way to test a callback would be using the argument `done` in the test like shown in below example:
-
-```ts
-test('Check if I am a true husky', (done) => {
-  function callback(data) {
-    expect(data).toBe('I am from Northeastern!');
-    done();
-  }
-  fetchData(callback);
-});
-```
-
-Now, the program would wait for done to be invoked. This implementation would correctly test both the above scenarios.
-
 ### Promise
 
 In previous tutorials, we have used Axios to make http requests which return promises. This is how we can write tests for axios requests. Consider the example below:
@@ -628,6 +580,54 @@ We can test the above functionality as follows:
   });
   ```
 
+### Callbacks
+
+Callbacks are one of the most commonly used patterns for asynchronous programming in JavaScript/TypeScript. Consider the below callback function use case:
+
+```ts
+test('Check if I am a true husky', () => {
+  function callback(data) {
+    expect(data).toBe('I am from Northeastern!');
+  }
+  fetchData(callback);
+});
+```
+Here, fetchData() is a function that takes a callback and would call that callback function later in it's implementation. Now consider 2 scenarios:
+
+case 1: 
+```ts
+fetchData(callback) {
+  setTimeout(()=>{
+    callback('I am from Northeastern!');
+  }, 1000);
+}
+```
+
+case 2: 
+```ts
+fetchData(callback) {
+  setTimeout(()=>{
+    callback('I am not from Northeastern!');
+  }, 1000);
+}
+```
+
+The test case would still pass in either of the above scenarios since fetchData() is an async function, which means the program will not wait for the call to complete.
+
+The correct way to test a callback would be using the argument `done` in the test like shown in below example:
+
+```ts
+test('Check if I am a true husky', (done) => {
+  function callback(data) {
+    expect(data).toBe('I am from Northeastern!');
+    done();
+  }
+  fetchData(callback);
+});
+```
+
+Now, the program would wait for done to be invoked. This implementation would correctly test both the above scenarios.
+
 # Setting up testing using Jest in VSCode
 
 Testing can sometimes get cumbersome as the user is expected to remember all the options provided by Jest to run a specific set of tests, or otherwise the user will have to run the entire test suite just to verify the result of a single test case. Not anymore!
@@ -708,7 +708,25 @@ If everything is setup correctly, the debugger in VSCode will pause at the break
 
 # General Guidelines For Writing Tests
 
-_Note:_ This will not be used as a reference when grading assignments.
+> **_Note:_ The following will be used as a reference when grading assignments.**
+
+1. Tests should be hermetic.
+   - Reduce flakiness.
+   - Flaky tests are those that fail intermittently:
+     - Nondeterminism (e.g., hash codes, random numbers);
+     - Timing issues (e.g., threads, network).
+     - Availability of Resources
+1. Tests should be clear.
+   - After failure, should be clear what went wrong.
+1. Tests should be scoped as small as possible.
+   - Faster and more reliable.
+1. Tests should make calls against public APIs.
+   - Or they become brittle
+   - Brittle tests are those that are not self-contained:
+     - Ordering of tests (e.g., assume prior state)
+
+
+> **_Note:_ The following will not be used as a reference when grading assignments. But you should try following these guidelines as much as you can.**
 
 1. Write tests based on the expected behavior, not based on the interpretation/implementation of it.
 2. Test assertion (expect) should match the test description.
