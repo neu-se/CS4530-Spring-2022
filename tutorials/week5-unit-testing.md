@@ -6,7 +6,7 @@ parent: Tutorials
 nav_order: 5
 ---
 
-This tutorial covers the basics on unit testing with Jest. By the end of this tutorial, you will have an introduction to unit testing with jest, best practices, and some handy tricks and tips to use in your tests. Starter code is available [here](./assets/week5-unit-tests/week5-tutorial-starter-code.zip), and finished code with tests covered in this tutorial can be found [here](./assets/week5-unit-tests/week5-unit-tests.zip). We strongly recommend using the completed solution only for reference and implementing the tutorial step by step from the starter code.
+This tutorial covers the basics on unit testing with Jest. By the end of this tutorial, you will have an introduction to unit testing with jest, best practices, and some handy tricks and tips to use in your tests. Starter code is available [here](./assets/week5-unit-testing/week5-tutorial-starter-code.zip), and finished code with tests covered in this tutorial can be found [here](./assets/week5-unit-testing/week5-unit-tests.zip). We strongly recommend using the completed solution only for reference and implementing the tutorial step by step from the starter code.
 
 Contents:
 
