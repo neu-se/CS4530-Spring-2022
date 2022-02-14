@@ -44,9 +44,9 @@ At some point, every programmer has wondered why they should spend time writing 
 Unit testing is not a new concept; it has been around for a long time. "Unit tests are often automated tests prepared and executed by software engineers to check that a portion of an application (referred to as a "unit") matches its design and behaves as expected," according to Wikipedia. So, to put it another way, it's a technique to undertake rigorous testing of every single function/module in isolation.
 
 Unit testing technques:
-- Black Box Testing : It is a process of validating a function's input and output without any knowledge of it's internal implementation details.
-- White Box Testing : Unlike Black Box testing, white box testing focuses on testing the specific internal code flows, uncovering any unidentified error or bug in that component.
-- Gray Box Testing  : Gray Box testing is a combination of the two above wherein partial knowledge of the internal code is needed. This strategy lowers a tester's reliance on a developer for every minor issue, allowing the tester to detect and resolved it alone.
+- **Black Box Testing** : It is a process of validating a function's input and output without any knowledge of it's internal implementation details.
+- **White Box Testing** : Unlike Black Box testing, white box testing focuses on testing the specific internal code flows, uncovering any unidentified error or bug in that component.
+- **Gray Box Testing**  : Gray Box testing is a combination of the two above wherein partial knowledge of the internal code is needed. This strategy lowers a tester's reliance on a developer for every minor issue, allowing the tester to detect and resolved it alone.
 
 # Testing with Jest
 ## Basics
@@ -507,14 +507,14 @@ case 2:
 ```ts
 fetchData(callback) {
   setTimeout(()=>{
-    callback('I am from not Northeastern!');
+    callback('I am not from Northeastern!');
   }, 1000);
 }
 ```
 
 The test case would still pass in either of the above scenarios since fetchData() is an async function, which means the program will not wait for the call to complete.
 
-The correct way to test a callback would be using argument done in the test like shown in below example:
+The correct way to test a callback would be using the argument `done` in the test like shown in below example:
 
 ```ts
 test('Check if I am a true husky', (done) => {
@@ -661,6 +661,7 @@ With [vscode-jest](https://marketplace.visualstudio.com/items?itemName=Orta.vsco
 
 1. Visit [Jest - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest) and click "Install".
 1. Allow the browser to open VSCode as shown (might be different for macOS/Linux systems) by clicking on Continue.
+
    ![Allow browser to open VSCode](./assets/week5-unit-testing/vscode-jest/allow-browser-vscode.jpg)
 1. Once VSCode is open, click on "Install".
 
@@ -670,7 +671,7 @@ You can verify the installation by checking if the following is visible to you w
 
 ![Verify Installation](./assets/week5-unit-testing/vscode-jest/verify-installation.jpg)
 
-If restarting Jest does not work, you can run the following in your VSCode by opening VSCode's command palette (Ctrl + Shift + P in Windows, Cmd + Shift + P in macOS) and run the following - "_Jest: Start All Runners_".
+If restarting Jest does not work, you can run the following in your VSCode by opening VSCode's command palette (`Ctrl + Shift + P` in Windows, `Cmd + Shift + P` in macOS) and run the following - "_Jest: Start All Runners_".
 
 ![Manually start Jest Runner](./assets/week5-unit-testing/vscode-jest/manual-jest-runner-start.jpg)
 
@@ -685,9 +686,12 @@ As of the latest stable version, the extension is set to run all tests whenever 
 - `"jest.autoRun": {"watch": false, "onSave": "test-src-file"}` => the extension will trigger test run for the given test or source file upon save.
 
 An example of changing the extension to run in manual mode is demonstrated below -
+
 ![Enable Manual Mode](./assets/week5-unit-testing/vscode-jest/disable-auto-run.gif)
 
+> NOTE - You will only be able to `Run` specific test cases as and when required only when `autoRun` is `off`. However, you'll be able to `Debug` any test cases in all available modes.
 
+ 
 ## Debugging Tests
 Once the extension is setup and confirmed to be working, we can now begin debugging the tests. You can do so by opening the testing tab from the left sidebar in VSCode to view all the tests present in the current project.
 
@@ -696,6 +700,7 @@ You can also navigate to the specific test file manually, and you will notice so
 ![Debug Test](./assets/week5-unit-testing/vscode-jest/start-debug-test.jpg)
 
 If everything is setup correctly, the debugger in VSCode will pause at the breakpoint you set and you can check the values of the variables by hovering over the said variable. 
+
 ![Debugging in Action](./assets/week5-unit-testing/vscode-jest/debugging-tests.jpg)
 
 
