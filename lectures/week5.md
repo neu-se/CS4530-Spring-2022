@@ -1,7 +1,7 @@
 ---
 layout: module
 title: Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures
-permalink: /modules/weekt-testing
+permalink: /modules/week5-testing
 parent: Modules
 nav_order: 5
 lessons: #I know that it seems a bit annoying to have to put each lesson in the yaml header like this...
