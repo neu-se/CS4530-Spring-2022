@@ -1,0 +1,12 @@
+When I do npm install and open in VSC, I get a warning about "version
+expansion limitied to 5000 lines.
+
+package-lock.json is 13292 lines!
+
+npm run-client gives some output that is vaguely like what's in the
+readme, but different enough to give a student pause.
+
+client.ts is mostly about how to construct REST calls, so importGrades
+should probably live somewhere else.
+
+importGrades should probably in a file other than client.ts
