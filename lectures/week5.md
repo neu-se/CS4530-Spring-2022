@@ -36,7 +36,7 @@ This week's lessons will focus on testing, discussing the need for testing and i
 ### Tutorials
 
 * [Unit Testing with Jest]({{site.baseurl}}{% link tutorials/week5-unit-testing.md %})
-
+{% endcomment %}
 ### Additional Readings:
 
 - For more discussion on Test Double, see [Martin Fowler’s article, “Mocks Aren’t Stubs”](https://martinfowler.com/articles/mocksArentStubs.html).
