@@ -25,7 +25,7 @@ We will grade your tests on several criteria:
 
 Based on past experiences, we project that this assignment could take you up to 18 hours (depending on your prior preparation). We encourage you to start early so that you can post questions on Piazza, make the most use of our TAs' tutorials, and attend office hours as necessary in order to ensure that you can reach full marks across the board.
 
-To get started, download the [handout zip]]({{site.baseurl}}{%link /Assignments/HW3/hw3-handout.zip %}). 
+To get started, download the [handout zip]({{site.baseurl}}{%link /Assignments/HW3/hw3-handout.zip %}). 
 
 ### Learning Objectives
 The objectives of this assignment are to:
