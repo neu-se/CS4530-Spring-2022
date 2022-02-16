@@ -140,17 +140,24 @@ A few things to note from the above example:
   - If no props are passed for an instance of the component, then it will display the default value of props.
 
 ## State 
+
 State management is just a means of facilitating data sharing and communication among components. It creates a concrete data structure that you can read and write to reflect the state of your program.
-
-In its most basic form, a State object is a JavaScript object that represents the part of a component that can change as a result of a user's action. States can also be thought of as a component's memory.
-
-The state of a component changes when a user makes an action in a typical React app. While this isn't a problem in and of itself, it quickly becomes one as the software grows in complexity; as a result, keeping track of all dependencies becomes incredibly tough.
 
 ```ts
 const [counter, setCounter] = useState(0)
 ```
 
-The above snippet shows creation of counter state with an intial value of 0. Using the [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we extract out the state variable and the function to update the counter value.  
+The above snippet shows creation of counter state with an intial value of 0. Using the [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we extract out the state variable and the function to update the counter value. 
+
+
+
+In its most basic form, a State object is a JavaScript object that represents the part of a component that can change as a result of a user's action. States can also be thought of as a component's memory.
+
+State update calls are asynchronous. As one cannot expect to call the update state function on one line and expect the state to be updated on the next. The reason for this is because update state methods are more of a request than an immediate order to update state. So React schedules an update to a component’s state object. When state changes, the component responds by re-rendering. Also multiple update request may be batched into one for performance reasons. 
+
+Changes in state and/or props will both cause our React component to re-render. Changes in state, on the other hand, can only occur internally as a result of components modifying their own state. 
+
+
 
 ## Communication between components: 
 
