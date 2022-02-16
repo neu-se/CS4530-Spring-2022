@@ -25,7 +25,7 @@ We will grade your tests on several criteria:
 
 Based on past experiences, we project that this assignment could take you up to 18 hours (depending on your prior preparation). We encourage you to start early so that you can post questions on Piazza, make the most use of our TAs' tutorials, and attend office hours as necessary in order to ensure that you can reach full marks across the board.
 
-To get started, download the handout zip. **TODO ON WEDS **
+To get started, download the [handout zip]]({{site.baseurl}}{%link /Assignments/HW3/hw3-handout.zip %}). 
 
 ### Learning Objectives
 The objectives of this assignment are to:
@@ -65,7 +65,7 @@ Your tests must be fully contained within these test files and `TestUtils.ts` - 
 
 You may implement your test suite in any order that you would like, but we provide a suggested ordering in the assignment.
 
-A helpful debugging strategy for writing effective tests is to manually inject some fault into the code under test, and then modify your test until it fails on this buggy code. This process is much faster than running a complete mutation analysis. However, if you would like to run the mutation analysis before submitting to GradeScope, you can do so by using the command `npx stryker run` in the project directory. After several minutes, a report will be generated to `reports/mutation/html/index.html` - you can open this report in your browser and see which mutants are not "killed".
+A helpful debugging strategy for writing effective tests is to manually inject some fault into the code under test, and then modify your test until it fails on this buggy code. This process is much faster than running a complete mutation analysis. However, if you would like to run the mutation analysis before submitting to GradeScope, you can do so by using the command `npx stryker run` in the project directory. After several minutes, a report will be generated to `reports/mutation/html/index.html` - you can open this report in your browser and see which mutants are not "killed" (the words "detected" and "killed" are used interchangably to refer to mutants that your test suite identifies as bugs; we prefer the term "detected").
 
 You may not make changes to `package.json` or to the lint configuration. You may not use `ts-ignore` or `eslint-disable` annotations.
 
