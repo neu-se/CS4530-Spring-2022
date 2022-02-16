@@ -17,8 +17,8 @@ This tutorial covers the basic concepts of react. By the end of this tutorial, y
     -   [Props](#)
     -   [State](#)
     -   [Communicating between Components](#)
-        - [Lifting Up State](#)
-        - [Props Drilling](#)
+        - [Parent to Child](#)
+        - [Child to Parent](#)
     -   [Handling Events](#)
 -   [React Hooks](#)
     -   [State and Event Binding](#)
@@ -152,8 +152,135 @@ const [counter, setCounter] = useState(0)
 
 The above snippet shows creation of counter state with an intial value of 0. Using the [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we extract out the state variable and the function to update the counter value.  
 
-## Component Communc
+## Communication between components: 
 
+### parent to child component communication: 
+
+Passing values from a parent component to a child component is simple. We only have to pass the values as props of the child component. The child component can then use the props object to output results. In te example code you will see that CounterContent component accepts a counter prop which is then used to display the value inside div element. 
+```ts
+import { useState } from "react";
+
+interface CounterContentProps {
+  counter: Number;
+}
+
+function CounterContent({ counter }: CounterContentProps) {
+  return <div>Counter: {counter}</div>;
+}
+
+function Counter() {
+  const [counter, setCounter] = useState<number>(0);
+
+  return (
+    <>
+      <CounterContent counter={counter} />
+      <button onClick={() => setCounter(counter + 1)}>Increment Count</button>
+    </>
+  );
+}
+```
+
+
+### child to parent component communication
+
+For passing data from child component to parent component do the following steps: 
+1. Declare a callback function inside the parent component. This function will get data from the child component. 
+2. Pass the callback function to the chil component as props.
+3. Child then sends the update to the parent through the use of the callback function. 
+
+In the example below we have four children components: 
+1. CounterContent: Displays the counter value
+2. IncrementCounterButton: Increments the counter value 
+3. DecrementCounterButton: Decrements the counter value
+4. CustomCounterButton: Sets the counter to a particular value. 
+
+All callback functions passed to the children component are declared in Counter function which is the parent component that maintains the state value for counter.
+
+```ts
+import { useState } from "react";
+
+interface CounterContentProps {
+  counter: Number;
+}
+
+interface IncrementCounterButtonProps {
+  incrementCount(): void;
+}
+
+interface DecrementCounterButtonProps {
+  decrementCount(): void;
+}
+
+interface SetCounterButtonProps {
+  setCount(value: number): void;
+}
+
+function CounterContent({ counter }: CounterContentProps) {
+  return <div>Counter: {counter}</div>;
+}
+
+/**
+ * Child component accepts a incrementCount callback function as a props.
+ * The callback which is declared inside the parent component triggers a state update.
+ */
+function IncrementCounterButton({
+  incrementCount
+}: IncrementCounterButtonProps) {
+  return <button onClick={() => incrementCount()}>increment Count</button>;
+}
+
+/**
+ * Child component accepts a decrementCount callback function as a props.
+ * The callback which is declared inside the parent component triggers a state update.
+ */
+function DecrementCounterButton({
+  decrementCount
+}: DecrementCounterButtonProps) {
+  return <button onClick={() => decrementCount()}>Decrement Count</button>;
+}
+
+function CustomCounterButton({ setCount }: SetCounterButtonProps) {
+  // change this value to see how child passes count value data to parent through
+  // the use of callback function
+
+  const dummyValue = 100;
+
+  return (
+    <button onClick={() => setCount(dummyValue)}>
+      Set Count to {dummyValue}
+    </button>
+  );
+}
+
+/**
+* Parent Component where state and callbacks are maintained. 
+**/
+function Counter() {
+  const [counter, setCounter] = useState(0);
+
+  const decrementCount = () => {
+    if (counter === 0) return;
+    setCounter(counter - 1);
+  };
+
+  const incrementCount = () => {
+    setCounter(counter + 1);
+  };
+
+  const setCount = (value: number) => {
+    setCounter(value);
+  };
+
+  return (
+    <>
+      <CounterContent counter={counter} />
+      <IncrementCounterButton incrementCount={incrementCount} />
+      <DecrementCounterButton decrementCount={decrementCount} />
+      <CustomCounterButton setCount={setCount} />
+    </>
+  );
+}
+```
 ## Template for structure of function component
 ```ts
 import * as React from "react";
