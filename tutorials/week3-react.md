@@ -15,6 +15,10 @@ This tutorial covers the basic concepts of react. By the end of this tutorial, y
 -   [Understanding a React App](#)
     -   [Components](#)
     -   [Props](#)
+    -   [State](#)
+    -   [Communicating between Components](#)
+        - [Lifting Up State](#)
+        - [Props Drilling](#)
     -   [Handling Events](#)
 -   [React Hooks](#)
     -   [State and Event Binding](#)
@@ -135,7 +139,22 @@ A few things to note from the above example:
   - In our example, `{props.name}` will display the value of `name` in the html for the cases when the values "John" and "Jane" are passed as props.
   - If no props are passed for an instance of the component, then it will display the default value of props.
 
-### Template for structure of function component
+## State 
+State management is just a means of facilitating data sharing and communication among components. It creates a concrete data structure that you can read and write to reflect the state of your program.
+
+In its most basic form, a State object is a JavaScript object that represents the part of a component that can change as a result of a user's action. States can also be thought of as a component's memory.
+
+The state of a component changes when a user makes an action in a typical React app. While this isn't a problem in and of itself, it quickly becomes one as the software grows in complexity; as a result, keeping track of all dependencies becomes incredibly tough.
+
+```ts
+const [counter, setCounter] = useState(0)
+```
+
+The above snippet shows creation of counter state with an intial value of 0. Using the [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we extract out the state variable and the function to update the counter value.  
+
+## Component Communc
+
+## Template for structure of function component
 ```ts
 import * as React from "react";
 
@@ -202,7 +221,7 @@ React hooks are built-in functions which allows us to use state and other lifecy
 
 ### useState():
 
-In this section we will see how we can add state to a React Component using the useState() hook provided by React.
+In this section we will see how we can add state to a React Component using the useState() hook provided by React. The useState hook takes the initial value of the state variable as an argument, the initial state can be any type you want (a string, a number, an array, an object) or a function. Only on the first render will the initial value be assigned. Each useState call returns a two-element array. The state variable is the first element of the array, followed by a function to change the variable's value.
 
 1. We'll start by defining and initializing state for the number of times the button is clicked, by adding the a state variable as follows:
 
@@ -217,6 +236,7 @@ function Counter() {
 
 This line of code looks a little strange, so let's break it down:
 
+-   When the hook useState() is invoked, it returns an array. Where the first item is the state value, and the second item is a function that updates the state. 
 -   First, we import the useState from react library.
 -   useState is a React function that lets us create state, passing in a default value as a parameter. In our case, we pass it a default value of 0.
 -   The useState function returns an array containing two elements:
