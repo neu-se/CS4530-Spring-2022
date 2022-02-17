@@ -200,7 +200,7 @@ function Counter() {
 
 For passing data from child component to parent component do the following steps: 
 1. Declare a callback function inside the parent component. This function will get data from the child component. 
-2. Pass the callback function to the chil component as props.
+2. Pass the callback function to the child component as props.
 3. Child then sends the update to the parent through the use of the callback function. 
 
 In the example below we have four children components: 
