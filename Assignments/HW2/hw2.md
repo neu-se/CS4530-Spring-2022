@@ -37,6 +37,8 @@ Avery replaced the "outdoor" map from the original Covey.Town implementation wit
 
 Each conversation area is a rectangle on the map. In this screenshot, there are three conversation areas: "Foyer Table 4", "Foyer Table 5", and "Foyer Table 6". There are two users who are engaged in a conversation at Foyer Table 5, who have labeled the current conversation topic to be "Talking about class".
 
+You can demo this feature on the public-facing site [app.covey.town](https://app.covey.town).
+
 ## This Assignment
 
 In this assignment, you will implement the backend service that supports the conversation areas feature, creating an implementation that behaves comparably to [our public deployment of covey.town](https://app.covey.town/). Since this is your first time working in this codebase, Avery has sketched out a reasonable design for the Conversation Area API, and has mapped the design into implementation tasks. Avery has also provided a few sanity tests so that you can check your work. There is a complete set of tests available to you on GradeScope. This assignment does *not* involve any frontend development, but we will return to the frontend aspects of the Conversation Area feature in HW4.
