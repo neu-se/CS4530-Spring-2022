@@ -31,11 +31,9 @@ This week's lessons will focus on testing, discussing the need for testing and i
 
 {% include lesson.html %}
 
-{% comment %}
-
 ### Tutorials
 
-{% endcomment %}
+* [Unit Testing with Jest]({{site.baseurl}}{% link tutorials/week5-unit-testing.md %})
 
 ### Additional Readings:
 
