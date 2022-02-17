@@ -9,6 +9,7 @@ nav_order: 6
 All projects will involve frontend and backend development of a new feature for Covey.Town.
 Once teams have been formed, you and your team will decide what kind of new feature you would like to build.
 Your feature should be something that can be implemented within the timeframe allotted (5 weeks), and will be implemented in a fork of the main Covey.Town codebase.
+You can play with a demo deployment of the app at [app.covey.town](https://app.covey.town), and in the coming weeks, we will provide tutorials and instructions for you to run the entire application in a local development environment, and also to deploy it to the cloud.
 Given that you will be up-to-speed on the Covey.Town codebase (and have been introduced to TypeScript, React, NodeJS, and testing frameworks),
 and that you will have a team of four, we expect that the feature that you propose will be at least as complex as the feature implemented in the individual
 homeworks.
