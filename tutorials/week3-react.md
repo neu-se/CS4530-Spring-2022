@@ -15,6 +15,10 @@ This tutorial covers the basic concepts of react. By the end of this tutorial, y
 -   [Understanding a React App](#)
     -   [Components](#)
     -   [Props](#)
+    -   [State](#)
+    -   [Communicating between Components](#)
+        - [Parent to Child](#)
+        - [Child to Parent](#)
     -   [Handling Events](#)
 -   [React Hooks](#)
     -   [State and Event Binding](#)
@@ -143,7 +147,156 @@ A few things to note from the above example:
   - In our example, `{props.name}` will reflect the value of the property `name` in the view(html) for the cases when the values "John" and "Jane" are passed as props for the `name` property.
   - If no props are passed for an instance of the component, then it will display the default value of props.
 
-### Template for structure of function component
+## State 
+
+State management is just a means of facilitating data sharing and communication among components. It creates a concrete data structure that you can read and write to reflect the state of your program.
+
+```ts
+const [counter, setCounter] = useState(0)
+```
+
+The above snippet shows creation of counter state with an intial value of 0. Using the [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) syntax we extract out the state variable and the function to update the counter value. 
+
+
+
+In its most basic form, a State object is a JavaScript object that represents the part of a component that can change as a result of a user's action. States can also be thought of as a component's memory.
+
+State update calls are asynchronous. As one cannot expect to call the update state function on one line and expect the state to be updated on the next. The reason for this is because update state methods are more of a request than an immediate order to update state. So React schedules an update to a component’s state object. When state changes, the component responds by re-rendering. Also multiple update request may be batched into one for performance reasons. 
+
+Changes in state and/or props will both cause our React component to re-render. Changes in state, on the other hand, can only occur internally as a result of components modifying their own state. 
+
+
+
+## Communication between components: 
+
+### parent to child component communication: 
+
+Passing values from a parent component to a child component is simple. We only have to pass the values as props of the child component. The child component can then use the props object to output results. In te example code you will see that CounterContent component accepts a counter prop which is then used to display the value inside div element. 
+```ts
+import { useState } from "react";
+
+interface CounterContentProps {
+  counter: Number;
+}
+
+function CounterContent({ counter }: CounterContentProps) {
+  return <div>Counter: {counter}</div>;
+}
+
+function Counter() {
+  const [counter, setCounter] = useState<number>(0);
+
+  return (
+    <>
+      <CounterContent counter={counter} />
+      <button onClick={() => setCounter(counter + 1)}>Increment Count</button>
+    </>
+  );
+}
+```
+
+
+### child to parent component communication
+
+For passing data from child component to parent component do the following steps: 
+1. Declare a callback function inside the parent component. This function will get data from the child component. 
+2. Pass the callback function to the chil component as props.
+3. Child then sends the update to the parent through the use of the callback function. 
+
+In the example below we have four children components: 
+1. CounterContent: Displays the counter value
+2. IncrementCounterButton: Increments the counter value 
+3. DecrementCounterButton: Decrements the counter value
+4. CustomCounterButton: Sets the counter to a particular value. 
+
+All callback functions passed to the children component are declared in Counter function which is the parent component that maintains the state value for counter.
+
+```ts
+import { useState } from "react";
+
+interface CounterContentProps {
+  counter: Number;
+}
+
+interface IncrementCounterButtonProps {
+  incrementCount(): void;
+}
+
+interface DecrementCounterButtonProps {
+  decrementCount(): void;
+}
+
+interface SetCounterButtonProps {
+  setCount(value: number): void;
+}
+
+function CounterContent({ counter }: CounterContentProps) {
+  return <div>Counter: {counter}</div>;
+}
+
+/**
+ * Child component accepts a incrementCount callback function as a props.
+ * The callback which is declared inside the parent component triggers a state update.
+ */
+function IncrementCounterButton({
+  incrementCount
+}: IncrementCounterButtonProps) {
+  return <button onClick={() => incrementCount()}>increment Count</button>;
+}
+
+/**
+ * Child component accepts a decrementCount callback function as a props.
+ * The callback which is declared inside the parent component triggers a state update.
+ */
+function DecrementCounterButton({
+  decrementCount
+}: DecrementCounterButtonProps) {
+  return <button onClick={() => decrementCount()}>Decrement Count</button>;
+}
+
+function CustomCounterButton({ setCount }: SetCounterButtonProps) {
+  // change this value to see how child passes count value data to parent through
+  // the use of callback function
+
+  const dummyValue = 100;
+
+  return (
+    <button onClick={() => setCount(dummyValue)}>
+      Set Count to {dummyValue}
+    </button>
+  );
+}
+
+/**
+* Parent Component where state and callbacks are maintained. 
+**/
+function Counter() {
+  const [counter, setCounter] = useState(0);
+
+  const decrementCount = () => {
+    if (counter === 0) return;
+    setCounter(counter - 1);
+  };
+
+  const incrementCount = () => {
+    setCounter(counter + 1);
+  };
+
+  const setCount = (value: number) => {
+    setCounter(value);
+  };
+
+  return (
+    <>
+      <CounterContent counter={counter} />
+      <IncrementCounterButton incrementCount={incrementCount} />
+      <DecrementCounterButton decrementCount={decrementCount} />
+      <CustomCounterButton setCount={setCount} />
+    </>
+  );
+}
+```
+## Template for structure of function component
 ```ts
 import * as React from "react";
 
@@ -212,7 +365,7 @@ React hooks are built-in functions which allows us to use state and other lifecy
 
 ### useState():
 
-In this section we will see how we can add state to a React Component using the useState() hook provided by React.
+In this section we will see how we can add state to a React Component using the useState() hook provided by React. The useState hook takes the initial value of the state variable as an argument, the initial state can be any type you want (a string, a number, an array, an object) or a function. Only on the first render will the initial value be assigned. Each useState call returns a two-element array. The state variable is the first element of the array, followed by a function to change the variable's value.
 
 1. We'll start by defining and initializing state for the number of times the button is clicked, by adding the a state variable as follows:
 
@@ -227,6 +380,7 @@ function Counter() {
 
 This line of code looks a little strange, so let's break it down:
 
+-   When the hook useState() is invoked, it returns an array. Where the first item is the state value, and the second item is a function that updates the state. 
 -   First, we import the useState from react library.
 -   useState is a React function that lets us create state, passing in a default value as a parameter. In our case, we pass it a default value of 0.
 -   The useState function returns an array containing two elements:
