@@ -10,6 +10,7 @@ submission_notes: Submit on GradeScope
 
 ### Change Log
 * 2/18/22: Initial Release
+* 2/18/22: Correct reference to `CoveyTownController.test.ts` - it is in `lib`, not `client`
 
 Welcome back! We were very pleased to see your thorough implementation of the new conversation areas API. We are certain that this new design and implementation will be a solid foundation for Covey.Town in the years to come. Before we move on to implement the frontend portion of this feature, however, there is one last matter to discuss: testing.
 
@@ -57,7 +58,7 @@ We will review your code and note each violation of this rubric. We will deduct 
 
 Please post any questions about this assignment on Piazza. We have many sections of this class, and we want to make sure that we respond to your questions the same way, regardless of which section you are in.
 
-You must implement all unit tests for `CoveyTownController` in the file `src/client/CoveyTownController.test.ts`, and all other tests in the file `src/client/CoveyTownConversationAPI.test.ts`.
+You must implement all unit tests for `CoveyTownController` in the file `src/lib/CoveyTownController.test.ts`, and all other tests in the file `src/client/CoveyTownConversationAPI.test.ts`.
 Please feel free to remove or modify any existing conversation area tests in these files. 
 
 You may add additional helper methods to these files, and you may add `beforeEach`, `beforeAll`, `afterEach`, or `afterAll` to these test suites. If you would like to create shared utilities for your tests, you may implement them in the file `src/client/TestUtils.ts`.
@@ -120,4 +121,4 @@ Submit your assignment in GradeScope. The easiest way to get into GradeScope the
 You should then also have the option to create an account on GradeScope (if you don't already have one) so that you can log in to GradeScope directly.
 Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.
 
-To submit your assignment: upload *only* the files `src/client/CoveyTownController.test.ts`, `src/client/CoveyTownConversationAPI.test` and `src/client/TestUtils.ts`. GradeScope will provide you with feedback on your submission, but note that it will *not* include any marks that will be assigned after we manually grade your submission for code style (it will show 0 for this until it is graded).
+To submit your assignment: upload *only* the files `src/lib/CoveyTownController.test.ts`, `src/client/CoveyTownConversationAPI.test` and `src/client/TestUtils.ts`. GradeScope will provide you with feedback on your submission, but note that it will *not* include any marks that will be assigned after we manually grade your submission for code style (it will show 0 for this until it is graded).
