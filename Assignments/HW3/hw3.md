@@ -80,13 +80,13 @@ Ripley and Avery can’t figure out how to get rid of this, and it’s mostly ha
 
 
 ### Testing CoveyTownController.destroySession (5 points)
-[HW2 Part 2.2]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}/#task-22-remove-participants-from-conversation-area-if-they-disconnect-10-points) describes that when a player's session is destroyed, they should be removed from the conversation area. This test is a great place to start. Take a look at the tests at the bottom of `CoveyTownController.test.ts` for examples of unit tests for similar functionality. *Hint:* You may be able to reuse many of the mocking patterns that already exist in this test suite. 
+[HW2 Part 2.2]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-22-remove-participants-from-conversation-area-if-they-disconnect-10-points) describes that when a player's session is destroyed, they should be removed from the conversation area. This test is a great place to start. Take a look at the tests at the bottom of `CoveyTownController.test.ts` for examples of unit tests for similar functionality. *Hint:* You may be able to reuse many of the mocking patterns that already exist in this test suite. 
 
 Mutant detection thresholds:
 * Detect 1 mutant - 5 points
 
 ### Testing CoveyTownController.updatePlayerLocation (30 points)
-[HW2 Part 2.1]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}/#part-2-completing-the-townservice-responsibilities-30-points-total) describes the expected behavior for `updatePlayerLocation`. Implement a suite of tests that directly call this method and check for the specification.
+[HW2 Part 2.1]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#part-2-completing-the-townservice-responsibilities-30-points-total) describes the expected behavior for `updatePlayerLocation`. Implement a suite of tests that directly call this method and check for the specification.
 
 Mutant detection thresholds:
 * Detect 20 mutants: 10 points
@@ -94,7 +94,7 @@ Mutant detection thresholds:
 * Detect 26 mutants: 30 points
 
 ### Testing CoveyTownController.addConversationArea (35 points)
-[HW2 Part 1.2b]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}/#task-12b-addconversationarea-30-points) describes the expected behavior for `addConversationArea`. Implement a suite of tests that directly call this method and check for the specification.
+[HW2 Part 1.2b]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-12b-addconversationarea-30-points) describes the expected behavior for `addConversationArea`. Implement a suite of tests that directly call this method and check for the specification.
 
 Mutant detection thresholds:
 * Detect 47 mutants: 10 points
@@ -102,14 +102,14 @@ Mutant detection thresholds:
 * Detect 70 mutants: 35 points
 
 ### Testing CoveyTownRequestHandlers.conversationAreaCreateHandler (10 points)
-[HW2 Part 1.2a]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}/#task-12a-conversationareacreatehandler-15-points) describes the expected behavior for `conversationAreaCreateHandler`. Implement a suite of tests that directly call this method and check for the specification. Ripley has porvided a helpful starter test in `CoveyTownConversationAPI.test.ts` - feel free to modify or extend this test (or delete it, if you do not find it useful).
+[HW2 Part 1.2a]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-12a-conversationareacreatehandler-15-points) describes the expected behavior for `conversationAreaCreateHandler`. Implement a suite of tests that directly call this method and check for the specification. Ripley has porvided a helpful starter test in `CoveyTownConversationAPI.test.ts` - feel free to modify or extend this test (or delete it, if you do not find it useful).
 
 Mutant detection thresholds:
 * Detect 3 mutants: 5 points
 * Detect 4 mutants: 10 points
 
 ### Testing Towns.ts POST route for /towns/:townID/conversationAreas (10 points)
-With all of the individual components for adding conversation areas unit tested, your last step is to write some integration tests that can check that the REST service is correctly implemented. You can find an example of this kind of test in `CoveyTownConverationAPI.test.ts`. These tests likely need only check that the error messages and HTTP status codes specified in [HW2 Part 1.1]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}/#task-11-add-an-http-route-to-create-conversation-areas-5-points) are correctly implemented.
+With all of the individual components for adding conversation areas unit tested, your last step is to write some integration tests that can check that the REST service is correctly implemented. You can find an example of this kind of test in `CoveyTownConverationAPI.test.ts`. These tests likely need only check that the error messages and HTTP status codes specified in [HW2 Part 1.1]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-11-add-an-http-route-to-create-conversation-areas-5-points) are correctly implemented.
 Mutant detection thresholds:
 * Detect 2 mutants: 10 points
 
