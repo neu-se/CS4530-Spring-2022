@@ -63,7 +63,8 @@ of other components.
 Components are the basic building blocks of a React application and they allow the developer to split the UI into independent and reusable
 pieces where each piece can be used in isolation. 
 ### Creating A Function Component in React
-[view in sandbox](https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/CreateFunctionComponent.tsx){:target="_blank"}
+
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/CreateFunctionComponent.tsx" target="_blank">view in sandbox</a>
 
 The simplest method to define a component is to write a function in Javascript. These components are also widely referred as functional stateless components but in the recent versions of React, they have the capabilities to contain state as well.
 ```ts
@@ -99,7 +100,7 @@ export default App;
 
 ## Template For Structure of Function Component
 
-[view in sandbox](https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/TemplateForFunction.tsx){:target="_blank"}
+<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/TemplateForFunction.tsx" target="_blank">view in sandbox</a>
 
 ```ts
 import * as React from "react";
@@ -123,8 +124,7 @@ export default ComponentName;
 ```
 
 ## Props
-
-[view in sandbox](https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/PassingProps.tsx){:target="_blank"}
+<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/PassingProps.tsx" target="_blank">view in sandbox</a>
 
 React components are similar to JavaScript functions and can accept arbitrary arguments called props. Since components are reusable, props are especially useful to display different content in each instance of the component. Let us extract the header elements from the previous code snippet into a new component called Header. We can then use props to say "hello" to different users.
 
@@ -194,8 +194,8 @@ Changes in state and/or props will both cause our React component to re-render. 
 ## Communication Between Components: 
 
 ### Parent To Child Component Communication: 
+<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/ParentChildCommunication.tsx" target="_blank">view in sandbox</a>
 
-[view in sandbox](https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/ParentChildCommunication.tsx){:target="_blank"}
 
 Passing values from a parent component to a child component is simple. We only have to pass the values as props of the child component. The child component can then use the props object to output results. In the example code you will see that CounterContent component accepts a counter prop which is then used to display the value inside div element. 
 ```ts
@@ -224,7 +224,7 @@ function Counter() {
 
 ### Child to Parent Component Communication
 
-[view in sandbox](https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/ChildParentCommunication.tsx){:target="_blank"}
+<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/ChildParentCommunication.tsx" target="_blank">view in sandbox</a>
 
 For passing data from child component to parent component do the following steps: 
 1. Declare a callback function inside the parent component. This function will get data from the child component. 
@@ -328,7 +328,8 @@ function Counter() {
 
 # Handling Events
 
-[view in sandbox](https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/HandlingEvents.tsx){:target="_blank"}
+<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/HandlingEvents.tsx" target="_blank">view in sandbox</a>
+
 
 -   React impelemnts its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
     -   React events are named using camelCase, rather than lower case.
@@ -375,7 +376,7 @@ React hooks are built-in functions which allows us to use state and other lifecy
 
 ### useState():
 
-[view in sandbox](https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/UseStateExample.tsx){:target="_blank"}
+<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/UseStateExample.tsx" target="_blank">view in sandbox</a>
 
 In this section we will see how we can add state to a React Component using the useState() hook provided by React. The useState hook takes the initial value of the state variable as an argument, the initial state can be any type you want (a string, a number, an array, an object) or a function. Only on the first render will the initial value be assigned. Each useState call returns a two-element array. The state variable is the first element of the array, followed by a function to change the variable's value.
 
@@ -435,8 +436,8 @@ If we give this a try in the running app, we should find the count variable's va
 After we've got our heads around the code needed to define state, accessing and setting state is fairly simple and elegant.
 
 ### useEffect():
+<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/UseEffectExample.tsx" target="_blank">view in sandbox</a>
 
-[view in sandbox](https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/UseEffectExample.tsx){:target="_blank"}
 
 Now let's have a look at how to invoke the code to execute at a certain point in the component's lifecycle.
 Older versions of React consisted of different Lifecycle hooks that allowed a user to hook into various phases of component rendering such as componentDidMount, ComponentDidUpdate, etc. which have all been condensed into a single function called useEffect(). Let us observe how this hook behaves by printing out the count in browser console.
