@@ -1,7 +1,7 @@
 ---
 layout: page
 title: React Tutorial
-permalink: /tutorials/week3-react-basics
+permalink: /tutorials/week6-react-basics
 parent: Tutorials
 nav_order: 2
 ---
