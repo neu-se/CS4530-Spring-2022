@@ -12,9 +12,9 @@ lessons: #I know that it seems a bit annoying to have to put each lesson in the 
     pdf: "Lesson 6.1 User-Centered UI Design.pdf"
     ppt: "Lesson 6.1 User-Centered UI Design.pptx"
   - title: React Intro
-    html: "()"
+    video: "()"
   - title: React Demo
-    html: "()"
+    video: "()"
 ---
 
 ### Learning Objectives:
@@ -33,4 +33,6 @@ This week's lessons will focus on User-centered UI design, discussing the need f
 * [React Tutorial]({{site.baseurl}}{% link tutorials/week6-react.md %})
 
 ### Additional Readings:
+
+* React/JS [Home](https://reactjs.org/)
 
