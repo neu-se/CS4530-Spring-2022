@@ -10,19 +10,20 @@ nav_order: 2
 
 This tutorial covers the basic concepts of react. By the end of this tutorial, you will be able to create a new react app, understand the basic concepts of react such as states and props, understand React hooks and handling events.
 
--   [React Basics](#)
--   [Creating a new React App](#)
--   [Understanding a React App](#)
-    -   [Components](#)
-    -   [Props](#)
-    -   [State](#)
-    -   [Communicating between Components](#)
-        - [Parent to Child](#)
-        - [Child to Parent](#)
-    -   [Handling Events](#)
--   [React Hooks](#)
-    -   [State and Event Binding](#)
-    -   [Lifecycle Hooks](#)
+-   [React Basics](#react-basics)
+-   [Creating a new React App](#creating-a-new-react-app)
+-   [Understanding a React App](#react-component)
+    -   [Components](#react-component)
+    -   [Template For Structure of Function Component](#template-for-structure-of-function-component)
+    -   [Props](#props)
+    -   [State](#state)
+    -   [Communicating between Components](#communicating-between-components)
+        - [Parent to Child](#parent-to-child-component-communication)
+        - [Child to Parent](#child-to-parent-component-communication)
+    -   [Handling Events](#handling-events)
+-   [React Hooks](#react-hooks)
+    -   [UseState](#usestate)
+    -   [UseEffect](#useeffect)
 
 ## Creating a New React App
 
@@ -100,7 +101,7 @@ export default App;
 
 ## Template For Structure of Function Component
 
-<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/TemplateForFunction.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/TemplateForFunction.tsx" target="_blank">view in sandbox</a>
 
 ```ts
 import * as React from "react";
@@ -124,28 +125,28 @@ export default ComponentName;
 ```
 
 ## Props
-<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/PassingProps.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/PassingProps.tsx" target="_blank">view in sandbox</a>
 
 React components are similar to JavaScript functions and can accept arbitrary arguments called props. Since components are reusable, props are especially useful to display different content in each instance of the component. Let us extract the header elements from the previous code snippet into a new component called Header. We can then use props to say "hello" to different users.
 
 - Create a new file in `src/` directory called `Header.tsx`
 - Create and export a function called Header in the file as below:
 ```ts
- interface Props = {name?: string}
+import React from "react";
 
- function Header (props: {name?: string}) {
+interface IProps {
+  name?: string;
+}
 
-    return (
-      <h1> Hello, {props.name} </h1>
-    );
+const Header = (props: IProps) => {
+  return <h1>Hello, {props.name}</h1>;
+};
 
-  }
+Header.defaultProps = {
+  name: "World"
+};
 
-  Header.defaultProps = {
-    name: 'World'
-  };
-
-  export default Header;
+export default Header;
 ```
 
 - The above code snippet creates a new function component `Header` and prints the value of the `name` passed in the props.
@@ -194,7 +195,7 @@ Changes in state and/or props will both cause our React component to re-render. 
 ## Communication Between Components: 
 
 ### Parent To Child Component Communication: 
-<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/ParentChildCommunication.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ParentChildCommunication.tsx" target="_blank">view in sandbox</a>
 
 
 Passing values from a parent component to a child component is simple. We only have to pass the values as props of the child component. The child component can then use the props object to output results. In the example code you will see that CounterContent component accepts a counter prop which is then used to display the value inside div element. 
@@ -224,7 +225,7 @@ function Counter() {
 
 ### Child to Parent Component Communication
 
-<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/ChildParentCommunication.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ChildParentCommunication.tsx" target="_blank">view in sandbox</a>
 
 For passing data from child component to parent component do the following steps: 
 1. Declare a callback function inside the parent component. This function will get data from the child component. 
@@ -328,7 +329,7 @@ function Counter() {
 
 # Handling Events
 
-<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/HandlingEvents.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/HandlingEvents.tsx" target="_blank">view in sandbox</a>
 
 
 -   React impelemnts its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
@@ -376,7 +377,7 @@ React hooks are built-in functions which allows us to use state and other lifecy
 
 ### useState():
 
-<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/UseStateExample.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseStateExample.tsx" target="_blank">view in sandbox</a>
 
 In this section we will see how we can add state to a React Component using the useState() hook provided by React. The useState hook takes the initial value of the state variable as an argument, the initial state can be any type you want (a string, a number, an array, an object) or a function. Only on the first render will the initial value be assigned. Each useState call returns a two-element array. The state variable is the first element of the array, followed by a function to change the variable's value.
 
@@ -436,7 +437,7 @@ If we give this a try in the running app, we should find the count variable's va
 After we've got our heads around the code needed to define state, accessing and setting state is fairly simple and elegant.
 
 ### useEffect():
-<a href="https://codesandbox.io/s/fervent-cray-i0mprb?file=/src/tutorial/UseEffectExample.tsx" target="_blank">view in sandbox</a>
+<a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseEffectExample.tsx" target="_blank">view in sandbox</a>
 
 
 Now let's have a look at how to invoke the code to execute at a certain point in the component's lifecycle.
