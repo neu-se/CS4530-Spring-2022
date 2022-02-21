@@ -17,7 +17,7 @@ This tutorial covers the basic concepts of react. By the end of this tutorial, y
     -   [Template For Structure of Function Component](#template-for-structure-of-function-component)
     -   [Props](#props)
     -   [State](#state)
-    -   [Communicating between Components](#communicating-between-components)
+    -   [Communicating between Components](#communication-between-components)
         - [Parent to Child](#parent-to-child-component-communication)
         - [Child to Parent](#child-to-parent-component-communication)
     -   [Handling Events](#handling-events)
