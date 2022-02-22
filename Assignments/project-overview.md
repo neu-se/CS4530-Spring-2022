@@ -27,7 +27,7 @@ Select projects from Spring 2021 are hosted [in our project showcase](https://ne
 | 2/18/22 | Kickoff Team Meeting | Meet with your assigned TA mentor to discuss your project concept |
 | 2/25/22 | Project Pitch | Propose a new feature for Covey.Town that can be implemented within 5 weeks |
 | 3/11/22 | Project Plan | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. Propose a high-level design. |
-| 4/22/22 | Project Implementation and Documentation | Deliver your new feature, including design documentation and tests |
+| 4/25/22 | Project Implementation and Documentation | Deliver your new feature, including design documentation and tests |
 
 ### Team Formation
 All projects will be completed in a team of 4-5 students.
