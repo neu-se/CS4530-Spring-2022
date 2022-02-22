@@ -50,7 +50,9 @@ BE PRESENT WHEN YOU ARE ATTENDING CLASS. Please do not distract yourself from th
 Attendance in the synchronous meetings is expected. Sometimes you cannot avoid missing a class. If you need to be away from class, it is your responsibility to catch up on the materials discussed in the class.
 
 ## Accommodations for Disabilities
-Students who have disabilities who wish to receive academic services and/or accommodations should visit the [Disability Resource Center](http://www.northeastern.edu/drc) at 20 Dodge Hall or call (617) 373-2675. If you have already done so, please provide your letter from the DRC to the Instructor early in the semester so that they can arrange those accommodations. Please note that these accommodation don't apply to the group assignments unless there are extenuating circumstances (we have confirmed this with the DRC at NU). Please feel free to reach out to DRC for any questions!
+Students who have disabilities who wish to receive academic services and/or accommodations should visit the [Disability Resource Center](http://www.northeastern.edu/drc) at 20 Dodge Hall or call (617) 373-2675. If you have already done so, please provide your letter from the DRC to the Instructor early in the semester so that they can arrange those accommodations. 
+**Please note that these accommodation don't apply to the group assignments unless there are extenuating circumstances (we have confirmed this with the DRC at NU). Please feel free to reach out to DRC for any questions! If you are involved in any such situation please coordinate with the instructors in timely manner to avoid any logistical problems and to help us figure out how to best provide support for you!**
+
 ## Title IX Notice
 *Title IX of the Education Amendments of 1972 protects individuals from sex or gender-based discrimination, including discrimination based on gender-identity, in educational programs and activities that receive federal financial assistance.*
 
