@@ -33,6 +33,8 @@ Your team's development must take place within a private GitHub repository in ou
 
 This repository will be private, and visible only to your team and the course staff. After the semester ends, you are welcome to make it public - you have complete administrative control of the repository. 
 
+You should create your team's repository before submitting your project plan - your TA will ask to confirm that you have created it when you meet.
+
 ## Revised Problem Statement, User Stories and Acceptance Criteria (max 4 pages)
 If your problem statement has changed in response to feedback from the course staff, please include a revised problem statement. If there are no changes to your problem statement from your original project pitch, then please include your original problem statement along with a note that this problem statement is unchanged.
 
