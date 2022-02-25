@@ -29,6 +29,7 @@ This week's lessons will focus on User-centered UI design, discussing the need f
 * [React Demo (video)](https://northeastern.instructure.com/courses/99531/files/folder/React?preview=14018845)
 * Activity: Build a calculator in React [activity instructions](https://northeastern.instructure.com/courses/99531/files/folder/React?preview=14024088), [activity handout](https://northeastern.instructure.com/files/14018677/download?download_frd=1)
 * [React Tutorial]({{site.baseurl}}{% link tutorials/week6-react.md %})
+* Example: [Prof. Wand's REACT Kitchen Timer]({{site.baseurl}}{% link Examples/Week06-Kitchen-Timer-App.zip %})
 
 ### Additional Readings:
 
