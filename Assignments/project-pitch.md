@@ -43,7 +43,7 @@ You can find good examples of user stories [on this GSA website](https://tech.gs
 ## Submission 
 Your project pitch should be no longer than 8 pages in length (with no more than 4 pages for the user stories and no more than 4 pages for the CRC cards), and submitted as a PDF in GradeScope to the assignment "Project Pitch."
 Each team submits a single document to GradeScope: when uploading the submission, GradeScope will ask you who your teammates are, and then will associate this submission with every member of your team.
-This assignment is due Feb 25. **In order to provide timely feedback on your project pitch, we can not allow any DRC accomodations for late submissions on this assignment.**
+This assignment is due Feb 25. **In order to provide timely feedback on your project pitch, we can not allow any  late submissions on this assignment. For any DRC accomodations, please check the course policy. **
 
 
 ## Grading
