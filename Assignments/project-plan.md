@@ -54,7 +54,7 @@ You do not need to use any special format (such as Gantt or Pert charts). If you
  
 ## Submission 
 Your project plan should be submitted as a single PDF in GradeScope to the assignment "Project Plan."
-Each team submits a single document to GradeScope: when uploading the submission, GradeScope will ask you who your teammates are, and then will associate this submission with every member of your team.
+Each team submits a single document to GradeScope: when uploading the submission, GradeScope will ask you who your teammates are, and then will associate this submission with every member of your team. Be sure to tag your team mates.
 This assignment is due March 11 at 10pm. 
 ## Grading
 The project plan will account for 10% of your project grade. The grading of the project plan is further broken down as follows:
