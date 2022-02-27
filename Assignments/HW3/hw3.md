@@ -11,6 +11,7 @@ submission_notes: Submit on GradeScope
 ### Change Log
 * 2/18/22: Initial Release
 * 2/18/22: Correct reference to `CoveyTownController.test.ts` - it is in `lib`, not `client`
+* 2/27/22: Clarify that `createConversationForTesting` can not be used to create a conversation area with a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) topic
 
 Welcome back! We were very pleased to see your thorough implementation of the new conversation areas API. We are certain that this new design and implementation will be a solid foundation for Covey.Town in the years to come. Before we move on to implement the frontend portion of this feature, however, there is one last matter to discuss: testing.
 
@@ -96,6 +97,8 @@ Mutant detection thresholds:
 
 ### Testing CoveyTownController.addConversationArea (35 points)
 [HW2 Part 1.2b]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-12b-addconversationarea-30-points) describes the expected behavior for `addConversationArea`. Implement a suite of tests that directly call this method and check for the specification.
+
+*Hint (added 2/27/22)*: The implementation of `createConversationForTesting` that we have provided you can not be used to create a conversation area object with a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) topic or label, due to the line `topic: params?.conversationTopic || nanoid()`. Feel free to modify this method, or to modify one of the properties of the returned object.
 
 Mutant detection thresholds:
 * Detect 47 mutants: 10 points
