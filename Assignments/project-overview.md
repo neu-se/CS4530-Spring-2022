@@ -25,9 +25,9 @@ Select projects from Spring 2021 are hosted [in our project showcase](https://ne
 | -----| ----------- | ----------- |
 | 2/9/22 | [Team Formation](https://docs.google.com/forms/d/e/1FAIpQLSdf7hc6AZ80f9pwAOV7vPsJxpQ-0KWy_kkIABLkP761V4UPPw/viewform?usp=sf_link) | Specify preferences for teammates |
 | 2/18/22 | Kickoff Team Meeting | Meet with your assigned TA mentor to discuss your project concept |
-| 2/25/22 | Project Pitch | Propose a new feature for Covey.Town that can be implemented within 5 weeks |
-| 3/11/22 | Project Plan | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. Propose a high-level design. |
-| 4/22/22 | Project Implementation and Documentation | Deliver your new feature, including design documentation and tests |
+| 2/25/22 | [Project Pitch]({{ site.baseurl }}{% link Assignments/project-pitch.md %}) | Propose a new feature for Covey.Town that can be implemented within 5 weeks |
+| 3/11/22 | [Project Plan]({{ site.baseurl }}{% link Assignments/project-plan.md %}) | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. |
+| 4/25/22 | Project Implementation and Documentation | Deliver your new feature, including design documentation and tests |
 
 ### Team Formation
 All projects will be completed in a team of 4-5 students.
@@ -51,6 +51,23 @@ homeworks.
 
 The project pitch assignment will be released on February 11th.
 
+### Creating a GitHub Repository
+Your team's development must take place within a private GitHub repository in our GitHub Classroom. To create your repository, one member of your team should follow these instructions:
+1. Sign in to [GitHub.com](https://www.github.com/), and then [use our invitation to create a repository with the covey.town codebase](https://classroom.github.com/a/VeYucWvK). You should enter your group number (e.g. "Group 7Y") as the team name.
+2. Refresh the page, and it will show a link to your new repository, for example: `https://github.com/neu-cs4530-s22/team-project-group-7y`. Click the link to navigate to your new repository. This is the repository you will use for the project.
+3. Add your teammates:
+   1. From your repository page, click on "Settings" [(Screenshot)]({{ site.baseurl }}{% link Assignments/project-plan-images/1project-settings.png %})
+   2. On the left hand sidebar, select "Collaborators and Teams" [(Screenshot)]({{ site.baseurl }}{% link Assignments/project-plan-images/2collaborators-teams.png %})
+   3. You will see a single team listed, which will be the group name that you entered when creating the repository. Click on that team name. [(Screenshot)]({{ site.baseurl }}{% link Assignments/project-plan-images/3team.png %})
+   4. From the next page, you can click on the "+" icon in order to add a team member [(Screenshot)]({{ site.baseurl }}{% link Assignments/project-plan-images/4team-page.png %})
+   5. Enter the GitHub.com username for your teammate. [(Screenshot)]({{ site.baseurl }}{% link Assignments/project-plan-images/5add-team-member.png %})
+   6. After confirming that you have selected the correct user, click the button to add your teammate. [(Screenshot)]({{ site.baseurl }}{% link Assignments/project-plan-images/6confirm-team-add.png %})
+   7. Repeat steps 4-6 for each of your teammates
+
+This repository will be private, and visible only to your team and the course staff. After the semester ends, you are welcome to make it public - you have complete administrative control of the repository. 
+
+You should create your team's repository before submitting your project plan - your TA will ask to confirm that you have created it when you meet.
+
 ### Project Plan
 Based on the feedback that you receive from the course staff, you will propose a detailed plan to implement your new feature.
 The project plan will include:
@@ -60,7 +77,7 @@ The project plan will include:
 
 Your team will self-organize, as agile teams do and will use the work breakdown and schedule as the basis for weekly check-ins with your team's TA.
 
-The project plan assignment will be released by February 18th.
+The [project plan assignment]({{ site.baseurl }}{% link Assignments/project-plan.md %}) is due by March 11.
 
 ### Project Implementation and Documentation
 You will be assigned a mentor for your project who will work closely with you for the entire project. You will coordinate with the mentor to setup weekly meetings and regular sprint demos. Peer evaluation will also be used.

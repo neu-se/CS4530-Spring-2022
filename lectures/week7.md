@@ -29,11 +29,12 @@ This week's lessons will continue our focus on software quality, centering on th
 
 ### Important Dates:
 
-<!-- - [Project Plan]({{ site.baseurl }}{% link Assignments/project-plan.md %}) due  -->
+- [Project Plan]({{ site.baseurl }}{% link Assignments/project-plan.md %}) due 3/11
 - [HW3]({{ site.baseurl }}{% link Assignments/HW3/hw3.md %}) due 3/4
 
 {% include lesson.html %}
 
+[UI Testing examples and activity handout]({{ site.baseurl }}{% link Examples/todo-app-tests.tgz %})
 ### Additional Readings:
 
 * React/JS [Home](https://reactjs.org/)
