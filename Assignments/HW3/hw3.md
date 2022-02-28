@@ -12,12 +12,15 @@ submission_notes: Submit on GradeScope
 * 2/18/22: Initial Release
 * 2/18/22: Correct reference to `CoveyTownController.test.ts` - it is in `lib`, not `client`
 * 2/27/22: Clarify that `createConversationForTesting` can not be used to create a conversation area with a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) topic
+* 2/28/22: Clarify that unit tests are allowed to execute multiple methods in the code under test
 
 Welcome back! We were very pleased to see your thorough implementation of the new conversation areas API. We are certain that this new design and implementation will be a solid foundation for Covey.Town in the years to come. Before we move on to implement the frontend portion of this feature, however, there is one last matter to discuss: testing.
 
 Unfortunately, we are seeing a recurring pattern with Avery’s development practices: just like Avery's first implementation of covey.town was poorly documented and structured... so are Avery’s tests. While we were able to use Avery’s tests to do some quality assurance on your conversation area implementation, we really do not want to rely on them going forward: they will be a nightmare for maintenance — they violate many of our test design principles, have duplicated code, and are quite brittle. Avery doesn't know how to use mocks or spies very well, and struggles with writing focused unit tests.
 
 Our lead test engineer, Ripley, has done some research into [Jest's Mock and Spy API](https://jestjs.io/docs/es6-class-mocks) and also found the [Jest mock-extended package](https://github.com/marchaos/jest-mock-extended). Ripley would like you to implement a new test suite for the Conversation Area feature - primarily unit tests that make use of mocks and spies. These tests will be quite useful in the coming months and years of the project, and will allow the rest of the team to maintain and enhance the conversation area feature as the overall system needs change. 
+
+**Clarification, 2/28**: In order to effectively test some methods (like `updatePlayerLocation`), your tests might need to also invoke other methods (like `addConversationArea`). That is absolutely OK - these two methods rely on a shared agreement of how the conversation areas are stored in the controller, and in this case, calling `addCoversationArea` in a test for `updatePlayerLocation` is the best way to test `updatePlayerLocation`. You may find similar coupling between other methods --- this is why we say that the definition of a "unit" test versus an "integration" test is lies somewhere on a broad spectrum, and "unit" is not precisely defined as "testing a single method of a single class".
 
 We will grade your tests on several criteria:
 
