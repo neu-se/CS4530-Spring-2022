@@ -35,7 +35,7 @@ This week's lessons will continue our focus on software quality, centering on th
 {% include lesson.html %}
 
 ### Resources
-[UI Testing examples and activity handout]({{ site.baseurl }}{% link Examples/todo-app-tests.tgz %})
+* [UI Testing examples and activity handout]({{ site.baseurl }}{% link Examples/todo-app-tests.tgz %})
 ### Additional Readings:
 
 * React/JS [Home](https://reactjs.org/)
