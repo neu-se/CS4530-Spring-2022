@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Week 7 - Testing + Code Review
+title: Week 7 - UI Testing + Pull Requests + Code Review
 permalink: /modules/week7
 parent: Modules
 nav_order: 7
@@ -34,6 +34,7 @@ This week's lessons will continue our focus on software quality, centering on th
 
 {% include lesson.html %}
 
+### Resources
 [UI Testing examples and activity handout]({{ site.baseurl }}{% link Examples/todo-app-tests.tgz %})
 ### Additional Readings:
 
