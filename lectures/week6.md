@@ -11,7 +11,7 @@ lessons: #I know that it seems a bit annoying to have to put each lesson in the 
   - title: User-Centered UI Design 
     pdf: "Lesson 6.1 User-Centered UI Design.pdf"
     ppt: "Lesson 6.1 User-Centered UI Design.pptx"
-- title: Introduction to React 
+  - title: Introduction to React 
     pdf: "Lesson 6.2 Introduction to React.pdf"
     ppt: "Lesson 6.2 Introduction to React.pptx"
 ---
