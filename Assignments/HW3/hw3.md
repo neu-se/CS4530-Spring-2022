@@ -13,6 +13,7 @@ submission_notes: Submit on GradeScope
 * 2/18/22: Correct reference to `CoveyTownController.test.ts` - it is in `lib`, not `client`
 * 2/27/22: Clarify that `createConversationForTesting` can not be used to create a conversation area with a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) topic
 * 2/28/22: Clarify that unit tests are allowed to execute multiple methods in the code under test
+* 3/1/22: Add explanation to *not* spend any time trying to get stryker to run locally, or to understand its output; this is orthogonal to the goal of the assignment. Added hints for Jest syntax.
 
 Welcome back! We were very pleased to see your thorough implementation of the new conversation areas API. We are certain that this new design and implementation will be a solid foundation for Covey.Town in the years to come. Before we move on to implement the frontend portion of this feature, however, there is one last matter to discuss: testing.
 
@@ -45,7 +46,7 @@ Your tests will be accepted by the autograder *only* if they have no linter erro
 
 Your tests will be graded based on their ability to detect injected faults, using the [stryker mutation tool](https://stryker-mutator.io/docs/stryker-js/introduction/). We have divided the test suite into five units; each unit will be graded inividually based on the number of mutants that your test suite detects. Each unit has a target number of mutants for you to detect, please note that several mutants might be "coupled" (that is, detecting one implies detecting the other), so you may find that a few well-designed tests with strong assertions will detect many mutants. 
 
-You may notice that there could be additional defects that would not be represented by a mutation. Your tests will not be graded on their ability to detect any defects other than the mutations specified.
+**IMPORTANT UPDATE 3/1/22**: Are you interested in learning how mutation testing works? If so, then feel free to run Stryker yourself. Are you currently stressed for time, trying to get through this assignment? **Do not try to run stryker, and do not try to understand its output**. Your objective is to write tests that detect bugs in the HW2 implementation that is included in this handout. You should do this by referring to the specification for HW2, and consider all of the different boundary cases (particularly error cases). Submit your code to GradeScope, and it will tell you if you find all of the bugs.
 
 Your code will be manually evaluated for conformance to our course [style guide]({{ site.baseurl }}{% link style.md %}). This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:
 
@@ -70,7 +71,7 @@ Your tests must be fully contained within these test files and `TestUtils.ts` - 
 
 You may implement your test suite in any order that you would like, but we provide a suggested ordering in the assignment.
 
-A helpful debugging strategy for writing effective tests is to manually inject some fault into the code under test, and then modify your test until it fails on this buggy code. This process is much faster than running a complete mutation analysis. However, if you would like to run the mutation analysis before submitting to GradeScope, you can do so by using the command `npx stryker run` in the project directory. After several minutes, a report will be generated to `reports/mutation/html/index.html` - you can open this report in your browser and see which mutants are not "killed" (the words "detected" and "killed" are used interchangably to refer to mutants that your test suite identifies as bugs; we prefer the term "detected").
+A helpful debugging strategy for writing effective tests is to manually inject some fault into the code under test, and then modify your test until it fails on this buggy code. This process is much faster than running a complete mutation analysis. However, if you would like to run the mutation analysis before submitting to GradeScope, you can do so by using the command `npx stryker run` in the project directory. After several minutes, a report will be generated to `reports/mutation/html/index.html` - you can open this report in your browser and see which mutants are not "killed" (the words "detected" and "killed" are used interchangably to refer to mutants that your test suite identifies as bugs; we prefer the term "detected"). You may notice that there could be additional defects that would not be represented by a mutation. Your tests will not be graded on their ability to detect any defects other than the mutations specified.
 
 You may not make changes to `package.json` or to the lint configuration. You may not use `ts-ignore` or `eslint-disable` annotations.
 
@@ -83,42 +84,56 @@ Jest might also report the following message after running some tests:
 
 Ripley and Avery can’t figure out how to get rid of this, and it’s mostly harmless. Please ignore it, although if you do happen to figure out a fix, please feel free to let us know so that we can share it with Ripley and Avery!
 
+### General Jest Hints
+If you would like to mock a request handler, this is the easiest syntax to use:
+
+```ts
+import * as requestHandlers from '../requestHandlers/CoveyTownRequestHandlers';
+...
+
+jest.spyOn(requestHandlers, 'nameOfRequestHandler').mock...
+```
+
+If you need to expect that some async function throws an error, you may find the [jest reference on error handling](https://jestjs.io/docs/tutorial-async#rejects) to be useful.
+
+Please feel free to post general questions about Jest usage as public posts on Piazza.
+
 
 ### Testing CoveyTownController.destroySession (5 points)
 [HW2 Part 2.2]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-22-remove-participants-from-conversation-area-if-they-disconnect-10-points) describes that when a player's session is destroyed, they should be removed from the conversation area. This test is a great place to start. Take a look at the tests at the bottom of `CoveyTownController.test.ts` for examples of unit tests for similar functionality. *Hint:* You may be able to reuse many of the mocking patterns that already exist in this test suite. 
 
-Mutant detection thresholds:
-* Detect 1 mutant - 5 points
+Bug detection thresholds:
+* Detect 1 bug - 5 points
 
 ### Testing CoveyTownController.updatePlayerLocation (30 points)
 [HW2 Part 2.1]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#part-2-completing-the-townservice-responsibilities-30-points-total) describes the expected behavior for `updatePlayerLocation`. Implement a suite of tests that directly call this method and check for the specification.
 
-Mutant detection thresholds:
-* Detect 20 mutants: 10 points
-* Detect 24 mutants: 22 points
-* Detect 26 mutants: 30 points
+Bug detection thresholds:
+* Detect 20 bugs: 10 points
+* Detect 24 bugs: 22 points
+* Detect 26 bugs: 30 points
 
 ### Testing CoveyTownController.addConversationArea (35 points)
 [HW2 Part 1.2b]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-12b-addconversationarea-30-points) describes the expected behavior for `addConversationArea`. Implement a suite of tests that directly call this method and check for the specification.
 
 *Hint (added 2/27/22)*: The implementation of `createConversationForTesting` that we have provided you can not be used to create a conversation area object with a [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) topic or label, due to the line `topic: params?.conversationTopic || nanoid()`. Feel free to modify this method, or to modify one of the properties of the returned object.
 
-Mutant detection thresholds:
-* Detect 47 mutants: 10 points
-* Detect 62 mutants: 25 points
-* Detect 70 mutants: 35 points
+Bug detection thresholds:
+* Detect 47 bugs: 10 points
+* Detect 62 bugs: 25 points
+* Detect 70 bugs: 35 points
 
 ### Testing CoveyTownRequestHandlers.conversationAreaCreateHandler (10 points)
 [HW2 Part 1.2a]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-12a-conversationareacreatehandler-15-points) describes the expected behavior for `conversationAreaCreateHandler`. Implement a suite of tests that directly call this method and check for the specification. Ripley has porvided a helpful starter test in `CoveyTownConversationAPI.test.ts` - feel free to modify or extend this test (or delete it, if you do not find it useful).
 
-Mutant detection thresholds:
-* Detect 3 mutants: 5 points
-* Detect 4 mutants: 10 points
+Bug detection thresholds:
+* Detect 3 bugs: 5 points
+* Detect 4 bugs: 10 points
 
 ### Testing Towns.ts POST route for /towns/:townID/conversationAreas (10 points)
 With all of the individual components for adding conversation areas unit tested, your last step is to write some integration tests that can check that the REST service is correctly implemented. You can find an example of this kind of test in `CoveyTownConverationAPI.test.ts`. These tests likely need only check that the error messages and HTTP status codes specified in [HW2 Part 1.1]({{ site.baseurl }}{% link Assignments/HW2/hw2.md %}#task-11-add-an-http-route-to-create-conversation-areas-5-points) are correctly implemented.
-Mutant detection thresholds:
-* Detect 2 mutants: 10 points
+Bug detection thresholds:
+* Detect 2 bugs: 10 points
 
 
 ## Submission Instructions
@@ -128,3 +143,5 @@ You should then also have the option to create an account on GradeScope (if you 
 Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.
 
 To submit your assignment: upload *only* the files `src/lib/CoveyTownController.test.ts`, `src/client/CoveyTownConversationAPI.test` and `src/client/TestUtils.ts`. GradeScope will provide you with feedback on your submission, but note that it will *not* include any marks that will be assigned after we manually grade your submission for code style (it will show 0 for this until it is graded).
+
+Note about GradeScope run times: GradeScope's technical team has confirmed that there are currently bugs in their system that can result in the system taking 15-20 minutes to allocate a docker container to run our autograder in. There is nothing that we can do to improve this, other than to hope that they resolve this for a future semester, or to use another grading platform in that future semester. Please be patient, and particularly late at night, do not expect that you will be able to get instantaneous results - this bug is exacerbated by a lack of any feedback that is available to you to indicate that it is still waiting, but is nonetheless making progress.
