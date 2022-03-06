@@ -10,6 +10,7 @@ submission_notes: Submit on GradeScope
 
 ### Change Log
 * 3/4/22: Initial Release
+* 3/6/22: Clarify that `npm install` and `npm run lint` must be run in the *frontend* directory of the handout.
 
 We're just about ready to call the "conversation areas" feature a wrap, and release it! After using the prototype feature for the past few weeks, our UX designer Calin has suggested that we add some additional functionality so that users can see an overview of the activity going on within the town. Calin has sketched out a simple interface, the "social sidebar," that will list the usernames of all of the players in the town, as well as a listing of all of the occupied conversation areas. This will help users to see where the activity is going on, since the map can be quite large. This feature will also provide useful abstractions for future features that might provide more social features.
 
@@ -57,6 +58,8 @@ You may not make changes to `package.json` or to the lint configuration. You may
 
 To run the app locally, please refer to the [README in the Covey.Town repository](https://github.com/neu-se/covey.town).
 
+Your development will take place entirely within the `frontend` directory. You must run `npm install` in the **frontend** directory, and similarly, to run the linter, run `npm run lint` in the **frontend** directory.
+  
 The handout contains components that are written as *functional components* in React. You might find examples online that refer to class-based components. Functional components use [hooks](https://reactjs.org/docs/hooks-intro.html) to store state and perform effects when the component is first rendered or when it's unmounted from the page. Class-based components use the `setState` method to store state, and callbacks like `componentDidMount`. We covered functional components in class, and this assignment requires you to write functional components. For references on how to maintain state in your component or how to perform actions when a component is first mounted on the page or when it's removed from the page, we suggest that you stick to the [React useState documentation](https://reactjs.org/docs/hooks-state.html) and [React useEffect documentation](https://reactjs.org/docs/hooks-effect.html). There are quite a few resources that instead describe the class-based API, and these might be confusing (since they are not applicable).
 
 The handout contains an automated test suite, which you can run with the command `npm test` from within the `frontend` directory. To run only one of the test suites, run the command `npm test testName` where `testName` is either `PlayersList` or `ConversationAreasList`.
