@@ -79,6 +79,7 @@ Once your git repository is up-to-date, you can configure GitHub Actions by foll
 	```
 
 1. Navigate back to the "Actions" tab. You should still see the build passed. If the "build-and-test" job failed, consider the following troubleshooting tips:
+	* If the build failed due to the HW4 tests (we inadvertently configured it such that some students may have the HW4 tests in their repo), delete those test files (`ConversationAreasList.test.tsx` and `PlayersList.test.tsx`). After HW4, we will distribute the solution to HW4 and then these tests can be re-activated.
     * If the build failed with `No tests found, exiting with code 1`, then your repository does not have any tests - perhaps they were deleted?
     * If the build failed due to undefined Twilio secrets, double check that you have correctly entered the Twilio secrets from your `.env` file into the GitHub Settings -> Secrets for your repository. Make sure that you have put the secrets on the same repository that you are setting up the GitHub Actions for.
 
