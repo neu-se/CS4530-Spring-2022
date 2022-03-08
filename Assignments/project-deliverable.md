@@ -15,7 +15,7 @@ Your final team deliverable will be a "release" of your new feature on GitHub (w
 codebase is independent of the grade you receive, but provides a platform for more visibility of your project). 
 
 ### Change Log
-* 3/7: Initial Release 
+* 3/8: Initial Release 
 
 ## Contents
 
@@ -36,14 +36,14 @@ Accompanying the final team deliverable will be an *individual reflection*, whic
 #### Code and documentation
  After you have pushed all of your code (and documentation) to your team's GitHub repository, create [a release](https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/managing-releases-in-a-repository) on GitHub, and apply the tag version `final-submission`. After your release is created, you'll find that there is now a `.zip` that can be downloaded from GitHub that contains a snapshot of your entire repository. Download this zip file, unpack it, and follow the instructions that you provided in your README to double-check that the course staff will be able to run your project (this step is handy to make sure that you didn't forget to include some key files in git). If needed, you can delete the release, make some changes, and re-release up until the deadline. **Submit this zip file to Canvas** under the assignment "Final Project - Code Submission". Submit your report separately to Canvas, under the assignment "Final Project - Report Submission".
 
-#### Demo video
-Record your demo video and upload it to Canvas, under the assignment "Demo Video for Final Project".
+#### Project Demo
+Details for project demos will be provided during class by each instructor. Some sections will have live (in-person demos) and others may ask you to record a demo video.
 
 #### Individual Reflection
 Create a PDF of your reflection, and submit it to Canvas, under the assignment "Project - Individual Reflection".
 
 ## Grading
-Each project will be graded by the team's assigned TA mentor, and the instructor. We do not expect all teams to deliver all of the features that were initially proposed - in the five week implementation period, there are sure to be some teams that encounter unexpected technical hurdles. As described in greater detail in the rubrics below, teams that have regular communication with their TA regarding their project status may be permitted to variances to their project scope. For each of the submisison components below, we provide two benchmark rubrics: one for a submission that is satisfactory (full marks), and one that would be meeting our minimum expectations (a pass). In practice, when grading projects we will assign numeric grades and provide partial credit, using these rubrics as guidelines for those two extremes.
+Each project will be graded by the team's assigned TA mentor, and the instructor. We do not expect all teams to deliver all of the features that were initially proposed - in the five week implementation period, there are sure to be some teams that encounter unexpected technical hurdles. As described in greater detail in the rubrics below, teams that have regular communication with their TA regarding their project status may be permitted to variances to their project scope. For most of the submisison components below, we provide two benchmark rubrics: one for a submission that is satisfactory (full marks), and one that would be meeting our minimum expectations (a pass). Rubric for remaining components will be provided by individual instructors. In practice, when grading projects we will assign numeric grades and provide partial credit, using these rubrics as guidelines for those two extremes. Overall project is worth 35% of the course.
 
 In cases where team members do not equally contribute to the project, we may assign different grades to different individuals, up to an extreme of deducting 50% of the marks from a student. We will evaluate each individual's contribution on the basis of a variety of factors, including progress reports at weekly meetings, through inspecting version control history, through each students' self-reflection, and through each students' peer evaluation at the end of the project. We will make regular efforts to collect and distribute this feedback throughout the project --- our ultimate goal is for all students to participate and receive full marks.
 
@@ -71,7 +71,6 @@ The project must include evidence of testing. Ideally, all new features will be 
 #### Meets minimum requirements:
 * Any new or modified backend features include at least one test, which may or may not be an effective test.
 * Tests may contain ESlint warnings (but no errors); does not include any eslint-disable or ts-ignore flags
-
 
 ### 10% Project Pitch
 Each team's project pitch grade will account for 10% of the overall grade for the project.
@@ -123,16 +122,8 @@ The final report should consist of two key sections:
 * The course course staff were able to stumble through configuring it without contacting you.
 * The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) 
 
-### 10% Demonstration video
-#### Satisfactory:
-* Fits in required time (10 minutes)
-* Contains a brief description of the high level components in Covey.Town introduced or modified by the team.
-* Successfully demonstrates all of the primary implemented user stories
-
-#### Meets minimum requirements: 
-* Fits in required time (10 minutes)
-* Contains a brief description of the high level components in Covey.Town introduced or modified by the team
-* Demonstrates at least one of the implemented user stories
+### 10% Demonstration
+Each instructor will provide details regarding expectations for the demo.
 
 ## Individual Reflection
 
