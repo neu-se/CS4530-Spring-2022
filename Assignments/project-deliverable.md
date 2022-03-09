@@ -81,7 +81,7 @@ Each team's project plan grade will account for 10% of the overall grade for the
 ### 10% Weekly meetings, demonstrations of progress and evaluations
 Throughout the semester, each team will be meeting with their TA mentor and with the instructor to discuss their project progress. Attendance at these meetings and demonstrations of progress will, cumulatively, account for 10% of the project grade. Each instructor will provide a more detailed rubric for this section of the assignment.
 
-### 10% Evidence of Development Process
+### 5% Evidence of Development Process
 Each team is expected to use their GitHub repository, regularly committing changes while developing their project. 
 
 #### Satisfactory:
@@ -95,7 +95,7 @@ Each team is expected to use their GitHub repository, regularly committing chang
 * Each team member has made at least 2 commits over the lifespan of the project
 
 ### Final Report 
-The final report should consist of two key sections:
+The final report should consist of three sections:
 
 #### 10% Report -- Feature Overview
 ##### Satisfactory:
@@ -103,7 +103,7 @@ The final report should consist of two key sections:
 * The documentation covers all steps that the user would need to take to exercise all of your user stories.
 * Screenshots are included that capture the key interactions between a user and your new feature.
 * Course staff were able to follow these instructions to successfully interact with your project implementation.
-* The section is at most 4 pages, NOT including figures --- fewer pages are absolutely acceptable, consider this a rough limit
+* The section is at most 4 pages (roughly 2,000 words maximum), NOT including figures --- fewer pages are absolutely acceptable, consider this a rough limit
 
 ##### Meets minimum requirements:
 * The Feature contains documentation for a user to interact with your updated version of Covey.Town, but perhaps does not fully describe how.
@@ -111,14 +111,24 @@ The final report should consist of two key sections:
 * The course staff were able to figure out how to use it through trial and error.
 * The section is at most 4 pages, NOT including figures --- fewer pages are absolutely acceptable, consider this a rough limit
 
-#### 10% Report -- Technical README
+#### 10% Report - Technical Overview
+##### Satisfactory:
+* Technical Overview contains a description of any substantive changes to the existing Covey.Town codebase, and the architecture of your new code.
+* It uses CRC cards, or state diagrams or any of the other techniques that help describe the structure.
+* It provides a well-reasoned rationale for why this is the "right" design. 
+* The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) 
+##### Meets minimum requirements:
+* Technical Overview includes a description of all major changes to the code compared to our existing Covey.Town codebase.
+* The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) 
+
+#### 5% Report - README
 ##### Satisfactory:
 * The README section contains detailed instructions to deploy the application with your new feature - modified from our initial installation instructions to include any new setup necessary for your feature.
 * The course staff is able to follow these instructions to deploy your application.
 * The README section is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) 
 
 #### Meets minimum requirements:
-* `README.md` file contains instructions to deploy the application with your new feature, perhaps missing key steps for installing/deploying the application
+* The README section contains instructions to deploy the application with your new feature, perhaps missing key steps for installing/deploying the application
 * The course course staff were able to stumble through configuring it without contacting you.
 * The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) 
 
