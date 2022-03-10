@@ -75,7 +75,7 @@ The project must include evidence of testing. Ideally, all new features will be 
 ### 10% Project Pitch
 Each team's project pitch grade will account for 10% of the overall grade for the project.
 
-### 10% Project Pitch
+### 10% Project Plan
 Each team's project plan grade will account for 10% of the overall grade for the project.
 
 ### 10% Weekly meetings, demonstrations of progress and evaluations
