@@ -5,7 +5,7 @@ permalink: /Assignments/project-deliverable
 parent: Assignments
 nav_order: 8
 ---
-# Project: Final Deliverable **Due Friday April 27, 10:00pm EST**{: .label .label-red }
+# Project: Final Deliverable **Due Monday April 25, 10:00pm EST**{: .label .label-red }
 The final project deliverable is the implementation, available in github and (front-end) deployed on Netlify and Heroku, and the documentation turned in to Canvas.
 
 # Project Implementation and Documentation
@@ -133,7 +133,7 @@ The final report should consist of three sections:
 * The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit) 
 
 ### 10% Demonstration
-Each instructor will provide details regarding expectations for the demo.
+Each instructor will provide details regarding expectations for the demo. The schedule and manner of these demos might also vary from section to section.
 
 ## Individual Reflection
 
