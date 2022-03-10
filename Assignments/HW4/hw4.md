@@ -3,7 +3,7 @@ layout: assignment
 title: "Assignment 4: Social Sidebar"
 permalink: /assignments/hw4
 parent: Assignments
-nav_order: 3
+nav_order: 4
 due_date: "Friday March 25, 10:00pm EST"
 submission_notes: Submit on GradeScope 
 ---
@@ -11,6 +11,7 @@ submission_notes: Submit on GradeScope
 ### Change Log
 * 3/4/22: Initial Release
 * 3/6/22: Clarify that `npm install` and `npm run lint` must be run in the *frontend* directory of the handout.
+* 3/10/22: Add hints about keys on arrays of components; proper syntax for creating a new component with parameters.
 
 We're just about ready to call the "conversation areas" feature a wrap, and release it! After using the prototype feature for the past few weeks, our UX designer Calin has suggested that we add some additional functionality so that users can see an overview of the activity going on within the town. Calin has sketched out a simple interface, the "social sidebar," that will list the usernames of all of the players in the town, as well as a listing of all of the occupied conversation areas. This will help users to see where the activity is going on, since the map can be quite large. This feature will also provide useful abstractions for future features that might provide more social features.
 
@@ -77,6 +78,8 @@ Calin provides the following specification:
 Please refer to the `usePlayersInTown` and `useCoveyAppState` hooks to find the relevant state that this component must display.
 Your component may not mutate the array returned by `usePlayersInTown`.
 
+Hint: If components are generated programatically in an array (e.g. a list of players), each component in that list must have [a unique `key`](https://reactjs.org/docs/lists-and-keys.html) - the tests will check for this.
+
 Your grade for this part of the assignment will be computed based on the set of tests that you pass. The tests are broken up into tasks; you will receive marks for a task only if you pass all of that task's tests. Tests for later tasks may depend on behavior in earlier tasks - we do not suggest moving on to the next task until you fully satisfy the tests for the earlier tasks.
 
 * Task 1: Display the heading [5 points]
@@ -100,6 +103,8 @@ Calin provides the following specification for the `ConversationAreasList`:
 
 Please refer to the `usePlayersInTown` and `useConversationAreas` hooks to find the relevant state that this component must display.
 Your component may not mutate the arrays returned by these hooks.
+
+Hint: If components are generated programatically in an array (e.g. a list of conversation areas), each component in that list must have [a unique `key`](https://reactjs.org/docs/lists-and-keys.html) - the tests will check for this. You may also find it particularly useful to review React's documentation on [rendering a component, and passing it properties](https://reactjs.org/docs/components-and-props.html#rendering-a-component), but be sure to focus on the examples for functional components (we are not writing class-based components). Note that React will always pass your component's properties as an object - in the example of the existing `PlayerName` component, note that the components is passed a `props` object of type `{player: Player}`, and *not* directly passed an argument of type `Player`. 
 
 Your grade for this part of the assignment will be computed based on the set of tests that you pass. The tests are broken up into tasks; you will receive marks for a task only if you pass all of that task's tests. Tests for later tasks may depend on behavior in earlier tasks - we do not suggest moving on to the next task until you fully satisfy the tests for the earlier tasks.
 
