@@ -13,8 +13,7 @@ The project plan will include:
 * *Revised* Introductory problem statement: what problem in Covey.Town does your (proposed) feature solve? Provide a paragraph (or two) that describes why you are interested in building this feature. (revised if necessary based on feedback on the project pitch)
 * *Revised* User stories and acceptance criteria: high level description of how users will interact with your new feature (revised based on feedback on the project pitch)
 * *Revised* Class-level design (CRC cards): What are the new classes that you are going to add to the Covey.Town codebase, and how will they interact with any existing classes?  (revised based on feedback on the project pitch)
-* Work breakdown: Define engineering tasks that will be necessary to implement your new feature. 
-* Schedule: Provide a weekly schedule for completion of these tasks. 
+* Work breakdown: Define engineering tasks that will be necessary to implement your new feature. Schedule each task into one of the pre-defined sprints. 
 
 We list page *maximums* for each section as general guidance of what we are willing to grade. Please do not feel compelled to use all of the pages provided, and remember that a diagram or table can be as expressive (or more) as a comparable amount of text.
 ## Revised Problem Statement, User Stories and Acceptance Criteria (max 4 pages)
