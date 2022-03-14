@@ -42,16 +42,16 @@ Once your git repository is up-to-date, you can configure GitHub Actions by foll
 1. Log in to GitHub, and navigate to your project. Go to the "Settings" tab, and then select "Secrets," and under "Secrets" select "Actions."
 2. Click "New Repository Secret", and then enter each of your Twilio secrets (from your `services/townService/.env` file) as new variables here, as shown in this screenshot:
 ![GitHub Actions Secrets]({{site.baseurl}}{% link Activities/Assets/continuous_dev/gha-secrets-twilio.png %})
-3. Navigate to the "Actions" tab in GitHub. If you had made commits previously, you may have seen them fail due to the missing twilio configuration (or, they may have never run). You can test that the CI workflow is correclty working by selecting the "Covey.Town CI" workflow on the left, then "Run worklow" and trigger the workflow to run on the `main` branch. While it's running, let's take a brief look at the workflow configuration that will run the tests, by looking at the `.github/workflows/main.yml` file. You won't need to make any changes here, but should take a quick look to see what's going on:
+3. Navigate to the "Actions" tab in GitHub. If you had made commits previously, you may have seen them fail due to the missing twilio configuration (or, they may have never run). You can test that the CI workflow is correclty working by selecting the "Covey.Town CI" workflow on the left, then "Run worklow" and trigger the workflow to run on the `main` branch. While it's running, let's take a brief look at the workflow configuration that will run the tests, by looking at the `.github/workflows/main.yml` file. Update the `push` and `pull_request` branches to reference `main` instead of `master` (the template repository still uses `master` as the default branch, but yours will use `main`)
 
 	```yaml
 	name: Covey.Town CI
 	on: # Controls when the action will run.
 	  # Triggers the workflow on push or pull request events but only for the master branch. If you want to trigger the action on other branches, add here
 	  push:
-		branches: [ master ]
+		branches: [ main ] # Says 'master' in starter code, change to 'main'
 	  pull_request:
-		branches: [ master ]
+		branches: [ main ] # Says 'master' in starter code, change to 'main'
 
 	  # Allows you to run this workflow manually from the Actions tab
 	  workflow_dispatch:
