@@ -11,6 +11,7 @@ submission_notes: Submit on GradeScope
 ### Change Log
 * 3/4/22: Initial Release
 * 3/6/22: Clarify that `npm install` and `npm run lint` must be run in the *frontend* directory of the handout.
+* 3/16/22: Add note about not using `useEffect` to cache sorted conversation areas, update typo in handout test name about sorting conversation areas
 
 We're just about ready to call the "conversation areas" feature a wrap, and release it! After using the prototype feature for the past few weeks, our UX designer Calin has suggested that we add some additional functionality so that users can see an overview of the activity going on within the town. Calin has sketched out a simple interface, the "social sidebar," that will list the usernames of all of the players in the town, as well as a listing of all of the occupied conversation areas. This will help users to see where the activity is going on, since the map can be quite large. This feature will also provide useful abstractions for future features that might provide more social features.
 
@@ -101,6 +102,8 @@ Calin provides the following specification for the `ConversationAreasList`:
 Please refer to the `usePlayersInTown` and `useConversationAreas` hooks to find the relevant state that this component must display.
 Your component may not mutate the arrays returned by these hooks.
 
+Note (added 3/16): To pass the test suite, your components may only use `useEffect` for subscribing to the `onOccupantsChange` event (as described above), and must *not* use any `useEffect` hooks for other purposes. If you would like to *cache* some information (like the list of sorted conversation areas), feel free to use [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo) for this purpose. However, it is also not necessary that you do any such caching. This note is only applicable if you are struggling to determine why your components fail the tests that use mock `useEffect` calls.
+
 Your grade for this part of the assignment will be computed based on the set of tests that you pass. The tests are broken up into tasks; you will receive marks for a task only if you pass all of that task's tests. Tests for later tasks may depend on behavior in earlier tasks - we do not suggest moving on to the next task until you fully satisfy the tests for the earlier tasks.
 
 * Task 1: Display the sorted conversation areas topics and labels [10 points]
@@ -108,6 +111,8 @@ Your grade for this part of the assignment will be computed based on the set of 
 * Task 3: Filter out inactive conversation areas [10 points]
 * Task 4: Create a useEffect hook that subscribes to `onOccupantsChange` events for the conversation area [10 points]
 * Task 5: Update the list of occupants displayed in response to `onOccupantsChange` events [20 points]
+
+Updated handout 3/16 corrects the name of the test on line 169 of `ConversationAreasListTest.test.tsx` from: `When checking usernames, it sorts conversation areas by topic` to: `When checking usernames, it sorts conversation areas by label` (change is only to name of test, contents of test are same)
 
 ## Submission Instructions
 Submit your assignment in GradeScope. The easiest way to get into GradeScope the first time is to first
