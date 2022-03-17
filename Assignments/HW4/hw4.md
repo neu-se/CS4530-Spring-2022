@@ -12,6 +12,7 @@ submission_notes: Submit on GradeScope
 * 3/4/22: Initial Release
 * 3/6/22: Clarify that `npm install` and `npm run lint` must be run in the *frontend* directory of the handout.
 * 3/16/22: Add note about not using `useEffect` to cache sorted conversation areas, update typo in handout test name about sorting conversation areas
+* 3/17/22: Hint that tooltip needs to wrap the heading tag, not the other way around
 
 We're just about ready to call the "conversation areas" feature a wrap, and release it! After using the prototype feature for the past few weeks, our UX designer Calin has suggested that we add some additional functionality so that users can see an overview of the activity going on within the town. Calin has sketched out a simple interface, the "social sidebar," that will list the usernames of all of the players in the town, as well as a listing of all of the occupied conversation areas. This will help users to see where the activity is going on, since the map can be quite large. This feature will also provide useful abstractions for future features that might provide more social features.
 
@@ -71,7 +72,7 @@ The top part of the SocialSidebar is the `PlayersList`, which lists the current 
 
 Calin provides the following specification:
 * The PlayersList component must be implemented in `PlayersList.tsx`
-* Town name must be shown in an H2 heading with a Chakra ToolTip that shows the label `Town ID: ${theCurrentTownID}`
+* Town name must be shown in an H2 heading with a Chakra ToolTip that shows the label `Town ID: ${theCurrentTownID}`. **Hint 3/17/22**: For reasons that are not currently known to us, it is necessary to nest the heading inside of the tooltip, rather than the tooltip inside of the heading.
 * Players must be listed in an `OrderedList` below that heading, sorted alphabetically by `userName`. The sorting should use an alphanumeric sort (e.g. user `user10` should appear *after* `user9`).
 * Each player must be rendered by the (existing) `<PlayerName>` component, that component must be nested within a list item.
 
