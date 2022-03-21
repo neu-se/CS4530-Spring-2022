@@ -13,6 +13,7 @@ submission_notes: Submit on GradeScope
 * 3/6/22: Clarify that `npm install` and `npm run lint` must be run in the *frontend* directory of the handout.
 * 3/16/22: Add note about not using `useEffect` to cache sorted conversation areas, update typo in handout test name about sorting conversation areas
 * 3/17/22: Hint that tooltip needs to wrap the heading tag, not the other way around
+* 3/20/22: Fix typo in part 2 description: Correct property is `occupants` not `occupantsByID`
 
 We're just about ready to call the "conversation areas" feature a wrap, and release it! After using the prototype feature for the past few weeks, our UX designer Calin has suggested that we add some additional functionality so that users can see an overview of the activity going on within the town. Calin has sketched out a simple interface, the "social sidebar," that will list the usernames of all of the players in the town, as well as a listing of all of the occupied conversation areas. This will help users to see where the activity is going on, since the map can be quite large. This feature will also provide useful abstractions for future features that might provide more social features.
 
@@ -97,7 +98,7 @@ Calin provides the following specification for the `ConversationAreasList`:
 * Each active conversation area is represented as its own component. You must author and name this component, locating it in the `ConversationAreasList.tsx` file. The component should contain, within a ChakraUI `Box`:
    * A heading (h3), with the text: `{conversationAreaLabel}: {conversationAreaTopic}`,
    * An unordered list of occupants:
-      * Occupants are *unsorted*, appearing in the order that they appear in the area's `occupantsByID` array. Each occupant is rendered by a `<PlayerName>` component, nested within a ListItem.
+      * Occupants are *unsorted*, appearing in the order that they appear in the area's `occupants` array. Each occupant is rendered by a `<PlayerName>` component, nested within a ListItem.
    * An `useEffect` hook, which subscribes to occupancy updates by registering an `onOccupantsChange` listener on the component's corresponding conversation area object:
      * The listener must be registered exaclty once (when the component is mounted), and unregistered exactly once (when the component is unmounted)
      * The listener must update the rendered list of occupants in the conversation area when it receives updates
