@@ -14,6 +14,7 @@ submission_notes: Submit on GradeScope
 * 3/16/22: Add note about not using `useEffect` to cache sorted conversation areas, update typo in handout test name about sorting conversation areas
 * 3/17/22: Hint that tooltip needs to wrap the heading tag, not the other way around
 * 3/20/22: Fix typo in part 2 description: Correct property is `occupants` not `occupantsByID`
+* 3/24/22: Add hint about rules of hooks
 
 We're just about ready to call the "conversation areas" feature a wrap, and release it! After using the prototype feature for the past few weeks, our UX designer Calin has suggested that we add some additional functionality so that users can see an overview of the activity going on within the town. Calin has sketched out a simple interface, the "social sidebar," that will list the usernames of all of the players in the town, as well as a listing of all of the occupied conversation areas. This will help users to see where the activity is going on, since the map can be quite large. This feature will also provide useful abstractions for future features that might provide more social features.
 
@@ -64,6 +65,11 @@ To run the app locally, please refer to the [README in the Covey.Town repository
 Your development will take place entirely within the `frontend` directory. You must run `npm install` in the **frontend** directory, and similarly, to run the linter, run `npm run lint` in the **frontend** directory.
   
 The handout contains components that are written as *functional components* in React. You might find examples online that refer to class-based components. Functional components use [hooks](https://reactjs.org/docs/hooks-intro.html) to store state and perform effects when the component is first rendered or when it's unmounted from the page. Class-based components use the `setState` method to store state, and callbacks like `componentDidMount`. We covered functional components in class, and this assignment requires you to write functional components. For references on how to maintain state in your component or how to perform actions when a component is first mounted on the page or when it's removed from the page, we suggest that you stick to the [React useState documentation](https://reactjs.org/docs/hooks-state.html) and [React useEffect documentation](https://reactjs.org/docs/hooks-effect.html). There are quite a few resources that instead describe the class-based API, and these might be confusing (since they are not applicable).
+
+**Hint 3/24**: Please, be sure to follow the [rules of hooks](https://reactjs.org/docs/hooks-rules.html), some of which are automatically enforced by the linter, but others of which you might not receive automated warnings for. We will not be manually deducting points for violations of these rules, but we do not believe that it is possible to pass all of the tests if these rules are violated (because React will behave unexpectedly). Those rules, in brief are:
+1. Only call hooks (`useEffect()` or `useState()`) at the top level: not in loops, conditionals, or nested functions
+2. Only call hooks from React function components (not from helper functions)
+
 
 Note that it might be tempting, because the component is a function, to instantiate your component `Foo` by calling the function, as in: `Foo({paramA=b})`. This style is an [anti-pattern](https://kentcdodds.com/blog/dont-call-a-react-function-component) in React, and likely to yield test failures that are otherwise unexplainable. Please, be sure to instantiate the components as we have in our slides and resources, and as in the React documentation, using TSX, as in: `<Foo paramA={b} />`.
 
