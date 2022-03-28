@@ -16,8 +16,8 @@ nav_order: 1
 | [Mar 7-11]({{ site.baseurl }}{% link lectures/week8.md %})      | Deployment Infrastructure<br />Continuous Development + DevOps            | [Project Plan due]({{ site.baseurl }}{% link Assignments/project-plan.md %})                                                       |
 | Mar 14-18     | Spring Break!                                                             |                                                                        |
 | [Mar 21-25]({{ site.baseurl }}{% link lectures/week9.md %})     | SE for Distributed Systems<br />Static Analysis & Bug-Finders                     | [HW 4 Due]({{ site.baseurl }}{% link Assignments/HW4/hw4.md %})                                                               |
-| Mar 28-Apr 1 | Security<br />Team Meetings |                                                                        |
-| Apr 4-8       | Code Smells & Refactoring; Technical Debt<br />Team Meetings                            |                                                                        |
+| [Mar 28-Apr 1]({{ site.baseurl }}{% link lectures/week10.md %}) | Security<br />Team Meetings |                                                                        |
+| [Apr 4-8]({{ site.baseurl }}{% link lectures/week11.md %})       | Code Smells & Refactoring; Technical Debt<br />Team Meetings                            |                                                                        |
 | Apr 11-15     | Engineering Equitable Software<br />Team Meetings                                            |                                                                        |
 | Apr 18-22     | Team Meetings + Demos                                                                       |                                                                        |
 | Apr 25-27     | Demos                                                                     | Final Project Report + Implementation Due                              |
