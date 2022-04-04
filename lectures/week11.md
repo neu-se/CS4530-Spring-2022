@@ -17,7 +17,7 @@ lessons: #I know that it seems a bit annoying to have to put each lesson in the 
 
 In this week of the course, you will learn to:
 * "Refactoring": restructuring of code to improve structure.
-* Some common code “smells” (anti-patterns).
+* Some common code "smells" (anti-patterns).
 * "Technical Debt": generalization covering all internal problems in a code-base
 
 {% include lesson.html %}
