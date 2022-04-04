@@ -17,9 +17,9 @@ nav_order: 1
 | Mar 14-18     | Spring Break!                                                             |                                                                        |
 | [Mar 21-25]({{ site.baseurl }}{% link lectures/week9.md %})     | SE for Distributed Systems<br />Static Analysis & Bug-Finders                     | [HW 4 Due]({{ site.baseurl }}{% link Assignments/HW4/hw4.md %})                                                               |
 | [Mar 28-Apr 1]({{ site.baseurl }}{% link lectures/week10.md %}) | Security<br />Team Meetings |                                                                        |
-| [Apr 4-8]({{ site.baseurl }}{% link lectures/week11.md %}) | Code Smells & Refactoring; Technical Debt<br />Team Meetings                            |                                                                        |
+| [Apr 4-8]({{ site.baseurl }}{% link lectures/week11.md %}) | Refactoring, Code Smells and Technical Debt<br />Team Meetings                            |                                                                        |
 | Apr 11-15     | Engineering Equitable Software<br />Team Meetings                                            |                                                                        |
 | Apr 18-22     | Team Meetings + Demos                                                                       |                                                                        |
-| Apr 25-27     | Demos                                                                     | Final Project Report + Implementation Due                              |
+| Apr 25-27     | Demos                                                                     | [Final Project Report + Implementation Due]({{ site.baseurl }}{% link Assignments/project-deliverable.md %})                              |
 | Apr 29, May 2 or May 4     | Final exam (online). <br />The exam will be 2 hours, and we have scheduled 3 windows of 3 hours in which you may choose to take the exam: April 29 10am-1pm, May 2 4pm-7pm, May 4 6pm-9pm. |
 {: class="schedule-table"}

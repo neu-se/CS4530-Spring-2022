@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Week 11 - Code Smells & Refactoring; Technical Debt
+title: Week 11 - Refactoring, Code Smells and Technical Debt
 permalink: /modules/week11
 parent: Modules
 nav_order: 11 
@@ -8,16 +8,16 @@ lessons: #I know that it seems a bit annoying to have to put each lesson in the 
   #But, the benefit is that if you do it like this, the site
   #will automatically add the lecture on Canvas, including
   #links to the ppt, pdf, and tutorials as appropriate!
-  - title: Code Smells, Refactoring and Technical Debt
-    pdf: "Lesson 11 Code Smells, Refactoring and Technical Debt.pdf"
-    ppt: "Lesson 11 Code Smells, Refactoring and Technical Debt.pptx"
+  - title: Refactoring, Code Smells and Technical Debt
+    pdf: "Lesson 11 Refactoring, Code Smells and Technical Debt.pdf"
+    ppt: "Lesson 11 Refactoring, Code Smells and Technical Debt.pptx"
 ---
 
 ### Learning Objectives:
 
 In this week of the course, you will learn to:
-* Some common code “smells” (anti-patterns).
 * "Refactoring": restructuring of code to improve structure.
+* Some common code “smells” (anti-patterns).
 * "Technical Debt": generalization covering all internal problems in a code-base
 
 {% include lesson.html %}
