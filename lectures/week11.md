@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Week 11 - Refactoring, Code Smells and Technical Debt
+title: Week 11 - Refactoring and Technical Debt
 permalink: /modules/week11
 parent: Modules
 nav_order: 11 
