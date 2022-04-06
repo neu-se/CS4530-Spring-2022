@@ -11,7 +11,7 @@ lessons: #I know that it seems a bit annoying to have to put each lesson in the 
   - title: Engineering Software For Equity
     pdf: "Lesson 12.1 Engineering Software For Equity.pdf"
     ppt: "Lesson 12.1 Engineering Software For Equity.pptx"
-  - title: Engineering Software For Equity
+  - title: Ethics in Software Engineering
     pdf: "Lesson 12.2 Ethics in Software Engineering.pdf"
     ppt: "Lesson 12.2 Ethics in Software Engineering.pptx"
 ---
