@@ -1,7 +1,7 @@
 ---
 layout: module
-title: Week 11 - Engineering Software For Equity
-permalink: /modules/week11
+title: Week 12 - Engineering Software For Equity
+permalink: /modules/week12
 parent: Modules
 nav_order: 12 
 lessons: #I know that it seems a bit annoying to have to put each lesson in the yaml header like this...
