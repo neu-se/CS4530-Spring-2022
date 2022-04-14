@@ -53,12 +53,12 @@ We will grade each delivered project holistically using the following two rubric
 
 #### Satisfactory:
 * Implemented feature satisfies the conditions of satisfaction as proposed by the team and as agreed to by the course staff. If technical difficulties resulted in features being dropped, the project may still earn full marks on "delivered features," but these difficulties must have been documented with the course staff as you encountered them during development.
-* Implemented feature is deployed to a publicly-accessible URL, using Netlify and Heroku for hosting as outlined in Activity 8.1
+* Implemented feature is deployed to a publicly-accessible URL, using Netlify and Heroku for hosting as outlined in the [Week 8 Activity]({{ site.baseurl }}{% link Activities/Activity8.1_Continuous_Dev.md %})
 * Implemented feature contains no ESLint warnings or errors; does not include any eslint-disable or ts-ignore flags
 
 #### Meets minimum requirements:
 * Implemented feature largely satisfies acceptance criteria as proposed by the team, but may not meet the course staff’s interpretation of those criteria.
-* Implemented feature is deployed to a publicly-accessible URL, using Netlify and Heroku for hosting as outlined in Activity 8.1
+* Implemented feature is deployed to a publicly-accessible URL, using Netlify and Heroku for hosting as outlined in the [Week 8 Activity]({{ site.baseurl }}{% link Activities/Activity8.1_Continuous_Dev.md %})
 * The implementation may have some obvious flaws, but largely works without crashing.
 * Implemented feature does not include any eslint-disable or ts-ignore flag
 
