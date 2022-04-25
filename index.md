@@ -68,7 +68,7 @@ The project will provide hands-on experience to complement the skills taught in 
   - Twilio's Programmable Video API
   - Postman
 
-Select projects from Spring 2021 are hosted [in our project showcase](https://neu-se.github.io/CS4530-CS5500-Spring-2021/assignments/project-showcase).
+Select projects from Spring 2022 are hosted [in our project showcase]({{ site.baseurl }}{% link Assignments/project-showcase.md %}).
 
 ### Acknowledgements
 This class and its contents were inspired by Software Engineering courses at various institutions, including:

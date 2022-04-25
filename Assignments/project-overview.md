@@ -16,7 +16,7 @@ All implementation will take place in the TypeScript programming language, using
 
 
 
-Select projects from Spring 2021 are hosted [in our project showcase](https://neu-se.github.io/CS4530-CS5500-Spring-2021/project-showcase).
+Select projects from Spring 2022 are hosted [in our project showcase]({{ site.baseurl }}{% link Assignments/project-showcase.md %}).
 
 
 ### Overview of Project Deliverables
@@ -88,12 +88,7 @@ codebase is independent of the grade you receive, but provides a platform for mo
 Your final team deliverable will include:
 * The implementation of your new feature
 * Automated tests for your new feature
-* A README.md document that includes instructions to deploy Covey.Town with your new feature
-* A FEATURE.md document that describes the final version of your use cases
-* A DESIGN.md document that includes documentation of your design (using CRC cards, UML class diagrams, and/or UML sequence diagrams as you find necessary; remember that a picture is worth a thousand words!). In particular,
-    for any change that you had to make to the existing codebase, provide a rationale for why the change was made, and what alternatives were considered.
-* A revised work breakdown, updated to reflect the work that was actually done and by whom
-* A 10 minute video that demonstrates the usage of your feature
+* A report
     
 Accompanying the final team deliverable will be an *individual reflection*, which every student must submit on their own, which will include your reflections on:
 * The evolution of your project concept: How does the project that you delivered compare to what you originally planned to deliver? What caused these deviations?
