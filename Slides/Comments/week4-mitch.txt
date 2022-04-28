@@ -1,0 +1,192 @@
+Lesson 4.1
+
+Slide 6: "Inside of the JS engine: perhaps more threads".   Seems to
+contradict the rest of the slide.
+
+Slide 6: You haven't introduced listeners.  Need to expand the left
+hand box to show the pool of listeners.
+
+maybe insert text:
+
+Node.js maintains a pool of _listeners_.  A listener is a piece of
+code that is waiting for some event to happen.
+
+Script should include a sentence like:
+
+"Those primitives may create other threads in the operating system,
+but all your code runs in a single OS thread."
+
+
+
+======
+
+Slide 8 script: delete "once it's available".  Replace 2nd para:
+
+> A Promise is a representation of a listener, and lets us request some
+> asynchronous action to happen (in the background) while our code
+> continues to run.
+> Here we tell JavaScript to "await" a promise.  This means that we will
+> suspend our code, and resume it once the promise has returned a value.
+
+Some of the following paras in the script may now be superfluous.
+
+======
+
+Slide 10 et seq: Now I understand the bullet on slide 6.  The point is
+that all YOUR code runs in a single thread.  The JS engine may create
+other OS threads to do IO, etc.
+
+The picture here is misleading, because the event "Response #3 from
+Covey.town" is not coming from the event-loop thread.  It is coming
+from one of those other OS threads that were created to do the IO.
+
+So we need some additional columns, labeled "thread calling covey.town
+with request #1"; "thread calling covey.town with request #2", etc,
+and the black arrows would come from separate threads.
+
+================
+
+Slide 15: "listenerhandling".  I'd add an overlay saying "listener2
+doesn't start running until listener1 has finished".
+
+Might also want to say that listener1 may "finish" by creating some
+promise and waiting for it.
+
+================================================================
+
+Lesson 4.2:
+
+Slide 4: I'm still not happy with the phrase "Code after the async
+call runs immediately", but I don't have a suggestion right now.
+
+====
+
+s 5: I don't understand the title at all.  Maybe just make the
+subtitle into the title.
+
+Widen top box to avoid line break :)
+
+or somewhere say "async/await is just syntactic sugar for promise/then"
+
+================
+
+s 8: I've sent you a version with what I think are better graphics
+
+================
+
+s 11: 'count' violates our naming conventions :)
+
+================
+
+s 12: should these points be in the Learning Objectives?
+
+================
+
+s 15: This is code for a client of the transcript server, not for the
+server.  So the subtitle should be Transcript Client, not Transcript
+Server, here and et seq.
+
+"making a requests" ? (code line 2)
+
+"functional magic"   Umm, all of our students should have had 'map'
+functions in Fundies 1.  Delete the two words?
+
+bogus '=' on last line of code
+
+I think this code would be clearer if it had started
+
+async function promiseForTranscript(studentID) => {..}
+
+
+You could also leave some blank lines or greyed-out lines to indicate
+where we will be adding more code.
+
+/maybe for next year/
+
+================
+
+s 16 delete "then get its value", since writeFile doesn't return a
+value.
+
+
+"the Promise we return won't be resolved until everything we await
+is."  ???  This async was on the preceding slide, so I think this
+comment may be out of place.
+
+s17: "reduce" is jargon that is not particular to JavaScript.  It's
+covered in fundies 1 under the name 'foldl'.
+
+================================================================
+
+L4.3 s9: title refers to "step 3".  Change title to "Typical HTTP
+Request"
+
+================
+
+s11: I've never liked this quote.  He talks about "the design choices
+of the Web."  I don't know what those are.  Eventually replace quote
+by
+
+* A core set of principles, properties, and constraints.
+
+(Maybe.  We should talk about what's actually in Fielding's diss.)
+
+================
+
+s12: put uniform interface last, so we don't have to say "Back to
+Uniform Interface" later on; move s16 to after s18-cacheablility.
+
+s16: REST doesn't help with addUser vs createUser.
+
+================
+
+s17: I would be happier if I knew what "cacheable" meant.
+
+================
+
+s18: delete "see Lesson 3.4"
+
+================
+
+s20: why is "body parameters" crossed out??  Must say something about
+how to choose between the 2 (or 3) ways.
+
+Talk about urlencoded parameters (slide 22)??
+
+Need to incorporate what's in the yellow sticky note into the body of
+the slide.
+
+================
+
+s21: remove animation from yellow box, and put arrow from the yellow
+box to the "post" bullet.
+
+================================================================
+
+Lesson 4.4: Debugging
+
+s6: The passage about eslint is distracting and can be deleted without
+loss.
+
+================
+
+s7: "Version" => "Versions"  (parallelism in the bullets)
+
+I'd talk about passing vs. failing inputs before passing-vs-failing
+versions first, but that may just be me.
+
+================
+
+Learning Objectives:  better:
+
+"Enumerate and explain explain several general debugging strategies beyond..."
+
+
+
+
+
+
+
+
+
+

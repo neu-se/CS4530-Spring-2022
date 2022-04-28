@@ -1,0 +1,130 @@
+How does JS provide asynchrony?
+
+JS runs in a single OS thread.  So what does async mean?  To explain
+this, we need to dive deeper into the architecture of the node.js
+engine.
+
+What kind of things does the JS engine need to represent?  There are
+'events' and 'listeners'. 
+
+An _event_ is something that happens in the world of the JS engine.
+Typical events are:
+
+listener 15 has completed
+timer 5 has expired
+system call 365 has returned (with value V)
+
+A _listener_ is a piece of code that is waiting to run.  Each listener
+is marked either with the event that it is listening for, or with
+notation "ready to run".
+
+================
+
+The JS engine maintains two data structures:
+
+1. The event queue, which is a list of events that have occurred, but
+have not yet been handled.
+
+2. The listener pool, which is a list of listeners that are waiting to
+run. 
+
+================
+
+JS runs a master loop, called the event loop, which works as follows:
+
+1. From the event queue, choose an event.  The way in which events are
+actually chosen is complicated and non-deterministic.
+
+2. In the listener pool, find all the listeners that are listening for
+that event, and mark each of them "ready to run".
+
+3. From the listener pool, choose a listener that is ready to run, and
+run it to completion.
+
+4. Go to step 1.
+
+================
+
+What kinds of things can a listener do?  Let's say you are running listener27.
+
+-- It can run ordinary, sequential code
+
+-- It can get to the end of your code.  At that time it will place the
+   event 'listener27 finished' in the queue of unhandled events and
+   return to the event loop.
+
+-- It can create a new listener.  A listener is represented in the
+   program by a value called a Promise.
+
+   If you have an async function
+
+   async function f(x:number) { ... }
+
+   then saying f(3) does the following
+
+   -- it creates a new listener (let's say listener45)
+   -- it places the new listener in the listener pool
+   -- it puts the event 'listener45 is ready to run' in the queue of
+      unhandled events.
+
+   So if your code calls f(3), then those three things happen, and
+   your code goes on its merry way.
+
+   f(3) is not like a function.  It can't return a value to you unless
+   you wait for it (see below).
+
+   If your code calls f(3), f(4), and f(5), three new listeners will
+   be placed in the listener pool, each marked 'ready to run', but
+   your code will keep running.
+
+-- It can wait on a promise.  So if your code says
+
+   await f(3)
+
+   then the following happens:
+
+   -- listener45 is created, just like the 3 steps above, AND
+   -- your listener (listener27) updates itself so that it will listen
+      for the event "listener45 has completed" and then continue with
+      the remainder of its code.
+   -- we return to the event loop, which will choose the next
+      listener to be executed.  IT MIGHT BE YOUR LISTENER OR IT MIGHT
+      BE SOME OTHER LISTENER.
+
+================
+
+So far so good, but how do we do non-blocking I/O?
+
+JS provides some primitives that call out to the operating system to
+do non-blocking I/O.  For example, such a primitive might instruct
+disk head 12 to move to track 34, and create a listener that waits for
+the event "disk head 12 has reached track 34" and then continues with
+the I/O task.  In the meantime, the system can continue with your
+code.  This new listener might be implemented as a full-fledged
+listener like the ones above, or it might be implemented in some
+lighter-weight fashion.
+
+================
+
+This model accounts for a lot, but the real world is quite a bit more
+complicated.
+
+In the real world, the event loop needs to be smart to make sure, for
+example, that timeouts get handled in a timely fashion.  Different JS
+engines do this in different ways.
+
+In the real world, a listener can either succeed with a value or fail
+by throwing an error.  This can be managed by .then() or .else() , but
+it turns out to be very nasty to write code like this ("listener
+hell")
+
+We also have to account for promise.all, which complicates this model a lot!
+
+
+
+
+A promise is a representation of a listener
+
+
+
+
