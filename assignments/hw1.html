@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Spring-2022/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Spring-2022/assets/js/vendor/lunr.min.js"></script>
+  
+
+  
+
+  <script src="/CS4530-Spring-2022/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Assignment 1: Venusians | CS4530, Spring 2022</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Assignment 1: Venusians" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Spring-2022/assignments/hw1" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Spring-2022/assignments/hw1" />
+<meta property="og:site_name" content="CS4530, Spring 2022" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Assignment 1: Venusians" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.","headline":"Assignment 1: Venusians","dateModified":"2023-02-08T18:46:55+00:00","url":"https://neu-se.github.io/CS4530-Spring-2022/assignments/hw1","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header">
+    <a href="/CS4530-Spring-2022/" class="site-title lh-tight">
+  CS4530, Spring 2022
+
+</a>
+    <a href="#" id="menu-button" class="site-button">
+      <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Spring-2022/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Modules category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week2-knowledge-sharing-design-doc" class="nav-list-link">Week 2 - Knowledge Sharing & Documenting Designs</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week3-processs" class="nav-list-link">Week 3 - Requirements, Process and Teams</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week4-async" class="nav-list-link">Week 4 - Async Programming and Debugging</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week5-testing" class="nav-list-link">Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week6-uidesign" class="nav-list-link">Week 6 - UI Design & React</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week7" class="nav-list-link">Week 7 - UI Testing + Pull Requests + Code Review</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week8" class="nav-list-link">Week 8 - Continuous Integration</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week9" class="nav-list-link">Week 9 - Distributed Systems & Static Program Analysis</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week10" class="nav-list-link">Week 10 - Software Engineering and Security</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week11" class="nav-list-link">Week 11 - Refactoring and Technical Debt</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week12" class="nav-list-link">Week 12 - Engineering Software For Equity</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander" aria-label="toggle links in Assignments category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item  active"><a href="/CS4530-Spring-2022/assignments/hw1" class="nav-list-link active">Assignment 1: Venusians</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw2" class="nav-list-link">Assignment 2: Conversation Areas</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw3" class="nav-list-link">Assignment 3: Testing</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw4" class="nav-list-link">Assignment 4: Social Sidebar</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-pitch" class="nav-list-link">Project Pitch</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-plan" class="nav-list-link">Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/Assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Tutorials category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week6-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week5-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Policies category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/resources/" class="nav-list-link">Other Resources</a></li></ul>
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Spring 2022" aria-label="Search CS4530, Spring 2022" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+  
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        
+          <li class="breadcrumb-nav-list-item"><a href="/CS4530-Spring-2022/assignments/">Assignments</a></li>
+        
+        <li class="breadcrumb-nav-list-item"><span>Assignment 1: Venusians</span></li>
+      </ol>
+    </nav>
+  
+
+
+      <div id="main-content" class="main-content" role="main">
+        
+          <h2 class="fs-6" id="assignment-1-venusians">
+  
+  
+    <a href="#assignment-1-venusians" class="anchor-heading" aria-labelledby="assignment-1-venusians"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 
+    
+    Assignment 1: Venusians
+    
+    <strong class="label label-red">Due Friday January 28, 10:00pm EST</strong>
+
+  
+  
+</h2>
+    
+<h3 id="change-log">
+  
+  
+    <a href="#change-log" class="anchor-heading" aria-labelledby="change-log"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Change Log
+  
+  
+</h3>
+    
+<ul>
+  <li>1/13/22: Initial Release</li>
+  <li>1/16/22: Add pointer to textbooks page - JB</li>
+  <li>1/18/22: Specify return types on Venusian class, and clarify that Venusian names are case-sensitive - JB</li>
+  <li>1/19/22: Update spec for Venusian to clarify captialization of the member method <code class="language-plaintext highlighter-rouge">getVsn</code>, to match the test included in the handout. -JB</li>
+  <li>1/19/22: Added a “Getting Started” section to help set up the development environment for the starter code locally. -SR</li>
+  <li>1/20/22: Clarify that unique ID’s need only be unique for a single execution of your program and need not be globally unique IDs. -JB</li>
+</ul>
+<h2 id="objectives-of-this-assignment">
+  
+  
+    <a href="#objectives-of-this-assignment" class="anchor-heading" aria-labelledby="objectives-of-this-assignment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Objectives of this Assignment
+  
+  
+</h2>
+    
+
+<p>The objectives for this first assignment are to:</p>
+<ul>
+  <li>get you familiar with the basics of Typescript and the VSC/npm
+ecosystem.</li>
+  <li>have you re-acquaint yourself with the basics of object-oriented
+programming, such as classes and objects.</li>
+  <li>learn to write new code in TypeScript.</li>
+</ul>
+
+<p>Your assignment will be graded following the rubric embedded in this
+document.  Based on past experiences, we project that this assignment
+could take you up to 14 hours (depending on your prior preparation).
+We encourage you to start early so that you can post questions on
+Piazza, make the most use of our TAs’ tutorials, and attend office
+hours as necessary in order to ensure that you can reach Satisfactory
+marks across the board.</p>
+
+<p><strong>This is an individual assignment.</strong></p>
+
+<p>Please post any questions about this assignment on Piazza.  We have
+many sections of this class, and we want to make sure that we respond
+to your questions the same way, regardless of which section you are in.</p>
+<h2 id="problem-statement">
+  
+  
+    <a href="#problem-statement" class="anchor-heading" aria-labelledby="problem-statement"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Problem Statement
+  
+  
+</h2>
+    
+
+<p>Mars is being invaded by Venusians.  Here’s a description of the
+Venusian fleet:</p>
+
+<ol>
+  <li>
+    <p>Each ship has a serial number, a crew, which is a list of
+Venusians, and a possibly-empty set of daughter ships, each of
+which is a ship.</p>
+  </li>
+  <li>
+    <p>Each Venusian has a name, which is a string, and a VSN (Venusian
+Security Number), which is a number.</p>
+  </li>
+  <li>
+    <p>When we say “fleet”, we mean a list of ships and their daughters,
+their daughters’ daughters, etc.</p>
+  </li>
+  <li>
+    <p>When we say the “fleet of a ship”, we mean the fleet
+consisting of its daughters.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p>EXAMPLE: if ship 1 has daughters ship 11 and ship 12, and ship 11 has
+   daughters 111 and 112, and ship 112 has daughters 1121 and 1122,
+   and none of these ships has any other daughters, then the fleet of
+   ship 1 consists of 1, 11, 12, 111, 112, 1121, and 1122</p>
+</blockquote>
+
+<p>Your task is to define TypeScript class <code class="language-plaintext highlighter-rouge">Venusian</code> and <code class="language-plaintext highlighter-rouge">Ship</code> as follows:</p>
+
+<ul>
+  <li>
+    <p>The class <code class="language-plaintext highlighter-rouge">Venusian</code> has a contructor <code class="language-plaintext highlighter-rouge">new Venusian(name:string)</code> that returns a Venusian with
+ the given name and a unique VSN. By “unique”, we mean that while your program is running, it must never re-use a VSN. It is OK for your program to re-use the same VSNs if you stop the program and run it again (it need not be a “globally unique” identifier). Venusian names are case-senstive. The class <code class="language-plaintext highlighter-rouge">Venusian</code> has the following public methods:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">getName():string</code> returns the name of the Venusian.</li>
+      <li><code class="language-plaintext highlighter-rouge">getVsn():number</code> returns the VSN of the given Venusian</li>
+    </ul>
+  </li>
+  <li>
+    <p>The class <code class="language-plaintext highlighter-rouge">Ship</code> has a constructor <code class="language-plaintext highlighter-rouge">new Ship(crew:Venusian[], daughters:Ship[])</code> that returns a
+ ship with the given crew, the given daughters, and a unique serial
+ number (similar to VSNs, the serial number need not be globally unique).  The class <code class="language-plaintext highlighter-rouge">Ship</code> has the following public methods:</p>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">getCrew():Venusian[]</code> returns the crew of the  ship.</li>
+      <li><code class="language-plaintext highlighter-rouge">getDaughters():Ship[]</code> returns the daughters of the ship.</li>
+      <li><code class="language-plaintext highlighter-rouge">getSerialNumber():number</code> returns the serial
+number of the ship</li>
+      <li><code class="language-plaintext highlighter-rouge">hasWaldo():boolean</code> returns true iff the ship has one or more crew
+ members named Waldo.</li>
+      <li><code class="language-plaintext highlighter-rouge">totalWaldos():number</code> returns the number of Venusians
+ named “Waldo” that are in the ship or its fleet.  Venusians can be in two places at once, so if two Waldos have same VSN, you should count them twice.</li>
+      <li><code class="language-plaintext highlighter-rouge">removeWaldos():void</code> removes any Venusians named “Waldo” from the crew of the ship.</li>
+      <li><code class="language-plaintext highlighter-rouge">removeDeepWaldos():void</code> removes any Venusians
+named Waldo from the crews of the given ship and its fleet.</li>
+      <li><code class="language-plaintext highlighter-rouge">fleetHasDuplicates():boolean</code> It has come to the attention
+of the Venusian fleet command that some shipbuilders have been
+cheating by putting multiple ships with the same serial number in the
+fleets of their ships.  Given a ship, determines whether there are any
+duplicates among the ship and its fleet.  The duplicates may occur
+anywhere in the ship and its fleet.`</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>EXAMPLE: in the example above,
+there are no duplicates.  If ship 12 were added to the daughters of
+ship 111, that would be a duplicate, and applying this function to
+ship 1 would return true.</p>
+</blockquote>
+<h2 id="starter-code-and-details">
+  
+  
+    <a href="#starter-code-and-details" class="anchor-heading" aria-labelledby="starter-code-and-details"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Starter Code and Details
+  
+  
+</h2>
+    
+
+<p>We will supply you with starter code in <a href="/CS4530-Spring-2022/Assignments/HW1/hw1-starter.zip">hw1.zip</a>.</p>
+<h3 id="getting-started">
+  
+  
+    <a href="#getting-started" class="anchor-heading" aria-labelledby="getting-started"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Getting Started
+  
+  
+</h3>
+    
+
+<ol>
+  <li>Download and unpack <a href="/CS4530-Spring-2022/Assignments/HW1/hw1-starter.zip">hw1.zip</a> in a fresh directory. You should have a directory <code class="language-plaintext highlighter-rouge">hw1-handout</code> containing <code class="language-plaintext highlighter-rouge">package.json</code>, <code class="language-plaintext highlighter-rouge">src/</code> and a bunch of other files.</li>
+  <li>Open <code class="language-plaintext highlighter-rouge">hw1-handout</code> in VSCode.</li>
+  <li>Open up the VSCode terminal with <code class="language-plaintext highlighter-rouge">ctrl + ~</code>. Alternatively, you can also open a seperate terminal/cmd. Please make sure the shell is in the same folder as your <code class="language-plaintext highlighter-rouge">package.json</code>.</li>
+  <li>Fetch all the necessary dependancies by running <code class="language-plaintext highlighter-rouge">npm install</code>. You may <em>not</em> install additional third-party libraries to use in your code beyond what is included in the handout - we will grade your code using the <code class="language-plaintext highlighter-rouge">package.json</code> distributed in the handout.</li>
+  <li>The package also includes some basic sanity tests, which you can run by saying <code class="language-plaintext highlighter-rouge">npm test</code>.</li>
+</ol>
+
+<p>To help you set up a local development environment for this class, we’ve prepared a tutorial for <a href="/CS4530-Spring-2022/tutorials/week1-getting-started">setting up a development environment with NodeJS, VSCode and TypeScript</a>. Additionally, <a href="https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/">An Absolute Beginner’s Guide to Using npm</a> can help you in getting acquainted with <code class="language-plaintext highlighter-rouge">npm</code>. As a reference for getting started with TypeScript, we suggest the book <a href="https://learning.oreilly.com/library/view/programming-typescript/9781492037644/">“Programming TypeScript” by Boris Cherny</a>. You can read this and many other tech books for free via Northeastern’s Libraries - follow the instructions on the <a href="/CS4530-Spring-2022/textbooks/">course textbooks page</a>.</p>
+<h2 id="rubric">
+  
+  
+    <a href="#rubric" class="anchor-heading" aria-labelledby="rubric"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rubric
+  
+  
+</h2>
+    
+
+<p>Your code will be evaluated by automated testing in Gradescope.  It
+will be judged for style using a linter with parameters set in the
+starter code that we will supply you.
+Your code must have <em>no linter errors or warnings</em> in order for it to receive any grade.
+Please note that you can check for linter issues before submitting by running <code class="language-plaintext highlighter-rouge">npm run lint</code>; many formatting issues can also be automatically fixed by running <code class="language-plaintext highlighter-rouge">npm run format</code>.</p>
+
+<p>If your code has no linter errors or warnings, then for each of the 10 methods listed above, you will receive a numeric
+score of:</p>
+<ul>
+  <li>2 (Satisfactory)</li>
+  <li>1 (Meets minimum expecations)</li>
+  <li>0 (Not passing)</li>
+</ul>
+
+<p>We have provided between one and three tests on Gradescope to check each of the ten functions that you have been asked to implement.
+For each function, the requirements for each of these grades are:</p>
+<h3 id="satisfactory">
+  
+  
+    <a href="#satisfactory" class="anchor-heading" aria-labelledby="satisfactory"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory
+  
+  
+</h3>
+    
+<ul>
+  <li>Have no errors or warnings reported by the linter</li>
+  <li>Passes all of the Gradescope tests for this function</li>
+</ul>
+<h3 id="meets-minimum-expectations">
+  
+  
+    <a href="#meets-minimum-expectations" class="anchor-heading" aria-labelledby="meets-minimum-expectations"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Meets minimum expectations
+  
+  
+</h3>
+    
+<ul>
+  <li>Have no errors or warnings reported by the linter</li>
+  <li>Fails no more than one of the Gradescope tests for this function (while also passing at least one)</li>
+</ul>
+<h3 id="not-passing">
+  
+  
+    <a href="#not-passing" class="anchor-heading" aria-labelledby="not-passing"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Not Passing
+  
+  
+</h3>
+    
+<ul>
+  <li>Does not meet the minimum expectations.</li>
+</ul>
+
+<p>When we say “no errors reported by the linter”, we mean the following:</p>
+
+<ul>
+  <li>
+    <p>Have no style errors (may have warnings) as reported by <code class="language-plaintext highlighter-rouge">npm run-script lint</code></p>
+  </li>
+  <li>
+    <p>Have no <code class="language-plaintext highlighter-rouge">@ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations in the code
+that you write.</p>
+  </li>
+</ul>
+<h2 id="submission-instructions">
+  
+  
+    <a href="#submission-instructions" class="anchor-heading" aria-labelledby="submission-instructions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Submission Instructions
+  
+  
+</h2>
+    
+
+<p>Submit your assignment in GradeScope. The easiest way to get into
+GradeScope the first time is to first <a href="https://northeastern.instructure.com/courses/99531">sign into
+Canvas</a> and then
+click the link on our course for “GradeScope”.  You should then also
+have the option to create an account on GradeScope (if you don’t
+already have one) so that you can log in to GradeScope directly.
+Please contact the instructors immediately if you have difficulty
+accessing the course on GradeScope.</p>
+
+<p>Submit your solution to Gradescope in the form of exactly two files, <code class="language-plaintext highlighter-rouge">Venusian.ts</code> and <code class="language-plaintext highlighter-rouge">Ship.ts</code>. Before submitting, be sure your code passes the sanity tests included in the starter package. 
+GradeScope will provide you with feedback on your submission, providing a numeric score between 0 and 20.</p>
+
+<p>You will be able to  view the complete output from running the tests and
+linter on GradeScope. If you have any doubts about the autograder,
+please contact the course staff immediately. In particular, if you are
+not able to reproduce and debug test or linter failures on your local
+machine, <strong>please</strong> ask the TAs for assistance: otherwise you’ll waste
+an immense amount of time waiting for the autograder to complete, when
+you could get the same feedback in seconds running the tests + linter
+locally.</p>
+
+<p>You may submit solutions as many times as you want; only the last
+submission before the deadline will be counted.</p>
+
+        
+
+        
+
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

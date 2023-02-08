@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Spring-2022/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Spring-2022/assets/js/vendor/lunr.min.js"></script>
+  
+
+  
+
+  <script src="/CS4530-Spring-2022/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Assignment 4: Social Sidebar | CS4530, Spring 2022</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Assignment 4: Social Sidebar" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Spring-2022/assignments/hw4" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Spring-2022/assignments/hw4" />
+<meta property="og:site_name" content="CS4530, Spring 2022" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Assignment 4: Social Sidebar" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.","headline":"Assignment 4: Social Sidebar","dateModified":"2023-02-08T18:46:55+00:00","url":"https://neu-se.github.io/CS4530-Spring-2022/assignments/hw4","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header">
+    <a href="/CS4530-Spring-2022/" class="site-title lh-tight">
+  CS4530, Spring 2022
+
+</a>
+    <a href="#" id="menu-button" class="site-button">
+      <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Spring-2022/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Modules category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week2-knowledge-sharing-design-doc" class="nav-list-link">Week 2 - Knowledge Sharing & Documenting Designs</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week3-processs" class="nav-list-link">Week 3 - Requirements, Process and Teams</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week4-async" class="nav-list-link">Week 4 - Async Programming and Debugging</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week5-testing" class="nav-list-link">Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week6-uidesign" class="nav-list-link">Week 6 - UI Design & React</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week7" class="nav-list-link">Week 7 - UI Testing + Pull Requests + Code Review</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week8" class="nav-list-link">Week 8 - Continuous Integration</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week9" class="nav-list-link">Week 9 - Distributed Systems & Static Program Analysis</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week10" class="nav-list-link">Week 10 - Software Engineering and Security</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week11" class="nav-list-link">Week 11 - Refactoring and Technical Debt</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week12" class="nav-list-link">Week 12 - Engineering Software For Equity</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander" aria-label="toggle links in Assignments category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw1" class="nav-list-link">Assignment 1: Venusians</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw2" class="nav-list-link">Assignment 2: Conversation Areas</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw3" class="nav-list-link">Assignment 3: Testing</a></li><li class="nav-list-item  active"><a href="/CS4530-Spring-2022/assignments/hw4" class="nav-list-link active">Assignment 4: Social Sidebar</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-pitch" class="nav-list-link">Project Pitch</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-plan" class="nav-list-link">Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/Assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Tutorials category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week6-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week5-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Policies category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/resources/" class="nav-list-link">Other Resources</a></li></ul>
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Spring 2022" aria-label="Search CS4530, Spring 2022" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+  
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        
+          <li class="breadcrumb-nav-list-item"><a href="/CS4530-Spring-2022/assignments/">Assignments</a></li>
+        
+        <li class="breadcrumb-nav-list-item"><span>Assignment 4: Social Sidebar</span></li>
+      </ol>
+    </nav>
+  
+
+
+      <div id="main-content" class="main-content" role="main">
+        
+          <h2 class="fs-6" id="assignment-4-social-sidebar">
+  
+  
+    <a href="#assignment-4-social-sidebar" class="anchor-heading" aria-labelledby="assignment-4-social-sidebar"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 
+    
+    Assignment 4: Social Sidebar
+    
+    <strong class="label label-red">Due Friday March 25, 10:00pm EST</strong>
+
+  
+  
+</h2>
+    
+<h3 id="change-log">
+  
+  
+    <a href="#change-log" class="anchor-heading" aria-labelledby="change-log"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Change Log
+  
+  
+</h3>
+    
+<ul>
+  <li>3/4/22: Initial Release</li>
+  <li>3/6/22: Clarify that <code class="language-plaintext highlighter-rouge">npm install</code> and <code class="language-plaintext highlighter-rouge">npm run lint</code> must be run in the <em>frontend</em> directory of the handout.</li>
+  <li>3/16/22: Add note about not using <code class="language-plaintext highlighter-rouge">useEffect</code> to cache sorted conversation areas, update typo in handout test name about sorting conversation areas</li>
+  <li>3/17/22: Hint that tooltip needs to wrap the heading tag, not the other way around</li>
+  <li>3/20/22: Fix typo in part 2 description: Correct property is <code class="language-plaintext highlighter-rouge">occupants</code> not <code class="language-plaintext highlighter-rouge">occupantsByID</code></li>
+  <li>3/24/22: Add hint about rules of hooks</li>
+</ul>
+
+<p>We’re just about ready to call the “conversation areas” feature a wrap, and release it! After using the prototype feature for the past few weeks, our UX designer Calin has suggested that we add some additional functionality so that users can see an overview of the activity going on within the town. Calin has sketched out a simple interface, the “social sidebar,” that will list the usernames of all of the players in the town, as well as a listing of all of the occupied conversation areas. This will help users to see where the activity is going on, since the map can be quite large. This feature will also provide useful abstractions for future features that might provide more social features.</p>
+
+<p>A screenshot of the prototype of the social sidebar appears below:
+<a target="_top" href="/CS4530-Spring-2022/Assignments/HW4/social-sidebar.png"><img width="500" alt="Social Sidebar in Covey.Town" src="/CS4530-Spring-2022/Assignments/HW4/social-sidebar.png" /></a></p>
+
+<p>The interface is quite utilitarian (with very little effort on aesthetics), but functional. The goal for this assignment is to implement this interface. Calin provided the specification for this assignment to Ripley, who implemented a very thorough test suite, which is provided to you with the handout.</p>
+
+<p>Based on past experiences, we project that this assignment could take you up to 18 hours (depending on your prior preparation). We encourage you to start early so that you can post questions on Piazza, make the most use of our TAs’ tutorials, and attend office hours as necessary in order to ensure that you can reach full marks across the board.</p>
+
+<p>To get started, download the <a href="/CS4530-Spring-2022/Assignments/HW4/hw4-handout.tgz">handout zip</a>.</p>
+<h3 id="learning-objectives">
+  
+  
+    <a href="#learning-objectives" class="anchor-heading" aria-labelledby="learning-objectives"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Learning Objectives
+  
+  
+</h3>
+    
+<p>The objectives of this assignment are to:</p>
+<ul>
+  <li>Write React components that make use of state</li>
+  <li>Use React hooks</li>
+  <li>Analyze Chakra UI documentation and write new code that uses widgets from this library</li>
+  <li>Write new TypeScript code that uses asynchronous operations</li>
+</ul>
+<h3 id="grading">
+  
+  
+    <a href="#grading" class="anchor-heading" aria-labelledby="grading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Grading
+  
+  
+</h3>
+    
+<p>Your code will automatically be evaluated for linter errors and warnings. Submissions that have <em>any</em> linter errors will automatically receive a grade of 0. <strong>Do not wait to run the linter until the last minute</strong>.</p>
+
+<p>Your code will be automatically evaluated for functional correctness by the test suite that is distributed in the handout. Your <code class="language-plaintext highlighter-rouge">SocialSidebar</code> will not be evalauted on its visual aesthetics - it need not look <em>exactly</em> like the screenshot above. The tests check only for conformance to the specification, which outlines several key landmark UI elements (e.g. heading levels, list structure).</p>
+
+<p>Your code will be manually evaluated for conformance to our course <a href="/CS4530-Spring-2022/policies/style/">style guide</a>. This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:</p>
+
+<p>To receive all 10 points:</p>
+<ul>
+  <li>All new names (e.g. for local variables, methods, and properties) follow the naming conventions defined in our style guide</li>
+  <li>All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describes what the property/method does, as defined in our style guide</li>
+  <li>The code that you write generally follows the design principles discussed in week one. In particular, your design does not have duplicated code that could have been refactored into a shared method.</li>
+</ul>
+
+<p>We will review your code and note each violation of this rubric. We will deduct two points for each violation, up to a maximum of deducting all 10 style points.</p>
+<h3 id="general-requirements">
+  
+  
+    <a href="#general-requirements" class="anchor-heading" aria-labelledby="general-requirements"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> General Requirements
+  
+  
+</h3>
+    
+<p><strong>This is an individual assignment.</strong></p>
+
+<p>Please post any questions about this assignment on Piazza. We have many sections of this class, and we want to make sure that we respond to your questions the same way, regardless of which section you are in.</p>
+
+<p>You must implement the entire assignment within the files <code class="language-plaintext highlighter-rouge">PlayersList.tsx</code> and <code class="language-plaintext highlighter-rouge">ConversationAreasList.tsx</code>, both within the directory <code class="language-plaintext highlighter-rouge">frontend/src/copmonents/SocialSidebar</code> in the handout.
+Part 1 of the assignemnt  will be contained entirely within <code class="language-plaintext highlighter-rouge">PlayersList.tsx</code>, and Part 2 within <code class="language-plaintext highlighter-rouge">ConversationAreasList.tsx</code>.</p>
+
+<p>To pass the tests, your components must have no warnings regarding missing or duplicate <a href="https://reactjs.org/docs/lists-and-keys.html#keys">keys</a>.</p>
+
+<p>You may not make changes to <code class="language-plaintext highlighter-rouge">package.json</code> or to the lint configuration. You may not use <code class="language-plaintext highlighter-rouge">ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations.</p>
+
+<p>To run the app locally, please refer to the <a href="https://github.com/neu-se/covey.town">README in the Covey.Town repository</a>.</p>
+
+<p>Your development will take place entirely within the <code class="language-plaintext highlighter-rouge">frontend</code> directory. You must run <code class="language-plaintext highlighter-rouge">npm install</code> in the <strong>frontend</strong> directory, and similarly, to run the linter, run <code class="language-plaintext highlighter-rouge">npm run lint</code> in the <strong>frontend</strong> directory.</p>
+
+<p>The handout contains components that are written as <em>functional components</em> in React. You might find examples online that refer to class-based components. Functional components use <a href="https://reactjs.org/docs/hooks-intro.html">hooks</a> to store state and perform effects when the component is first rendered or when it’s unmounted from the page. Class-based components use the <code class="language-plaintext highlighter-rouge">setState</code> method to store state, and callbacks like <code class="language-plaintext highlighter-rouge">componentDidMount</code>. We covered functional components in class, and this assignment requires you to write functional components. For references on how to maintain state in your component or how to perform actions when a component is first mounted on the page or when it’s removed from the page, we suggest that you stick to the <a href="https://reactjs.org/docs/hooks-state.html">React useState documentation</a> and <a href="https://reactjs.org/docs/hooks-effect.html">React useEffect documentation</a>. There are quite a few resources that instead describe the class-based API, and these might be confusing (since they are not applicable).</p>
+
+<p><strong>Hint 3/24</strong>: Please, be sure to follow the <a href="https://reactjs.org/docs/hooks-rules.html">rules of hooks</a>, some of which are automatically enforced by the linter, but others of which you might not receive automated warnings for. We will not be manually deducting points for violations of these rules, but we do not believe that it is possible to pass all of the tests if these rules are violated (because React will behave unexpectedly). Those rules, in brief are:</p>
+<ol>
+  <li>Only call hooks (<code class="language-plaintext highlighter-rouge">useEffect()</code> or <code class="language-plaintext highlighter-rouge">useState()</code>) at the top level: not in loops, conditionals, or nested functions</li>
+  <li>Only call hooks from React function components (not from helper functions)</li>
+</ol>
+
+<p>Note that it might be tempting, because the component is a function, to instantiate your component <code class="language-plaintext highlighter-rouge">Foo</code> by calling the function, as in: <code class="language-plaintext highlighter-rouge">Foo({paramA=b})</code>. This style is an <a href="https://kentcdodds.com/blog/dont-call-a-react-function-component">anti-pattern</a> in React, and likely to yield test failures that are otherwise unexplainable. Please, be sure to instantiate the components as we have in our slides and resources, and as in the React documentation, using TSX, as in: <code class="language-plaintext highlighter-rouge">&lt;Foo paramA={b} /&gt;</code>.</p>
+
+<p>The handout contains an automated test suite, which you can run with the command <code class="language-plaintext highlighter-rouge">npm test</code> from within the <code class="language-plaintext highlighter-rouge">frontend</code> directory. To run only one of the test suites, run the command <code class="language-plaintext highlighter-rouge">npm test testName</code> where <code class="language-plaintext highlighter-rouge">testName</code> is either <code class="language-plaintext highlighter-rouge">PlayersList</code> or <code class="language-plaintext highlighter-rouge">ConversationAreasList</code>.
+Each test has a prefix <code class="language-plaintext highlighter-rouge">[Tx]</code>, where <code class="language-plaintext highlighter-rouge">Tx</code> corresponds to “Task X” in the rubrics below.</p>
+<h2 id="part-1---listing-players-in-the-town-30-points">
+  
+  
+    <a href="#part-1---listing-players-in-the-town-30-points" class="anchor-heading" aria-labelledby="part-1---listing-players-in-the-town-30-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 1 - Listing Players in the Town (30 points)
+  
+  
+</h2>
+    
+<p>The top part of the SocialSidebar is the <code class="language-plaintext highlighter-rouge">PlayersList</code>, which lists the current players in the town along with the current town’s name and ID.</p>
+
+<p>Calin provides the following specification:</p>
+<ul>
+  <li>The PlayersList component must be implemented in <code class="language-plaintext highlighter-rouge">PlayersList.tsx</code></li>
+  <li>Town name must be shown in an H2 heading with a Chakra ToolTip that shows the label <code class="language-plaintext highlighter-rouge">Town ID: ${theCurrentTownID}</code>. <strong>Hint 3/17/22</strong>: For reasons that are not currently known to us, it is necessary to nest the heading inside of the tooltip, rather than the tooltip inside of the heading.</li>
+  <li>Players must be listed in an <code class="language-plaintext highlighter-rouge">OrderedList</code> below that heading, sorted alphabetically by <code class="language-plaintext highlighter-rouge">userName</code>. The sorting should use an alphanumeric sort (e.g. user <code class="language-plaintext highlighter-rouge">user10</code> should appear <em>after</em> <code class="language-plaintext highlighter-rouge">user9</code>).</li>
+  <li>Each player must be rendered by the (existing) <code class="language-plaintext highlighter-rouge">&lt;PlayerName&gt;</code> component, that component must be nested within a list item.</li>
+</ul>
+
+<p>Please refer to the <code class="language-plaintext highlighter-rouge">usePlayersInTown</code> and <code class="language-plaintext highlighter-rouge">useCoveyAppState</code> hooks to find the relevant state that this component must display.
+Your component may not mutate the array returned by <code class="language-plaintext highlighter-rouge">usePlayersInTown</code>.</p>
+
+<p>Your grade for this part of the assignment will be computed based on the set of tests that you pass. The tests are broken up into tasks; you will receive marks for a task only if you pass all of that task’s tests. Tests for later tasks may depend on behavior in earlier tasks - we do not suggest moving on to the next task until you fully satisfy the tests for the earlier tasks.</p>
+
+<ul>
+  <li>Task 1: Display the heading [5 points]</li>
+  <li>Task 2: Render player names [10 points]</li>
+  <li>Task 3: Sort the players array, and update the display when the list of players changes [15 points]</li>
+</ul>
+<h2 id="part-2---listing-active-conversation-areas-in-the-town-60-points">
+  
+  
+    <a href="#part-2---listing-active-conversation-areas-in-the-town-60-points" class="anchor-heading" aria-labelledby="part-2---listing-active-conversation-areas-in-the-town-60-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 2 - Listing Active Conversation Areas in the Town (60 points)
+  
+  
+</h2>
+    
+<p>The lower part of the sidebar is the <code class="language-plaintext highlighter-rouge">ConversationAreasList</code>, which displays a list of “active” conversation areas, along with their occupants.
+A conversation area is “active” if its topic is not set to the constant <code class="language-plaintext highlighter-rouge">NO_TOPIC_STRING</code> that is exported from the <code class="language-plaintext highlighter-rouge">ConverationArea</code> file.</p>
+
+<p>Calin provides the following specification for the <code class="language-plaintext highlighter-rouge">ConversationAreasList</code>:</p>
+<ul>
+  <li>If there are no active conversation areas, it displays the text “No active conversation areas”</li>
+  <li>If there are active areas, it sorts them by label ascending, using an alphanumeric sort (e.g. <code class="language-plaintext highlighter-rouge">area9</code> appears before <code class="language-plaintext highlighter-rouge">area10</code>), and displaying only active areas</li>
+  <li>Each active conversation area is represented as its own component. You must author and name this component, locating it in the <code class="language-plaintext highlighter-rouge">ConversationAreasList.tsx</code> file. The component should contain, within a ChakraUI <code class="language-plaintext highlighter-rouge">Box</code>:
+    <ul>
+      <li>A heading (h3), with the text: <code class="language-plaintext highlighter-rouge">{conversationAreaLabel}: {conversationAreaTopic}</code>,</li>
+      <li>An unordered list of occupants:
+        <ul>
+          <li>Occupants are <em>unsorted</em>, appearing in the order that they appear in the area’s <code class="language-plaintext highlighter-rouge">occupants</code> array. Each occupant is rendered by a <code class="language-plaintext highlighter-rouge">&lt;PlayerName&gt;</code> component, nested within a ListItem.</li>
+        </ul>
+      </li>
+      <li>An <code class="language-plaintext highlighter-rouge">useEffect</code> hook, which subscribes to occupancy updates by registering an <code class="language-plaintext highlighter-rouge">onOccupantsChange</code> listener on the component’s corresponding conversation area object:
+        <ul>
+          <li>The listener must be registered exaclty once (when the component is mounted), and unregistered exactly once (when the component is unmounted)</li>
+          <li>The listener must update the rendered list of occupants in the conversation area when it receives updates</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Please refer to the <code class="language-plaintext highlighter-rouge">usePlayersInTown</code> and <code class="language-plaintext highlighter-rouge">useConversationAreas</code> hooks to find the relevant state that this component must display.
+Your component may not mutate the arrays returned by these hooks.</p>
+
+<p>Note (added 3/16): To pass the test suite, your components may only use <code class="language-plaintext highlighter-rouge">useEffect</code> for subscribing to the <code class="language-plaintext highlighter-rouge">onOccupantsChange</code> event (as described above), and must <em>not</em> use any <code class="language-plaintext highlighter-rouge">useEffect</code> hooks for other purposes. If you would like to <em>cache</em> some information (like the list of sorted conversation areas), feel free to use <a href="https://reactjs.org/docs/hooks-reference.html#usememo">useMemo</a> for this purpose. However, it is also not necessary that you do any such caching. This note is only applicable if you are struggling to determine why your components fail the tests that use mock <code class="language-plaintext highlighter-rouge">useEffect</code> calls.</p>
+
+<p>Your grade for this part of the assignment will be computed based on the set of tests that you pass. The tests are broken up into tasks; you will receive marks for a task only if you pass all of that task’s tests. Tests for later tasks may depend on behavior in earlier tasks - we do not suggest moving on to the next task until you fully satisfy the tests for the earlier tasks.</p>
+
+<ul>
+  <li>Task 1: Display the sorted conversation areas topics and labels [10 points]</li>
+  <li>Task 2: Display the usernames of each occupant of each conversation area, sorted [10 points]</li>
+  <li>Task 3: Filter out inactive conversation areas [10 points]</li>
+  <li>Task 4: Create a useEffect hook that subscribes to <code class="language-plaintext highlighter-rouge">onOccupantsChange</code> events for the conversation area [10 points]</li>
+  <li>Task 5: Update the list of occupants displayed in response to <code class="language-plaintext highlighter-rouge">onOccupantsChange</code> events [20 points]</li>
+</ul>
+
+<p>Updated handout 3/16 corrects the name of the test on line 169 of <code class="language-plaintext highlighter-rouge">ConversationAreasListTest.test.tsx</code> from: <code class="language-plaintext highlighter-rouge">When checking usernames, it sorts conversation areas by topic</code> to: <code class="language-plaintext highlighter-rouge">When checking usernames, it sorts conversation areas by label</code> (change is only to name of test, contents of test are same)</p>
+<h2 id="submission-instructions">
+  
+  
+    <a href="#submission-instructions" class="anchor-heading" aria-labelledby="submission-instructions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Submission Instructions
+  
+  
+</h2>
+    
+<p>Submit your assignment in GradeScope. The easiest way to get into GradeScope the first time is to first
+<a href="https://northeastern.instructure.com/courses/99531">sign into Canvas</a> and then click the link on our course for “GradeScope”. 
+You should then also have the option to create an account on GradeScope (if you don’t already have one) so that you can log in to GradeScope directly.
+Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.</p>
+
+<p>To submit your assignment: upload <em>only</em> the files <code class="language-plaintext highlighter-rouge">frontend/src/components/SocialSidebar/PlayersList.tsx</code> and <code class="language-plaintext highlighter-rouge">frontend/src/components/SocialSidebar/ConversationsAreasList.tsx</code>. GradeScope will provide you with feedback on your submission, but note that it will <em>not</em> include any marks that will be assigned after we manually grade your submission for code style (it will show 0 for this until it is graded).</p>
+
+        
+
+        
+
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

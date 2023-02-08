@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Spring-2022/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Spring-2022/assets/js/vendor/lunr.min.js"></script>
+  
+
+  
+
+  <script src="/CS4530-Spring-2022/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Activity 8.1 | CS4530, Spring 2022</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Activity 8.1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Spring-2022/Activities/continuous-development" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Spring-2022/Activities/continuous-development" />
+<meta property="og:site_name" content="CS4530, Spring 2022" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Activity 8.1" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.","headline":"Activity 8.1","dateModified":"2023-02-08T18:46:55+00:00","url":"https://neu-se.github.io/CS4530-Spring-2022/Activities/continuous-development","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header">
+    <a href="/CS4530-Spring-2022/" class="site-title lh-tight">
+  CS4530, Spring 2022
+
+</a>
+    <a href="#" id="menu-button" class="site-button">
+      <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Spring-2022/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Modules category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week2-knowledge-sharing-design-doc" class="nav-list-link">Week 2 - Knowledge Sharing & Documenting Designs</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week3-processs" class="nav-list-link">Week 3 - Requirements, Process and Teams</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week4-async" class="nav-list-link">Week 4 - Async Programming and Debugging</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week5-testing" class="nav-list-link">Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week6-uidesign" class="nav-list-link">Week 6 - UI Design & React</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week7" class="nav-list-link">Week 7 - UI Testing + Pull Requests + Code Review</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week8" class="nav-list-link">Week 8 - Continuous Integration</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week9" class="nav-list-link">Week 9 - Distributed Systems & Static Program Analysis</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week10" class="nav-list-link">Week 10 - Software Engineering and Security</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week11" class="nav-list-link">Week 11 - Refactoring and Technical Debt</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week12" class="nav-list-link">Week 12 - Engineering Software For Equity</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Assignments category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw1" class="nav-list-link">Assignment 1: Venusians</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw2" class="nav-list-link">Assignment 2: Conversation Areas</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw3" class="nav-list-link">Assignment 3: Testing</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw4" class="nav-list-link">Assignment 4: Social Sidebar</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-pitch" class="nav-list-link">Project Pitch</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-plan" class="nav-list-link">Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/Assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Tutorials category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week6-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week5-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Policies category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/resources/" class="nav-list-link">Other Resources</a></li></ul>
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Spring 2022" aria-label="Search CS4530, Spring 2022" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+  
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        
+          <li class="breadcrumb-nav-list-item"><a href="">Activities</a></li>
+        
+        <li class="breadcrumb-nav-list-item"><span>Activity 8.1</span></li>
+      </ol>
+    </nav>
+  
+
+
+      <div id="main-content" class="main-content" role="main">
+        
+          <div class="fs-1 text-right fw-300">Last updated: Feb 08, 23 18:46 UTC | <a href="/CS4530-Spring-2022/Activities/continuous-development">Permalink</a></div>
+<h1 id="activity-81-continuous-development-pipelines">
+  
+  
+    <a href="#activity-81-continuous-development-pipelines" class="anchor-heading" aria-labelledby="activity-81-continuous-development-pipelines"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Activity 8.1 Continuous Development Pipelines
+  
+  
+</h1>
+    
+
+<p>In this activity, you will configure a continuous development pipeline using <a href="https://github.com/features/actions">GitHub Actions</a>, <a href="https://heroku.com">Heroku</a>, and <a href="https://www.netlify.com">Netlify</a>. Our pipeline will use GitHub Actions to build and test your Covey.Town fork. After successful compilation and testing, the pipeline will deploy the backend service to Heroku, create an optimized production build of the frontend, and deploy that frontend to Netlify.</p>
+
+<p>This activity is split up into three phases: setting up GitHub Actions to build and test your project, then to deploy to Heroku, and lastly, to deploy to Netlify.</p>
+<h2 id="pre-requisites">
+  
+  
+    <a href="#pre-requisites" class="anchor-heading" aria-labelledby="pre-requisites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pre-requisites
+  
+  
+</h2>
+    
+<p>There are two pre-requisites for this activity: you must have a GitHub.com repository generated following our <a href="/CS4530-Spring-2022/assignments/project-overview">project forking instructions</a>, and you must have a Twilio account.</p>
+
+<p>If you run into the error “refusing to allow an OAuth App to create or update workflow” when trying to push to GitHub, the fix is to <a href="https://stackoverflow.com/questions/64059610/how-to-resolve-refusing-to-allow-an-oauth-app-to-create-or-update-workflow-on">update your saved authentication credentials for GitHub</a>. For instance, you can follow <a href="https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain">these instructions to update your credentials in the MacOS Keychain</a>. If all else fails, you can <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">connect to GitHub with SSH</a> instead of HTTPS, which will also solve this problem. This error seems to only occur when pushing a change to the GitHub Actions configuration file, so you could also side-step the problem by having a team mate push this change to GitHub instead (who may not run into this issue).</p>
+<h3 id="creating-a-twilio-account-and-recording-the-credentials">
+  
+  
+    <a href="#creating-a-twilio-account-and-recording-the-credentials" class="anchor-heading" aria-labelledby="creating-a-twilio-account-and-recording-the-credentials"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating a Twilio account and recording the credentials
+  
+  
+</h3>
+    
+<p>If you have not configured a Twilio account yet, follow these instructions to set one up:</p>
+<ol>
+  <li>Go to <a href="https://www.twilio.com/">Twilio’s website</a> and sign up for an account. You do not need to provide a credit card to create a trial account, but will need to provide a cell phone number.
+ a. When you create your account, to the question “Which Twilio product are you here to use”, answer “Video”, to “What do you plan to build…” answer “Other”, to “Preferred Language” select JavaScript, and to “Would you like Twilio to host your code?” select “No”. (It is OK to select other answers, but selecting these will bring you directly to the “programmable video” part of Twilio’s admin console.</li>
+  <li>Create an API Key: Select the “Account” menu from the top toolbar, and then select “API keys &amp; tokens”. If prompted, re-enter your password.</li>
+  <li>Take note of the “Live Credentials” in the box lower on this page. The “Account SID” and “Auth token” will be necessary for step 5.</li>
+  <li>Click “Create new API key”. Enter any descriptive name that you would like for the “friendly name”, and use the other default settings (US region, “standard” key type). Save the “SID” (this will be referenced later as the <code class="language-plaintext highlighter-rouge">TWILIO_API_KEY_SID</code>) and the “Secret” (this will be referenced later as the <code class="language-plaintext highlighter-rouge">TWILIO_API_KEY_SECRET</code>).
+You’ll need this for your local development environment. You can share a single Twilio account with all of the members in your team (sharing the <code class="language-plaintext highlighter-rouge">.env</code> file), but please be careful to avoid posting the contents of your <code class="language-plaintext highlighter-rouge">.env</code> file publicly anywhere - someone else might find your credentials and run out all of the free minutes on your account. To set up GitHub Actions and Heroku, we’ll need the values from your <code class="language-plaintext highlighter-rouge">.env</code> file - so be sure to get them working before proceeding.</li>
+  <li>Create a <code class="language-plaintext highlighter-rouge">.env</code> file in the <code class="language-plaintext highlighter-rouge">services/townService</code> directory, setting the values as follows:</li>
+</ol>
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Config Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">TWILIO_ACCOUNT_SID</code></td>
+      <td>Visible on your twilio account dashboard. Starts with AC…</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">TWILIO_API_KEY_SID</code></td>
+      <td>The SID of the new API key you created. Starts with SK…</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">TWILIO_API_KEY_SECRET</code></td>
+      <td>The secret for the API key you created.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">TWILIO_API_AUTH_TOKEN</code></td>
+      <td>Visible on your twilio account dashboard.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<p>You should now be able to start the backend and fronted in your local development environment and have functioning video chat.</p>
+<h2 id="set-up-github-actions">
+  
+  
+    <a href="#set-up-github-actions" class="anchor-heading" aria-labelledby="set-up-github-actions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Set up GitHub Actions
+  
+  
+</h2>
+    
+
+<p>Once your git repository is up-to-date, you can configure GitHub Actions by following these steps:</p>
+<ol>
+  <li>Log in to GitHub, and navigate to your project. Go to the “Settings” tab, and then select “Secrets,” and under “Secrets” select “Actions.”</li>
+  <li>Click “New Repository Secret”, and then enter each of your Twilio secrets (from your <code class="language-plaintext highlighter-rouge">services/townService/.env</code> file) as new variables here, as shown in this screenshot:
+<img src="/CS4530-Spring-2022/Activities/Assets/continuous_dev/gha-secrets-twilio.png" alt="GitHub Actions Secrets" /></li>
+  <li>
+    <p>Navigate to the “Actions” tab in GitHub. If you had made commits previously, you may have seen them fail due to the missing twilio configuration (or, they may have never run). You can test that the CI workflow is correclty working by selecting the “Covey.Town CI” workflow on the left, then “Run worklow” and trigger the workflow to run on the <code class="language-plaintext highlighter-rouge">main</code> branch. While it’s running, let’s take a brief look at the workflow configuration that will run the tests, by looking at the <code class="language-plaintext highlighter-rouge">.github/workflows/main.yml</code> file. Update the <code class="language-plaintext highlighter-rouge">push</code> and <code class="language-plaintext highlighter-rouge">pull_request</code> branches to reference <code class="language-plaintext highlighter-rouge">main</code> instead of <code class="language-plaintext highlighter-rouge">master</code> (the template repository still uses <code class="language-plaintext highlighter-rouge">master</code> as the default branch, but yours will use <code class="language-plaintext highlighter-rouge">main</code>)</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="na">name</span><span class="pi">:</span> <span class="s">Covey.Town CI</span>
+ <span class="na">on</span><span class="pi">:</span> <span class="c1"># Controls when the action will run.</span>
+   <span class="c1"># Triggers the workflow on push or pull request events but only for the master branch. If you want to trigger the action on other branches, add here</span>
+   <span class="na">push</span><span class="pi">:</span>
+     <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span> <span class="c1"># Says 'master' in starter code, change to 'main'</span>
+   <span class="na">pull_request</span><span class="pi">:</span>
+     <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span> <span class="c1"># Says 'master' in starter code, change to 'main'</span>
+
+   <span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
+   <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+ <span class="c1"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span>
+ <span class="na">jobs</span><span class="pi">:</span>
+   <span class="na">build-and-test</span><span class="pi">:</span> <span class="c1">#</span>
+     <span class="c1"># The type of runner that the job will run on</span>
+     <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+
+     <span class="c1"># Steps represent a sequence of tasks that will be executed as part of the job</span>
+     <span class="na">steps</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+
+       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build and test backend service</span>
+         <span class="na">env</span><span class="pi">:</span> <span class="c1"># Pass the Twilio secrets into environmental variables for the backend tests to use</span>
+           <span class="na">TWILIO_ACCOUNT_SID</span><span class="pi">:</span> <span class="s">${{ secrets.TWILIO_ACCOUNT_SID }}</span>
+           <span class="na">TWILIO_API_AUTH_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.TWILIO_API_AUTH_TOKEN }}</span>
+           <span class="na">TWILIO_API_KEY_SECRET</span><span class="pi">:</span> <span class="s">${{ secrets.TWILIO_API_KEY_SECRET }}</span>
+           <span class="na">TWILIO_API_KEY_SID</span><span class="pi">:</span> <span class="s">${{ secrets.TWILIO_API_KEY_SID }}</span>
+         <span class="na">run</span><span class="pi">:</span> <span class="s">cd services/townService; npm install &amp;&amp; npm test</span>
+
+       <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Build and test frontend components</span>
+         <span class="na">run</span><span class="pi">:</span> <span class="s">cd frontend; npm install &amp;&amp; npm test</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Navigate back to the “Actions” tab. You should still see the build passed. If the “build-and-test” job failed, consider the following troubleshooting tips:
+    <ul>
+      <li>If the build failed due to the HW4 tests (we inadvertently configured it such that some students may have the HW4 tests in their repo), delete those test files (<code class="language-plaintext highlighter-rouge">ConversationAreasList.test.tsx</code> and <code class="language-plaintext highlighter-rouge">PlayersList.test.tsx</code>). After HW4, we will distribute the solution to HW4 and then these tests can be re-activated.</li>
+      <li>If the build failed with <code class="language-plaintext highlighter-rouge">No tests found, exiting with code 1</code>, then your repository does not have any tests - perhaps they were deleted?</li>
+      <li>If the build failed due to undefined Twilio secrets, double check that you have correctly entered the Twilio secrets from your <code class="language-plaintext highlighter-rouge">.env</code> file into the GitHub Settings -&gt; Secrets for your repository. Make sure that you have put the secrets on the same repository that you are setting up the GitHub Actions for.</li>
+    </ul>
+  </li>
+</ol>
+<h2 id="set-up-heroku">
+  
+  
+    <a href="#set-up-heroku" class="anchor-heading" aria-labelledby="set-up-heroku"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Set up Heroku
+  
+  
+</h2>
+    
+<p>Now that we have GitHub Actions successfully running our tests, we can configure it to also automatically deploy the backend rooms service to Heroku. This way, you can have a publicly available version of your backend service, which will automatically update with any changes that you push to Git.
+Note that it is possible to set up Heroku to automatically deploy every new change that you push to GitHub (without setting up GitHub Actions). Instead, we’ll configure our GitHub Actions pipeline to deploy to Heroku <em>only</em> if our test suite passes.</p>
+
+<ol>
+  <li>Go to <a href="https://www.heroku.com">Heroku.com</a> and create an account, or sign in if you already have one</li>
+  <li>After signing in, create a new app. Choose a name for your app that is somewhat descriptive - it will become part of the URL that you’ll use to access the service. Click “Create app” (no need to go through “Add to pipeline…”)</li>
+  <li>After creating your app on Heroku, open the app’s settings page, revealing a page that looks like this:
+<img src="/CS4530-Spring-2022/Activities/Assets/continuous_dev/heroku-settings.png" alt="Heroku App Settings" /></li>
+  <li>Click “Reveal Config Vars”, and enter the 4 twilio configuration variables from your <code class="language-plaintext highlighter-rouge">.env</code> file (the same 4 that you set up on GitHub Actions). Heroku’s “Config Vars” are the way that we tell Heroku what variables to use for <code class="language-plaintext highlighter-rouge">.env</code> without having to commit that file into the (publicly viewable) repository. Your configuration settings on Heroku should look like this now:
+<img src="/CS4530-Spring-2022/Activities/Assets/continuous_dev/heroku-settings-expanded.png" alt="Heroku App Settings" /></li>
+  <li>Before navigating away from this settings page, scroll down to “Domains”, and take note of the address that Heroku has provided for your app. This should say something like “Your app can be found at https://covey-deployment-example.herokuapp.com/”.</li>
+  <li>Retrieve your personal Heroku API key. From Heroku go to “Manage Account” (click on the profile menu on  the top right of the page and then click “Account Settings”. 
+<img src="/CS4530-Spring-2022/Activities/Assets/continuous_dev/heroku-account-settings-menu.png" alt="Heroku Profile Menu" />
+Scroll down to “API Key” and click “Reveal”. Copy this key, you’ll use it in the next step.</li>
+  <li>Return to the GitHub Settings -&gt; Secrets -&gt; Actions pane, and add a new repository secret: <code class="language-plaintext highlighter-rouge">HEROKU_API_KEY</code>, setting the value to the exact string that you copied from “API Key” in the last step. Add the secret <code class="language-plaintext highlighter-rouge">HEROKU_APP_NAME</code> (in this example, our app name is <code class="language-plaintext highlighter-rouge">covey-deployment-example</code>), set to the name that you choose for your Heroku app in step 2. Add the secret <code class="language-plaintext highlighter-rouge">HEROKU_EMAIL</code>, set to the email address that you used when you created your Heroku account. Even though these last two values aren’t <em>secret</em> per-say, configuring them in this way keeps them out of the config files, so you won’t run into merge conflicts with our upstream branch (which would have a <code class="language-plaintext highlighter-rouge">main.yml</code> file with our own settings in it).</li>
+  <li>Update the CI workflow (the file <code class="language-plaintext highlighter-rouge">.github/workflows/main.yml</code>). The starter code has the Heroku deploy commented out: uncomment it, and replace the line <code class="language-plaintext highlighter-rouge">if: github.ref == 'refs/heads/master'</code> with <code class="language-plaintext highlighter-rouge">if: github.ref == 'refs/heads/main'</code>.</li>
+  <li>
+    <p>Return to your GitHub Actions page, and the detail view for the most recent build - retrigger it, so that it runs again. Now that we have the Heroku secrets installed, we expect the “Deploy to Heroku” aspect of the deployment job to pass, although the “deploy to netlify” task will still fail. Here is the segment of the GitHub Actions configuration file that deploys our app to Heroku:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="na">deploy</span><span class="pi">:</span>
+     <span class="na">if</span><span class="pi">:</span> <span class="s">github.ref == 'refs/heads/main'</span>
+     <span class="na">needs</span><span class="pi">:</span> <span class="s">build-and-test</span>
+     <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+     <span class="na">steps</span><span class="pi">:</span>
+       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+       <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">akhileshns/heroku-deploy@v3.12.12</span> <span class="c1"># Deploy to Heroku action</span>
+         <span class="na">with</span><span class="pi">:</span>
+           <span class="na">heroku_api_key</span><span class="pi">:</span> <span class="s">${{secrets.HEROKU_API_KEY}}</span>
+           <span class="na">heroku_app_name</span><span class="pi">:</span> <span class="s">${{secrets.HEROKU_APP_NAME}}</span>
+           <span class="na">heroku_email</span><span class="pi">:</span> <span class="s">${{secrets.HEROKU_EMAIL}}</span>
+ 
+</code></pre></div>    </div>
+  </li>
+  <li>To confirm that your service is successfully deployed, try to visit it in your browser. Use the URL that you noted in step 5 (“Your app can be found at https://covey-deployment-example.herokuapp.com/”). Append <code class="language-plaintext highlighter-rouge">towns</code> to the URl, and visit it in your browser (e.g. <code class="language-plaintext highlighter-rouge">https://covey-deployment-example.herokuapp.com/towns</code>). After a short delay, you should see the response <code class="language-plaintext highlighter-rouge">{"isOK":true,"response":{"towns":[]}}</code>.</li>
+</ol>
+<h2 id="set-up-netlify">
+  
+  
+    <a href="#set-up-netlify" class="anchor-heading" aria-labelledby="set-up-netlify"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Set up Netlify
+  
+  
+</h2>
+    
+<p>The last step to our continuous development pipeline will be to automatically deploy our frontend to Netlify. Netlify will create an optimized production build of your frontend (by running <code class="language-plaintext highlighter-rouge">npm run build</code>) and host it in their globally-distributed content delivery network. Netlify will also automatically build an deploy previews of pull requests on your repository.</p>
+
+<ol>
+  <li>Create a free account on <a href="https://www.netlify.com">Netlify</a>. We suggest signing up with GitHub.</li>
+  <li>After logging in, select “Add new site”, then “Import an existing project” and then select “GitHub” as your git provider. Follow the prompts to connect Netlify with GitHub, and then choose the “neu-cs4530-s22” organization (you might need to click “Add another organization” in the dropdown to find it, and then select your repository. Leave “branch to deploy” as “main”. Set the base directory to <code class="language-plaintext highlighter-rouge">frontend</code>, the build command to <code class="language-plaintext highlighter-rouge">CI= npm run-script build</code>, and the publish directory to <code class="language-plaintext highlighter-rouge">frontend/build</code>. Click deploy site.</li>
+  <li>Click on “Site Settings” and scroll down to “Environment”. This is where we define the <code class="language-plaintext highlighter-rouge">.env</code> variables that Netlify should use (without needing to put <code class="language-plaintext highlighter-rouge">.env</code> in a publicly viewable place). Click “Edit variables” and add a single variable: <code class="language-plaintext highlighter-rouge">REACT_APP_TOWNS_SERVICE_URL</code> should be set to your heroku server name (https://yourapp-name.herokuapp.com, find in heroku “settings” page for your app). Click save.</li>
+  <li>The very first deploy that was triggered will not have this environmental variable set, and hence the resulting build won’t actually be functional. Cancel the build if it is still in progress, and then click “trigger build” to trigger a new build. Once you confirm that it builds correctly, it will always auto-build and deploy without needing this intervention.</li>
+  <li>Netlify will take several minutes to build your site. From the “Deploys” view of Netlify’s control panel, you can see the status of each build. Once you have a successful build, it will show a URL where your site is published (something like https://mystifying-beaver-b51dd2.netlify.app). Visit the site and confirm that it’s working. If you see an error in the JavaScript log like <code class="language-plaintext highlighter-rouge">process is not defined</code>, this indicates that the site was not built with the <code class="language-plaintext highlighter-rouge">REACT_APP_TOWNS_SERVICE_URL</code> variable set - confirm that it is correctly set, and then rebuild the site on Netlify.</li>
+</ol>
+
+        
+
+        
+
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

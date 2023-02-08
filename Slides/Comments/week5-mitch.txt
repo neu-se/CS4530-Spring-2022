@@ -1,0 +1,153 @@
+================================================================
+
+Lesson 5.1
+
+s 2: Too many LO's.  Which of these are actually covered? Which are
+actionable (eg by Bloom's hierarchy):
+
+Describe the elements of a test, and how they are used.  Where is this
+in the slides?
+
+State Dijkstra's Law and its relevance.  [Is this really important
+enough to be a LO?]
+
+"Classify tests by purpose, size, and scope" => "Describe three ways in
+which tests can be classified"  [Slides list 4 classifications: by
+scope, purpose, size, and manner].
+
+Are scope and size related?
+
+"Explain why test automation is important"  Where is this covered in
+the slides? 
+
+s 9: Can we relate this to hw2?  What is the "purpose" of the tests in
+hw2?  They are neither black-box nor structural.  In my mind
+"structural" is associated with coverage.
+
+I think we need to spend more time talking about the purpose of tests.
+
+I don't think that "structural vs. functional" is the right
+distinction.  I don't know the literature, so I don't know if these
+are standard terms.  Black-box/white-box is a clear distinction.
+
+Doesn't scope imply size?
+
+Regression is also about bugs re-entering during _development_
+
+Probably should be in a different order: functional, structural,
+regression, acceptance.
+
+s13-16.  As mentioned, I don't find the water-wheel metaphor useful.
+What's the role of that river below the wheel?  Which way is it
+flowing? etc.
+
+Maybe reuse some of Jon's slides from earlier in the term?
+
+s 18: how does this fit into the story?
+
+================================================================
+
+L 5.2 Evaluating Tests
+
+I think this lesson really needs to be redone, starting with the LO's.
+In general, the material starting at slide 20 is pretty good, but the
+material up to that point seems unfocussed.  Only a small part of it
+is about "evaluating tests".  (and is it evaluating tests, or
+evaluating test suites?)
+
+ss 10-12: What does "Coverage of Abstraction of SUT" mean?
+
+s11: bullets are good.
+
+s12: what does "abstract specification as a DFA" mean?  We've been
+preaching against exhaustive specifications and in favor of User
+Stories.  This seems to go in the opposite direction.  It's clearly
+useful, but when and how?  The example isn't even a piece of software.
+
+s13 et seq: what's being talked about here is not "whitebox testing"
+per se, but measures to judge the adequacy of the test suite.  Are all
+paths covered?  Are any error states reachable?
+
+s14-17: do we really care about how we look for reachability? do we
+care if the students know about control-flow graphs?
+
+s19: Mutation testing: how does this contribute to a LO?
+
+s22 et seq: Some of these test smells are bogus; listing them all
+sends the students into a rabbit hole trying to de-smell their tests
+(this happened last time).
+
+s22 et seq: this material applies to more than regression tests!
+
+s22 et seq: need to define "flaky", "brittle", etc.
+
+s23.  Title should be "Example of a Flaky Test" . Also typography is
+sucky, needs to be as good as our earlier slides
+
+s24: Our analysis of this test should be more focussed:
+
+  1. Title is uninformative
+  2. ..etc..
+
+(or find another example).
+
+In this sequence, we should talk about how to fix these tests.
+
+s 26: This slide should come at the beginning of the sequence.  Then
+you can classify the bad examples by the ways in which they violate
+these principles.
+
+Also add "repeatable" to this slide.
+Also add "reuse setups @Before and @BeforeEach to make tests clearer and avoid
+duplicated code."
+
+Is the citation to SoftwareEng@Google?  Should say that instead of a
+mysterious URL.
+
+================================================================
+
+s 2 delete.
+
+Proposed LO: 1. Explain why you might need a mock or similar construct
+(a "test double") in your testing.  (Answer: you need a mock when the
+purpose of the SUT not to change its own state, but to change the
+state of some entity that it communicates with.  Longer answer: ..and
+you may not be able to test those states directly, so create another
+entity (the 'mock') for the SUT to communicate with, and then you see
+whether the state of the mock has changed correctly.).
+
+LO: Describe a situation in which "fuzz testing" might be useful.
+
+s 6: What is the relation between the two halves of this slide?
+
+s 7: Mention answer to LO1 here.
+
+ss 8-11: Do our students really need to learn this terminology?  The
+news-you-can-use is whatever tools Jest gives you for doing this kind
+of thing.
+
+s12:  Is this what is called "fuzzing" on s6?  Need to make the
+connection.
+
+ss 12-13: If this is all you have to say about fuzzing, it may not be
+worth mentioning at all.
+
+s14: This should appear before s12.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

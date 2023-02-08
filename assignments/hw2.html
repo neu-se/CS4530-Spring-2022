@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Spring-2022/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Spring-2022/assets/js/vendor/lunr.min.js"></script>
+  
+
+  
+
+  <script src="/CS4530-Spring-2022/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Assignment 2: Conversation Areas | CS4530, Spring 2022</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Assignment 2: Conversation Areas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Spring-2022/assignments/hw2" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Spring-2022/assignments/hw2" />
+<meta property="og:site_name" content="CS4530, Spring 2022" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Assignment 2: Conversation Areas" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.","headline":"Assignment 2: Conversation Areas","dateModified":"2023-02-08T18:46:55+00:00","url":"https://neu-se.github.io/CS4530-Spring-2022/assignments/hw2","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header">
+    <a href="/CS4530-Spring-2022/" class="site-title lh-tight">
+  CS4530, Spring 2022
+
+</a>
+    <a href="#" id="menu-button" class="site-button">
+      <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Spring-2022/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Modules category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week2-knowledge-sharing-design-doc" class="nav-list-link">Week 2 - Knowledge Sharing & Documenting Designs</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week3-processs" class="nav-list-link">Week 3 - Requirements, Process and Teams</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week4-async" class="nav-list-link">Week 4 - Async Programming and Debugging</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week5-testing" class="nav-list-link">Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week6-uidesign" class="nav-list-link">Week 6 - UI Design & React</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week7" class="nav-list-link">Week 7 - UI Testing + Pull Requests + Code Review</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week8" class="nav-list-link">Week 8 - Continuous Integration</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week9" class="nav-list-link">Week 9 - Distributed Systems & Static Program Analysis</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week10" class="nav-list-link">Week 10 - Software Engineering and Security</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week11" class="nav-list-link">Week 11 - Refactoring and Technical Debt</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week12" class="nav-list-link">Week 12 - Engineering Software For Equity</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander" aria-label="toggle links in Assignments category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw1" class="nav-list-link">Assignment 1: Venusians</a></li><li class="nav-list-item  active"><a href="/CS4530-Spring-2022/assignments/hw2" class="nav-list-link active">Assignment 2: Conversation Areas</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw3" class="nav-list-link">Assignment 3: Testing</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw4" class="nav-list-link">Assignment 4: Social Sidebar</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-pitch" class="nav-list-link">Project Pitch</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-plan" class="nav-list-link">Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/Assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Tutorials category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week6-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week5-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Policies category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/resources/" class="nav-list-link">Other Resources</a></li></ul>
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Spring 2022" aria-label="Search CS4530, Spring 2022" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+  
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        
+          <li class="breadcrumb-nav-list-item"><a href="/CS4530-Spring-2022/assignments/">Assignments</a></li>
+        
+        <li class="breadcrumb-nav-list-item"><span>Assignment 2: Conversation Areas</span></li>
+      </ol>
+    </nav>
+  
+
+
+      <div id="main-content" class="main-content" role="main">
+        
+          <h2 class="fs-6" id="assignment-2-conversation-areas">
+  
+  
+    <a href="#assignment-2-conversation-areas" class="anchor-heading" aria-labelledby="assignment-2-conversation-areas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 
+    
+    Assignment 2: Conversation Areas
+    
+    <strong class="label label-red">Due Friday February 11, 10:00pm EST</strong>
+
+  
+  
+</h2>
+    
+<h3 id="change-log">
+  
+  
+    <a href="#change-log" class="anchor-heading" aria-labelledby="change-log"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Change Log
+  
+  
+</h3>
+    
+<ul>
+  <li>1/28/22: Initial Release</li>
+  <li>1/29/22: Clarify expected return type of <code class="language-plaintext highlighter-rouge">conversationAreas</code> route</li>
+  <li>1/31/22: Clarify route specification, clarify behavior of <code class="language-plaintext highlighter-rouge">updatePlayerLocation</code> (2.1), update handout test for 2.1 to clearly specify the intended location to use is <code class="language-plaintext highlighter-rouge">userLocation.conversationLabel</code> (<a href="https://github.com/neu-se/CS4530-Spring-2022/commit/f7ce445fb51f99afc37c74fe94a21d4c4c3051bd">diff</a>)</li>
+  <li>2/4/22: Clarify task 2.3 introductory language (<a href="https://github.com/neu-se/CS4530-Spring-2022/commit/f842dfef57ab468a0bd41f81cba07a90810b8f10">diff</a>)</li>
+  <li>2/5/22: Clarify conversation -&gt; conversation area; rework 2.3 text to be clearer (<a href="https://github.com/neu-se/CS4530-Spring-2022/commit/284fdb83fec1e89a4bd1d6907d827e20fb296bde">diff</a>)</li>
+  <li>2/6/22: Add note clarifying that Task 1.1 tests can not run on GradeScope until after Task 1.3 is completed; this does not impact Task 1.2</li>
+  <li>2/9/22: Add debugging tips</li>
+  <li>2/9/22: Clarified that 2.1 should not make a copy/clone of the conversation area</li>
+  <li>2/10/22: Clarified that existing behavior (e.g. emitting <code class="language-plaintext highlighter-rouge">onPlayerMoved</code>) must be preserved in order to pass tests</li>
+</ul>
+
+<p>Welcome aboard to the Covey.Town team! We’re glad that you’re here and ready to join our development team as a new software engineer.
+We’re building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
+Covey.Town is a collective effort of many contributors, and by the end of the semester, you will have the option to submit a pull request to merge a new feature into the codebase, and become a direct contributor yourself.</p>
+
+<p>We understand that some of you may have some web development experience, but don’t expect that most of you do, and hence, have created this series of three individual assignments to help you get up to speed with our existing codebase and development environment.</p>
+<h2 id="the-new-feature-conversation-areas">
+  
+  
+    <a href="#the-new-feature-conversation-areas" class="anchor-heading" aria-labelledby="the-new-feature-conversation-areas"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> The new feature: Conversation Areas
+  
+  
+</h2>
+    
+<p>In the original release of Covey.Town (demoed at <a href="https://spring2021.covey.town">https://spring2021.covey.town</a>), users connect to a “Town”, which provides a 2D arcade-style map that users can walk around in.
+When two users get close, they are able to see and hear each other through a video call.
+Since that original release, our lead software engineer, Avery, has been quite busy on making this app more interesting and usable.
+One problem that Avery observed with the app was that users would focus on exploring the relatively small map, and then not know what to do: how do you have a conversation with someone else when there is nothing to indicate that you want to talk? If two people are talking, how does a third person know that it is OK to approach them and join the conversation?</p>
+
+<p>Avery has developed an exciting new feature concept for Covey.Town this semester: <strong>Conversation Areas</strong>.
+Avery replaced the “outdoor” map from the original Covey.Town implementation with a new map for users to explore, which has some interesting sights to see and talk about, added text chat, and designed a new <em>conversation areas</em> feature, highlighted in the screenshot below:</p>
+
+<p><img width="400" alt="Conversation Areas in Covey.Town" src="/CS4530-Spring-2022/assets/images/covey.town/conversation-areas.png" /></p>
+
+<p>Each conversation area is a rectangle on the map. In this screenshot, there are three conversation areas: “Foyer Table 4”, “Foyer Table 5”, and “Foyer Table 6”. There are two users who are engaged in a conversation at Foyer Table 5, who have labeled the current conversation topic to be “Talking about class”.</p>
+
+<p>You can demo this feature on the public-facing site <a href="https://app.covey.town">app.covey.town</a>.</p>
+<h2 id="this-assignment">
+  
+  
+    <a href="#this-assignment" class="anchor-heading" aria-labelledby="this-assignment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> This Assignment
+  
+  
+</h2>
+    
+
+<p>In this assignment, you will implement the backend service that supports the conversation areas feature, creating an implementation that behaves comparably to <a href="https://app.covey.town/">our public deployment of covey.town</a>. Since this is your first time working in this codebase, Avery has sketched out a reasonable design for the Conversation Area API, and has mapped the design into implementation tasks. Avery has also provided a few sanity tests so that you can check your work. There is a complete set of tests available to you on GradeScope. This assignment does <em>not</em> involve any frontend development, but we will return to the frontend aspects of the Conversation Area feature in HW4.</p>
+
+<p>Based on past experiences, we project that this assignment could take you up to 20 hours (depending on your prior preparation). We encourage you to start early so that you can post questions on Piazza, make the most use of our TAs’ tutorials, and attend office hours as necessary in order to ensure that you can reach full marks across the board. Please note that while Part 2 looks shorter, this is mainly an artifact of us providing you with less detailed steps of what you need to do: it might take you just as long as Part 1, so do not assume that it will be a quick last few steps!</p>
+<h3 id="learning-objectives">
+  
+  
+    <a href="#learning-objectives" class="anchor-heading" aria-labelledby="learning-objectives"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Learning Objectives
+  
+  
+</h3>
+    
+<p>The objectives of this assignment are to:</p>
+<ul>
+  <li>Read an architectural diagram and apply that design to an implementation</li>
+  <li>Expand an existing API following the coding conventions set out in an existing codebase</li>
+  <li>Translate high-level requirements into code</li>
+  <li>Become familiar with the Covey.Town codebase, which will be reused in HW3, HW4, and your final project</li>
+</ul>
+
+<p>You are encouraged to write tests for your implementation, however <em>we will not grade your tests on this assignment</em>.</p>
+<h3 id="grading">
+  
+  
+    <a href="#grading" class="anchor-heading" aria-labelledby="grading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Grading
+  
+  
+</h3>
+    
+<p>Your code will automatically be evaluated for linter errors and warnings. Submissions that have <em>any</em> linter errors will automatically receive a grade of 0. <strong>Do not wait to run the linter until the last minute</strong>.
+Please note that you can check for linter issues before submitting by running <code class="language-plaintext highlighter-rouge">npm run lint</code>; many formatting issues can also be automatically fixed by running <code class="language-plaintext highlighter-rouge">npm run format</code>.</p>
+
+<p>Each implementation task will be automatically graded by our test suite on GradeScope. You may resubmit your code an unlimited number of times for feedback. Each task is allocated a set number of points based on its complexity. There are no partial marks for passing some, but not all of the tests for a function. GradeScope will provide feedback on which checks your implementation fails.</p>
+
+<p>Your code will be manually evaluated for conformance to our course <a href="/CS4530-Spring-2022/policies/style/">style guide</a>. This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:</p>
+
+<p>To receive all 10 points:</p>
+<ul>
+  <li>All new names (e.g. for local variables, methods, and properties) follow the naming conventions defined in our style guide</li>
+  <li>All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describes what the property/method does, as defined in our style guide</li>
+  <li>The code that you write generally follows the design principles discussed in week one. In particular, your design does not have duplicated code that could have been refactored into a shared method.</li>
+</ul>
+
+<p>We will review your code and note each violation of this rubric. We will deduct two points for each violation, up to a maximum of deducting all 10 style points.</p>
+<h3 id="general-requirements">
+  
+  
+    <a href="#general-requirements" class="anchor-heading" aria-labelledby="general-requirements"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> General Requirements
+  
+  
+</h3>
+    
+<p><strong>This is an individual assignment.</strong></p>
+
+<p>Please post any questions about this assignment on Piazza. We have many sections of this class, and we want to make sure that we respond to your questions the same way, regardless of which section you are in.</p>
+
+<p>You may not make changes to <code class="language-plaintext highlighter-rouge">package.json</code> or to the lint configuration. You may not use <code class="language-plaintext highlighter-rouge">ts-ignore</code> or <code class="language-plaintext highlighter-rouge">eslint-disable</code> annotations.</p>
+<h3 id="how-to-use-gradescopes-test-suite-effectively">
+  
+  
+    <a href="#how-to-use-gradescopes-test-suite-effectively" class="anchor-heading" aria-labelledby="how-to-use-gradescopes-test-suite-effectively"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> How To Use GradeScope’s Test Suite Effectively
+  
+  
+</h3>
+    
+<p>We have provided a very thorough test suite on GradeScope, but our goal is for you to <em>not</em> rely on this test suite for debugging your code, and instead rely as an objective ground truth to determine if you have successfully implemented a task or not.
+You will <em>not</em> see detailed failure messages on GradeScope, and any console output is hidden.
+The names of each of the tests describe loosely what inputs the test is providing to your application, but <em>not</em> the detailed criteria that each test is checking for. The tests, broadly, check for the behaviors that are described in this specification.</p>
+
+<p>If you are struggling to understand why a test isn’t passing, we suggest a strategy called “<a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber duck debugging</a>”: Reread the specification. Read through your code line by line, thinking about and explaining what it does - as if you were explaining it to a colleague or the TA. Do NOT try to think too much about what tests you are or are not passing: think about the specification, and what you think your code does, and what it actually appears to do as you read it.</p>
+<h2 id="part-1-base-implementation-of-townservices-conversationarea-api-60-points-total">
+  
+  
+    <a href="#part-1-base-implementation-of-townservices-conversationarea-api-60-points-total" class="anchor-heading" aria-labelledby="part-1-base-implementation-of-townservices-conversationarea-api-60-points-total"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 1: Base implementation of TownService’s ConversationArea API [60 points total]
+  
+  
+</h2>
+    
+
+<p>Your first major objective for this assignment will be to create a base implementation of the ConversationArea API in the backend TownService. By the end of this part of the assignment, you will have implemented a <code class="language-plaintext highlighter-rouge">createConversationArea</code> API endpoint, which will create a new <code class="language-plaintext highlighter-rouge">ConversationArea</code> on the server, and extended the existing <code class="language-plaintext highlighter-rouge">TownJoinHandler</code> so that when a player joins a town and receives the initial state of the town, the list of <code class="language-plaintext highlighter-rouge">ConversationArea</code>s will be included in that response.</p>
+
+<p>Start by <a href="/CS4530-Spring-2022/Assignments/HW2/hw2-handout.zip">downloading this starter code</a>. Extract this archive and run <code class="language-plaintext highlighter-rouge">npm install</code> to fetch the dependencies. Avery has provided you with some very basic sanity tests that you can extend for testing your implementation as you go.</p>
+
+<p>Each ConversationArea exists within a single Town in the overall Covey.Town data model. Hence, you will implement the ConversationArea API in the context of the existing service that implements the logic to manage each town. The diagram below outlines the major components in the existing TownsService.</p>
+
+<p><img width="300" alt="Towns Service Component Architecture" src="/CS4530-Spring-2022/assets/images/covey.town/townservice-components.png" /></p>
+
+<p>Referring to the diagram above, you’ll start by implementing the ConverstationArea API at the <em>Router</em> level, defining the API in terms of an HTTP endpoint (Task 1.1). Then, you will implement the business logic to create new ConversationAreas in a request handler, and in CoveyTownController (Task 1.2). Lastly, you’ll update the existing request handler that processes a player’s request to join a town so that this response also includes the list of current <code class="language-plaintext highlighter-rouge">ConversationArea</code>s (Task 1.3).</p>
+<h3 id="task-11-add-an-http-route-to-create-conversation-areas-5-points">
+  
+  
+    <a href="#task-11-add-an-http-route-to-create-conversation-areas-5-points" class="anchor-heading" aria-labelledby="task-11-add-an-http-route-to-create-conversation-areas-5-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 1.1: Add an HTTP route to create conversation areas [5 points]
+  
+  
+</h3>
+    
+<p>Your first task is to add a request handler to the <code class="language-plaintext highlighter-rouge">TownsService</code> to receive client requests to create a new conversation. In the Towns Service architecture diagram above, this task will require modifying the <strong>Router</strong> to know about our new REST API endpoint.</p>
+
+<p>Avery has already decided on the API’s specification, and in fact has already also created a client that coforms to that specification - so you will be able to start testing your implementation right away. Here is the specification of the new route that you need to add for this API:</p>
+<ul>
+  <li>URL: <code class="language-plaintext highlighter-rouge">/towns/:townID/conversationAreas</code> (where <code class="language-plaintext highlighter-rouge">:townID</code> is a parameter that specified the town in which the conversation area should be created)</li>
+  <li>HTTP Method: <code class="language-plaintext highlighter-rouge">post</code></li>
+  <li>Body: JSON, the body matches the type <code class="language-plaintext highlighter-rouge">ConversationAreaCreateRequest</code>, defined in <code class="language-plaintext highlighter-rouge">src/client/TownsServiceClient.ts</code> and reproduced below</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Payload sent by the client to create a new conversation area
+ */</span>
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">ConversationAreaCreateRequest</span> <span class="p">{</span>
+  <span class="nl">coveyTownID</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">sessionToken</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">conversationArea</span><span class="p">:</span> <span class="nx">ServerConversationArea</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Avery’s sanity test for this task uses their API client to make a request to create a conversation area. You can run it right now, by running the command <code class="language-plaintext highlighter-rouge">npm test CoveyTownConversationAPI</code>. Before you implement this task, you should expect to see the tests fail, with a message <code class="language-plaintext highlighter-rouge">Request failed with status code 404</code> (404 is the error code that indicates that an address does not exist).</p>
+
+<p><strong>The route</strong>. Following the example routes that already exist in <code class="language-plaintext highlighter-rouge">router/towns.ts</code>, create the new route as specified above in the file <code class="language-plaintext highlighter-rouge">router/towns.ts</code>. Your route should follow the conventions in the other routes: forward the request on to the <code class="language-plaintext highlighter-rouge">conversationAreaCreateHandler</code> and record the response. If <code class="language-plaintext highlighter-rouge">conversationAreaCreateHandler</code> throws no error, then return the response from the handler as JSON, with the HTTP status code <code class="language-plaintext highlighter-rouge">OK</code>. If <code class="language-plaintext highlighter-rouge">conversationAreaCreateHandler</code> throws an error, log the error and return a response with HTTP status <code class="language-plaintext highlighter-rouge">INTERNAL_SERVER_ERROR</code>, a JSON response of <code class="language-plaintext highlighter-rouge">{message: 'Internal server error, please see log in server for more details'}</code>.</p>
+
+<p>The router interfaces with the HTTP server through the variable <code class="language-plaintext highlighter-rouge">app</code>, which in our case, is a library called <a href="https://expressjs.com">ExpressJS</a>. For tips on working with Express, see the <a href="https://expressjs.com/en/guide/routing.html">ExpressJS routing docs</a></p>
+
+<p>📝 Check your work: When you run the sanity test, it should still fail, but this time with the message “Error processing request: This feature is not yet implemented” (the default behavior of <code class="language-plaintext highlighter-rouge">conversationAreaCreateHandler</code>). If you get this message, then you have successfully completed this first task!</p>
+
+<p>Note: Due to the complexity of writing these tests to work with partial implementations, the GradeScope tests for Task 1.1 <em>will not pass</em> until after you get to Task 1.3. The Task 1.2 tasks do <em>not</em> have this dependency: so once you are fairly certain that Task 1.1 is implemented correctly, continue with the rest of Task 1, and don’t expect the GradeScope tests for  Task 1.1 to pass until after you implement 1.3.</p>
+<h3 id="task-12-implement-business-logic-to-create-a-conversation-area-45-points-total">
+  
+  
+    <a href="#task-12-implement-business-logic-to-create-a-conversation-area-45-points-total" class="anchor-heading" aria-labelledby="task-12-implement-business-logic-to-create-a-conversation-area-45-points-total"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 1.2: Implement business logic to create a conversation area [45 points total]
+  
+  
+</h3>
+    
+<p>With the top of the architecture stack implemented, it’s now time to implement some business logic to actually create a conversation area.
+This task will require you to implement three methods, and you will receive partial credit for this task at the level of each of the implementation methods:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">conversationAreaCreateHandler</code> [15 points]</li>
+  <li><code class="language-plaintext highlighter-rouge">addConversationArea</code> [30 points]</li>
+</ul>
+<h4 id="task-12a-conversationareacreatehandler-15-points">
+  
+  
+    <a href="#task-12a-conversationareacreatehandler-15-points" class="anchor-heading" aria-labelledby="task-12a-conversationareacreatehandler-15-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 1.2a conversationAreaCreateHandler [15 points]
+  
+  
+</h4>
+    
+
+<p>When the <code class="language-plaintext highlighter-rouge">conversationAreaCreateHandler</code> is called, it should:</p>
+<ol>
+  <li>Validate that the supplied session token is a valid token for the specified town</li>
+  <li>Delegate the actual responsibility for creating the conersation area to the <code class="language-plaintext highlighter-rouge">CoveyTownController</code>, invoking the <code class="language-plaintext highlighter-rouge">addConversationArea</code> method on the appropriate town controller.</li>
+</ol>
+
+<p>If the token is valid and the conversation area is successfully created, set return the <code class="language-plaintext highlighter-rouge">isOK</code> parameter on the returned response to <code class="language-plaintext highlighter-rouge">true</code>, the <code class="language-plaintext highlighter-rouge">response</code> property to <code class="language-plaintext highlighter-rouge">{}</code>, and the <code class="language-plaintext highlighter-rouge">message</code> to <code class="language-plaintext highlighter-rouge">undefined</code>. If not successful for any reason, set the return <code class="language-plaintext highlighter-rouge">isOK</code> to <code class="language-plaintext highlighter-rouge">false</code>, and set the message to exactly the string: <code class="language-plaintext highlighter-rouge">Unable to create conversation area &lt;conversationAreaLabel&gt; with topic &lt;conversationAreaTopic&gt;</code> (replacing the values in <code class="language-plaintext highlighter-rouge">&lt;&gt;</code> with the parameters that were passed). For example, if a request to create a conversation area with label <code class="language-plaintext highlighter-rouge">foo</code> and topic <code class="language-plaintext highlighter-rouge">bar</code> fails, the returned message should be <code class="language-plaintext highlighter-rouge">Unable to create conversation area foo with topic bar</code>.</p>
+
+<p>📝 Check your work: When you run the API sanity test suite (<code class="language-plaintext highlighter-rouge">npm test CoveyTownConversationAPI</code>), you should now see “Executes without error when creating a new conversation” succeed. Other tests may fail.</p>
+<h4 id="task-12b-addconversationarea-30-points">
+  
+  
+    <a href="#task-12b-addconversationarea-30-points" class="anchor-heading" aria-labelledby="task-12b-addconversationarea-30-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 1.2b addConversationArea [30 points]
+  
+  
+</h4>
+    
+
+<p>Implement the method <code class="language-plaintext highlighter-rouge">addConversationArea</code> method in <code class="language-plaintext highlighter-rouge">CoveyTownController</code>. Recall from the architectural diagram above that the <code class="language-plaintext highlighter-rouge">CoveyTownController</code> is responsible for keeping track of all of the state regarding a single town, including its conversation areas. Avery has already added a private field, <code class="language-plaintext highlighter-rouge">_conversationAreas</code> to <code class="language-plaintext highlighter-rouge">CoveyTownController</code>. Your task is to implement the <code class="language-plaintext highlighter-rouge">addConversationArea</code> method, which should have the following behavior:</p>
+<ol>
+  <li>Check that the <code class="language-plaintext highlighter-rouge">topic</code> is defined: it is not permitted to create a conversation area an empty string as the topic, if this is the case return <code class="language-plaintext highlighter-rouge">false</code>.</li>
+  <li>Check to see if there is an existing conversation area with the requested <code class="language-plaintext highlighter-rouge">label</code>, and if one already exists, return <code class="language-plaintext highlighter-rouge">false</code>.</li>
+  <li>Check to see if the <code class="language-plaintext highlighter-rouge">boundingBox</code> of the new conversation area overlaps with any existing, and if so, return <code class="language-plaintext highlighter-rouge">false</code>.
+    <ul>
+      <li>Boxes are allowed to be <em>adjacent</em> that is, two conversation areas may share boundary points.</li>
+      <li>The <code class="language-plaintext highlighter-rouge">x, y</code> position of the box denotes the <em>center</em> of the box on the map, <code class="language-plaintext highlighter-rouge">height</code> and <code class="language-plaintext highlighter-rouge">width</code> represent the overall height and width of the box.</li>
+    </ul>
+  </li>
+  <li>Any players who are in the region defined by the <code class="language-plaintext highlighter-rouge">boundingBox</code> of the new conversation area should be added to it as <code class="language-plaintext highlighter-rouge">occupants</code>, and those players should have their <code class="language-plaintext highlighter-rouge">_activeConversationArea</code> property set to that new conversation area.
+    <ul>
+      <li>A player is defined as inside of a box if the <code class="language-plaintext highlighter-rouge">x, y</code> position of the player is anywhere within the bounding box. A player who overlaps only with the edge of a conversation area’s bounding box is not in the box.</li>
+      <li>This behavior <em>only</em> applies when a conversation area is created. After the conversation area is created, the server does <em>not</em> rely on the <code class="language-plaintext highlighter-rouge">x,y</code> position of a player to determine which conversation area they are in, and instead relies on the players’ self-reported <code class="language-plaintext highlighter-rouge">location.conversationLabel</code> as the source of truth.</li>
+    </ul>
+  </li>
+  <li>Notify all listeners that are subscribed to this town that the newly created conversation area was created, by invoking <code class="language-plaintext highlighter-rouge">onConversationAreaUpdated(theNewConversationArea)</code> on each.</li>
+</ol>
+
+<p>This is a much bigger task than the first one. Note that you will undoubtedly find it useful to add new helper methods (private or public), perhaps in <code class="language-plaintext highlighter-rouge">CoveyTownController</code>, <code class="language-plaintext highlighter-rouge">Player</code>, or both. You <em>must not</em> add additional fields to track the conversation area’s state: the data model that Avery defined is the data model that you must use!</p>
+
+<p>📝 Check your work: Avery has also provided a single unit test for <code class="language-plaintext highlighter-rouge">addConversationArea</code>, which you can run with <code class="language-plaintext highlighter-rouge">npm test -- -t 'CoveyTownController addConversationArea'</code>. You can also run this test directly in VSCode. Of course, you may find it useful to write additional tests (either writing new tests, or modifying the behavior of this one to check more interesting behaviors). There is also a complete test suite for this task on GradeScope.</p>
+<h3 id="task-13-include-current-conversation-areas-in-join-response-10-points">
+  
+  
+    <a href="#task-13-include-current-conversation-areas-in-join-response-10-points" class="anchor-heading" aria-labelledby="task-13-include-current-conversation-areas-in-join-response-10-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 1.3: Include current conversation areas in join response [10 points]
+  
+  
+</h3>
+    
+<p>If you completed task 1.2 correctly, then all players who are in the town when a new converation is made will be notified of the new converation area. The last task to complete before we can move on to frontend implementation of this feature is to update the backend service to include the list of all current conversation areas when a new player joins the town.</p>
+
+<p>In the file <code class="language-plaintext highlighter-rouge">CoveyTownRequestHandler.ts</code>, examine the method <code class="language-plaintext highlighter-rouge">townJoinHandler</code> and the type <code class="language-plaintext highlighter-rouge">TownJoinResponse</code>. Your objective for this task is to update the <code class="language-plaintext highlighter-rouge">TownJoinResponse</code> type to include a new field, <code class="language-plaintext highlighter-rouge">conversationAreas</code>, of type <code class="language-plaintext highlighter-rouge">ServerConversationArea[]</code>, and to update the <code class="language-plaintext highlighter-rouge">townJoinHandler</code> to include the current list of converation areas for the town that the user has joined.</p>
+
+<p>📝 Check your work: Run <code class="language-plaintext highlighter-rouge">npm test CoveyTownConversationAPI</code> again, you should now see the test “Includes newly created conversations when a new player joins” pass.</p>
+<h3 id="checkpoint-check-your-work-on-this-entire-task">
+  
+  
+    <a href="#checkpoint-check-your-work-on-this-entire-task" class="anchor-heading" aria-labelledby="checkpoint-check-your-work-on-this-entire-task"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Checkpoint, check your work on this entire task
+  
+  
+</h3>
+    
+<p>We suggest that you submit your code at this point on GradeScope, which will run Avery’s <em>extremely</em> thorough test suite on your code. If there are test errors, you will likely find it easier to debug them <em>now</em> rather than moving on to implement more code (and perhaps introduce more bugs).</p>
+<h2 id="part-2-completing-the-townservice-responsibilities-30-points-total">
+  
+  
+    <a href="#part-2-completing-the-townservice-responsibilities-30-points-total" class="anchor-heading" aria-labelledby="part-2-completing-the-townservice-responsibilities-30-points-total"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Part 2: Completing the TownService responsibilities [30 points total]
+  
+  
+</h2>
+    
+<p>Congratulations on making it this far! You are almost done, there are only two more tasks to complete the feature.</p>
+<h3 id="task-21-track-conversation-area-participants-15-points">
+  
+  
+    <a href="#task-21-track-conversation-area-participants-15-points" class="anchor-heading" aria-labelledby="task-21-track-conversation-area-participants-15-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 2.1: Track conversation area participants [15 points]
+  
+  
+</h3>
+    
+<p>In Avery’s design, each of the users connected to a town track which conversation area (if any) they are in, and send this information to the <code class="language-plaintext highlighter-rouge">CoveyTownController</code>. The <code class="language-plaintext highlighter-rouge">CoveyTownController</code> needs to track which users are in each conversation. <code class="language-plaintext highlighter-rouge">CoveyTownController</code> has a method <code class="language-plaintext highlighter-rouge">updatePlayerLocation</code>, which is called each time that a player’s location changes. You should use the <code class="language-plaintext highlighter-rouge">conversationLabel</code> property on the <code class="language-plaintext highlighter-rouge">UserLocation</code> that is passed to <code class="language-plaintext highlighter-rouge">updatePlayerLocation</code> to identify the user’s current conversation area (as reported by that user). You should preserve the existing behavior of <code class="language-plaintext highlighter-rouge">updatePlayerLocation</code>, in particular, ensuring that <code class="language-plaintext highlighter-rouge">onPlayerMoved</code> is still emitted</p>
+
+<p>Your objective for this task is to implement functionality so that at the end of the execution of this method, the <code class="language-plaintext highlighter-rouge">_conversationAreas</code> list tracked by the town controller reflects that player’s transition between conversation areas, updating the <code class="language-plaintext highlighter-rouge">occupantsByID</code> property on any effected conversation areas. You must also update the <code class="language-plaintext highlighter-rouge">Player</code> instance, setting the property <code class="language-plaintext highlighter-rouge">activeConversationArea</code> to point to the  corresponding <code class="language-plaintext highlighter-rouge">ServerConversationArea</code> in the <code class="language-plaintext highlighter-rouge">_conversationAreas</code> array (or <code class="language-plaintext highlighter-rouge">undefined</code> if they are no longer within one).</p>
+
+<p>If any conversation areas are updated, you must emit a <code class="language-plaintext highlighter-rouge">onConversationAreaUpdated</code> event, similarly to how you did in Task 1.2 when a conversation is created. Note that you might need to send multiple <code class="language-plaintext highlighter-rouge">onConversationAreaUpdated</code> events: one for a user leaving an area and one for them entering another. It is important that no client ever believe that a user is in two conversation areas at the same time. Hence, be sure to send the “exit” update before the “enter” update.</p>
+
+<p>📝 Check your work: Again, Avery has provided a single sanity test that checks some of the behavior defined above. You can run this test with the command <code class="language-plaintext highlighter-rouge">npm test -- -t 'CoveyTownController updatePlayerLocation'</code>, and you might also consider extending it.</p>
+<h3 id="task-22-remove-participants-from-conversation-area-if-they-disconnect-10-points">
+  
+  
+    <a href="#task-22-remove-participants-from-conversation-area-if-they-disconnect-10-points" class="anchor-heading" aria-labelledby="task-22-remove-participants-from-conversation-area-if-they-disconnect-10-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 2.2: Remove participants from conversation area if they disconnect [10 points]
+  
+  
+</h3>
+    
+<p>When a player disconnects from the server, there is no “movement” that happens, but any resources used by that player are cleaned up by the <code class="language-plaintext highlighter-rouge">CoveyTownController</code>’s <code class="language-plaintext highlighter-rouge">destroySession</code> method. Update <code class="language-plaintext highlighter-rouge">destroySession</code> to remove disconnected players from any conversation area that they had been a participant in and emit any <code class="language-plaintext highlighter-rouge">onConversationAreaUpdated</code> events as necessary.</p>
+
+<p>📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provided to test this behavior.</p>
+<h3 id="task-23-automatically-end-a-conversation-area-when-its-unoccupied-5-points">
+  
+  
+    <a href="#task-23-automatically-end-a-conversation-area-when-its-unoccupied-5-points" class="anchor-heading" aria-labelledby="task-23-automatically-end-a-conversation-area-when-its-unoccupied-5-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 2.3: Automatically end a conversation area when it’s unoccupied [5 points]
+  
+  
+</h3>
+    
+<p>Avery has implemented logic on the frontend to show a default greeting message when there is no conversation area defined for a space.
+The code that you are implementing, then, needs to notify the frontend when a conversation area becomes unoccupied.
+When the last player leaves a conversation area emit the <code class="language-plaintext highlighter-rouge">onConversationAreaDestroyed(destroyedArea:ServerConversationArea)</code> event to each of the town controller’s listeners, and then remove that conversation area from the town controller’s list of conversation areas.
+When the last player leaves a conversation area, there is no need to emit a <code class="language-plaintext highlighter-rouge">onConversationAreaUpdated</code>.</p>
+
+<p>📝 Check your work: Avery has not provided you with a sanity test for this task. Consider testing it manually, or enhance the sanity test that they provided to test this behavior.</p>
+<h2 id="submission-instructions">
+  
+  
+    <a href="#submission-instructions" class="anchor-heading" aria-labelledby="submission-instructions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Submission Instructions
+  
+  
+</h2>
+    
+<p>Submit your assignment in GradeScope. The easiest way to get into GradeScope the first time is to first
+<a href="https://northeastern.instructure.com/courses/99531">sign into Canvas</a> and then click the link on our course for “GradeScope”. 
+You should then also have the option to create an account on GradeScope (if you don’t already have one) so that you can log in to GradeScope directly.
+Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.</p>
+
+<p>To submit your assignment: run the command <code class="language-plaintext highlighter-rouge">npm run-script zip</code>. GradeScope will provide you with feedback on your submission, but note that it will <em>not</em> include any marks that will be assigned after we manually grade your submission for code style (it will show 0 for this until it is graded).</p>
+
+        
+
+        
+
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

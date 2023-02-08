@@ -1,0 +1,1537 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Spring-2022/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Spring-2022/assets/js/vendor/lunr.min.js"></script>
+  
+
+  
+
+  <script src="/CS4530-Spring-2022/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Typescript Basics | CS4530, Spring 2022</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Typescript Basics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Spring-2022/tutorials/week2-typescript-basics" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Spring-2022/tutorials/week2-typescript-basics" />
+<meta property="og:site_name" content="CS4530, Spring 2022" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Typescript Basics" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.","headline":"Typescript Basics","dateModified":"2023-02-08T18:46:57+00:00","url":"https://neu-se.github.io/CS4530-Spring-2022/tutorials/week2-typescript-basics","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header">
+    <a href="/CS4530-Spring-2022/" class="site-title lh-tight">
+  CS4530, Spring 2022
+
+</a>
+    <a href="#" id="menu-button" class="site-button">
+      <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Spring-2022/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Modules category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week2-knowledge-sharing-design-doc" class="nav-list-link">Week 2 - Knowledge Sharing & Documenting Designs</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week3-processs" class="nav-list-link">Week 3 - Requirements, Process and Teams</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week4-async" class="nav-list-link">Week 4 - Async Programming and Debugging</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week5-testing" class="nav-list-link">Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week6-uidesign" class="nav-list-link">Week 6 - UI Design & React</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week7" class="nav-list-link">Week 7 - UI Testing + Pull Requests + Code Review</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week8" class="nav-list-link">Week 8 - Continuous Integration</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week9" class="nav-list-link">Week 9 - Distributed Systems & Static Program Analysis</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week10" class="nav-list-link">Week 10 - Software Engineering and Security</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week11" class="nav-list-link">Week 11 - Refactoring and Technical Debt</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week12" class="nav-list-link">Week 12 - Engineering Software For Equity</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Assignments category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw1" class="nav-list-link">Assignment 1: Venusians</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw2" class="nav-list-link">Assignment 2: Conversation Areas</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw3" class="nav-list-link">Assignment 3: Testing</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw4" class="nav-list-link">Assignment 4: Social Sidebar</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-pitch" class="nav-list-link">Project Pitch</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-plan" class="nav-list-link">Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/Assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander" aria-label="toggle links in Tutorials category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week6-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item  active"><a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics" class="nav-list-link active">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week5-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Policies category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/resources/" class="nav-list-link">Other Resources</a></li></ul>
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Spring 2022" aria-label="Search CS4530, Spring 2022" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+  
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        
+          <li class="breadcrumb-nav-list-item"><a href="/CS4530-Spring-2022/tutorials/">Tutorials</a></li>
+        
+        <li class="breadcrumb-nav-list-item"><span>Typescript Basics</span></li>
+      </ol>
+    </nav>
+  
+
+
+      <div id="main-content" class="main-content" role="main">
+        
+          <div class="fs-1 text-right fw-300">Last updated: Feb 08, 23 18:46 UTC | <a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics">Permalink</a></div>
+<h1 id="typescript-basics">
+  
+  
+    <a href="#typescript-basics" class="anchor-heading" aria-labelledby="typescript-basics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Typescript Basics
+  
+  
+</h1>
+    
+
+<p>This tutorial describes the basic concepts and syntax of typescript with code examples. Typescript is treated here as an extension of JavaScript, but it requires no prior knowledge to follow along.</p>
+
+<p>You can run the examples on <a href="https://www.typescriptlang.org/play">Online Typescript Editor</a> .</p>
+
+<p>Contents:</p>
+
+<ul>
+  <li><a href="#types-in-typescript">Types in Typescript</a>
+    <ul>
+      <li><a href="#boolean">Boolean</a></li>
+      <li><a href="#number">Number</a></li>
+      <li><a href="#bigint">BigInt</a></li>
+      <li><a href="#string">String</a></li>
+      <li><a href="#arrays">Arrays</a></li>
+      <li><a href="#tuples">Tuples</a></li>
+      <li><a href="#enums">Enums</a></li>
+      <li><a href="#any">Any</a></li>
+      <li><a href="#unknown">Unknown</a></li>
+    </ul>
+  </li>
+  <li><a href="#variable-declaration-in-typescript">Variable declaration in typescript</a></li>
+  <li><a href="#objects">Objects</a></li>
+  <li><a href="#control-flow-statements">Control Flow Statements</a>
+    <ul>
+      <li><a href="#equality-vs-strict-equality">Equality vs Strict Equality</a></li>
+    </ul>
+  </li>
+  <li><a href="#loops">Loops</a></li>
+  <li><a href="#array-functions">Array Functions</a>
+    <ul>
+      <li><a href="#foreach">ForEach</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#filter">Filter</a></li>
+      <li><a href="#reduce">Reduce</a></li>
+    </ul>
+  </li>
+  <li><a href="#functions">Functions</a>
+    <ul>
+      <li><a href="#typing-the-function">Typing the function</a></li>
+      <li><a href="#invoking-the-function">Invoking the function</a></li>
+      <li><a href="#optional-and-default-parameters">Optional and Default Parameters</a></li>
+      <li><a href="#rest-parameters">Rest Parameters</a></li>
+      <li><a href="#functions-as-constructors">Functions as Constructors</a></li>
+      <li><a href="#arrow-functions">Arrow Functions</a></li>
+      <li><a href="#function-overloads">Function Overloads</a></li>
+    </ul>
+  </li>
+  <li><a href="#classes">Classes</a>
+    <ul>
+      <li><a href="#creating-an-abstract-class">Creating a class</a></li>
+      <li><a href="#creating-an-abstract-class">Creating an abstract class</a></li>
+    </ul>
+  </li>
+  <li><a href="#type-aliases">Type Aliases</a></li>
+  <li><a href="#interfaces">Interfaces</a></li>
+  <li><a href="#custom-types">Custom types</a></li>
+  <li><a href="#generics">Generics</a></li>
+  <li><a href="#modules">Modules</a></li>
+  <li><a href="#object-oriented-programming-concepts-using-typescript">Object oriented programming concepts using typescript</a>
+    <ul>
+      <li><a href="#inheritance">Inheritance</a></li>
+      <li><a href="#polymorphism">Polymorphism</a></li>
+      <li><a href="#abstraction">Abstraction</a></li>
+      <li><a href="#encapsulation">Encapsulation</a></li>
+    </ul>
+  </li>
+  <li><a href="#general-guidelines">General Guidelines</a></li>
+</ul>
+
+<p>Typescript is a superset of JavaScript. Thus, all JavaScript code is valid Typescript code. Typescript introduces concepts of optional typing, modules, and few additional features to Javascript. Let us begin by extending JavaScript to use the features of Typescript and primitive types.</p>
+<h2 id="types-in-typescript">
+  
+  
+    <a href="#types-in-typescript" class="anchor-heading" aria-labelledby="types-in-typescript"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Types in typescript
+  
+  
+</h2>
+    
+<h3 id="boolean">
+  
+  
+    <a href="#boolean" class="anchor-heading" aria-labelledby="boolean"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Boolean
+  
+  
+</h3>
+    
+
+<p>The boolean type has two values: true and false.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="kc">true</span>                <span class="c1">// boolean</span>
+     <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">false</span>               <span class="c1">// boolean</span>
+     <span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="kc">true</span>              <span class="c1">// true</span>
+     <span class="kd">let</span> <span class="nx">d</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">true</span>       <span class="c1">// boolean</span>
+     <span class="kd">let</span> <span class="nx">e</span><span class="p">:</span> <span class="kc">true</span> <span class="o">=</span> <span class="kc">true</span>          <span class="c1">// true</span>
+</code></pre></div></div>
+<ul>
+  <li><em>Usage</em>: 
+You can compare them (with ==, ===, ||, &amp;&amp;, and ?), negate them (with !).</li>
+</ul>
+<h3 id="number">
+  
+  
+    <a href="#number" class="anchor-heading" aria-labelledby="number"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Number
+  
+  
+</h3>
+    
+
+<p>Number is the set of all numbers: integers, floats, positives, negatives, Infinity, NaN.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="kc">Infinity</span> <span class="o">*</span> <span class="mf">0.10</span>     <span class="c1">// number</span>
+<span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">5678</span>              <span class="c1">// 5678</span>
+<span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">b</span>               <span class="c1">// boolean</span>
+<span class="kd">let</span> <span class="nx">e</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">100</span>         <span class="c1">// number</span>
+<span class="kd">let</span> <span class="nx">f</span><span class="p">:</span> <span class="mf">26.218</span> <span class="o">=</span> <span class="mf">26.218</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>Usage</em>: 
+Numbers can do things, like addition (+), subtraction (-), modulo (%), and comparison (&lt;). When working with long numbers, use numeric separators to make those numbers easier to read.</li>
+</ul>
+<h3 id="bigint">
+  
+  
+    <a href="#bigint" class="anchor-heading" aria-labelledby="bigint"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> BigInt
+  
+  
+</h3>
+    
+
+<p>The bigint type is the set of all BigInts, and supports things like addition (+), subtraction (-), multiplication (*), division (/), and comparison (&lt;).</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1234</span><span class="nx">n</span>               <span class="c1">// bigint</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">5678</span><span class="nx">n</span>             <span class="c1">// 5678n</span>
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>               <span class="c1">// bigint</span>
+<span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="mi">1235</span>            <span class="c1">// boolean</span>
+<span class="kd">let</span> <span class="nx">e</span> <span class="o">=</span> <span class="mf">88.5</span><span class="nx">n</span>               <span class="c1">// Error TS1353: A bigint literal must be an integer.</span>
+<span class="kd">let</span> <span class="nx">f</span><span class="p">:</span> <span class="nx">bigint</span> <span class="o">=</span> <span class="mi">100</span><span class="nx">n</span>        <span class="c1">// bigint</span>
+<span class="kd">let</span> <span class="nx">g</span><span class="p">:</span> <span class="mi">100</span><span class="nx">n</span> <span class="o">=</span> <span class="mi">100</span><span class="nx">n</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>Usage</em>: 
+It lets you work with large integers without running into rounding errors. While the number type can only represent whole numbers it can hold numbers larger than 2<sup>53</sup> – 1.</li>
+</ul>
+<h3 id="string">
+  
+  
+    <a href="#string" class="anchor-heading" aria-labelledby="string"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> String
+  
+  
+</h3>
+    
+
+<p>String is the set of all strings and the things you can do with them like concatenate (+), slice (.slice),etc.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="mi">666</span>            <span class="c1">// any</span>
+<span class="kd">let</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">danger</span><span class="dl">'</span><span class="p">]</span>     <span class="c1">// any</span>
+<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>               <span class="c1">// any</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>Usage</em>: 
+Any functionality that requires the functionality of a  string of characters. Here are a couple of string operations:</li>
+</ul>
+
+<p><strong>charAt()</strong> : This method returns the character from the specified index. Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.length – 1.</p>
+
+<p>Syntax:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">string</span><span class="p">.</span><span class="nx">charAt</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>slice()</strong> : This method extracts a section of a string and returns a new string. 
+Syntax:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">string</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span> <span class="nx">beginslice</span> <span class="p">[,</span> <span class="nx">endSlice</span><span class="p">])</span>
+</code></pre></div></div>
+<p><strong>split()</strong> : This method splits a String object into an array of strings by separating the string into substrings. 
+Syntax:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">string</span><span class="p">.</span><span class="nx">split</span><span class="p">([</span><span class="nx">separator</span><span class="p">][,</span> <span class="nx">limit</span><span class="p">])</span>
+</code></pre></div></div>
+<p><strong>concat()</strong>: This method adds two or more strings and returns a new single string. 
+Syntax:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">string</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">string2</span><span class="p">,</span> <span class="nx">string3</span><span class="p">[,</span> <span class="p">...,</span> <span class="nx">stringN</span><span class="p">])</span>
+</code></pre></div></div>
+<p><strong>indexOf()</strong>: This method returns the index within the calling String object of the first occurrence of the specified value, starting the search at index or -1 if the value is not found. 
+Syntax:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">string</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">searchValue</span><span class="p">[,</span> <span class="nx">fromIndex</span><span class="p">])</span>
+</code></pre></div></div>
+<h3 id="arrays">
+  
+  
+    <a href="#arrays" class="anchor-heading" aria-labelledby="arrays"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Arrays
+  
+  
+</h3>
+    
+
+<p>Like in JavaScript, TypeScript arrays are special kinds of objects that support things like concatenation, pushing, searching, and slicing. Arrays are iterable Objects with the keys as numbers.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>           <span class="c1">// number[]</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">]</span>          <span class="c1">// string[]</span>
+<span class="kd">let</span> <span class="nx">c</span><span class="p">:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">]</span>     <span class="c1">// string[]</span>
+<span class="kd">let</span> <span class="nx">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">]</span>            <span class="c1">// (string | number)[]</span>
+<span class="kd">const</span> <span class="nx">e</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">]</span>          <span class="c1">// (string | number)[]</span>
+ 
+<span class="kd">let</span> <span class="nx">f</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">]</span>
+<span class="nx">f</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">g</span> <span class="o">=</span> <span class="p">[]</span>                  <span class="c1">// any[]</span>
+<span class="nx">g</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                   <span class="c1">// number[]</span>
+<span class="nx">g</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">'</span><span class="s1">red</span><span class="dl">'</span><span class="p">)</span>               <span class="c1">// (string | number)[]</span>
+ 
+<span class="kd">let</span> <span class="nx">h</span><span class="p">:</span> <span class="kr">number</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1">// number[]</span>
+<span class="nx">h</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                   <span class="c1">// number[]</span>
+</code></pre></div></div>
+<h3 id="tuples">
+  
+  
+    <a href="#tuples" class="anchor-heading" aria-labelledby="tuples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Tuples
+  
+  
+</h3>
+    
+
+<p>Tuples are subtypes of array. They’re a special way to type arrays that have fixed lengths, where the values at each index have specific, known types. Unlike most other types, tuples have to be explicitly typed when you declare them.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="p">[</span><span class="kr">number</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+ 
+<span class="c1">// A tuple of [first name, last name, birth year]</span>
+<span class="kd">let</span> <span class="nx">b</span><span class="p">:</span> <span class="p">[</span><span class="kr">string</span><span class="p">,</span> <span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">malcolm</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">gladwell</span><span class="dl">'</span><span class="p">,</span> <span class="mi">1963</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>Usage</em>: 
+In TypeScript Tuples support optional elements too. Just like in object types, ? means “optional”. Tuples also support rest elements, which you can use to type tuples with minimum lengths. Not only do tuple types safely encode heterogeneous lists, but they also capture the length of the list they type.</li>
+</ul>
+<h3 id="enums">
+  
+  
+    <a href="#enums" class="anchor-heading" aria-labelledby="enums"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Enums
+  
+  
+</h3>
+    
+
+<p>Enums are a way to enumerate the possible values for a type. They are unordered data structures that map keys to values.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">enum</span> <span class="nx">Language</span> <span class="p">{</span>
+ <span class="nx">English</span><span class="p">,</span>
+ <span class="nx">Spanish</span><span class="p">,</span>
+ <span class="nx">Russian</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li><em>Usage</em>: 
+There are two kinds of enums: enums that map from strings to strings, and enums that map from strings to numbers. Use it when you wish to provide flexibility making it easier to express and document intentions and use cases or when you want to save compile-time and runtime with inline code.</li>
+</ul>
+<h3 id="any">
+  
+  
+    <a href="#any" class="anchor-heading" aria-labelledby="any"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Any
+  
+  
+</h3>
+    
+
+<p>The any data type is the super type of all types in TypeScript. It denotes a dynamic type. Using the any type is equivalent to opting out of type checking for a variable.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="mi">666</span>            <span class="c1">// any</span>
+<span class="kd">let</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">danger</span><span class="dl">'</span><span class="p">]</span>     <span class="c1">// any</span>
+<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>               <span class="c1">// any</span>
+</code></pre></div></div>
+<ul>
+  <li><em>Usage</em>: 
+In TypeScript everything needs to have a type at compile time, and any is the default type when you (the programmer) and TypeScript (the typechecker) can’t figure out what type something is. It’s a last resort type, and you should avoid it when possible.</li>
+</ul>
+<h3 id="unknown">
+  
+  
+    <a href="#unknown" class="anchor-heading" aria-labelledby="unknown"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Unknown
+  
+  
+</h3>
+    
+
+<p>If any is the Godfather, then unknown is Keanu Reeves as undercover FBI agent Johnny Utah in Point Break: laid back, fits right in with the bad guys, but deep down has a respect for the law and is on the side of the good guys. You can compare unknown values (with ==, ===, &amp;&amp;, and ?), and refine them (like you can any other type) with JavaScript’s typeof and instanceof operators.</p>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span><span class="p">:</span> <span class="nx">unknown</span> <span class="o">=</span> <span class="mi">30</span>         <span class="c1">// unknown</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">===</span> <span class="mi">123</span>           <span class="c1">// boolean</span>
+</code></pre></div></div>
+<ul>
+  <li><em>Usage</em>: 
+For the few cases where you have a value whose type you really don’t know ahead of time, don’t use any, and instead reach for unknown. Like any, it represents any value, but TypeScript won’t let you use an unknown type until you refine it by checking what it is.</li>
+</ul>
+<h2 id="variable-declaration-in-typescript">
+  
+  
+    <a href="#variable-declaration-in-typescript" class="anchor-heading" aria-labelledby="variable-declaration-in-typescript"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Variable declaration in typescript
+  
+  
+</h2>
+    
+
+<p>Variables can be declared in Typescript using one of 3 keywords:</p>
+
+<ul>
+  <li><em>var</em>:  var declarations are accessible anywhere within their containing function, module, namespace, or global scope - all which we’ll go over later on - regardless of the containing block. Some people call this var-scoping or function-scoping. Parameters are also function scoped.</li>
+  <li><em>let</em>: When a variable is declared using let, it uses what some call lexical-scoping or block-scoping. Unlike variables declared with var whose scopes leak out to their containing function, block-scoped variables are not visible outside of their nearest containing block.</li>
+  <li><em>const</em>: They are like let declarations but, as their name implies, their value cannot be changed once they are bound. In other words, they have the same scoping rules as let, but you can’t re-assign to them.</li>
+</ul>
+
+<p>The syntax of declarations is as below:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="o">&lt;</span><span class="nx">name</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="kd">type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">value</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="o">&lt;</span><span class="nx">name</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="kd">type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">value</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="o">&lt;</span><span class="nx">name</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="kd">type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">value</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">num</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">PI</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">x</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">This is a string</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">t</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">f</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">uninitialized</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+</code></pre></div></div>
+<h2 id="objects">
+  
+  
+    <a href="#objects" class="anchor-heading" aria-labelledby="objects"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Objects
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Objects are similar to dictionaries with key-value pairs.</li>
+  <li>Arrays are iterable Objects with the keys as numbers.</li>
+</ul>
+
+<p>Examples:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">myObj</span><span class="p">:</span> <span class="kr">any</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">key1</span><span class="p">:</span> <span class="dl">'</span><span class="s1">value1</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">key2</span><span class="p">:</span> <span class="dl">'</span><span class="s1">value2</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myObj</span><span class="p">.</span><span class="nx">key1</span><span class="p">);</span> <span class="c1">// prints 'value1'</span>
+</code></pre></div></div>
+<h2 id="control-flow-statements">
+  
+  
+    <a href="#control-flow-statements" class="anchor-heading" aria-labelledby="control-flow-statements"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Control Flow Statements
+  
+  
+</h2>
+    
+
+<p>Typescript contains the following control flow statements:</p>
+
+<ul>
+  <li>If-Else</li>
+  <li>Switch</li>
+  <li>Ternary operator: Shorthand for if-else which returns a value.</li>
+</ul>
+
+<p>If condition syntax:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// executed when condition is true</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// executed when condition is true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// executed when condition is false</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// executed when condition is true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nx">condition2</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// checked only if condition is false</span>
+    <span class="c1">// executed when condition2 is true</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// executed when all conditions in the if-elseif ladder are false.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Switch case syntax:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span> <span class="p">(</span><span class="nx">variable</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">case</span> <span class="o">&lt;</span><span class="nx">case1</span><span class="o">&gt;</span><span class="p">:</span>
+        <span class="c1">// executed when value of variable matches &lt;case1&gt;</span>
+        <span class="k">break</span><span class="p">;</span> <span class="c1">// Break is required to prevent all subsequent cases from executing</span>
+    <span class="k">case</span> <span class="o">&lt;</span><span class="nx">case2</span><span class="o">&gt;</span><span class="p">:</span>
+        <span class="c1">// executed when value of variable matches &lt;case1&gt;</span>
+        <span class="k">break</span><span class="p">;</span> <span class="c1">// Break is required to prevent all subsequent cases from executing</span>
+    <span class="nl">default</span><span class="p">:</span>
+        <span class="c1">// executed if variable does not match any prior cases</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Ternary Syntax:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">?</span> <span class="cm">/* Executed when condition is true */</span> <span class="p">:</span> <span class="cm">/*Executed when condition is false*/</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Examples:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">str</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">ABCD</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nx">str</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">ABCD</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">it was true</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">it was false</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">ABCD</span><span class="dl">"</span><span class="p">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">It was ABCD</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">WXYZ</span><span class="dl">"</span><span class="p">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">It was WXYZ</span><span class="dl">'</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="nl">default</span><span class="p">:</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">It was something completely different</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">))</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">The string contains A</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">The string does not contain A</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// y now contains "The string contains A"</span>
+</code></pre></div></div>
+<h2 id="equality-vs-strict-equality">
+  
+  
+    <a href="#equality-vs-strict-equality" class="anchor-heading" aria-labelledby="equality-vs-strict-equality"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Equality vs Strict Equality
+  
+  
+</h2>
+    
+
+<p>Typescript/JavaScript contain 2 equality operators:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">==</code>: Compares only the value of entities being compared.</li>
+  <li><code class="language-plaintext highlighter-rouge">===</code>: Compares the type and value of entities being compared.</li>
+</ul>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span><span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// Evaluates to true despite comparing string to number.</span>
+
+<span class="k">if</span><span class="p">(</span><span class="mi">0</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// Evaluated to false because types are different.</span>
+</code></pre></div></div>
+
+<p>We recommend using strict equality (<code class="language-plaintext highlighter-rouge">===</code>) in all cases, and this recommendation is enforced by our linter.</p>
+<h2 id="loops">
+  
+  
+    <a href="#loops" class="anchor-heading" aria-labelledby="loops"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Loops
+  
+  
+</h2>
+    
+
+<p>Typescript contains the following loops:</p>
+
+<ul>
+  <li>For</li>
+  <li>While</li>
+  <li>Do-while</li>
+</ul>
+
+<p>Examples:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="k">while</span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="k">do</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="nx">condition</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="array-functions">
+  
+  
+    <a href="#array-functions" class="anchor-heading" aria-labelledby="array-functions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Array Functions
+  
+  
+</h2>
+    
+
+<p>ForEach, Map, reduce, and filter are all array methods in JavaScript. Each one will iterate over an array and perform a transformation or computation. Each will return a new array based on the result of the function.</p>
+<h2 id="foreach">
+  
+  
+    <a href="#foreach" class="anchor-heading" aria-labelledby="foreach"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> ForEach
+  
+  
+</h2>
+    
+
+<p>forEach() method calls a function for each element in the array. It returns the resultant array.</p>
+
+<p>Syntax</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">callback</span><span class="p">[,</span> <span class="nx">thisObject</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>Example</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">num</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">];</span>
+<span class="nx">num</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">});</span> 
+</code></pre></div></div>
+<h2 id="map">
+  
+  
+    <a href="#map" class="anchor-heading" aria-labelledby="map"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Map
+  
+  
+</h2>
+    
+
+<p>It is an array function that transforms the array according to the applied function and returns the updated array. It works on each element of an array.</p>
+
+<p>Syntax</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">callback</span><span class="p">[,</span><span class="nx">object</span><span class="p">])</span>
+</code></pre></div></div>
+<p>callback - It is a function that provides an element of the new Array from an element of the current one.</p>
+
+<p>object - object to use as this when executing callback.</p>
+
+<p>Return Type - List</p>
+
+<p>Examples</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calculate cube of each element with the help of map. </span>
+<span class="kd">function</span> <span class="nx">cube</span><span class="p">(</span><span class="nx">n</span><span class="p">){</span>  
+   <span class="k">return</span> <span class="nx">n</span><span class="o">*</span><span class="nx">n</span><span class="o">*</span><span class="nx">n</span><span class="p">;</span>  
+<span class="p">}</span>  
+<span class="kd">var</span> <span class="nx">arr</span><span class="o">=</span><span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>  
+<span class="kd">var</span> <span class="nx">newArr</span><span class="o">=</span><span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">cube</span><span class="p">);</span>  
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newArr</span><span class="p">)</span>  <span class="c1">// Output : [1,8,27,64]</span>
+</code></pre></div></div>
+<p>In the above example, a function called “cube” is created and then is passed as a callback function into map().</p>
+<h2 id="reduce">
+  
+  
+    <a href="#reduce" class="anchor-heading" aria-labelledby="reduce"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Reduce
+  
+  
+</h2>
+    
+<p>It also works on a callback for each element of an array. It reduces the result of this callback function from one array element to the other.</p>
+
+<p>Syntax</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">array</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">callback</span><span class="p">[,</span><span class="nx">initalValue</span><span class="p">])</span>
+</code></pre></div></div>
+<p>callback - this parameter is the function to execute on each value in the array.</p>
+
+<p>intitalValue - this parameter is the object to use as the first argument of the first call of the callback.</p>
+
+<p>Examples</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//To calculate product of every element of an array,</span>
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>    
+<span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span>    
+   <span class="k">return</span> <span class="nx">a</span><span class="o">*</span><span class="nx">b</span><span class="p">;</span>    
+<span class="p">});</span>      
+<span class="c1">//output =&gt; 120  </span>
+</code></pre></div></div>
+<p>Calculate the total salary from a list of object, then you will use the reduce() like,</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">employees</span> <span class="o">=</span> <span class="p">[</span>    
+   <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Ajay</span><span class="dl">'</span><span class="p">,</span> <span class="na">salary</span><span class="p">:</span><span class="mi">30000</span> <span class="p">},</span>    
+   <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Vijay</span><span class="dl">'</span><span class="p">,</span> <span class="na">salary</span><span class="p">:</span><span class="mi">35000</span> <span class="p">},</span>    
+   <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Rahul</span><span class="dl">'</span><span class="p">,</span> <span class="na">salary</span><span class="p">:</span><span class="mi">32000</span> <span class="p">},</span>    
+   <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Raman</span><span class="dl">'</span><span class="p">,</span> <span class="na">salary</span><span class="p">:</span><span class="mi">38000</span> <span class="p">}</span>    
+<span class="p">];</span>    
+<span class="kd">var</span> <span class="nx">totalSalary</span><span class="o">=</span> <span class="nx">employees</span> <span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">record</span><span class="p">)</span> <span class="p">{</span>    
+   <span class="k">return</span> <span class="nx">total</span> <span class="o">+</span> <span class="nx">record</span><span class="p">.</span><span class="nx">salary</span><span class="p">;</span>    
+<span class="p">},</span> <span class="mi">0</span><span class="p">);</span>    
+    
+<span class="c1">//It will return the total salary of all the employees.  </span>
+</code></pre></div></div>
+<h2 id="filter">
+  
+  
+    <a href="#filter" class="anchor-heading" aria-labelledby="filter"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Filter
+  
+  
+</h2>
+    
+<p>As the name suggests it can filter out the data/array elements on the basis of condition and return the result as a list. Basically, this function pushes the current element into a new array when the callback functions return true.</p>
+
+<p>Syntax</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">array</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">callback</span><span class="p">[,</span><span class="nx">object</span><span class="p">])</span>
+</code></pre></div></div>
+<p>callback - it is a function that provides an element of the new Array from an element of the current one.
+object - object to use as this when executing callback.</p>
+
+<p>Return Type: List</p>
+
+<p>Examples</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Calculate a list of even elements from an array :    </span>
+<span class="nx">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>  
+<span class="kd">var</span> <span class="nx">newArr</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">record</span><span class="p">)</span> <span class="p">{</span>  
+    <span class="k">return</span> <span class="nx">record</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>  
+<span class="p">});</span> <span class="c1">// output =&gt; [2,6,4] </span>
+</code></pre></div></div>
+<h2 id="functions">
+  
+  
+    <a href="#functions" class="anchor-heading" aria-labelledby="functions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Functions
+  
+  
+</h2>
+    
+<ul>
+  <li>
+    <p>Functions usually “take in” data, process it, and “return” a result. <strong>Remember one function/method one job!</strong></p>
+  </li>
+  <li>
+    <p>There is a lot you can do with functions in JavaScript like assign them to variables, pass them to other functions, return them from functions, assign them to objects and prototypes, write properties to them, read those properties back, and so on, and TypeScript models all of those things with its rich type system, which we just learnt.</p>
+  </li>
+  <li>
+    <p>Typescript enables us to set the types for our function parameters and our return type.</p>
+  </li>
+  <li>
+    <p>Functions in Typescript are defined as below:</p>
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">functionName</span><span class="p">(</span><span class="nx">argument1</span><span class="p">:</span> <span class="o">&lt;</span><span class="kd">type</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">defaultArgument</span><span class="p">:</span> <span class="o">&lt;</span><span class="kd">type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">optionalArgument</span><span class="p">?:</span> <span class="o">&lt;</span><span class="kd">type</span><span class="o">&gt;</span><span class="p">):</span> <span class="o">&lt;</span><span class="k">return</span> <span class="kd">type</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="c1">// Function body</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<h2 id="typing-the-function">
+  
+  
+    <a href="#typing-the-function" class="anchor-heading" aria-labelledby="typing-the-function"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Typing the function
+  
+  
+</h2>
+    
+
+<p>A simple function in javascript would look like this:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Named function</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Now, let’s add types to our simple examples above:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You will usually explicitly annotate function parameters (a and b in this example)—TypeScript will always infer types throughout the body of your function, but in most cases it won’t infer types for your parameters. The return type is inferred, but it’s a good practice to explicitly annotate it.</p>
+<h2 id="invoking-the-function">
+  
+  
+    <a href="#invoking-the-function" class="anchor-heading" aria-labelledby="invoking-the-function"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Invoking the function
+  
+  
+</h2>
+    
+
+<p>When you invoke a function in TypeScript, you don’t need to provide any additional type information—just pass in some arguments, and TypeScript will go to work checking that your arguments are compatible with the types of your function’s parameters:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>         <span class="c1">// evaluates to 3</span>
+</code></pre></div></div>
+<p>Of course, if you forgot an argument, or passed an argument of the wrong type, TypeScript will be quick to point it out:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>            <span class="c1">// Error TS2554: Expected 2 arguments, but got 1.</span>
+<span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">);</span>       <span class="c1">// Error TS2345: Argument of type '"a"' is not assignable</span>
+                  <span class="c1">// to parameter of type 'number'.</span>
+</code></pre></div></div>
+<h2 id="optional-and-default-parameters">
+  
+  
+    <a href="#optional-and-default-parameters" class="anchor-heading" aria-labelledby="optional-and-default-parameters"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Optional and Default Parameters
+  
+  
+</h2>
+    
+
+<p>Like in object and tuple types, you can use ? to mark parameters as optional. When declaring your function’s parameters, required parameters have to come first, followed by optional parameters:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">userId</span><span class="p">?:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">time</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleTimeString</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">userId</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">Not signed in</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+ 
+<span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Page loaded</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// Logs "12:38:31 PM Page loaded Not signed in"</span>
+<span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">User signed in</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">da763be</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// Logs "12:38:31 PM User signed in da763be"</span>
+</code></pre></div></div>
+<p>You can provide default values for optional parameters. Semantically it’s similar to making a parameter optional, in that callers no longer have to pass it in (a difference is that default parameters don’t have to be at the end of your list of parameters, while optional parameters do).</p>
+
+<p>For example, we can rewrite log as:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">userId</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Not signed in</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">time</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">()</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">time</span><span class="p">,</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">userId</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">User clicked on a button</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">da763be</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">User signed out</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="rest-parameters">
+  
+  
+    <a href="#rest-parameters" class="anchor-heading" aria-labelledby="rest-parameters"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rest Parameters
+  
+  
+</h2>
+    
+
+<p>If a function takes a list of arguments, you can of course simply pass the list in as an array:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">numbers</span><span class="p">:</span> <span class="kr">number</span><span class="p">[]):</span> <span class="kr">number</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">numbers</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">total</span><span class="p">,</span> <span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">total</span> <span class="o">+</span> <span class="nx">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+ 
+<span class="nx">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span> <span class="c1">// evaluates to 6</span>
+</code></pre></div></div>
+<h2 id="functions-as-constructors">
+  
+  
+    <a href="#functions-as-constructors" class="anchor-heading" aria-labelledby="functions-as-constructors"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Functions as Constructors
+  
+  
+</h2>
+    
+
+<p>In Typescript/Javascript, Functions can be used as constructors for creating objects. This is similar to classes, but not quite the same.</p>
+
+<p>Examples:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">firstName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="nx">lastName</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">getFullName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">():</span> <span class="kr">string</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">'</span><span class="s1">first</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">last</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person1</span><span class="p">.</span><span class="nx">getFullName</span><span class="p">());</span> <span class="c1">// Returns 'first last'.</span>
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>Constructors can’t have type parameters - these belong on the outer class declaration</p>
+  </li>
+  <li>
+    <p>Constructors can’t have return type annotations - the class instance type is always what’s returned
+```ts
+class Point {
+  x: number;
+  y: number;</p>
+  </li>
+</ul>
+
+<p>// Normal signature with defaults
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## Arrow Functions
+
+Arrow Functions (also called fat arrow functions) are functions which have lexical 'this' and 'arguments'. This are especially useful in class methods to preserve the context when using higher order functions.
+
+Examples:
+```ts
+let sum = (x: number, y: number): number =&gt; {
+    return x + y;
+}
+
+sum(10, 20); //returns 30
+</code></pre></div></div>
+<p>In the above example, sum is an arrow function. (x:number, y:number) denotes the parameter types, :number specifies the return type. The fat arrow =&gt; separates the function parameters and the function body. The right side of =&gt; can contain one or more code statements.</p>
+<h2 id="function-overloads">
+  
+  
+    <a href="#function-overloads" class="anchor-heading" aria-labelledby="function-overloads"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Function Overloads
+  
+  
+</h2>
+    
+
+<p>In TypeScript, we can specify a function that can be called in different ways by writing overload signatures. To do this, write some number of function signatures (usually two or more), followed by the body of the function:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//function makeDate() with one parameter</span>
+<span class="kd">function</span> <span class="nx">makeDate</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nb">Date</span><span class="p">;</span>
+<span class="c1">//function makeDate() with three parameters </span>
+<span class="kd">function</span> <span class="nx">makeDate</span><span class="p">(</span><span class="nx">m</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">d</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nb">Date</span><span class="p">;</span>
+<span class="c1">//function makeDate() with one parameter and 2 default parameters</span>
+<span class="kd">function</span> <span class="nx">makeDate</span><span class="p">(</span><span class="nx">mOrTimestamp</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">d</span><span class="p">?:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">?:</span> <span class="kr">number</span><span class="p">):</span> <span class="nb">Date</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">d</span> <span class="o">!==</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">!==</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">y</span><span class="p">,</span> <span class="nx">mOrTimestamp</span><span class="p">,</span> <span class="nx">d</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">mOrTimestamp</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">d1</span> <span class="o">=</span> <span class="nx">makeDate</span><span class="p">(</span><span class="mi">12345678</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">d2</span> <span class="o">=</span> <span class="nx">makeDate</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">d3</span> <span class="o">=</span> <span class="nx">makeDate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//No overload expects 2 arguments, but overloads do exist that expect either 1 or 3 arguments.</span>
+</code></pre></div></div>
+<h2 id="classes">
+  
+  
+    <a href="#classes" class="anchor-heading" aria-labelledby="classes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Classes
+  
+  
+</h2>
+    
+
+<p>Classes are blueprints for creating objects.</p>
+
+<ul>
+  <li>They can contain <em>properties</em>, <em>methods</em>, and a <em>constructor</em>.</li>
+  <li>All members of a class can have an access modifier: <em>public</em>, <em>protected</em>, <em>private</em>.</li>
+  <li>Members can also be <em>static</em> (shared across all instances of the class) and <em>final</em> (immutable).</li>
+  <li>Class properties may have <em>getters</em> and <em>setters</em>.</li>
+  <li>Classes can extend other classes.</li>
+  <li>Classes can implement interfaces.</li>
+</ul>
+<h3 id="creating-a-class">
+  
+  
+    <a href="#creating-a-class" class="anchor-heading" aria-labelledby="creating-a-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating a Class
+  
+  
+</h3>
+    
+
+<p>A class definition can include the following:</p>
+
+<ul>
+  <li><em>Fields</em> − A field is any variable declared in a class. Fields represent data pertaining to objects</li>
+  <li><em>Constructors</em> − Responsible for allocating memory for the objects of the class</li>
+  <li><em>Functions</em> − Functions represent actions an object can take. They are also at times referred to as methods</li>
+</ul>
+
+<p>Examples:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+
+    <span class="k">private</span> <span class="nx">firstName</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nx">middleName</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nx">lastName</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">static</span> <span class="nx">final</span> <span class="nx">NeverGonnaGiveYouUp</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="k">static</span> <span class="nx">final</span> <span class="nx">NeverGonnaLetYouDown</span><span class="p">:</span> <span class="kr">any</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nx">final</span> <span class="nx">isRickRolled</span><span class="p">:</span> <span class="nx">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// I execute when you call new Person().</span>
+        <span class="c1">// No access modifier === public by default.</span>
+        <span class="c1">// Make me private if implementing a singleton.</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nx">anyoneCanCallMe</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">childClassesCanCallMe</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="nx">childClassesCanCallMe</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">onlyPersonCanCallMe</span><span class="p">();</span>
+    <span class="p">}</span>
+    
+    <span class="k">private</span> <span class="nx">onlyAccessibleInsidePerson</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="c1">// I lied, anyone can call me if you know how.</span>
+        <span class="c1">// Welcome to JavaScript :p</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kd">get</span> <span class="nx">firstName</span><span class="p">():</span> <span class="kr">string</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kd">set</span> <span class="nx">firstName</span><span class="p">(</span><span class="nx">firstName</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">();</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">first</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">firstName</span><span class="p">);</span>
+<span class="nx">person</span><span class="p">.</span><span class="nx">anyoneCanCallMe</span><span class="p">();</span>
+
+<span class="kd">class</span> <span class="nx">SpecialPerson</span> <span class="kd">extends</span> <span class="nx">Person</span> <span class="p">{</span>
+    <span class="c1">// I contain everything person has, and can extend/override it.</span>
+
+    <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">()</span> <span class="c1">// I call the constructor for Person.</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="creating-an-abstract-class">
+  
+  
+    <a href="#creating-an-abstract-class" class="anchor-heading" aria-labelledby="creating-an-abstract-class"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating an abstract class
+  
+  
+</h2>
+    
+
+<ul>
+  <li>
+    <p>Define an abstract class in Typescript using the abstract keyword. Abstract classes are mainly for inheritance where other classes may derive from them. We cannot create an instance of an abstract class.</p>
+  </li>
+  <li>
+    <p>An abstract class typically includes one or more abstract methods or property declarations. The class which extends the abstract class must define all the abstract methods.</p>
+  </li>
+</ul>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+ <span class="kd">abstract</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+ <span class="nx">display</span><span class="p">():</span> <span class="k">void</span><span class="p">{</span>
+     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="kd">extends</span> <span class="nx">Person</span> <span class="p">{</span>
+ <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+ <span class="nl">empCode</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">code</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+     <span class="k">super</span><span class="p">();</span> <span class="c1">// must call super()</span>
+     <span class="k">this</span><span class="p">.</span><span class="nx">empCode</span> <span class="o">=</span> <span class="nx">code</span><span class="p">;</span>
+     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">emp</span><span class="p">:</span> <span class="nx">Person</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="dl">"</span><span class="s2">James</span><span class="dl">"</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">emp</span><span class="p">.</span><span class="nx">display</span><span class="p">();</span> <span class="c1">//James</span>
+</code></pre></div></div>
+<h2 id="type-aliases">
+  
+  
+    <a href="#type-aliases" class="anchor-heading" aria-labelledby="type-aliases"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Type Aliases
+  
+  
+</h2>
+    
+
+<p>We’ve been using object types and union types by writing them directly in type annotations. This is convenient, but it’s common to want to use the same type more than once and refer to it by a single name.
+A type alias is exactly that - a name for any type. The syntax for a type alias is:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">Point</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+  <span class="nl">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">};</span>
+ 
+<span class="kd">function</span> <span class="nx">printCoord</span><span class="p">(</span><span class="nx">pt</span><span class="p">:</span> <span class="nx">Point</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">The coordinate's x value is </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">pt</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">The coordinate's y value is </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">pt</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
+ 
+<span class="nx">printCoord</span><span class="p">({</span> <span class="na">x</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="na">y</span><span class="p">:</span> <span class="mi">100</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<p>You can actually use a type alias to give a name to any type at all, not just an object type. For example, a type alias can name a union type:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">ID</span> <span class="o">=</span> <span class="kr">number</span> <span class="o">|</span> <span class="kr">string</span><span class="p">;</span>
+</code></pre></div></div>
+<p>Note that aliases are only aliases - you cannot use type aliases to create different/distinct “versions” of the same type. When you use the alias, it’s exactly as if you had written the aliased type. In other words, this code might look illegal, but is OK according to TypeScript because both types are aliases for the same type:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">UserInputSanitizedString</span> <span class="o">=</span> <span class="kr">string</span><span class="p">;</span>
+ 
+<span class="kd">function</span> <span class="nx">sanitizeInput</span><span class="p">(</span><span class="nx">str</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nx">UserInputSanitizedString</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">sanitize</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+<span class="p">}</span>
+ 
+<span class="c1">// Create a sanitized input</span>
+<span class="kd">let</span> <span class="nx">userInput</span> <span class="o">=</span> <span class="nx">sanitizeInput</span><span class="p">(</span><span class="nx">getInput</span><span class="p">());</span>
+ 
+<span class="c1">// Can still be re-assigned with a string though</span>
+<span class="nx">userInput</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">new input</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+<h2 id="interfaces">
+  
+  
+    <a href="#interfaces" class="anchor-heading" aria-labelledby="interfaces"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Interfaces
+  
+  
+</h2>
+    
+
+<p>Interfaces are used to define contracts for interaction with external entities. If an interface has a property/method, an Object/Class which implements it <em>must</em> have it. Interfaces can be used to define custom types for Objects in Typescript.</p>
+
+<p>Examples:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Interface IPerson respresents a person by attributes firstName and lastName and a method to getFullName()</span>
+<span class="kr">interface</span> <span class="nx">IPerson</span> <span class="p">{</span>
+    <span class="nl">firstName</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">lastName</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nx">getFullName</span><span class="p">():</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Class Person implements interface Iperson. Person class must contains ll the attributes and methods of interface. </span>
+<span class="kd">class</span> <span class="nx">Person</span> <span class="k">implements</span> <span class="nx">IPerson</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="nx">firstName</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nx">lastName</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">''</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nx">getFullName</span><span class="p">():</span> <span class="kr">string</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// It can contain any other properties/methods but must contain those in the interface.</span>
+
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">person</span><span class="p">:</span> <span class="nx">IPerson</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+</code></pre></div></div>
+<h2 id="custom-types">
+  
+  
+    <a href="#custom-types" class="anchor-heading" aria-labelledby="custom-types"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Custom types
+  
+  
+</h2>
+    
+
+<ul>
+  <li>For complicated types (usually required for Objects), it is recommended to use an interface.</li>
+  <li>Additionally, typescript contain the ‘type’ keyword which can be used to create new types.</li>
+  <li>This is generally used when a union of different types is required.</li>
+</ul>
+
+<p>Examples:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">IStudent</span> <span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+    <span class="nl">studentID</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+    <span class="nl">gender</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">isEnrolled</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">student</span><span class="p">:</span> <span class="nx">IStudent</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">age</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="na">studentID</span><span class="p">:</span> <span class="mi">111111111</span><span class="p">,</span>
+    <span class="na">gender</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hidden</span><span class="dl">'</span>
+    <span class="na">isEnrolled</span><span class="p">:</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">type</span> <span class="nx">StringOrNumber</span> <span class="o">=</span> <span class="kr">string</span> <span class="o">|</span> <span class="kr">number</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">x</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">some string</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<h2 id="generics">
+  
+  
+    <a href="#generics" class="anchor-heading" aria-labelledby="generics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Generics
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Generics allow us to pass different types to a function/class making it more generalized.</li>
+  <li>This will be especially useful when working with http requests.</li>
+</ul>
+
+<p>Examples:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">myFunc</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">data</span><span class="p">:</span> <span class="nx">T</span><span class="p">):</span> <span class="nx">T</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">data</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">x</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="nx">myFunc</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">'</span><span class="s1">some string</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="nx">myFunc</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="kd">class</span> <span class="nx">myClass</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">IMyInterface</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="modules">
+  
+  
+    <a href="#modules" class="anchor-heading" aria-labelledby="modules"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Modules
+  
+  
+</h2>
+    
+
+<p>A Module in typescript is defined by using the ‘Import’ or ‘Export’ keywords within a file. Variables declared in a module are scoped locally and are not added to the global scope.</p>
+
+<ul>
+  <li><strong>Export</strong> makes the variables and functions from a file visible outside it.</li>
+  <li><strong>Import</strong> allows use to use variables and functions exported by another file.</li>
+</ul>
+
+<p>Examples:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file1.ts</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">someVar</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Variables can be exported too.</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">subtract</span><span class="p">(</span><span class="nx">x</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">y</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="kr">number</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">-</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">multiply</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">();</span>
+<span class="p">}</span>
+
+
+<span class="c1">// file2.ts</span>
+<span class="k">import</span> <span class="nx">add</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./file1</span><span class="dl">'</span><span class="p">;</span> <span class="c1">// curly braces are not required if export default is used.</span>
+<span class="c1">// There can be only 1 export default in a while. Use it if file has only 1 export.</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">subtract</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./file1</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nx">subtract</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// multiply cannot be imported.</span>
+</code></pre></div></div>
+<h2 id="object-oriented-programming-concepts-using-typescript">
+  
+  
+    <a href="#object-oriented-programming-concepts-using-typescript" class="anchor-heading" aria-labelledby="object-oriented-programming-concepts-using-typescript"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Object oriented programming concepts using typescript
+  
+  
+</h2>
+    
+
+<p>Object Oriented Programming or OOP is a programming paradigm that has four principles which are:</p>
+
+<ul>
+  <li>Inheritance</li>
+  <li>Polymorphism</li>
+  <li>Abstraction</li>
+  <li>Encapsulation</li>
+</ul>
+<h2 id="inheritance">
+  
+  
+    <a href="#inheritance" class="anchor-heading" aria-labelledby="inheritance"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Inheritance
+  
+  
+</h2>
+    
+
+<p>TypeScript supports the concept of Inheritance. Inheritance is the ability of a program to create new classes from an existing class. The class that is extended to create newer classes is called the parent class/super class. The newly created classes are called the child/sub classes.</p>
+
+<p>A class inherits from another class using the ‘extends’ keyword. Child classes inherit all properties and methods except private members and constructors from the parent class. However, TypeScript doesn’t support multiple inheritance.</p>
+
+<p>Syntax:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">child_class_name</span> <span class="kd">extends</span> <span class="nx">parent_class_name</span>
+</code></pre></div></div>
+
+<p>Example:</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Parent class Shape</span>
+<span class="kd">class</span> <span class="nx">Shape</span> <span class="p">{</span>
+ <span class="nl">Area</span><span class="p">:</span><span class="kr">number</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span><span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">Area</span> <span class="o">=</span> <span class="nx">a</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">//Child class Circle that inherits properties of Shape </span>
+<span class="kd">class</span> <span class="nx">Circle</span> <span class="kd">extends</span> <span class="nx">Shape</span> <span class="p">{</span>
+ <span class="nx">disp</span><span class="p">():</span><span class="k">void</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Area of the circle:  </span><span class="dl">"</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">Area</span><span class="p">)</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Circle</span><span class="p">(</span><span class="mi">223</span><span class="p">);</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">disp</span><span class="p">()</span>
+</code></pre></div></div>
+<h2 id="polymorphism">
+  
+  
+    <a href="#polymorphism" class="anchor-heading" aria-labelledby="polymorphism"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Polymorphism
+  
+  
+</h2>
+    
+
+<p>When multiple classes inherit from a parent and override the same functionality, the result is polymorphism. Each of those child classes now implements a property or method, but they each may have their own way of performing that implementation.</p>
+
+<p>lternatively, one child class might override the parent’s members while another child doesn’t but just accepts the parent class’s implementation instead. This also demonstrates polymorphic behavior, since those behaviors are different between the siblings.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">CheckingAccount</span> <span class="p">{</span>
+  <span class="nx">open</span><span class="p">(</span><span class="nx">initialAmount</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// code to open account and save in database</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">BusinessCheckingAccount</span> <span class="kd">extends</span> <span class="nx">CheckingAccount</span> <span class="p">{</span>
+  <span class="nx">open</span><span class="p">(</span><span class="nx">initialAmount</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">initialAmount</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Business accounts must have an initial deposit of 1.000 Euros</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">initialAmount</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">PersonalCheckingAccount</span> <span class="kd">extends</span> <span class="nx">CheckingAccount</span> <span class="p">{</span>
+  <span class="nx">open</span><span class="p">(</span><span class="nx">initialAmount</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">initialAmount</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Personal accounts must have an initial deposit of more than zero Euros</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">initialAmount</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the above code sample shows, the two child classes have different business rules to implement when it comes to opening an account – mainly different opening balances. Because both children have a method to open the account but both children choose to do it differently means the behavior is polymorphic.</p>
+
+<p>To achieve polymorphism, inherit from a base class, then override methods and write implementation code in them. In addition to overriding methods, you can overload methods to achieve polymorphism.</p>
+
+<p>Overloaded methods are methods that have different signatures (i.e., different data types or number of arguments) with the same name. However, in TypeScript, methods aren’t overloaded by simply modifying the types or number of arguments like in some other languages.</p>
+
+<p>To create an overload in TypeScript, you can either add optional arguments to a method, or overload function declarations in an interface and implement the interface.</p>
+<h2 id="abstraction">
+  
+  
+    <a href="#abstraction" class="anchor-heading" aria-labelledby="abstraction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Abstraction
+  
+  
+</h2>
+    
+
+<p>Abstraction is a way to model objects in a system that creates a separation of duties between class or type and the code that inherits it.</p>
+
+<p>A developer creates a type, i.e., a class or interface, and that type specifies what the calling code should implement, but not how. So it’s the job of the abstract type to define what needs to be done, but up to the consuming types to actually do those things. To enforce abstraction, inherit or implement from abstract classes and interfaces.</p>
+
+<p>For example, some bank accounts have fees. You can create a Fee interface that defines a method for charging a fee. Fees don’t apply to all types of accounts, so it’s best to create an interface that can be applied to specific classes anywhere in the inheritance hierarchy. A checking account might charge fees, where its parent and sibling, the generic bank account and savings accounts might not.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Fee</span> <span class="p">{</span>
+  <span class="nx">chargeFee</span><span class="p">(</span><span class="nx">amount</span><span class="p">:</span> <span class="kr">number</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// parent BankAccount and sibling SavingsAccount do not implement Fee interface</span>
+<span class="kd">class</span> <span class="nx">BankAccount</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">SavingsAccount</span> <span class="kd">extends</span> <span class="nx">BankAccount</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+
+<span class="c1">// checking implements Fee</span>
+<span class="kd">class</span> <span class="nx">CheckingAccount</span> <span class="kd">extends</span> <span class="nx">BankAccount</span> <span class="k">implements</span> <span class="nx">Fee</span> <span class="p">{</span>
+  <span class="nx">chargeFee</span><span class="p">(</span><span class="nx">amount</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Children classes inherit interface members that have been implemented in their parent, so if a BusinessChecking account has inherited from the CheckingAccount class, then it inherits that implementation.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// BusinessChecking inherits CheckingAccount and therefore Fee</span>
+<span class="kd">class</span> <span class="nx">BusinessChecking</span> <span class="kd">extends</span> <span class="nx">CheckingAccount</span> <span class="p">{</span> <span class="err">…</span> <span class="p">}</span>
+
+
+<span class="c1">// Code that uses BusinessChecking can call chargeFee</span>
+<span class="kd">function</span> <span class="nx">CalculateMonthlyStatements</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">businessChecking</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BusinessChecking</span><span class="p">();</span>
+  <span class="nx">businessChecking</span><span class="p">.</span><span class="nx">chargeFee</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="encapsulation">
+  
+  
+    <a href="#encapsulation" class="anchor-heading" aria-labelledby="encapsulation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Encapsulation
+  
+  
+</h2>
+    
+
+<p>Encapsulation is a key part of Object Oriented Programming that is a way to structure code so that a certain block of code has specific access points for external code. The term for this is “visibility” or “accessibility”. Visibility defines what code from one method, property, or class can call code in another method, property, or class.</p>
+
+<p>In TypeScript, we enforce encapsulation with methods and properties that only allow access to data that we control. The Withdraw method below does that by doing the calculation and updating the class level _balance field. The Balance property then returns the private _balance field to the calling code.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Withdraw</span><span class="p">(</span><span class="nx">amount</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nx">boolean</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_balance</span> <span class="o">&gt;</span> <span class="nx">amount</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_balance</span> <span class="o">-=</span> <span class="nx">amount</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">private</span> <span class="nx">_balance</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="kd">get</span> <span class="nx">Balance</span><span class="p">():</span> <span class="kr">number</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_balance</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="general-guidelines">
+  
+  
+    <a href="#general-guidelines" class="anchor-heading" aria-labelledby="general-guidelines"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> General Guidelines
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Naming conventions
+    <ul>
+      <li>use kebab-case for file names.</li>
+      <li>Use camelCase for variable and function names.</li>
+      <li>Use PascalCase for Class and constructor function names.</li>
+    </ul>
+  </li>
+  <li>Prefer descriptive names over random letters.</li>
+  <li>Although typing is optional in typescript, it is not optional for this course.</li>
+  <li>Always use strict equality.</li>
+  <li>Use a linter. (as specified on course website)</li>
+  <li>Use a prettifier. (If the linter doesn’t do it already)</li>
+  <li>Use general coding guidelines as discussed in Week1.</li>
+</ul>
+
+        
+
+        
+
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

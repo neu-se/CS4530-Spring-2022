@@ -1,0 +1,853 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Spring-2022/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Spring-2022/assets/js/vendor/lunr.min.js"></script>
+  
+
+  
+
+  <script src="/CS4530-Spring-2022/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>React Tutorial | CS4530, Spring 2022</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="React Tutorial" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Spring-2022/tutorials/week6-react-basics" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Spring-2022/tutorials/week6-react-basics" />
+<meta property="og:site_name" content="CS4530, Spring 2022" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="React Tutorial" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.","headline":"React Tutorial","dateModified":"2023-02-08T18:46:57+00:00","url":"https://neu-se.github.io/CS4530-Spring-2022/tutorials/week6-react-basics","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header">
+    <a href="/CS4530-Spring-2022/" class="site-title lh-tight">
+  CS4530, Spring 2022
+
+</a>
+    <a href="#" id="menu-button" class="site-button">
+      <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Spring-2022/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Modules category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week2-knowledge-sharing-design-doc" class="nav-list-link">Week 2 - Knowledge Sharing & Documenting Designs</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week3-processs" class="nav-list-link">Week 3 - Requirements, Process and Teams</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week4-async" class="nav-list-link">Week 4 - Async Programming and Debugging</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week5-testing" class="nav-list-link">Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week6-uidesign" class="nav-list-link">Week 6 - UI Design & React</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week7" class="nav-list-link">Week 7 - UI Testing + Pull Requests + Code Review</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week8" class="nav-list-link">Week 8 - Continuous Integration</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week9" class="nav-list-link">Week 9 - Distributed Systems & Static Program Analysis</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week10" class="nav-list-link">Week 10 - Software Engineering and Security</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week11" class="nav-list-link">Week 11 - Refactoring and Technical Debt</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week12" class="nav-list-link">Week 12 - Engineering Software For Equity</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Assignments category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw1" class="nav-list-link">Assignment 1: Venusians</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw2" class="nav-list-link">Assignment 2: Conversation Areas</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw3" class="nav-list-link">Assignment 3: Testing</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw4" class="nav-list-link">Assignment 4: Social Sidebar</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-pitch" class="nav-list-link">Project Pitch</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-plan" class="nav-list-link">Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/Assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander" aria-label="toggle links in Tutorials category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item  active"><a href="/CS4530-Spring-2022/tutorials/week6-react-basics" class="nav-list-link active">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week5-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Policies category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/resources/" class="nav-list-link">Other Resources</a></li></ul>
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Spring 2022" aria-label="Search CS4530, Spring 2022" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+  
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        
+          <li class="breadcrumb-nav-list-item"><a href="/CS4530-Spring-2022/tutorials/">Tutorials</a></li>
+        
+        <li class="breadcrumb-nav-list-item"><span>React Tutorial</span></li>
+      </ol>
+    </nav>
+  
+
+
+      <div id="main-content" class="main-content" role="main">
+        
+          <div class="fs-1 text-right fw-300">Last updated: Feb 08, 23 18:46 UTC | <a href="/CS4530-Spring-2022/tutorials/week6-react-basics">Permalink</a></div>
+<h1 id="react-basics">
+  
+  
+    <a href="#react-basics" class="anchor-heading" aria-labelledby="react-basics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> React Basics
+  
+  
+</h1>
+    
+<p>This tutorial covers the basic concepts of react. By the end of this tutorial, you will be able to create a new react app, understand the basic concepts of react such as states and props, understand React hooks and handling events.</p>
+
+<ul>
+  <li><a href="#react-basics">React Basics</a></li>
+  <li><a href="#creating-a-new-react-app">Creating a new React App</a></li>
+  <li><a href="#react-component">Understanding a React App</a>
+    <ul>
+      <li><a href="#react-component">Components</a></li>
+      <li><a href="#template-for-structure-of-function-component">Template For Structure of Function Component</a></li>
+      <li><a href="#props">Props</a></li>
+      <li><a href="#state">State</a></li>
+      <li><a href="#communication-between-components">Communicating between Components</a>
+        <ul>
+          <li><a href="#parent-to-child-component-communication">Parent to Child</a></li>
+          <li><a href="#child-to-parent-component-communication">Child to Parent</a></li>
+        </ul>
+      </li>
+      <li><a href="#handling-events">Handling Events</a></li>
+    </ul>
+  </li>
+  <li><a href="#react-hooks">React Hooks</a>
+    <ul>
+      <li><a href="#usestate">UseState</a></li>
+      <li><a href="#useeffect">UseEffect</a></li>
+    </ul>
+  </li>
+</ul>
+<h2 id="creating-a-new-react-app">
+  
+  
+    <a href="#creating-a-new-react-app" class="anchor-heading" aria-labelledby="creating-a-new-react-app"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating a New React App
+  
+  
+</h2>
+    
+
+<p>Let’s use <strong>npx</strong> and <strong>create-react-app</strong> to create a new React project</p>
+
+<ul>
+  <li>
+    <p><strong>npx</strong> stands for Node Package Execute. It is a runner that can execute any package that you want from the npm registry without even installing that package. In this case npx tool temporarily installs the create-react-app npm package and uses it to create our project.</p>
+  </li>
+  <li>
+    <p><strong>create-react-app</strong> is a command-line tool that we can use to quickly create a React and TypeScript app with lots of useful pieces.</p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>We use the create-react-app npm package to create a React and TypeScript project by entering the following:</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">my</span><span class="o">-</span><span class="nx">app</span> <span class="o">--</span><span class="nx">template</span> <span class="nx">typescript</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Note 1: This will create a new project directory called my-app under the current directory.</li>
+      <li>Note 2: This will create a git repo in my-app, so you probably shouldn’t do this inside a pre-existing git repository.</li>
+    </ul>
+  </li>
+  <li>Navigate to the project directory using the command:
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">cd</span> <span class="nx">my</span><span class="o">-</span><span class="nx">app</span>
+</code></pre></div>    </div>
+  </li>
+  <li>To start the development server for React, run the command:
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">npm</span> <span class="nx">start</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Navigate to http://localhost:3000/ to see the default react page.
+    <ul>
+      <li>After a few seconds, a browser window opens, with our app running:
+<img src="./assets/week3-react/start-screen.png" alt="image" /></li>
+    </ul>
+  </li>
+</ol>
+<h2 id="react-component">
+  
+  
+    <a href="#react-component" class="anchor-heading" aria-labelledby="react-component"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> React Component
+  
+  
+</h2>
+    
+<p>React follows a Component based architecture. A component is a
+repeatable html element with built-in state, business logic, and a
+lifecycle. The component may be something as simple as a single html
+element such as an input box, or a button, or a complex entity made up
+of other components.</p>
+
+<p>Components are the basic building blocks of a React application and they allow the developer to split the UI into independent and reusable
+pieces where each piece can be used in isolation.</p>
+<h3 id="creating-a-function-component-in-react">
+  
+  
+    <a href="#creating-a-function-component-in-react" class="anchor-heading" aria-labelledby="creating-a-function-component-in-react"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Creating A Function Component in React
+  
+  
+</h3>
+    
+
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/CreateFunctionComponent.tsx" target="_blank">view in sandbox</a></p>
+
+<p>The simplest method to define a component is to write a function in Javascript. These components are also widely referred as functional stateless components but in the recent versions of React, they have the capabilities to contain state as well.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="p">?:</span> <span class="kr">string</span><span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">App</span> <span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">App</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Welcome</span> <span class="nx">to</span> <span class="nx">React</span> <span class="kd">with</span> <span class="nx">Typescript</span> <span class="nx">Tutorial</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+<h3 id="a-few-things-to-note-about-react-components">
+  
+  
+    <a href="#a-few-things-to-note-about-react-components" class="anchor-heading" aria-labelledby="a-few-things-to-note-about-react-components"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> A Few Things to Note About React Components:
+  
+  
+</h3>
+    
+
+<ul>
+  <li>The root (App) component is the entry point for the React App and all other components are nested in it.</li>
+  <li>We define a function component using a javascript function, passing the props type in as a generic parameter.</li>
+  <li>The import statement is used to import the public classes/functions from the <code class="language-plaintext highlighter-rouge">react</code> library.</li>
+  <li>A function can return a single top level element.
+    <ul>
+      <li>div is the top level element in this case and other elements can be nested in it.
+        <ul>
+          <li>The attribute <code class="language-plaintext highlighter-rouge">className</code> is used to specify a CSS class name if CSS properties have been defined seperately for a class.</li>
+          <li><code class="language-plaintext highlighter-rouge">className</code> attribute is used to set the value of an element’s class attribute. Using this property, the user can set the class of an element to the desired class.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>The round brackets (()) after return are used to span a JSX/TSX element across multiple lines.</li>
+  <li>At last , the component needs to be exported from the current file, so that it can be imported somewhere else and can be used either in isolation or combination with other components for rendering on the UI.</li>
+  <li>Elements on one line can be returned directly.</li>
+  <li>Each instance of a component creates a new element independent of other instances of the component.</li>
+  <li>Each component has it’s own state, props, and lifecycle (which will be explored later in the tutorial).</li>
+</ul>
+<h2 id="template-for-structure-of-function-component">
+  
+  
+    <a href="#template-for-structure-of-function-component" class="anchor-heading" aria-labelledby="template-for-structure-of-function-component"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Template For Structure of Function Component
+  
+  
+</h2>
+    
+
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/TemplateForFunction.tsx" target="_blank">view in sandbox</a></p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="o">*</span> <span class="k">as</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">Props</span> <span class="o">=</span> <span class="p">{</span><span class="nx">property1</span><span class="p">?:</span> <span class="nx">value1</span><span class="p">,</span> <span class="nx">property2</span><span class="p">?:</span> <span class="nx">value2</span><span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">ComponentName</span> <span class="p">(</span><span class="nx">props</span><span class="p">:</span> <span class="nx">Props</span><span class="p">)</span> <span class="p">{</span>
+ <span class="kd">const</span> <span class="nx">handler</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+ <span class="p">...</span>
+ <span class="p">};</span>
+
+ <span class="k">return</span> <span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Our</span> <span class="nx">TSX</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span> <span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">ComponentName</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="p">...</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ComponentName</span><span class="p">;</span>
+</code></pre></div></div>
+<h2 id="props">
+  
+  
+    <a href="#props" class="anchor-heading" aria-labelledby="props"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Props
+  
+  
+</h2>
+    
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/PassingProps.tsx" target="_blank">view in sandbox</a></p>
+
+<p>React components are similar to JavaScript functions and can accept arbitrary arguments called props. Since components are reusable, props are especially useful to display different content in each instance of the component. Let us extract the header elements from the previous code snippet into a new component called Header. We can then use props to say “hello” to different users.</p>
+
+<ul>
+  <li>Create a new file in <code class="language-plaintext highlighter-rouge">src/</code> directory called <code class="language-plaintext highlighter-rouge">Header.tsx</code></li>
+  <li>Create and export a function called Header in the file as below:
+```ts
+import React from “react”;</li>
+</ul>
+
+<p>interface IProps {
+  name?: string;
+}</p>
+
+<p>const Header = (props: IProps) =&gt; {
+  return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+};</p>
+
+<p>Header.defaultProps = {
+  name: “World”
+};</p>
+
+<p>export default Header;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- The above code snippet creates a new function component `Header` and prints the value of the `name` passed in the props.
+- It defines a defaultProps for the component `Header` where the default value for `name` is used in case the value for props for `name` is not passed in any instance of the component.
+
+
+- In App.tsx:
+  - Remove the code in h1 tags.
+  - Import the Header component as below:
+    - ```ts
+       import Header from './Header';
+      ```
+  - Update the contents of return as below:
+    - ```ts
+       &lt;div className="App-header"&gt;
+         &lt;Header /&gt;
+         &lt;Header name="John" /&gt;
+         &lt;Header name="Jane" /&gt;
+       &lt;/div&gt;
+      ```
+  - Save all files and run npm start
+
+A few things to note from the above example:
+
+- Component.defaultProps can be used to specify default values for props.
+- Components are rendered to the user interface and the component’s logic contains the data to be displayed in the view(UI).
+- Curly braces ({}) in JSX/TSX are used as a connection between the data to be displayed in the view and the component’s logic for displaying the data in the view.
+  - In our example, `{props.name}` will reflect the value of the property `name` in the view(html) for the cases when the values "John" and "Jane" are passed as props for the `name` property.
+  - If no props are passed for an instance of the component, then it will display the default value of props.
+
+## State 
+State management is just a means of facilitating data sharing and communication among components. It creates a concrete data structure that you can read and write to reflect the state of your program.
+
+```ts
+const [counter, setCounter] = useState(0)
+</code></pre></div></div>
+
+<p>The above snippet shows creation of counter state with an intial value of 0. Using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">array destructuring</a> syntax we extract out the state variable and the function to update the counter value.</p>
+
+<p>In its most basic form, a State object is a JavaScript object that represents the part of a component that can change as a result of a user’s action. States can also be thought of as a component’s memory.</p>
+
+<p>State update calls are asynchronous. As one cannot expect to call the update state function on one line and expect the state to be updated on the next. The reason for this is because update state methods are more of a request than an immediate order to update state. So React schedules an update to a component’s state object. When state changes, the component responds by re-rendering. Also multiple update request may be batched into one for performance reasons.</p>
+
+<p>Changes in state and/or props will both cause our React component to re-render. Changes in state, on the other hand, can only occur internally as a result of components modifying their own state. </p>
+<h2 id="communication-between-components">
+  
+  
+    <a href="#communication-between-components" class="anchor-heading" aria-labelledby="communication-between-components"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Communication Between Components:
+  
+  
+</h2>
+    
+<h3 id="parent-to-child-component-communication">
+  
+  
+    <a href="#parent-to-child-component-communication" class="anchor-heading" aria-labelledby="parent-to-child-component-communication"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Parent To Child Component Communication:
+  
+  
+</h3>
+    
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ParentChildCommunication.tsx" target="_blank">view in sandbox</a></p>
+
+<p>Passing values from a parent component to a child component is simple. We only have to pass the values as props of the child component. The child component can then use the props object to output results. In the example code you will see that CounterContent component accepts a counter prop which is then used to display the value inside div element.</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">CounterContentProps</span> <span class="p">{</span>
+  <span class="nl">counter</span><span class="p">:</span> <span class="nb">Number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">CounterContent</span><span class="p">({</span> <span class="nx">counter</span> <span class="p">}:</span> <span class="nx">CounterContentProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Counter</span><span class="p">:</span> <span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">counter</span><span class="p">,</span> <span class="nx">setCounter</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="o">&lt;</span><span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">CounterContent</span> <span class="nx">counter</span><span class="o">=</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Increment</span> <span class="nx">Count</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="child-to-parent-component-communication">
+  
+  
+    <a href="#child-to-parent-component-communication" class="anchor-heading" aria-labelledby="child-to-parent-component-communication"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Child to Parent Component Communication
+  
+  
+</h3>
+    
+
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/ChildParentCommunication.tsx" target="_blank">view in sandbox</a></p>
+
+<p>For passing data from child component to parent component do the following steps:</p>
+<ol>
+  <li>Declare a callback function inside the parent component. This function will get data from the child component.</li>
+  <li>Pass the callback function to the child component as props.</li>
+  <li>Child then sends the update to the parent through the use of the callback function.</li>
+</ol>
+
+<p>In the example below we have four children components:</p>
+<ol>
+  <li>CounterContent: Displays the counter value</li>
+  <li>IncrementCounterButton: Increments the counter value</li>
+  <li>DecrementCounterButton: Decrements the counter value</li>
+  <li>CustomCounterButton: Sets the counter to a particular value.</li>
+</ol>
+
+<p>All callback functions passed to the children component are declared in Counter function which is the parent component that maintains the state value for counter.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kr">interface</span> <span class="nx">CounterContentProps</span> <span class="p">{</span>
+  <span class="nl">counter</span><span class="p">:</span> <span class="nb">Number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">IncrementCounterButtonProps</span> <span class="p">{</span>
+  <span class="nx">incrementCount</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">DecrementCounterButtonProps</span> <span class="p">{</span>
+  <span class="nx">decrementCount</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">SetCounterButtonProps</span> <span class="p">{</span>
+  <span class="nx">setCount</span><span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="k">void</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">CounterContent</span><span class="p">({</span> <span class="nx">counter</span> <span class="p">}:</span> <span class="nx">CounterContentProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Counter</span><span class="p">:</span> <span class="p">{</span><span class="nx">counter</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="cm">/**
+ * Child component accepts a incrementCount callback function as a props.
+ * The callback which is declared inside the parent component triggers a state update.
+ */</span>
+<span class="kd">function</span> <span class="nx">IncrementCounterButton</span><span class="p">({</span>
+  <span class="nx">incrementCount</span>
+<span class="p">}:</span> <span class="nx">IncrementCounterButtonProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">incrementCount</span><span class="p">()}</span><span class="o">&gt;</span><span class="nx">increment</span> <span class="nx">Count</span><span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="cm">/**
+ * Child component accepts a decrementCount callback function as a props.
+ * The callback which is declared inside the parent component triggers a state update.
+ */</span>
+<span class="kd">function</span> <span class="nx">DecrementCounterButton</span><span class="p">({</span>
+  <span class="nx">decrementCount</span>
+<span class="p">}:</span> <span class="nx">DecrementCounterButtonProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">decrementCount</span><span class="p">()}</span><span class="o">&gt;</span><span class="nx">Decrement</span> <span class="nx">Count</span><span class="o">&lt;</span><span class="sr">/button&gt;</span><span class="err">;
+</span><span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">CustomCounterButton</span><span class="p">({</span> <span class="nx">setCount</span> <span class="p">}:</span> <span class="nx">SetCounterButtonProps</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// change this value to see how child passes count value data to parent through</span>
+  <span class="c1">// the use of callback function</span>
+
+  <span class="kd">const</span> <span class="nx">dummyValue</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">setCount</span><span class="p">(</span><span class="nx">dummyValue</span><span class="p">)}</span><span class="o">&gt;</span>
+      <span class="nb">Set</span> <span class="nx">Count</span> <span class="nx">to</span> <span class="p">{</span><span class="nx">dummyValue</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/**
+* Parent Component where state and callbacks are maintained. 
+**/</span>
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">counter</span><span class="p">,</span> <span class="nx">setCounter</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">decrementCount</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">counter</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">incrementCount</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setCounter</span><span class="p">(</span><span class="nx">counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">setCount</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setCounter</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">CounterContent</span> <span class="nx">counter</span><span class="o">=</span><span class="p">{</span><span class="nx">counter</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">IncrementCounterButton</span> <span class="nx">incrementCount</span><span class="o">=</span><span class="p">{</span><span class="nx">incrementCount</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">DecrementCounterButton</span> <span class="nx">decrementCount</span><span class="o">=</span><span class="p">{</span><span class="nx">decrementCount</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">CustomCounterButton</span> <span class="nx">setCount</span><span class="o">=</span><span class="p">{</span><span class="nx">setCount</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h1 id="handling-events">
+  
+  
+    <a href="#handling-events" class="anchor-heading" aria-labelledby="handling-events"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Handling Events
+  
+  
+</h1>
+    
+
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/HandlingEvents.tsx" target="_blank">view in sandbox</a></p>
+
+<ul>
+  <li>React impelemnts its own system of handling events that is very similar to handling events on DOM elements. There are some syntax differences:
+    <ul>
+      <li>React events are named using camelCase, rather than lower case.</li>
+      <li>With JSX a function can be passed as an event handler instead of a string.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For example, the HTML</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"incrementCounter()"</span><span class="nt">&gt;</span>Increment Counter<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<p>is slightly different in React:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"{incrementCounter}"</span><span class="nt">&gt;</span>Increment Counter<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>React provides an equivalent of each event that you might be familiar with from
+standard HTML DOM. Events typing can be imported directly from react as shown in the example below:</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">MouseEvent</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">HelloWorld</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">sayHello</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">:</span> <span class="nx">MouseEvent</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">tagName</span><span class="p">}</span><span class="s2">: says hello, world.`</span><span class="p">);</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">sayHello</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Submit</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">HelloWorld</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>For the list of all the supported events refer https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/#list-of-event-types</p>
+<h2 id="react-hooks">
+  
+  
+    <a href="#react-hooks" class="anchor-heading" aria-labelledby="react-hooks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> React Hooks
+  
+  
+</h2>
+    
+
+<p>React hooks are built-in functions which allows us to use state and other lifecycle features. The most basic hooks used by react are useState() which adds a state variable to a react component and useEffect() which is the lifecycle hook for a component. State of component referes to the data it is holding at a particular moment in time.</p>
+<h3 id="usestate">
+  
+  
+    <a href="#usestate" class="anchor-heading" aria-labelledby="usestate"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> useState():
+  
+  
+</h3>
+    
+
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseStateExample.tsx" target="_blank">view in sandbox</a></p>
+
+<p>In this section we will see how we can add state to a React Component using the useState() hook provided by React. The useState hook takes the initial value of the state variable as an argument, the initial state can be any type you want (a string, a number, an array, an object) or a function. Only on the first render will the initial value be assigned. Each useState call returns a two-element array. The state variable is the first element of the array, followed by a function to change the variable’s value.</p>
+
+<ol>
+  <li>We’ll start by defining and initializing state for the number of times the button is clicked, by adding the a state variable as follows:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">useState</span><span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This line of code looks a little strange, so let’s break it down:</p>
+
+<ul>
+  <li>When the hook useState() is invoked, it returns an array. Where the first item is the state value, and the second item is a function that updates the state.</li>
+  <li>First, we import the useState from react library.</li>
+  <li>useState is a React function that lets us create state, passing in a default value as a parameter. In our case, we pass it a default value of 0.</li>
+  <li>The useState function returns an array containing two elements:</li>
+  <li>
+    <ul>
+      <li>The first array element contains the current value of state.</li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li>The second array element contains a function to set state to a different value.</li>
+    </ul>
+  </li>
+  <li>We destructure the array and store the first array element (the state value) in count, and the second array element (the function to set state) in setCount.</li>
+  <li>The rest of the function now has access to the count, via the count variable. The function is also able to increment the count, via the setCount variable.</li>
+</ul>
+
+<ol>
+  <li>Let’s add a function to update the state of the variable:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">incrementCount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Now, functions to set the piece of state take in the new state as their parameter.</li>
+</ul>
+
+<ol>
+  <li>Next we’ll make the component return the count along with a button to increment the count when clicked. Final function code will be as follows:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kd">function</span> <span class="nx">incrementCount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="p">:</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">incrementCount</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">me</span><span class="o">!&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>If we give this a try in the running app, we should find the count variable’s value to keep incrementing by one every time the button is clicked.
+After we’ve got our heads around the code needed to define state, accessing and setting state is fairly simple and elegant.</p>
+<h3 id="useeffect">
+  
+  
+    <a href="#useeffect" class="anchor-heading" aria-labelledby="useeffect"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> useEffect():
+  
+  
+</h3>
+    
+<p><a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseEffectExample.tsx" target="_blank">view in sandbox</a></p>
+
+<p>Now let’s have a look at how to invoke the code to execute at a certain point in the component’s lifecycle.
+Older versions of React consisted of different Lifecycle hooks that allowed a user to hook into various phases of component rendering such as componentDidMount, ComponentDidUpdate, etc. which have all been condensed into a single function called useEffect(). Let us observe how this hook behaves by printing out the count in browser console.</p>
+
+<ol>
+  <li>As always, we will start by importing the function from the react library:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Next we will add the function to our existing counter component:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The current count is </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">[]);</span>
+</code></pre></div></div>
+
+<p>Let’s break down this code to understand what is happening:</p>
+
+<ul>
+  <li>We use React’s useEffect function to hook into the component life cycle.</li>
+  <li>The function takes in an arrow function, which executes when the component is first rendered.</li>
+  <li>The function takes in a second parameter, which determines when our arrow function is called. This parameter is an array of values that, when changed, will cause the arrow function to be invoked. In our case, we pass in an empty array, so our arrow function will never be called after the first render.</li>
+  <li>If we now try the running app and open the console, we’ll see Counter first rendering only appears once.</li>
+</ul>
+
+<ol>
+  <li>Let’s remove the second parameter into useEffect now:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The current count is </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Now we can see that the componenet will render everytime the value of count is changed.</li>
+  <li>Additionally we can also pass the variable in the array to observe only changes related to a particular value:</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The current count is </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">count</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Finally, our component counter will look like:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useEffect</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+    <span class="kd">function</span> <span class="nx">incrementCount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`The current count is </span><span class="p">${</span><span class="nx">count</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="p">:</span> <span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">incrementCount</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">me</span><span class="o">!&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+        
+
+        
+
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

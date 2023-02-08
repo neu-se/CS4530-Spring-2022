@@ -1,0 +1,552 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Spring-2022/assets/css/just-the-docs-default.css">
+
+  
+
+  
+    <script src="/CS4530-Spring-2022/assets/js/vendor/lunr.min.js"></script>
+  
+
+  
+
+  <script src="/CS4530-Spring-2022/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Installing a Development Environment | CS4530, Spring 2022</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Installing a Development Environment" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Spring-2022/tutorials/week1-getting-started" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Spring-2022/tutorials/week1-getting-started" />
+<meta property="og:site_name" content="CS4530, Spring 2022" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Installing a Development Environment" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Spring 2022. Professors Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand.","headline":"Installing a Development Environment","dateModified":"2023-02-08T18:46:57+00:00","url":"https://neu-se.github.io/CS4530-Spring-2022/tutorials/week1-getting-started","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header">
+    <a href="/CS4530-Spring-2022/" class="site-title lh-tight">
+  CS4530, Spring 2022
+
+</a>
+    <a href="#" id="menu-button" class="site-button">
+      <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+    </a>
+  </div>
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+    
+    
+      <ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Spring-2022/calendar/" class="nav-list-link">Calendar</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Modules category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week1-overview-design-principles" class="nav-list-link">Week 1 - Overview and Design Principles</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week2-knowledge-sharing-design-doc" class="nav-list-link">Week 2 - Knowledge Sharing & Documenting Designs</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week3-processs" class="nav-list-link">Week 3 - Requirements, Process and Teams</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week4-async" class="nav-list-link">Week 4 - Async Programming and Debugging</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week5-testing" class="nav-list-link">Week 5 - Testing Intro, Unit Tests / Test Adequacy Measures</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week6-uidesign" class="nav-list-link">Week 6 - UI Design & React</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week7" class="nav-list-link">Week 7 - UI Testing + Pull Requests + Code Review</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week8" class="nav-list-link">Week 8 - Continuous Integration</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week9" class="nav-list-link">Week 9 - Distributed Systems & Static Program Analysis</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week10" class="nav-list-link">Week 10 - Software Engineering and Security</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week11" class="nav-list-link">Week 11 - Refactoring and Technical Debt</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/modules/week12" class="nav-list-link">Week 12 - Engineering Software For Equity</a></li></ul></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Assignments category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw1" class="nav-list-link">Assignment 1: Venusians</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw2" class="nav-list-link">Assignment 2: Conversation Areas</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw3" class="nav-list-link">Assignment 3: Testing</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/hw4" class="nav-list-link">Assignment 4: Social Sidebar</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-pitch" class="nav-list-link">Project Pitch</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-plan" class="nav-list-link">Project Plan</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/Assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item active"><a href="#" class="nav-list-expander" aria-label="toggle links in Tutorials category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item  active"><a href="/CS4530-Spring-2022/tutorials/week1-getting-started" class="nav-list-link active">Installing a Development Environment</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week6-react-basics" class="nav-list-link">React Tutorial</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week2-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item "><a href="/CS4530-Spring-2022/tutorials/week5-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><a href="#" class="nav-list-expander" aria-label="toggle links in Policies category">
+            <svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg>
+          </a><a href="/CS4530-Spring-2022/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item "><a href="/CS4530-Spring-2022/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Spring-2022/resources/" class="nav-list-link">Other Resources</a></li></ul>
+    
+  </nav>
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Spring 2022" aria-label="Search CS4530, Spring 2022" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div id="main-content-wrap" class="main-content-wrap">
+      
+  
+    <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        
+          <li class="breadcrumb-nav-list-item"><a href="/CS4530-Spring-2022/tutorials/">Tutorials</a></li>
+        
+        <li class="breadcrumb-nav-list-item"><span>Installing a Development Environment</span></li>
+      </ol>
+    </nav>
+  
+
+
+      <div id="main-content" class="main-content" role="main">
+        
+          <div class="fs-1 text-right fw-300">Last updated: Feb 08, 23 18:46 UTC | <a href="/CS4530-Spring-2022/tutorials/week1-getting-started">Permalink</a></div>
+
+<p>This tutorial describes the basic steps needed to set up a development environment with NodeJS, TypeScript, and VisualStudio Code.
+At the end of this tutorial, you should have a complete local development environment that you can use to build and test
+code for this class.</p>
+
+<p>Contents:</p>
+<ul>
+  <li><a href="#installing-nodejs">Installing NodeJS</a></li>
+  <li><a href="#installing-visual-studio-code-vscode">Installing Visual Studio Code</a></li>
+  <li><a href="#getting-started-with-typescript">Hello, World in TypeScript</a></li>
+</ul>
+
+<p>If you run into any difficulties following any of these steps, please post (in a non-private question) on Piazza.</p>
+<h1 id="installing-nodejs">
+  
+  
+    <a href="#installing-nodejs" class="anchor-heading" aria-labelledby="installing-nodejs"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installing NodeJS
+  
+  
+</h1>
+    
+
+<p>Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine.</p>
+
+<p>For this class, you will need Node.js version 16 (16.13.2 is the latest version at time of writing, although any 16.x shoudl work in theory). 
+There are many ways that you can install Node.js: for instance, you can use a package manager like
+<code class="language-plaintext highlighter-rouge">snap</code> or <code class="language-plaintext highlighter-rouge">homebrew</code> to install it; you can download an installer directly from the Node.js website, and you can,
+of course, build it from source. However, due to the complexity of running different Node.js versions on the same machine, we <em>very strongly</em> suggest using <code class="language-plaintext highlighter-rouge">nvm</code>, as explained below.</p>
+
+<p>We recommend installing Node.js using <a href="https://github.com/nvm-sh/nvm">nvm, the node version manager</a>. When language runtimes
+are in active development (like Node.js is), sometimes you end up needing to have multiple versions of Node.js installed,
+and different projects that you work on might require different versions of Node.js. These annoyances are quite rare,
+but when it happens that you need to have mutliple versions of Node.js installed, it’s super handy to have your system set up already
+so that installing multiple versions and switching between it is easy. You can use our instructions to set up nvm even if you
+have previously installed Node.js.</p>
+<h2 id="installing-nodejs-with-nvm-for-windows">
+  
+  
+    <a href="#installing-nodejs-with-nvm-for-windows" class="anchor-heading" aria-labelledby="installing-nodejs-with-nvm-for-windows"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installing NodeJS with NVM for Windows
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Download <code class="language-plaintext highlighter-rouge">nvm-setup.zip</code> from the most recent release of <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a> (at time of writing this document, version 1.1.9).
+    <ul>
+      <li><img src="./assets/week1-getting-started/node/download-nvmw.png" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Extract the contents of <code class="language-plaintext highlighter-rouge">nvm-setup.zip</code> and run the executable <code class="language-plaintext highlighter-rouge">nvm-setup.exe</code>.
+    <ul>
+      <li>This should open the nvm installation wizard.</li>
+    </ul>
+  </li>
+  <li>Accept the license agreement and click next. Continue to accept the default choices for any remaining prompts, and click “install”. If you receive messages along the lines of “NodeJS version XYZ is already installed, would you like nvm to control this installation,” select “Yes”.</li>
+  <li>Upon completion, you will see the below window
+    <ul>
+      <li><img src="./assets/week1-getting-started/node/nvmw-finished.png" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Open a command prompt with administrative privileges (type <code class="language-plaintext highlighter-rouge">cmd</code> in the windows start bar, then select “Run as administrator”).</li>
+  <li>Verify the installation, run the command <code class="language-plaintext highlighter-rouge">nvm version</code>
+    <ul>
+      <li>This should display the version of nvm installed.</li>
+      <li><img src="./assets/week1-getting-started/node/nvmw-verification.png" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Run the command <code class="language-plaintext highlighter-rouge">nvm list available</code> to display all available NodeJS versions.
+    <ul>
+      <li><img src="./assets/week1-getting-started/node/nvmw-list-available.png" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Install the latest LTS (Long term supported, as opposed to the “development”) version of Node.js available using the command <code class="language-plaintext highlighter-rouge">nvm install 16.13.2</code>.</li>
+  <li>To use this version of NodeJS, run the command <code class="language-plaintext highlighter-rouge">nvm use 16.13.2</code>.</li>
+  <li>Now, NodeJS should be installed and ready for use. To verify the installation run the below commands:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">node -v</code></li>
+      <li><code class="language-plaintext highlighter-rouge">npm -v</code></li>
+      <li><img src="./assets/week1-getting-started/node/nvmw-use-16.png" alt="image" /></li>
+    </ul>
+  </li>
+</ol>
+
+<p><em>Troubleshooting with VSCode</em>: Did you follow these instructions successfully, but find a “Command not found” error when you try to run <code class="language-plaintext highlighter-rouge">npm</code> in VSCode? Try this: Close VSCode completely. Re-open it. In your command shell in VSCode, try again. We have noticed that if you have VSCode open while installing <code class="language-plaintext highlighter-rouge">nvm</code>, it is possible that VSCode will not see the new software installation until it’s closed and re-opened. You can also confirm that VSCode correctly sees the NodeJS installation by running <code class="language-plaintext highlighter-rouge">echo %PATH%</code> in your windows command shell in VSCode: it should include an entry similar to <code class="language-plaintext highlighter-rouge">C:\Program Files\nodejs</code>.</p>
+<h2 id="installation-steps-linux--mac">
+  
+  
+    <a href="#installation-steps-linux--mac" class="anchor-heading" aria-labelledby="installation-steps-linux--mac"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installation Steps (Linux / Mac)
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Run either <code class="language-plaintext highlighter-rouge">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</code> or <code class="language-plaintext highlighter-rouge">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</code>.</li>
+  <li>Close and reopen a terminal.</li>
+  <li>Verify nvm is working by entering <code class="language-plaintext highlighter-rouge">command -v nvm</code>. If your terminal prints
+out <code class="language-plaintext highlighter-rouge">nvm</code>, it should be working. If you see <code class="language-plaintext highlighter-rouge">nvm: command not found</code> or no
+feedback, open a new terminal and trying again or restart from step 1.</li>
+  <li>Install the latest LTS (Long term supported, as opposed to the “development”) version of Node.js by typing <code class="language-plaintext highlighter-rouge">nvm install 16</code>.</li>
+</ol>
+<h2 id="verification">
+  
+  
+    <a href="#verification" class="anchor-heading" aria-labelledby="verification"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Verification
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Open a shell or windows powershell.</li>
+  <li>Run the command <code class="language-plaintext highlighter-rouge">node -v</code>
+    <ul>
+      <li>This should print the current version of nodeJS installed (v16.x.x)</li>
+    </ul>
+  </li>
+  <li>Run the command <code class="language-plaintext highlighter-rouge">npm -v</code>
+    <ul>
+      <li>This should print the current version of npm installed (v8.x.x)
+<img src="./assets/week1-getting-started/node/verification.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>If you find that some other version is being used, and would like to change the default to 16, run the command <code class="language-plaintext highlighter-rouge">nvm alias default 16</code></li>
+</ol>
+<h1 id="installing-visual-studio-code-vscode">
+  
+  
+    <a href="#installing-visual-studio-code-vscode" class="anchor-heading" aria-labelledby="installing-visual-studio-code-vscode"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installing Visual Studio Code (VSCode)
+  
+  
+</h1>
+    
+
+<p>Visual Studio Code is a lightweight but powerful source code editor which runs on your desktop and is available for Windows, macOS and Linux. It comes with built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity). VSCode also supports importing hotkey configurations from most other text editors and IDEs. Read more <a href="https://code.visualstudio.com/docs">here</a>.
+While you are required to use <em>an</em> IDE for this class, it is not mandatory to use VSCode: if you already are comfortable developing TypeScript or JavaScript
+in another suitable IDE (like IntelliJ), then you are welcome to continue to use that. However, VSCode is the
+“supported” option: if you struggle to get things like the linter set up correctly in VSCode, we will be happy to help you. 
+However, we can’t provide such support for all IDEs.</p>
+<h2 id="pre-requisites">
+  
+  
+    <a href="#pre-requisites" class="anchor-heading" aria-labelledby="pre-requisites"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pre-requisites
+  
+  
+</h2>
+    
+
+<ul>
+  <li>Administrative access on the host machine for software installation.</li>
+</ul>
+<h2 id="installation-steps-windows--mac">
+  
+  
+    <a href="#installation-steps-windows--mac" class="anchor-heading" aria-labelledby="installation-steps-windows--mac"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installation Steps (Windows / Mac)
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Download the VSCode installer from the <a href="https://code.visualstudio.com/download">VSCode website</a>.
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/download.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Run the installer to start the installation wizard for VSCode
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/license-agreement.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Accept the license agreement and click next.
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/destination.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Choose the installation directory of your choice and click next.
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/start-menu.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Click next on the select start menu folder screen.
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/additional-tasks.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Tick all check boxes on the select additional tasks menu and click next.
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/ready-to-install.JPG" alt="image" /></li>
+    </ul>
+  </li>
+  <li>Review the settings on the the “Ready to install” screen and click Install to begin installation.</li>
+  <li>Once the installation is complete, you will see the below screen and you are ready to use VSCode.
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/finish.JPG" alt="image" /></li>
+    </ul>
+  </li>
+</ol>
+<h2 id="installation-linux">
+  
+  
+    <a href="#installation-linux" class="anchor-heading" aria-labelledby="installation-linux"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installation (Linux)
+  
+  
+</h2>
+    
+
+<ul>
+  <li>The above instructions for Windows/Mac should also work, but VSCode is also provided as a snap package</li>
+</ul>
+
+<ol>
+  <li>Install snap if you haven’t already by running <code class="language-plaintext highlighter-rouge">sudo apt update</code> and then <code class="language-plaintext highlighter-rouge">sudo apt install snapd</code>.</li>
+  <li>Install VSCode by running <code class="language-plaintext highlighter-rouge">sudo snap install --classic code</code>.</li>
+  <li>Open VSCode as an application on your desktop.</li>
+</ol>
+<h2 id="additional-extensions-optional">
+  
+  
+    <a href="#additional-extensions-optional" class="anchor-heading" aria-labelledby="additional-extensions-optional"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Additional Extensions (Optional)
+  
+  
+</h2>
+    
+
+<p>VSCode comes with a rich set of extensions to aid in software development.
+Below is a list of extensions that you may find useful.</p>
+
+<ol>
+  <li>GitLens - Git Supercharged</li>
+  <li>Prettier - code formatter</li>
+  <li>vscode-icons</li>
+  <li>ESLint</li>
+  <li>Andromeda (Color theme: Andromeda Colorizer)</li>
+</ol>
+
+<p><img src="./assets/week1-getting-started/vsc/useful-extensions.JPG" alt="image" /></p>
+<h2 id="installing-extensions-eg-eslint">
+  
+  
+    <a href="#installing-extensions-eg-eslint" class="anchor-heading" aria-labelledby="installing-extensions-eg-eslint"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installing Extensions (eg. ESLint)
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Click on the extensions tab on the left in VSCode.</li>
+  <li>Search ESLint.</li>
+  <li>Click on Install.</li>
+  <li>Done!
+    <ul>
+      <li><img src="./assets/week1-getting-started/vsc/eslint-search.JPG" alt="image" /></li>
+    </ul>
+  </li>
+</ol>
+<h1 id="getting-started-with-typescript">
+  
+  
+    <a href="#getting-started-with-typescript" class="anchor-heading" aria-labelledby="getting-started-with-typescript"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Getting Started With Typescript
+  
+  
+</h1>
+    
+
+<p>Typescript is a superscript of JavaScript which adds type information and other features.</p>
+<h2 id="pre-requisites-1">
+  
+  
+    <a href="#pre-requisites-1" class="anchor-heading" aria-labelledby="pre-requisites-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Pre-requisites
+  
+  
+</h2>
+    
+
+<ul>
+  <li>NodeJS</li>
+  <li>VSCode (recommended but not required)</li>
+</ul>
+<h2 id="installation">
+  
+  
+    <a href="#installation" class="anchor-heading" aria-labelledby="installation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Installation
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Open VSCode and press the ctrl + <code class="language-plaintext highlighter-rouge">~</code> (Tilde or back tick key) to open a terminal.
+    <ul>
+      <li>Optionally you can open a separate shell (Do not use powershell)</li>
+    </ul>
+  </li>
+  <li>Run the command <code class="language-plaintext highlighter-rouge">npm install -g typescript</code> in the terminal.
+    <ul>
+      <li>Typescript should now be installed globally and accessible from the terminal.</li>
+    </ul>
+  </li>
+  <li>Verify the installation using the command <code class="language-plaintext highlighter-rouge">tsc -v</code> in the terminal. (Do NOT use powershell)
+    <ul>
+      <li><img src="./assets/week1-getting-started/ts/installing-tsc.JPG" alt="image" /></li>
+    </ul>
+  </li>
+</ol>
+<h2 id="hello-world">
+  
+  
+    <a href="#hello-world" class="anchor-heading" aria-labelledby="hello-world"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Hello World
+  
+  
+</h2>
+    
+
+<ol>
+  <li>Create a new directory and open it with VSCode.</li>
+  <li>Create a new file called <code class="language-plaintext highlighter-rouge">hello-world.ts</code></li>
+  <li>Add the following code to the file:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> console.log('Hello, World!');
+</code></pre></div>    </div>
+  </li>
+  <li>Open the terminal with ctrl + <code class="language-plaintext highlighter-rouge">~</code>.
+    <ul>
+      <li>Ensure that you are in the same directory as <code class="language-plaintext highlighter-rouge">hello-world.ts</code>.</li>
+    </ul>
+  </li>
+  <li>Run the command <code class="language-plaintext highlighter-rouge">tsc hello-world.ts</code>
+    <ul>
+      <li>This will generate a JS file called <code class="language-plaintext highlighter-rouge">hello-world.js</code></li>
+    </ul>
+  </li>
+  <li>Run the file with node using the command <code class="language-plaintext highlighter-rouge">node hello-world.js</code>.
+    <ul>
+      <li>This will give the result below.</li>
+      <li><img src="./assets/week1-getting-started/ts/result.JPG" alt="image" /></li>
+    </ul>
+  </li>
+</ol>
+
+        
+
+        
+
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2022 Jonathan Bell, Adeel Bhutta, Ferdinand Vesely and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+
